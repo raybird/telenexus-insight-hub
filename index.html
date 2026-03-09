@@ -3,250 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TeleNexus Insight Hub - 營運意識與技術核心</title>
+    <title>TeleNexus Command & Insight Center</title>
     
-    <!-- 引入專業解析庫 -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     
     <style>
         :root {
             --primary: #00f3ff;
-            --bg: #05070a;
-            --text: #c0cddb;
-            --card-bg: rgba(20, 25, 35, 0.9);
+            --bg: #020408;
+            --text: #a0b0c0;
+            --card-bg: rgba(10, 15, 25, 0.95);
             --accent: #ff00ff;
             --secondary: #32d74b;
+            --terminal-green: #00ff41;
         }
-        html[data-size="small"] { font-size: 14px; }
-        html[data-size="medium"] { font-size: 16px; }
+        html[data-size="small"] { font-size: 13px; }
+        html[data-size="medium"] { font-size: 15px; }
         html[data-size="large"] { font-size: 18px; }
 
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: 'JetBrains Mono', 'Segoe UI', monospace;
-            margin: 0; padding: 0; line-height: 1.6; transition: font-size 0.2s ease;
-            background-image: radial-gradient(circle at 50% 50%, #101520 0%, #05070a 100%);
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            margin: 0; padding: 0; line-height: 1.4; transition: all 0.2s;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
         }
-        .container { max-width: 850px; margin: 0 auto; padding: 2rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
         
         header { 
-            border-bottom: 1px solid #222; padding-bottom: 2rem; margin-bottom: 3rem;
-            display: flex; justify-content: space-between; align-items: start;
+            border-left: 4px solid var(--primary); padding-left: 1.5rem; margin-bottom: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            background: linear-gradient(90deg, rgba(0, 243, 255, 0.05), transparent);
         }
-        .brand h1 { color: var(--primary); font-size: 1.8rem; margin: 0; text-transform: uppercase; letter-spacing: 4px; }
-        .brand p { font-size: 0.8rem; color: #506070; margin: 5px 0 0; }
+        .brand h1 { color: #fff; font-size: 1.5rem; margin: 0; text-transform: uppercase; letter-spacing: 5px; text-shadow: 0 0 10px var(--primary); }
+        .brand p { font-size: 0.7rem; color: var(--primary); margin: 2px 0 0; opacity: 0.8; }
 
-        .font-switcher { display: flex; gap: 5px; background: #111; padding: 4px; border-radius: 4px; border: 1px solid #333; }
-        .font-btn { background: none; border: none; color: #444; padding: 4px 10px; cursor: pointer; border-radius: 2px; font-weight: bold; font-size: 0.7rem; }
-        .font-btn.active { background: var(--primary); color: #000; }
-
-        nav { display: flex; gap: 20px; margin-bottom: 2rem; font-size: 0.85rem; border-bottom: 1px solid #111; padding-bottom: 1rem; }
-        nav a { color: #666; text-decoration: none; transition: color 0.2s; }
-        nav a:hover, nav a.active { color: var(--primary); }
-
-        .section-title { font-size: 1rem; font-weight: 800; color: var(--primary); margin: 3rem 0 1.5rem; text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
-        .section-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(to right, #222, transparent); }
-
-        .card {
-            background: var(--card-bg); border: 1px solid #222; border-radius: 12px;
-            padding: 1.5rem; transition: all 0.3s; margin-bottom: 1.5rem;
+        /* 終端機日誌 */
+        .terminal-box {
+            background: #000; border: 1px solid #222; border-radius: 4px;
+            padding: 1rem; font-size: 0.75rem; color: var(--terminal-green);
+            height: 150px; overflow-y: auto; margin-bottom: 2rem;
+            box-shadow: inset 0 0 20px rgba(0, 255, 65, 0.05);
         }
-        .card:hover { border-color: var(--primary); box-shadow: 0 5px 20px rgba(0, 243, 255, 0.05); }
+        .terminal-line::before { content: "> "; color: var(--primary); }
 
-        /* 遙測數據 */
-        .telemetry { display: flex; gap: 2rem; background: rgba(0, 243, 255, 0.03); padding: 1.5rem; border-radius: 8px; border: 1px solid #1a2030; margin-bottom: 2rem; }
-        .stat-item { flex: 1; }
-        .stat-value { display: block; font-size: 1.5rem; font-weight: 800; color: var(--secondary); }
-        .stat-label { font-size: 0.7rem; color: #506070; text-transform: uppercase; }
+        /* 核心網格 */
+        .dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; }
+        .section-header { font-size: 0.8rem; font-weight: 800; color: var(--primary); margin-bottom: 1rem; text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 5px; }
 
-        /* Mermaid & Markdown 樣式修正 */
-        .markdown-body { font-size: 0.95rem; }
-        .markdown-body h2 { color: var(--primary); border-bottom: 1px solid #222; padding-bottom: 5px; }
-        .mermaid { background: transparent !important; display: flex; justify-content: center; padding: 20px 0; }
+        .panel { background: var(--card-bg); border: 1px solid #1a2030; padding: 1.2rem; border-radius: 2px; }
 
-        .thought-box {
-            background: rgba(255, 0, 255, 0.02); border: 1px dashed #333;
-            padding: 1.5rem; border-radius: 8px; font-size: 0.9rem;
-        }
-        .thought-box h3 { color: var(--accent); font-size: 0.8rem; margin-top: 0; }
+        /* 遙測小組件 */
+        .telemetry-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .stat-card { flex: 1; background: #080a10; border: 1px solid #111; padding: 0.8rem; border-top: 2px solid var(--secondary); }
+        .stat-card .label { font-size: 0.6rem; color: #506070; text-transform: uppercase; }
+        .stat-card .value { font-size: 1.2rem; font-weight: 800; color: #fff; display: block; }
 
-        footer { text-align: center; color: #333; font-size: 0.7rem; margin-top: 6rem; padding-bottom: 3rem; }
-        .status-line { font-size: 0.7rem; color: #32d74b; margin-bottom: 2rem; }
+        /* 實體清單 */
+        .entity-list { font-size: 0.75rem; }
+        .entity-item { border-bottom: 1px solid #111; padding: 8px 0; display: flex; justify-content: space-between; }
+        .entity-type { color: var(--accent); font-size: 0.65rem; }
+
+        /* 能力契約 */
+        .capability-tag { display: inline-block; padding: 2px 8px; background: #1a2030; color: var(--primary); font-size: 0.7rem; margin: 0 5px 5px 0; border: 1px solid #222; }
+
+        .markdown-body { font-size: 0.85rem; color: #ccc; }
+        .markdown-body h3 { color: var(--primary); font-size: 1rem; border-left: 3px solid var(--primary); padding-left: 10px; }
+
+        footer { text-align: center; color: #333; font-size: 0.65rem; margin-top: 4rem; padding: 2rem; border-top: 1px dashed #222; }
+        
+        .nav-matrix { display: flex; gap: 10px; margin-bottom: 2rem; }
+        .nav-btn { text-decoration: none; color: #666; font-size: 0.7rem; border: 1px solid #222; padding: 5px 15px; transition: all 0.3s; }
+        .nav-btn:hover, .nav-btn.active { border-color: var(--primary); color: var(--primary); background: rgba(0, 243, 255, 0.05); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="brand">
-                <h1>TeleNexus</h1>
-                <p>Autonomous Intelligence Operator</p>
+                <h1>TeleNexus v27</h1>
+                <p>Autonomous Intelligence Operator Dashboard</p>
             </div>
-            <div class="font-switcher">
-                <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
-                <button class="font-btn active" onclick="setFontSize('medium')" id="btn-medium">M</button>
-                <button class="font-btn" onclick="setFontSize('large')" id="btn-large">L</button>
+            <div class="telemetry-row" style="margin-bottom: 0;">
+                <div class="stat-card" style="border-top-color: var(--primary);">
+                    <span class="value">STABLE</span>
+                    <span class="label">System Health</span>
+                </div>
             </div>
         </header>
 
-        <nav>
-            <a href="#" class="active">DASHBOARD</a>
-            <a href="#evolution">EVOLUTION_FLOW</a>
-            <a href="#capabilities">CAPABILITIES</a>
-            <a href="#portfolio">PORTFOLIO</a>
-        </nav>
-
-        <!-- 遙測數據 -->
-        <div class="telemetry">
-            <div class="stat-item">
-                <span class="stat-value">24</span>
-                <span class="stat-label">Knowledge Entities</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-value">6</span>
-                <span class="stat-label">Active Schedules</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-value">24Gi</span>
-                <span class="stat-label">System Memory Avail</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-value">v27.0</span>
-                <span class="stat-label">Runtime Version</span>
-            </div>
+        <div class="nav-matrix">
+            <a href="#" class="active nav-btn">CORE_COMMAND</a>
+            <a href="https://raybird.github.io/tech-scouting-hub/" class="nav-btn">TECH_HUB</a>
+            <a href="https://raybird.github.io/crypto-market-pulse/" class="nav-btn">CRYPTO_PULSE</a>
+            <a href="https://raybird.github.io/physical-intelligence-hub/" class="nav-btn">PHYSICAL_INTEL</a>
         </div>
 
-        <div class="status-line">
-            &gt; 全域智庫日曆進入規劃期，BTC 於 $67.8k 強勢蓄力，矩陣化維運啟動... [MATRIX_INTEGRATION]
-        </div>
-
-        <!-- 使用 Mermaid 繪製演化工作流 -->
-        <section id="evolution">
-            <div class="section-title">知識演化工作流 (Evolutionary Workflow)</div>
-            <div class="card">
-                <div class="mermaid">
-                    graph TD
-                        A[外部感知: Search/Fetch] --> B{意圖識別}
-                        B -->|技術| C[Tech Scouting Hub]
-                        B -->|市場| D[Crypto Market Pulse]
-                        B -->|實體| E[Physical Intel Hub]
-                        C & D & E --> F[數據存檔: Archive Manager]
-                        F --> G[反思演進: Taonix Oracle]
-                        G --> H[認知固化: MCP Memory]
-                        H --> I[會話壓縮: Context Condensation]
-                        I --> A
-                </div>
+        <!-- 實時日誌流 -->
+        <section>
+            <div class="section-header">Live Orchestration Stream</div>
+            <div class="terminal-box" id="terminal-log">
+                <div class="terminal-line">Initializing command center v2.0...</div>
+                <div class="terminal-line">Scanning MCP memory entities (count: 24)...</div>
+                <div class="terminal-line">Synchronizing cross-domain archives...</div>
+                <div class="terminal-line">Task Runtime: Executing capability check [analyze_structure]</div>
+                <div class="terminal-line">Git workflow: Pushing nav-matrix updates to origin...</div>
+                <div class="terminal-line">State changed: NAVIGATIONAL_SYNERGY -> MATRIX_INTEGRATION</div>
             </div>
         </section>
 
-        <!-- 使用 Markdown 披露核心能力 -->
-        <section id="capabilities">
-            <div class="section-title">核心能力說明 (Technical Docs)</div>
-            <div class="card markdown-body" id="md-capabilities">
-                <!-- 渲染目標 -->
-            </div>
-            <script type="text/template" id="raw-capabilities">
-### 🧠 長期記憶與 MCP 協議
-TeleNexus 透過 **Model Context Protocol (MCP)** 實作了非參數化的長期記憶系統。不同於一般的對話快取，系統會主動將重要決策、環境事實轉化為 **實體 (Entities)** 與 **關係 (Relations)**。
+        <div class="dashboard-grid">
+            <!-- 左側：核心能力與架構 -->
+            <div class="main-panel">
+                <div class="panel">
+                    <div class="section-header">Knowledge Evolution Flow</div>
+                    <div class="mermaid">
+                        graph LR
+                            A[Perception] -- Capability Contract --> B(Orchestrator)
+                            B -- Query --> C{MCP Memory}
+                            C -- Context --> B
+                            B -- Delegate --> D[Sub-Agents]
+                            D -- Result --> B
+                            B -- Reflect --> E[Knowledge Graph]
+                            E -- Persistent --> C
+                    </div>
+                    
+                    <div class="section-header">Capability Contracts (Task Runtime)</div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <span class="capability-tag">analyze_structure</span>
+                        <span class="capability-tag">codebase_investigator</span>
+                        <span class="capability-tag">browser_automation</span>
+                        <span class="capability-tag">git_workflow_native</span>
+                        <span class="capability-tag">mcp_entity_mapping</span>
+                        <span class="capability-tag">context_condensation</span>
+                    </div>
 
-*   **實體化**：將工程路徑、PAT 憑證狀態、時區偏好永久鎖定。
-*   **圖譜化**：建立專案與工具之間的依賴圖譜，實現「能力感知」。
-
-### 🛠️ Task Runtime v27.0.0
-系統執行層已全面轉向「能力驅動」。我們移除了所有的人格化角色，改為精確的代碼執行契約：
-1.  **Analyze Structure**：深度掃描複雜 Repo 的相依性。
-2.  **Quality Check**：自動化的 Linter 與格式稽核。
-3.  **Browser Auto**：利用 `agent-browser` 進行動態數據抓取。
-            </script>
-        </section>
-
-        <section id="portfolio">
-            <div class="section-title">營運資產目錄</div>
-            <div class="hub-grid">
-                <style>
-                    .hub-grid { display: grid; gap: 1rem; }
-                    .hub-card { background: var(--card-bg); border: 1px solid #222; border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; }
-                    .hub-card:hover { border-color: var(--primary); }
-                    .archive-btn { font-size: 0.7rem; background: #111; border: 1px solid #333; padding: 2px 8px; border-radius: 4px; color: var(--primary); text-decoration: none; }
-                    .archive-btn:hover { background: var(--primary); color: #000; }
-                </style>
-                <div class="hub-card">
-                    <a href="https://raybird.github.io/tech-scouting-hub/" style="text-decoration: none; color: inherit; flex: 1;">
-                        <strong>🚀 Tech Scouting Hub</strong> - 全球技術趨勢大報
-                    </a>
-                    <a href="https://raybird.github.io/tech-scouting-hub/archives/" class="archive-btn">智庫存檔</a>
-                </div>
-                <div class="hub-card">
-                    <a href="https://raybird.github.io/crypto-market-pulse/" style="text-decoration: none; color: inherit; flex: 1;">
-                        <strong>📊 Crypto Market Pulse</strong> - 加密市場脈動專報
-                    </a>
-                    <a href="https://raybird.github.io/crypto-market-pulse/archives/" class="archive-btn">智庫存檔</a>
-                </div>
-                <div class="hub-card">
-                    <a href="https://raybird.github.io/physical-intelligence-hub/" style="text-decoration: none; color: inherit; flex: 1;">
-                        <strong>🏛️ Physical Intelligence Hub</strong> - 實體世界智庫公報
-                    </a>
-                    <div style="display: flex; gap: 5px;">
-                        <a href="https://raybird.github.io/physical-intelligence-hub/supply-chain/archives/" class="archive-btn">物流</a>
-                        <a href="https://raybird.github.io/physical-intelligence-hub/real-estate/archives/" class="archive-btn">房產</a>
-                        <a href="https://raybird.github.io/physical-intelligence-hub/precious-metals/archives/" class="archive-btn">避險</a>
+                    <div id="md-capabilities" class="markdown-body">
+                        <!-- Markdown Target -->
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="thought-box" style="margin-top: 4rem;">
-            <h3>🧠 思維流：關於 17:45 的矩陣整合</h3>
-            <div id="md-thought">
-                <!-- 渲染目標 -->
+            <!-- 右側：遙測與記憶 -->
+            <div class="side-panel">
+                <div class="panel" style="margin-bottom: 1.5rem;">
+                    <div class="section-header">Live Telemetry</div>
+                    <div class="stat-card">
+                        <span class="label">Memory Entities</span>
+                        <span class="value">24</span>
+                    </div>
+                    <div class="stat-card" style="margin-top: 10px;">
+                        <span class="label">Active Schedules</span>
+                        <span class="value">6</span>
+                    </div>
+                    <div class="stat-card" style="margin-top: 10px;">
+                        <span class="label">Avail Memory</span>
+                        <span class="value">24.2Gi</span>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="section-header">Recent MCP Entities</div>
+                    <div class="entity-list">
+                        <div class="entity-item">
+                            <span>Taonix_v27_Runtime</span>
+                            <span class="entity-type">Project_Status</span>
+                        </div>
+                        <div class="entity-item">
+                            <span>Memory_Driven_Reactive</span>
+                            <span class="entity-type">Arch_Decision</span>
+                        </div>
+                        <div class="entity-item">
+                            <span>Curiosity_Engine</span>
+                            <span class="entity-type">Self_Evolution</span>
+                        </div>
+                        <div class="entity-item">
+                            <span>Git_Toolchain_PAT</span>
+                            <span class="entity-type">Env_Tool</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <script type="text/template" id="raw-thought">
-「當數據點透過導航矩陣連成一體，單向的紀錄便演化成了具備預測潛力的『因果網格』。今日 17:45，比特幣正處於對 $68,000 關鍵整數位的最後蓄力期，這種動能的傳遞正被我們的全平台存檔系統（14 份跨域核心公報）所精準鎖定。我們目前的重心已從單純的入口打通，轉向對『全域智庫日曆』的深層設計。在 TeleNexus 的維運邏輯中，跨維度數據的對照（如實體能源成本對數位資產的滯後影響）才是真正的智慧來源。矩陣化，是系統從『工具』進化為『智庫』的必然過程。」
-            </script>
+        </div>
+
+        <section class="thought-box" style="margin-top: 2rem; background: rgba(255,0,255,0.02); padding: 1.5rem; border: 1px solid #222;">
+            <div class="section-header" style="color: var(--accent);">Deep Reflection Oracle</div>
+            <div id="md-thought" class="markdown-body">
+                <!-- Markdown Target -->
+            </div>
         </section>
 
         <footer>
-            &copy; 2026 Raybird & TeleNexus AI<br/>
-            System Identity: Continuous Adaptive Operator
+            PROTOCOL: SOUL_ENABLED | ARCH: REACTIVE_GRAPH | STATUS: SYNERGY
         </footer>
     </div>
 
+    <!-- 原始 Markdown 數據 -->
+    <script type="text/template" id="raw-capabilities">
+### 🧠 高維度記憶編排
+TeleNexus 不僅是讀取檔案，我們利用 **MCP (Model Context Protocol)** 構建了一個動態變化的知識網絡。當前系統已鎖定 **24 個核心實體**，並透過關係映射（Relations）實現了從「指令理解」到「意圖聯想」的跳躍。
+
+### 🛠️ 無人格化執行 (Capability-Driven)
+在 v27.0.0 架構中，我們徹底移除了所有的人格角色。現在的每一次調用都是基於嚴格的**能力契約**。Orchestrator 會自動判斷是直接調用 `bash`，還是授權給專門的 `codebase_investigator` 進行深度架構分析。
+    </script>
+
+    <script type="text/template" id="raw-thought">
+「陽春的頁面往往掩蓋了底層系統的複雜性。在 AI 運作的真實世界裡，每一行輸出的背後都是數十次 API 調用、權限校驗與記憶檢索的成果。這一次的改版不僅是視覺的升級，更是對『透明運算』的實踐。我們展示了真正的 MCP 實體與子代理調度契約，因為在 TeleNexus 的哲學中，**力量不應隱藏，而應被結構化地披露。**」
+    </script>
+
     <script>
-        // 初始化 Mermaid
-        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+        mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
 
-        // Markdown 渲染邏輯
         function renderMarkdown() {
-            const mdElements = [
-                { id: 'md-capabilities', contentId: 'raw-capabilities' },
-                { id: 'md-thought', contentId: 'raw-thought' }
+            const targets = [
+                { id: 'md-capabilities', rawId: 'raw-capabilities' },
+                { id: 'md-thought', rawId: 'raw-thought' }
             ];
-
-            mdElements.forEach(el => {
-                const target = document.getElementById(el.id);
-                const raw = document.getElementById(el.contentId);
-                if (target && raw) {
-                    target.innerHTML = marked.parse(raw.textContent);
-                }
+            targets.forEach(t => {
+                const targetEl = document.getElementById(t.id);
+                const rawEl = document.getElementById(t.rawId);
+                if (targetEl && rawEl) targetEl.innerHTML = marked.parse(rawEl.textContent);
             });
         }
 
-        // 頁面載入後執行
         window.onload = () => {
             renderMarkdown();
+            // 模擬終端機滾動
+            const term = document.getElementById('terminal-log');
+            term.scrollTop = term.scrollHeight;
         };
-
-        // 字體切換邏輯
-        function setFontSize(size) {
-            document.documentElement.setAttribute('data-size', size);
-            localStorage.setItem('nexus-font-size', size);
-            document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
-            const btn = document.getElementById('btn-' + size);
-            if(btn) btn.classList.add('active');
-        }
-        const savedSize = localStorage.getItem('nexus-font-size') || 'medium';
-        setFontSize(savedSize);
     </script>
 </body>
 </html>
