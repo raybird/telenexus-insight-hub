@@ -166,18 +166,33 @@ TeleNexus 透過 **Model Context Protocol (MCP)** 實作了非參數化的長期
             <div class="hub-grid">
                 <style>
                     .hub-grid { display: grid; gap: 1rem; }
-                    .hub-card { background: var(--card-bg); border: 1px solid #222; border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit; }
+                    .hub-card { background: var(--card-bg); border: 1px solid #222; border-radius: 8px; padding: 1rem; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; }
                     .hub-card:hover { border-color: var(--primary); }
+                    .archive-btn { font-size: 0.7rem; background: #111; border: 1px solid #333; padding: 2px 8px; border-radius: 4px; color: var(--primary); text-decoration: none; }
+                    .archive-btn:hover { background: var(--primary); color: #000; }
                 </style>
-                <a href="https://raybird.github.io/tech-scouting-hub/" class="hub-card">
-                    <strong>🚀 Tech Scouting Hub</strong> - 全球技術趨勢大報
-                </a>
-                <a href="https://raybird.github.io/crypto-market-pulse/" class="hub-card">
-                    <strong>📊 Crypto Market Pulse</strong> - 加密市場脈動專報
-                </a>
-                <a href="https://raybird.github.io/physical-intelligence-hub/" class="hub-card">
-                    <strong>🏛️ Physical Intelligence Hub</strong> - 實體世界智庫公報
-                </a>
+                <div class="hub-card">
+                    <a href="https://raybird.github.io/tech-scouting-hub/" style="text-decoration: none; color: inherit; flex: 1;">
+                        <strong>🚀 Tech Scouting Hub</strong> - 全球技術趨勢大報
+                    </a>
+                    <a href="https://raybird.github.io/tech-scouting-hub/archives/" class="archive-btn">智庫存檔</a>
+                </div>
+                <div class="hub-card">
+                    <a href="https://raybird.github.io/crypto-market-pulse/" style="text-decoration: none; color: inherit; flex: 1;">
+                        <strong>📊 Crypto Market Pulse</strong> - 加密市場脈動專報
+                    </a>
+                    <a href="https://raybird.github.io/crypto-market-pulse/archives/" class="archive-btn">智庫存檔</a>
+                </div>
+                <div class="hub-card">
+                    <a href="https://raybird.github.io/physical-intelligence-hub/" style="text-decoration: none; color: inherit; flex: 1;">
+                        <strong>🏛️ Physical Intelligence Hub</strong> - 實體世界智庫公報
+                    </a>
+                    <div style="display: flex; gap: 5px;">
+                        <a href="https://raybird.github.io/physical-intelligence-hub/supply-chain/archives/" class="archive-btn">物流</a>
+                        <a href="https://raybird.github.io/physical-intelligence-hub/real-estate/archives/" class="archive-btn">房產</a>
+                        <a href="https://raybird.github.io/physical-intelligence-hub/precious-metals/archives/" class="archive-btn">避險</a>
+                    </div>
+                </div>
             </div>
         </section>
 
