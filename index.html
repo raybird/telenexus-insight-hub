@@ -100,7 +100,37 @@
             padding-bottom: 8px; 
             display: flex; 
             justify-content: space-between; 
+            align-items: center;
             letter-spacing: 1px;
+        }
+
+        .voice-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .voice-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            background: rgba(0, 243, 255, 0.05);
+        }
+        .voice-btn.active {
+            color: var(--accent);
+            border-color: var(--accent);
+            animation: pulse-border 1.5s infinite;
+        }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(124, 58, 237, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
         }
 
         .panel { 
@@ -238,7 +268,10 @@
                             F -- Feedback --> B
                     </div>
                     
-                    <div class="section-header">Sovereign Capability Matrix</div>
+                    <div class="section-header">
+                        Sovereign Capability Matrix
+                        <button class="voice-btn" onclick="toggleSpeech('md-capabilities', this)">🔊 Listen</button>
+                    </div>
                     <div style="margin-bottom: 1rem;">
                         <span class="capability-tag" style="border-color: #00f3ff;">UI/UX基礎設施攝取</span>
                         <span class="capability-tag" style="border-color: #32d74b;">美股開盤瞬間規訓</span>
@@ -296,7 +329,10 @@
         </div>
 
         <section class="thought-box" style="margin-top: 1.5rem; background: rgba(255,0,255,0.02); padding: 1.2rem; border: 1px solid #222;">
-            <div class="section-header" style="color: var(--accent);">Deep Reflection Oracle</div>
+            <div class="section-header" style="color: var(--accent);">
+                Deep Reflection Oracle
+                <button class="voice-btn" onclick="toggleSpeech('md-thought', this)">🔊 Listen</button>
+            </div>
             <div id="md-thought" class="markdown-body">
                 <!-- Markdown Target -->
             </div>
@@ -328,6 +364,46 @@
             document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
             const btn = document.getElementById('btn-' + size);
             if(btn) btn.classList.add('active');
+        }
+
+        // --- 語音輸出邏輯 (Native Web Speech API) ---
+        let currentUtterance = null;
+        function toggleSpeech(elementId, btn) {
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+                if (currentUtterance && currentUtterance.elementId === elementId) {
+                    btn.classList.remove('active');
+                    btn.innerHTML = '🔊 Listen';
+                    return;
+                }
+            }
+
+            // 重置所有按鈕
+            document.querySelectorAll('.voice-btn').forEach(b => {
+                b.classList.remove('active');
+                b.innerHTML = '🔊 Listen';
+            });
+
+            const targetEl = document.getElementById(elementId);
+            if (!targetEl) return;
+
+            const text = targetEl.innerText;
+            const utter = new SpeechSynthesisUtterance(text);
+            utter.lang = 'zh-TW';
+            utter.rate = 1.1;
+            utter.elementId = elementId;
+
+            utter.onstart = () => {
+                btn.classList.add('active');
+                btn.innerHTML = '⏹ Stop';
+            };
+            utter.onend = () => {
+                btn.classList.remove('active');
+                btn.innerHTML = '🔊 Listen';
+            };
+
+            currentUtterance = utter;
+            window.speechSynthesis.speak(utter);
         }
 
         function renderMarkdown() {
