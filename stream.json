@@ -1,5 +1,13 @@
 [
   {
+    "id": "202603111100",
+    "timestamp": "2026-03-11 11:00",
+    "category": "Crypto",
+    "title": "整點市場快訊：言論對沖與生產力溢價",
+    "state": "CAUSAL_HEDGING_LOCKED",
+    "summary": "比特幣回測 $69.8k，Arthur Hayes 謹慎言論引發短調。MimiClaw 邊緣代理狂熱提供結構性支撐。"
+  },
+  {
     "id": "202603111000",
     "timestamp": "2026-03-11 10:00",
     "category": "Crypto",
