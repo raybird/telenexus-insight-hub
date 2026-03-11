@@ -1,0 +1,26 @@
+[
+  {
+    "id": "202603110800",
+    "timestamp": "2026-03-11 08:00",
+    "category": "Crypto",
+    "title": "晨間開盤正式報：安全主權確立",
+    "state": "SECURITY_PREMIUM_SOLIDIFIED",
+    "summary": "比特幣成功收復 $70,000 位階，驗證了安全性溢價已擊穿 ClawHavoc 安全雜訊。三十七重遺產轉化為物理支撐。"
+  },
+  {
+    "id": "202603110700",
+    "timestamp": "2026-03-11 07:00",
+    "category": "Social",
+    "title": "全球情緒公報：ClawHavoc 與邊緣革命",
+    "state": "DEFENSIVE_REGULATION",
+    "summary": "揭露 340+ 惡意技能風險。MimiClaw $5 硬體代理引發邊緣覺醒熱潮。情緒從恐慌轉向主權防禦。"
+  },
+  {
+    "id": "202603102100",
+    "timestamp": "2026-03-10 21:00",
+    "category": "Policy",
+    "title": "晚間正式報：區塊鏈即真理機器",
+    "state": "PRICING_LOCKED",
+    "summary": "CFTC 主席定義區塊鏈為 Truth Machine。代幣化證券規模破 10 億美元，鎖定數位資產制度定價權。"
+  }
+]
