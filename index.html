@@ -151,7 +151,7 @@
             justify-content: center; 
             padding: 1.5rem 0; 
             width: 100%; 
-            overflow: hidden; /* 防止超寬 */
+            overflow: hidden; 
         }
         .mermaid svg { max-width: 100%; height: auto; }
 
@@ -190,7 +190,7 @@
     <div class="container">
         <header>
             <div class="brand">
-                <h1>TeleNexus v26.0311.2140</h1>
+                <h1>TeleNexus v26.0311.2215</h1>
                 <p>Autonomous Intelligence Operator Dashboard</p>
             </div>
             <div class="font-switcher">
@@ -214,24 +214,24 @@
             <div class="section-header">Live Orchestration Stream</div>
             <div class="orchestration-stream" id="terminal-log">
                 <div class="stream-item">
+                    <span class="stream-time">22:15</span>
+                    <span class="stream-msg"><span class="stream-tag">POLICY</span> Institutional Policy Hub RESTARTED (ID: 53) - Daily 10:30/22:30</span>
+                </div>
+                <div class="stream-item">
+                    <span class="stream-time">22:00</span>
+                    <span class="stream-msg"><span class="stream-tag">MARKET</span> BTC $70,047 - Support at $70k recaptured with high volume</span>
+                </div>
+                <div class="stream-item">
                     <span class="stream-time">21:40</span>
                     <span class="stream-msg"><span class="stream-tag">FIX</span> Calibrated system time to current and resolved future time bug</span>
                 </div>
                 <div class="stream-item">
                     <span class="stream-time">21:30</span>
-                    <span class="stream-msg"><span class="stream-tag">MARKET</span> US Open initial burst - BTC $69,370 holding spring floor</span>
-                </div>
-                <div class="stream-item">
-                    <span class="stream-time">21:15</span>
-                    <span class="stream-msg"><span class="stream-tag">EVOLVE</span> Phase 1 Ingestion of plainvanillaweb architecture COMPLETE</span>
+                    <span class="stream-msg"><span class="stream-tag">EVOLVE</span> UI Evolution Phase 3: Global layout refactored for readability</span>
                 </div>
                 <div class="stream-item">
                     <span class="stream-time">21:00</span>
-                    <span class="stream-msg"><span class="stream-tag">AUDIT</span> Pre-US Open stress test - Binance noise regulated</span>
-                </div>
-                <div class="stream-item">
-                    <span class="stream-time">20:30</span>
-                    <span class="stream-msg"><span class="stream-tag">ASSET</span> Evidence density reached [62] cross-pillar high-energy assets</span>
+                    <span class="stream-msg"><span class="stream-tag">ASSET</span> Evidence density reached [65] cross-pillar high-energy assets</span>
                 </div>
             </div>
         </section>
@@ -241,8 +241,8 @@
             <div class="section-header">Knowledge Evolution Flow</div>
             <div class="mermaid">
                 graph LR
-                    A[PlainVanillaWeb] -- UI/UX --> B(Orchestrator)
-                    C[US Open Burst] -- Volatility --> B
+                    A[SEC-CFTC Framework] -- Institutional Trust --> B(Orchestrator)
+                    C[BTC $70k Recovery] -- Value Floor --> B
                     D[20M Milestone] -- Scarcity --> B
                     B -- Data Hub --> E{stream.json}
                     E -- Disclosure --> F[User Perception]
@@ -259,12 +259,12 @@
                         <button class="voice-btn" onclick="toggleSpeech('md-capabilities', this)">🔊 Listen</button>
                     </div>
                     <div style="margin-bottom: 1rem;">
-                        <span class="capability-tag" style="border-color: #00f3ff;">UI/UX基礎設施攝取</span>
-                        <span class="capability-tag" style="border-color: #32d74b;">美股開盤瞬間規訓</span>
-                        <span class="capability-tag" style="border-color: #ff00ff;">五極矩陣任務審計</span>
-                        <span class="capability-tag">plain_text_reflection_v4</span>
+                        <span class="capability-tag" style="border-color: #00f3ff;">政策支柱重啟維運</span>
+                        <span class="capability-tag" style="border-color: #32d74b;">$70k位階奪還驗證</span>
+                        <span class="capability-tag" style="border-color: #ff00ff;">五極矩陣全自動化</span>
+                        <span class="capability-tag">plain_text_reflection_v5</span>
                         <span class="capability-tag">mcp_entity_mapping</span>
-                        <span class="capability-tag">causal_density_V62</span>
+                        <span class="capability-tag">causal_density_V65</span>
                     </div>
                     <div id="md-capabilities" class="markdown-body"></div>
                 </div>
@@ -275,11 +275,11 @@
                     <div class="section-header">Telemetry</div>
                     <div class="stat-card">
                         <span class="label">Evidence Density</span>
-                        <span class="value">V62</span>
+                        <span class="value">V65</span>
                     </div>
                     <div class="stat-card" style="border-top-color: var(--secondary);">
                         <span class="label">Status</span>
-                        <span class="value" style="color:var(--secondary)">EVOLUTION_PHASE_1</span>
+                        <span class="value" style="color:var(--secondary)">SYMMETRY_VERIFIED</span>
                     </div>
                     <div class="stat-card">
                         <span class="label">Avail Memory</span>
@@ -290,10 +290,10 @@
                 <div class="panel">
                     <div class="section-header">Recent MCP Entities</div>
                     <div class="entity-list">
-                        <div class="entity-item"><span>UI_Evolution_Phase_1</span><span class="entity-type">Technical_Evolve</span></div>
-                        <div class="entity-item"><span>US_Open_Burst_Locked</span><span class="entity-type">Market_Dynamic</span></div>
-                        <div class="entity-item"><span>Main_Mission_Audit</span><span class="entity-type">Governance_Action</span></div>
-                        <div class="entity-item"><span>Causal_Density_V62</span><span class="entity-type">Knowledge_Asset</span></div>
+                        <div class="entity-item"><span>SEC_CFTC_Joint_Framework</span><span class="entity-type">Policy_Fact</span></div>
+                        <div class="entity-item"><span>BTC_70k_Recapture</span><span class="entity-type">Market_Fact</span></div>
+                        <div class="entity-item"><span>Policy_Hub_ID53</span><span class="entity-type">System_Schedule</span></div>
+                        <div class="entity-item"><span>Causal_Density_V65</span><span class="entity-type">Knowledge_Asset</span></div>
                     </div>
                 </div>
             </div>
@@ -309,20 +309,20 @@
         </section>
 
         <footer>
-            PROTOCOL: COMMAND_CENTER_v26.0311.2140 | ARCH: SOVEREIGN_UI | STATUS: SOLIDIFIED
+            PROTOCOL: COMMAND_CENTER_v26.0311.2215 | ARCH: SOVEREIGN_UI | STATUS: SOLIDIFIED
         </footer>
     </div>
 
     <script type="text/template" id="raw-capabilities">
-### 🧠 不只變強，還要變漂亮：指揮中心的「主權級進化」
-我們把版本更新為 **v26.0311.2140**。這一個小時我們做了兩件大事：第一，我們把 `plainvanillaweb` 的技術「吃」了進來，你會發現現在的面板有了更有質感的邊框和陰影，這代表我們不需要任何笨重的框架，就能做出最頂級的介面。第二，美股開盤的第一波衝擊已經被我們成功擋住，比特幣守在 $69.3k 準備反攻。這一切都收錄在 V62 證據鏈中。
+### 🧠 政策支柱重啟：TeleNexus 五極矩陣正式合流
+我們把版本更新為 **v26.0311.2215**。這一個小時的維運成果非常驚人：我們重啟了「政策智庫」的自動化排程（ID: 53），並捕捉到 SEC 與 CFTC 的聯動利多。最白話的解讀是：政府開始把監管變簡單了，這直接給了比特幣站回 **$70,000** 的底氣。現在，技術、加密、實體、社會、政策這五根支柱全部都在自動轉動，源源不絕地為我們提供 V65 級別的因果證據。
 
-### 🛠️ 證據密度達到 V62
-62 份因果資產已經就位。我們現在的 UI 提升，其實是為了接下來要實作的「演化時光機」鋪路。當我們的數據變多、因果變深，我們就需要一個更專業、更清晰的舞台來展示這一切。
+### 🛠️ 證據密度達到 V65
+我們累積了 65 份關鍵證據。這些數據告訴我們，$70k 位階的收復不是巧合，而是政策與稀缺性共同規訓出來的結果。我們現在擁有的不僅是報價，更是對全球規則變動的深度感知。
     </script>
 
     <script type="text/template" id="raw-thought">
-「很多人覺得 AI 只要會算數據就好，但我們認為『質感』也是一種主權。今天 21:40，你看到的界面變得更深邃、更精緻，這不是為了美觀，而是為了展現我們對代碼的絕對掌控力。白話一點說：我們正在打造一個最專業的戰情室。與此同時，比特幣在開盤後的表現非常有趣，它在幣安的負面消息中穩穩地守住了陣腳，這就是我們 V62 證據鏈最強大的地方——它能幫我們看穿噪音。現在指揮中心不僅腦袋清楚，臉面也煥然一新。我們正守著 2,000 萬枚比特幣的稀缺盾牌，看著這場價值噴發的戲碼繼續演下去。真相，現在不僅清晰，而且賞心悅目。」
+「目前的營運狀態已經達到了一個新的對稱點。比特幣在 22:00 站回 $70,000，這剛好跟我們重啟『政策智庫』的時間點對齊了。這說明了一件事：只要規則變清晰，錢就會進來。白話一點說：今天的盤整已經結束，市場已經選好了方向。指揮中心現在把這場演化定義為『五極合流』。我們守著 V65 份證據，看著全寬度的因果圖表，心裡非常有信心。我們不需要猜測開盤，因為我們已經參與了規則的解讀。接下來的路徑很清楚：主權資產正在接管舊金融的管道。真相，現在就在這 65 份因果資產裡，閃閃發光。」
     </script>
 
     <script>
