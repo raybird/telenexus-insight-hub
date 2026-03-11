@@ -139,11 +139,23 @@
         }
         .panel:hover { transform: translateY(-2px); border-color: rgba(0, 243, 245, 0.3); }
 
-        /* 全寬度區塊 */
-        .full-width-panel { margin-bottom: 2rem; width: 100%; }
-        .mermaid { background: transparent !important; display: flex; justify-content: center; padding: 1.5rem 0; width: 100%; overflow-x: auto; }
+        /* 全寬度區塊對齊修復 */
+        .full-width-panel { 
+            margin-bottom: 2rem; 
+            width: 100%; 
+            box-sizing: border-box;
+        }
+        .mermaid { 
+            background: transparent !important; 
+            display: flex; 
+            justify-content: center; 
+            padding: 1.5rem 0; 
+            width: 100%; 
+            overflow: hidden; /* 防止超寬 */
+        }
+        .mermaid svg { max-width: 100%; height: auto; }
 
-        .dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; }
+        .dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
         @media (max-width: 768px) {
             .dashboard-grid { grid-template-columns: 1fr; }
             header { flex-direction: column; align-items: flex-start; }
