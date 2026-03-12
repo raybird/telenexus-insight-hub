@@ -175,6 +175,37 @@
         .capability-tag { display: inline-block; padding: 4px 10px; background: rgba(0, 243, 255, 0.05); color: var(--primary); font-size: 0.75rem; margin: 0 8px 8px 0; border: 1px solid var(--border); border-radius: 4px; transition: 0.2s; }
         .capability-tag:hover { background: rgba(0, 243, 245, 0.1); border-color: var(--primary); }
 
+        /* 多維度觀察矩陣樣式 */
+        .observation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        .data-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            padding: 1.2rem;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .data-card:hover { border-color: var(--primary); background: rgba(0, 243, 255, 0.03); }
+        .data-pillar { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.8rem; }
+        .data-value { font-size: 1.8rem; font-weight: 900; color: #fff; text-shadow: 0 0 15px rgba(0, 243, 255, 0.3); margin-bottom: 0.4rem; font-family: monospace; }
+        .data-label { font-size: 0.75rem; color: #cbd5e1; font-weight: 600; margin-bottom: 0.8rem; }
+        .data-tag { 
+            display: inline-block; 
+            font-size: 0.6rem; 
+            padding: 2px 8px; 
+            background: rgba(255, 255, 255, 0.05); 
+            border-radius: 10px; 
+            color: var(--primary); 
+            border: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
         .markdown-body { font-size: 0.95rem; color: #cbd5e1; }
         .markdown-body h3 { color: var(--primary); font-size: 1.1rem; border-left: 4px solid var(--primary); padding-left: 12px; margin: 2rem 0 1rem; letter-spacing: 0.5px; }
         .markdown-body p { margin-bottom: 1.2rem; line-height: 1.7; }
@@ -247,6 +278,46 @@
                     B -- Causal Settle --> E{Insight Hub}
                     E -- Disclosure --> F[User Perception]
                     F -- Feedback --> B
+            </div>
+        </section>
+
+        <!-- 新增：多維度觀察矩陣 (全寬) -->
+        <section class="panel full-width-panel" style="background: rgba(0, 243, 255, 0.02);">
+            <div class="section-header">
+                Multidimensional Observation Matrix
+                <div style="font-size: 0.6rem; color: var(--text-muted);">LIVE_CAUSAL_DATA</div>
+            </div>
+            <div class="observation-grid" id="data-matrix">
+                <div class="data-card">
+                    <div class="data-pillar">CRYPTO</div>
+                    <div class="data-value">$70,225</div>
+                    <div class="data-label">BTC/USDT 主權地板</div>
+                    <div class="data-tag">Recapture_Success</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-pillar">PHYSICAL</div>
+                    <div class="data-value">$98.60</div>
+                    <div class="data-label">Brent 原油滯脹預警</div>
+                    <div class="data-tag">Energy_Shockwave</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-pillar">POLICY</div>
+                    <div class="data-value">78%</div>
+                    <div class="data-label">SEC-CFTC 制度清晰度</div>
+                    <div class="data-tag">Harmonized_Legit</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-pillar">SOCIAL</div>
+                    <div class="data-value">98%</div>
+                    <div class="data-label">20M 稀缺共鳴巔峰</div>
+                    <div class="data-tag">Absolute_Scarcity</div>
+                </div>
+                <div class="data-card">
+                    <div class="data-pillar">TECH</div>
+                    <div class="data-value">1,000+</div>
+                    <div class="data-label">Optimus 實戰部署</div>
+                    <div class="data-tag">Physical_Agency</div>
+                </div>
             </div>
         </section>
 
