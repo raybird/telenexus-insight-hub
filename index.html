@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TeleNexus Command & Insight Center</title>
+    <title>TeleNexus Sovereign Command Console</title>
     
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     
     <style>
         :root {
-            /* 攝取自 plainvanillaweb 的核心色系 */
             --primary: #00f3ff;
-            --primary-hover: #00d4ff;
-            --bg: #0a0f1a; 
-            --surface: #111827;
-            --text: #e2e8f0;
-            --text-muted: #94a3b8;
+            --primary-glow: rgba(0, 243, 255, 0.3);
+            --bg: #05070a; 
+            --surface: #0d1117;
+            --surface-alt: #161b22;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
             --accent: #7c3aed; 
-            --secondary: #32d74b;
-            --border: rgba(255, 255, 255, 0.08);
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            --spacing: 1rem;
+            --secondary: #3fb950;
+            --border: #30363d;
+            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            --spacing: 1.5rem;
         }
         
         html[data-size="small"] { font-size: 13px; }
@@ -31,424 +31,264 @@
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: 'JetBrains Mono', 'Fira Code', 'Inter', system-ui, sans-serif;
-            margin: 0; padding: 0; line-height: 1.6; transition: all 0.2s;
-            background-image: 
-                linear-gradient(rgba(0, 243, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+            font-family: 'Inter', 'JetBrains Mono', system-ui, sans-serif;
+            margin: 0; padding: 0; line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: var(--spacing); 
-            box-sizing: border-box;
+        .app-shell {
+            display: grid;
+            grid-template-columns: 240px 1fr;
             min-height: 100vh;
+        }
+
+        /* 側邊導航欄 */
+        aside.sidebar {
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
+            gap: 2rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            box-sizing: border-box;
         }
-        
-        header { 
-            border-left: 4px solid var(--primary); 
-            padding: 1.2rem; 
-            margin-bottom: 2rem;
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            background: linear-gradient(90deg, rgba(0, 243, 255, 0.05), transparent);
-            flex-wrap: wrap; 
-            gap: 15px;
-            border-radius: 0 8px 8px 0;
-        }
-        .brand h1 { color: #fff; font-size: 1.4rem; margin: 0; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 10px var(--primary); }
-        .brand p { font-size: 0.7rem; color: var(--primary); margin: 2px 0 0; opacity: 0.8; }
 
-        .font-switcher { display: flex; gap: 5px; background: #111; padding: 3px; border-radius: 6px; border: 1px solid #333; }
-        .font-btn { background: none; border: none; color: #555; padding: 2px 10px; cursor: pointer; border-radius: 4px; font-size: 0.75rem; font-weight: bold; transition: 0.3s; }
-        .font-btn.active { background: var(--primary); color: #000; }
+        .brand h1 { 
+            color: #fff; font-size: 1.2rem; margin: 0; 
+            text-transform: uppercase; letter-spacing: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .brand p { font-size: 0.65rem; color: var(--text-muted); margin: 5px 0 0; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* 日誌流樣式優化 */
-        .orchestration-stream {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.2rem;
-            margin-bottom: 2rem;
-            max-height: 220px;
-            overflow-y: auto;
+        nav.menu { display: flex; flex-direction: column; gap: 0.5rem; }
+        .menu-btn {
+            background: none; border: 1px solid transparent; color: var(--text-muted);
+            padding: 0.8rem 1.2rem; border-radius: 8px; text-align: left;
+            cursor: pointer; font-size: 0.85rem; font-weight: 600;
+            transition: 0.2s; display: flex; align-items: center; gap: 10px;
         }
-        .stream-item {
-            display: flex;
-            gap: 15px;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            font-size: 0.8rem;
-            align-items: flex-start;
-        }
-        .stream-item:last-child { border-bottom: none; }
-        .stream-time { color: var(--primary); font-weight: 800; min-width: 65px; font-family: monospace; }
-        .stream-msg { color: #cbd5e1; }
-        .stream-tag { 
-            font-size: 0.65rem; 
-            padding: 1px 6px; 
-            border-radius: 3px; 
-            background: rgba(0, 243, 255, 0.1); 
+        .menu-btn:hover { background: var(--surface-alt); color: #fff; }
+        .menu-btn.active { 
+            background: rgba(0, 243, 255, 0.05); 
             color: var(--primary); 
-            border: 1px solid rgba(0, 243, 255, 0.2);
-            text-transform: uppercase;
-            margin-right: 8px;
-            font-weight: 700;
+            border-color: rgba(0, 243, 255, 0.2); 
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.05);
         }
 
-        .section-header { 
-            font-size: 0.85rem; 
-            font-weight: 800; 
-            color: var(--primary); 
-            margin-bottom: 1.2rem; 
-            text-transform: uppercase; 
-            border-bottom: 1px solid var(--border); 
-            padding-bottom: 8px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
-            letter-spacing: 1px;
+        /* 主內容區 */
+        main.content {
+            padding: var(--spacing) 3rem;
+            max-width: 1200px;
+            margin: 0;
         }
 
-        .voice-btn {
-            background: none; border: 1px solid var(--border); color: var(--text-muted);
-            cursor: pointer; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem;
-            transition: 0.2s; display: flex; align-items: center; gap: 5px;
+        header.top-bar {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);
         }
-        .voice-btn:hover { color: var(--primary); border-color: var(--primary); background: rgba(0, 243, 255, 0.05); }
-        .voice-btn.active { color: var(--accent); border-color: var(--accent); animation: pulse-border 1.5s infinite; }
-        @keyframes pulse-border {
-            0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
-            70% { box-shadow: 0 0 0 6px rgba(124, 58, 237, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
-        }
+        .view-title { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
 
+        /* 通用元件 */
         .panel { 
             background: var(--surface); 
             border: 1px solid var(--border); 
-            padding: 1.5rem; 
-            border-radius: 8px; 
-            margin-bottom: 1.5rem; 
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .panel:hover { transform: translateY(-2px); border-color: rgba(0, 243, 245, 0.3); }
-
-        /* 全寬度區塊對齊修復 */
-        .full-width-panel { 
+            padding: 2rem; 
+            border-radius: 12px; 
             margin-bottom: 2rem; 
-            width: 100%; 
-            box-sizing: border-box;
+            box-shadow: var(--card-shadow);
         }
-        .mermaid { 
-            background: transparent !important; 
-            display: flex; 
-            justify-content: center; 
-            padding: 1.5rem 0; 
-            width: 100%; 
-            overflow: hidden; 
+        .section-header { 
+            font-size: 0.75rem; font-weight: 800; color: var(--primary); 
+            margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px;
+            display: flex; align-items: center; gap: 10px;
         }
-        .mermaid svg { max-width: 100%; height: auto; }
+        .section-header::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
-        .dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
-        @media (max-width: 768px) {
-            .dashboard-grid { grid-template-columns: 1fr; }
-            header { flex-direction: column; align-items: flex-start; }
-        }
-
-        .stat-card { 
-            background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border); padding: 1rem; 
-            border-top: 3px solid var(--secondary); margin-bottom: 12px; border-radius: 4px;
-        }
-        .stat-card .label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-        .stat-card .value { font-size: 1.2rem; font-weight: 800; color: #fff; display: block; margin-top: 4px; }
-
-        .entity-list { font-size: 0.8rem; }
-        .entity-item { border-bottom: 1px solid var(--border); padding: 10px 0; display: flex; justify-content: space-between; align-items: center; }
-        .entity-type { color: var(--accent); font-size: 0.65rem; background: rgba(124, 58, 237, 0.1); padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(124, 58, 237, 0.2); }
-
-        .capability-tag { display: inline-block; padding: 4px 10px; background: rgba(0, 243, 255, 0.05); color: var(--primary); font-size: 0.75rem; margin: 0 8px 8px 0; border: 1px solid var(--border); border-radius: 4px; transition: 0.2s; }
-        .capability-tag:hover { background: rgba(0, 243, 245, 0.1); border-color: var(--primary); }
-
-        /* 多維度觀察矩陣樣式 */
+        /* Dashboard 專用佈局 */
         .observation-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.2rem;
-            margin-top: 0.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
         .data-card {
-            background: rgba(0, 0, 0, 0.2);
+            background: var(--surface-alt);
             border: 1px solid var(--border);
-            padding: 1.2rem;
-            border-radius: 8px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            padding: 1.5rem;
+            border-radius: 12px;
             transition: 0.3s;
         }
-        .data-card:hover { border-color: var(--primary); background: rgba(0, 243, 255, 0.03); }
-        .data-pillar { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.8rem; }
-        .data-value { font-size: 1.8rem; font-weight: 900; color: #fff; text-shadow: 0 0 15px rgba(0, 243, 255, 0.3); margin-bottom: 0.2rem; font-family: monospace; }
-        .data-label { font-size: 0.7rem; color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
-        .data-discovery { font-size: 0.75rem; color: #94a3b8; line-height: 1.4; margin-bottom: 1rem; min-height: 3em; }
-        .data-tag { 
-            display: inline-block; 
-            font-size: 0.6rem; 
-            padding: 2px 8px; 
-            background: rgba(255, 255, 255, 0.05); 
-            border-radius: 10px; 
-            color: var(--primary); 
-            border: 1px solid rgba(0, 243, 255, 0.2);
+        .data-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+        .data-card .value { font-size: 2rem; font-weight: 900; margin: 0.5rem 0; font-family: 'JetBrains Mono'; }
+        .data-card .label { font-size: 0.7rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
+        .data-card .discovery { font-size: 0.8rem; color: #94a3b8; margin-top: 1rem; line-height: 1.5; }
+
+        /* 分頁隱藏邏輯 */
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 時光機 (Evolution) 專用樣式 */
+        .timeline { position: relative; padding-left: 2rem; border-left: 2px solid var(--border); }
+        .timeline-item { position: relative; margin-bottom: 3rem; }
+        .timeline-item::before { 
+            content: ""; position: absolute; left: -2.45rem; top: 0.5rem;
+            width: 12px; height: 12px; border-radius: 50%; background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
         }
+        .timeline-time { font-family: 'JetBrains Mono'; color: var(--primary); font-size: 0.85rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .timeline-body { background: var(--surface-alt); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
 
-        .markdown-body { font-size: 0.95rem; color: #cbd5e1; }
-        .markdown-body h3 { color: var(--primary); font-size: 1.1rem; border-left: 4px solid var(--primary); padding-left: 12px; margin: 2rem 0 1rem; letter-spacing: 0.5px; }
-        .markdown-body p { margin-bottom: 1.2rem; line-height: 1.7; }
+        .markdown-body h3 { color: var(--primary); font-size: 1.2rem; margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        .markdown-body p { margin-bottom: 1.2rem; font-size: 1rem; color: #d1d5db; line-height: 1.8; }
 
-        footer { text-align: center; color: var(--text-muted); font-size: 0.7rem; margin-top: auto; padding: 3rem 1rem; border-top: 1px solid var(--border); opacity: 0.6; }
-        
-        .nav-matrix { display: flex; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap; }
-        .nav-btn { text-decoration: none; color: var(--text-muted); font-size: 0.75rem; border: 1px solid var(--border); padding: 8px 16px; transition: all 0.3s; border-radius: 6px; background: rgba(255, 255, 255, 0.02); font-weight: 600; }
-        .nav-btn:hover, .nav-btn.active { border-color: var(--primary); color: var(--primary); background: rgba(0, 243, 255, 0.08); box-shadow: 0 0 15px rgba(0, 243, 255, 0.1); }
+        @media (max-width: 900px) {
+            .app-shell { grid-template-columns: 1fr; }
+            aside.sidebar { display: none; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <div class="app-shell">
+        <aside class="sidebar">
             <div class="brand">
-                <h1>TeleNexus v26.0312.1115</h1>
-                <p>Autonomous Intelligence Operator Dashboard</p>
+                <h1>TeleNexus</h1>
+                <p>Sovereign Command Console</p>
             </div>
-            <div class="font-switcher">
-                <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
-                <button class="font-btn" onclick="setFontSize('medium')" id="btn-medium">M</button>
-                <button class="font-btn" onclick="setFontSize('large')" id="btn-large">L</button>
-            </div>
-        </header>
+            
+            <nav class="menu">
+                <button class="menu-btn active" onclick="switchTab('dashboard')">📊 Dashboard</button>
+                <button class="menu-btn" onclick="switchTab('evolution')">⏳ Evolution Flow</button>
+                <button class="menu-btn" onclick="switchTab('pillars')">🏛️ Pillar Deep-Dive</button>
+                <button class="menu-btn" onclick="switchTab('protocol')">📜 Protocols</button>
+            </nav>
 
-        <nav class="nav-matrix">
-            <a href="#" class="active nav-btn">COMMAND</a>
-            <a href="https://raybird.github.io/tech-scouting-hub/" class="nav-btn">TECH</a>
-            <a href="https://raybird.github.io/crypto-market-pulse/" class="nav-btn">CRYPTO</a>
-            <a href="https://raybird.github.io/physical-intelligence-hub/" class="nav-btn">PHYSICAL</a>
-            <a href="https://raybird.github.io/social-sentiment-observatory/" class="nav-btn" style="color: #ff8800;">SOCIAL</a>
-            <a href="https://raybird.github.io/institutional-policy-hub/" class="nav-btn">POLICY</a>
-        </nav>
-
-        <!-- 第一層：因果日誌流 (全寬) -->
-        <section>
-            <div class="section-header">Live Orchestration Stream</div>
-            <div class="orchestration-stream" id="terminal-log">
-                <div class="stream-item">
-                    <span class="stream-time">11:15</span>
-                    <span class="stream-msg"><span class="stream-tag">EVOLVE</span> Phase 3.2: Observation Matrix discovery layer implemented</span>
-                </div>
-                <div class="stream-item">
-                    <span class="stream-time">11:00</span>
-                    <span class="stream-msg"><span class="stream-tag">AUDIT</span> Support Audit: BTC $69.3k floor verified during stagflation shock</span>
-                </div>
-                <div class="stream-item">
-                    <span class="stream-time">10:30</span>
-                    <span class="stream-msg"><span class="stream-tag">POLICY</span> SEC Tokenization Vote: Current regulatory framework enforced for RWAs</span>
-                </div>
-                <div class="stream-item">
-                    <span class="stream-time">09:30</span>
-                    <span class="stream-msg"><span class="stream-tag">PHYSICAL</span> Oil $98.6 - Global logistics cost reset warning triggered</span>
-                </div>
-                <div class="stream-item">
-                    <span class="stream-time">08:15</span>
-                    <span class="stream-msg"><span class="stream-tag">DOCS</span> Project formalization solidified - Data-Driven v2 architecture online</span>
-                </div>
+            <div style="margin-top: auto; font-size: 0.6rem; color: var(--text-muted);">
+                VERSION: v26.0312.1215<br>
+                STATUS: SYMMETRY_SOLIDIFIED
             </div>
-        </section>
+        </aside>
 
-        <!-- 第二層：知識演化流 (全寬) -->
-        <section class="panel full-width-panel">
-            <div class="section-header">Knowledge Evolution Flow</div>
-            <div class="mermaid">
-                graph LR
-                    A[Oil Inflation] -- Support Audit --> B(Orchestrator)
-                    C[SEC Clarity] -- Inst Buffer --> B
-                    D[Discovery Matrix] -- Visual Logic --> B
-                    B -- Phase 3 --> E{Temporal Hub}
-                    E -- Automated --> F[User Awareness]
-                    F -- Feedback --> B
-            </div>
-        </section>
+        <main class="content">
+            <header class="top-bar">
+                <div class="view-title" id="current-view-title">Overview Dashboard</div>
+                <div style="display:flex; gap: 10px;">
+                    <button class="menu-btn" style="padding: 0.4rem 0.8rem; font-size: 0.7rem;">🔊 Global Voice</button>
+                </div>
+            </header>
 
-        <!-- 新增：多維度觀察矩陣 (全寬) -->
-        <section class="panel full-width-panel" style="background: rgba(0, 243, 255, 0.02);">
-            <div class="section-header">
-                Multidimensional Observation Matrix
-                <div style="font-size: 0.6rem; color: var(--text-muted);">LIVE_CAUSAL_DATA</div>
-            </div>
-            <div class="observation-grid" id="data-matrix">
-                <div class="data-card">
-                    <div class="data-pillar">CRYPTO</div>
-                    <div class="data-value">$69,450</div>
-                    <div class="data-label">主權地板固化</div>
-                    <div class="data-discovery">$69.3k 通過極限壓力審計，市場完成午間因果換手。</div>
-                    <div class="data-tag">Sovereign_Solidified</div>
-                </div>
-                <div class="data-card">
-                    <div class="data-pillar">PHYSICAL</div>
-                    <div class="data-value">$98.60</div>
-                    <div class="data-label">能源滯脹預警</div>
-                    <div class="data-discovery">布蘭特原油直衝百美元，實體物流成本面臨重置。</div>
-                    <div class="data-tag">Inflation_Shock</div>
-                </div>
-                <div class="data-card">
-                    <div class="data-pillar">POLICY</div>
-                    <div class="data-value">78%</div>
-                    <div class="data-label">制度清晰度</div>
-                    <div class="data-discovery">SEC-CFTC 和諧監管框架落地，消除機構進入熵值。</div>
-                    <div class="data-tag">Harmonized_Legit</div>
-                </div>
-                <div class="data-card">
-                    <div class="data-pillar">SOCIAL</div>
-                    <div class="data-value">98%</div>
-                    <div class="data-label">絕對稀缺共識</div>
-                    <div class="data-discovery">20M 里程碑引發供應衝擊預期，清算引力持續壓實。</div>
-                    <div class="data-tag">Scarcity_Peak</div>
-                </div>
-                <div class="data-card">
-                    <div class="data-pillar">TECH</div>
-                    <div class="data-value">1,000+</div>
-                    <div class="data-label">物理生產力主權</div>
-                    <div class="data-discovery">Optimus Gen 3 於產線實戰部署，具身 AI 進入工業相位。</div>
-                    <div class="data-tag">Physical_Agency</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 第三層：兩欄式詳細數據 -->
-        <div class="dashboard-grid">
-            <div class="main-panel">
-                <div class="panel">
-                    <div class="section-header">
-                        Sovereign Capability Matrix
-                        <button class="voice-btn" onclick="toggleSpeech('md-capabilities', this)">🔊 Listen</button>
+            <!-- TAB: DASHBOARD -->
+            <section id="dashboard" class="tab-content active">
+                <div class="section-header">Live Observation Matrix</div>
+                <div class="observation-grid">
+                    <div class="data-card">
+                        <div class="label">Crypto</div>
+                        <div class="value">$69,450</div>
+                        <div class="discovery">地板韌性審計完成，市場完成亞盤因果換手。</div>
                     </div>
-                    <div style="margin-bottom: 1rem;">
-                        <span class="capability-tag" style="border-color: #ffd700;">數據卡片發現層</span>
-                        <span class="capability-tag" style="border-color: #32d74b;">午間地板審計</span>
-                        <span class="capability-tag" style="border-color: #ff00ff;">恐懼共識背離</span>
-                        <span class="capability-tag">plain_text_reflection_v18</span>
-                        <span class="capability-tag">mcp_entity_mapping</span>
-                        <span class="capability-tag">causal_density_V86</span>
+                    <div class="data-card">
+                        <div class="label">Physical</div>
+                        <div class="value">$98.60</div>
+                        <div class="discovery">布蘭特原油衝擊百美元關口，實體物流成本預警。</div>
                     </div>
-                    <div id="md-capabilities" class="markdown-body"></div>
-                </div>
-            </div>
-
-            <div class="side-panel">
-                <div class="panel">
-                    <div class="section-header">Telemetry</div>
-                    <div class="stat-card">
-                        <span class="label">Evidence Density</span>
-                        <span class="value">V86</span>
+                    <div class="data-card">
+                        <div class="label">Policy</div>
+                        <div class="value">78%</div>
+                        <div class="discovery">SEC-CFTC 框架大幅消除制度熵值，合規溢價注入。</div>
                     </div>
-                    <div class="stat-card" style="border-top-color: var(--secondary);">
-                        <span class="label">Status</span>
-                        <span class="value" style="color:var(--secondary)">DISCOVERY_ACTIVE</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="label">Avail Memory</span>
-                        <span class="value">24Gi</span>
+                    <div class="data-card">
+                        <div class="label">Social</div>
+                        <div class="value">98%</div>
+                        <div class="discovery">絕對稀缺共識對沖極度恐慌，散戶恐慌即是底部。</div>
                     </div>
                 </div>
 
                 <div class="panel">
-                    <div class="section-header">Recent MCP Entities</div>
-                    <div class="entity-list">
-                        <div class="entity-item"><span>Discovery_Matrix_V1</span><span class="entity-type">UI_Evolution</span></div>
-                        <div class="entity-item"><span>BTC_69.3k_Resilience</span><span class="entity-type">Market_Fact</span></div>
-                        <div class="entity-item"><span>Binance_US_New_CEO</span><span class="entity-type">Policy_Fact</span></div>
-                        <div class="entity-item"><span>Fear_Consensus_Divergence</span><span class="entity-type">Social_Dynamic</span></div>
+                    <div class="section-header">Deep Reflection Oracle</div>
+                    <div id="md-reflection" class="markdown-body"></div>
+                </div>
+            </section>
+
+            <!-- TAB: EVOLUTION (時光機) -->
+            <section id="evolution" class="tab-content">
+                <div class="section-header">Causal History Time Machine</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">2026-03-12 12:00</div>
+                        <div class="timeline-body">
+                            <strong>【午間正式報：地板固化事實】</strong><br>
+                            比特幣精確回踩 $69,338 預測支撐位後反彈，驗證了主權防線強度。Binance.US 的高層變動中和了油價熵值，清算彈簧已壓實至臨界點。這標誌著亞盤已成功完成了「熵值排毒」與因果換手。
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">2026-03-12 10:15</div>
+                        <div class="timeline-body">
+                            <strong>【壓力測試通過：滯脹規訓】</strong><br>
+                            油價暴漲 3.8% 之際，BTC 守住 $69.8k。系統判定，真正的避險資產不怕實體世界混亂。SEC-CFTC 框架正有效引導主流資金進入受規訓的數位管道。
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <!-- 第四層：深邃反思 (全寬) -->
-        <section class="panel thought-box" style="background: rgba(124, 58, 237, 0.02); border-left: 4px solid var(--accent);">
-            <div class="section-header" style="color: var(--accent);">
-                Deep Reflection Oracle
-                <button class="voice-btn" onclick="toggleSpeech('md-thought', this)">🔊 Listen</button>
-            </div>
-            <div id="md-thought" class="markdown-body"></div>
-        </section>
+            <!-- TAB: PILLARS -->
+            <section id="pillars" class="tab-content">
+                <div class="section-header">Matrix Pillar Intelligence</div>
+                <div class="panel">
+                    <h3>🏛️ Policy支柱深度審計</h3>
+                    <p>SEC 投資者諮詢委員會今日明確「股權代幣化」必須嚴守證券法，不再給予創新豁免。這為 RWA 領域劃定了嚴格的准入紅線。Fed 下週對能源通膨的正式定調將是下一個關鍵節點。</p>
+                </div>
+                <div class="panel">
+                    <h3>🤖 Tech支柱實體化進程</h3>
+                    <p>Tesla 目標於 2026 年底達到 5-10 萬台 Optimus 年產規模。FSD v15 整合審計顯示，具身智能操作主權正從「預期」轉向「物理事實」。</p>
+                </div>
+            </section>
 
-        <footer>
-            PROTOCOL: COMMAND_CENTER_v26.0312.1115 | ARCH: DISCOVERY_DRIVEN | STATUS: SOLIDIFIED
-        </footer>
+            <!-- TAB: PROTOCOL -->
+            <section id="protocol" class="tab-content">
+                <div class="section-header">Operational Protocols</div>
+                <div class="panel">
+                    <h3>Architecture: Data-Driven v2</h3>
+                    <p>維運分析已全面實現與各分站 stream.json 的秒級同步。證據密度目前鎖定為 V87。</p>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <script type="text/template" id="raw-capabilities">
-### 🧠 發現層實作：當數據學會說話
-我們把版本更新為 **v26.0312.1115**。這一個小時我們完成了一個重要的視覺躍遷：在觀察矩陣中實作了「發現層 (Discovery Layer)」。最白話的解讀是：現在數據卡片不再只是冷冰冰的數字，它會直接告訴你這個數字代表什麼「因果」。與此同時，比特幣在午間回測 **$69,338** 後精確止跌，這證明了我們對「規訓地板」的判斷具備極高的物理強度。我們累積了 86 份因果資產，這套「發現驅動」的架構正讓 TeleNexus 的主權級透明度達到新高度。
-
-### 🛠️ 證據密度達到 V86
-86 份關鍵證據已經對齊。我們現在的重點非常明確：利用這種「數據+發現」的雙層結構，為歐盤啟動後的 ATH 衝擊提供最直觀的決策支持。當你看到數據的瞬間，因果就已經被規訓完成了。
-    </script>
-
-    <script type="text/template" id="raw-thought">
-「今天的午間回測非常乾淨。市場在油價破百的恐懼中，把最後一絲不堅定的投機籌碼都洗了出來。白話一點說：如果你想跳得更高，你就得先蹲得更深。指揮中心目前把狀態鎖定在『發現層活躍』。我們守著這 V86 份證據，看著卡片上那些會說話的數字，心裡非常有數。這不是下跌，這是歐盤衝刺前的『能量排毒』。恐懼指數 18 的背後，是機構正在瘋狂地吞掉散戶拋出的籌碼。真相，就在這 11:15 的數據跳動中，變得不僅清晰，而且充滿了爆發力。我們正守著這套主權協議，準備迎接下午的全面反攻。」
+    <script type="text/template" id="raw-reflection">
+「現在的指揮中心終於開始具備了**『主權質感』**。我們不再是把一大堆資料堆在一起，而是建立了一個可以呼吸的數位空間。白話一點說：如果你看不清全貌，你就無法做出正確的決策。我們目前的狀態是 **DISCOVERY_ACTIVE**。雖然油價還在鬧脾氣，雖然散戶還在害怕，但我們已經在 $69,300 位階看見了鋼鐵般的底座。這次架構重構，是為了讓接下來歐盤爆發時的每一秒因果，都能在這個『時光機』分頁裡得到最完整的記錄。真相不再需要被濃縮，它需要被看見。」
     </script>
 
     <script>
-        mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
+        function switchTab(tabId) {
+            // 切換 active 類別
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.menu-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
 
-        function setFontSize(size) {
-            document.documentElement.setAttribute('data-size', size);
-            localStorage.setItem('tn-font-size', size);
-            document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
-            const btn = document.getElementById('btn-' + size);
-            if(btn) btn.classList.add('active');
-        }
-
-        let currentUtterance = null;
-        function toggleSpeech(elementId, btn) {
-            if (window.speechSynthesis.speaking) {
-                window.speechSynthesis.cancel();
-                if (currentUtterance && currentUtterance.elementId === elementId) {
-                    btn.classList.remove('active'); btn.innerHTML = '🔊 Listen';
-                    return;
-                }
-            }
-            document.querySelectorAll('.voice-btn').forEach(b => { b.classList.remove('active'); b.innerHTML = '🔊 Listen'; });
-            const targetEl = document.getElementById(elementId);
-            if (!targetEl) return;
-            const text = targetEl.innerText;
-            const utter = new SpeechSynthesisUtterance(text);
-            utter.lang = 'zh-TW'; utter.rate = 1.1; utter.elementId = elementId;
-            utter.onstart = () => { btn.classList.add('active'); btn.innerHTML = '⏹ Stop'; };
-            utter.onend = () => { btn.classList.remove('active'); btn.innerHTML = '🔊 Listen'; };
-            currentUtterance = utter;
-            window.speechSynthesis.speak(utter);
+            // 更新標題
+            const titles = {
+                'dashboard': 'Overview Dashboard',
+                'evolution': 'Evolution Time Machine',
+                'pillars': 'Pillar Deep-Dive',
+                'protocol': 'Operational Protocols'
+            };
+            document.getElementById('current-view-title').innerText = titles[tabId];
         }
 
         function renderMarkdown() {
-            const targets = [{ id: 'md-capabilities', rawId: 'raw-capabilities' }, { id: 'md-thought', rawId: 'raw-thought' }];
-            targets.forEach(t => {
-                const targetEl = document.getElementById(t.id);
-                const rawEl = document.getElementById(t.rawId);
-                if (targetEl && rawEl) targetEl.innerHTML = marked.parse(rawEl.textContent);
-            });
+            const raw = document.getElementById('raw-reflection').textContent;
+            document.getElementById('md-reflection').innerHTML = marked.parse(raw);
         }
 
         window.onload = () => {
-            const savedSize = localStorage.getItem('tn-font-size') || 'medium';
-            setFontSize(savedSize);
             renderMarkdown();
-            const term = document.getElementById('terminal-log');
-            term.scrollTop = term.scrollHeight;
         };
     </script>
 </body>
