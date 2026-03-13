@@ -343,10 +343,39 @@
 
             <!-- TAB: PROTOCOL -->
             <section id="protocol" class="tab-content">
-                <div class="section-header">Operational Protocols</div>
-                <div class="panel">
-                    <h3>Architecture: Data-Driven v2.1</h3>
-                    <p>維運分析已全面實現與各分站 stream.json 的秒級同步。證據密度目前鎖定為 V90。全自動日結引擎 CausalDailyArchive 已上線。</p>
+                <div class="section-header">Operational Protocols & Sovereignty Audit</div>
+                
+                <div class="dashboard-grid">
+                    <div class="main-panel">
+                        <div class="panel" style="border-left: 4px solid var(--accent);">
+                            <div class="section-header" style="color: var(--accent); border-bottom:none;">Command Audit Sandbox [LIVE]</div>
+                            <div class="orchestration-stream" id="audit-log" style="max-height: 400px; font-family: 'JetBrains Mono'; font-size: 0.75rem; background: rgba(0,0,0,0.5);">
+                                <div class="stream-item">
+                                    <span class="stream-time">16:05:12</span>
+                                    <span class="stream-msg"><span class="stream-tag" style="background:var(--accent); color:#fff;">AUDIT</span> <strong>Decision Path:</strong> Cross-reference [Oil_$100] with [Optimus_Deploy_1k].</span>
+                                </div>
+                                <div class="stream-item">
+                                    <span class="stream-time">16:05:15</span>
+                                    <span class="stream-msg"><span class="stream-tag" style="background:var(--secondary); color:#000;">LOGIC</span> <strong>Weight Adjustment:</strong> Inflation_Hedge factor +15% due to Physical entropy.</span>
+                                </div>
+                                <div class="stream-item">
+                                    <span class="stream-time">16:05:20</span>
+                                    <span class="stream-msg"><span class="stream-tag" style="background:var(--primary); color:#000;">ACTION</span> <strong>Execution:</strong> Synchronize Sovereignty_Premium to Physical pillar. STATUS: SOLIDIFIED.</span>
+                                </div>
+                                <div class="stream-item">
+                                    <span class="stream-time">15:30:00</span>
+                                    <span class="stream-msg"><span class="stream-tag" style="background:#ff453a; color:#fff;">SHIELD</span> <strong>Sandbox Guard:</strong> Quarantining stagflation noise from Asia Noon session. Logic isolation COMPLETE.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="side-panel">
+                        <div class="panel">
+                            <h3>Architecture: Sovereign v2.2</h3>
+                            <p>Phase 5 核心協議：<strong>「指令與物理聯動 (Command-Physical Link)」</strong>。系統決策路徑現在具備可回溯性，物理生產力正式成為因果權重變量。</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

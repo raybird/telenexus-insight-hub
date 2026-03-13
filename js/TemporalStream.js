@@ -84,6 +84,8 @@ class TemporalStream {
                     ${data.clarity_index ? `<span class="stream-tag" style="background:rgba(162,162,162,0.1); color:#a2a2a2;">CLARITY: ${data.clarity_index}</span>` : ''}
                     ${data.bullish_consensus ? `<span class="stream-tag" style="background:rgba(255,136,0,0.1); color:#ff8800;">BULLISH: ${data.bullish_consensus}</span>` : ''}
                     ${data.top_trend ? `<span class="stream-tag" style="background:rgba(0,255,136,0.1); color:#00ff88;">TREND: ${data.top_trend}</span>` : ''}
+                    ${data.productivity_momentum ? `<span class="stream-tag" style="background:rgba(0,243,255,0.1); color:var(--primary); border-color:var(--primary);">MOMENTUM: ${data.productivity_momentum}</span>` : ''}
+                    ${data.sovereignty_premium ? `<span class="stream-tag" style="background:rgba(124,58,237,0.1); color:var(--accent); border-color:var(--accent);">RWA PREMIUM: ${data.sovereignty_premium}</span>` : ''}
                 </div>
             `;
             detailContainer.appendChild(panel);
