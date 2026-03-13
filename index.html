@@ -90,10 +90,12 @@
         }
 
         header.top-bar {
-            display: flex; justify-content: space-between; align-items: center;
+            display: flex; justify-content: space-between; align-items: flex-start;
             margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border);
         }
+        .view-title-group { display: flex; flex-direction: column; gap: 4px; }
         .view-title { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+        .view-version { font-family: 'JetBrains Mono'; font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 
         .font-switcher { display: flex; gap: 5px; background: var(--surface-alt); padding: 4px; border-radius: 8px; border: 1px solid var(--border); }
         .font-btn { 
@@ -241,7 +243,9 @@
             main.content {
                 padding: var(--spacing) 1.5rem 100px; /* 留出底部導航空間 */
             }
-            header.top-bar { margin-bottom: 2rem; }
+            header.top-bar { margin-bottom: 2rem; flex-direction: column; gap: 1rem; align-items: flex-start; }
+            .view-title { font-size: 1.2rem; }
+            .view-version { font-size: 0.55rem; }
         }
     </style>
 </head>
@@ -259,16 +263,14 @@
                 <button class="menu-btn" onclick="switchTab('pillars')"><span>🏛️</span> Pillars</button>
                 <button class="menu-btn" onclick="switchTab('protocol')"><span>📜</span> Protocols</button>
             </nav>
-
-            <div style="margin-top: auto; font-size: 0.6rem; color: var(--text-muted);">
-                VERSION: v26.0313.1716<br>
-                STATUS: AUTONOMOUS_ACTIVE
-            </div>
         </aside>
 
         <main class="content">
             <header class="top-bar">
-                <div class="view-title" id="current-view-title">Overview Dashboard</div>
+                <div class="view-title-group">
+                    <div class="view-title" id="current-view-title">Overview Dashboard</div>
+                    <div class="view-version">VERSION: v26.0313.1716 | STATUS: AUTONOMOUS_ACTIVE</div>
+                </div>
                 <div style="display:flex; gap: 15px; align-items: center;">
                     <div class="font-switcher">
                         <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
