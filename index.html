@@ -94,6 +94,15 @@
         }
         .view-title { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
 
+        .font-switcher { display: flex; gap: 5px; background: var(--surface-alt); padding: 4px; border-radius: 8px; border: 1px solid var(--border); }
+        .font-btn { 
+            background: none; border: none; color: var(--text-muted); 
+            padding: 4px 10px; cursor: pointer; border-radius: 4px; 
+            font-size: 0.7rem; font-weight: bold; transition: 0.2s;
+        }
+        .font-btn:hover { color: var(--text); }
+        .font-btn.active { background: var(--primary); color: #000; }
+
         /* 通用元件 */
         .panel { 
             background: var(--surface); 
@@ -259,7 +268,12 @@
         <main class="content">
             <header class="top-bar">
                 <div class="view-title" id="current-view-title">Overview Dashboard</div>
-                <div style="display:flex; gap: 10px;">
+                <div style="display:flex; gap: 15px; align-items: center;">
+                    <div class="font-switcher">
+                        <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
+                        <button class="font-btn" onclick="setFontSize('medium')" id="btn-medium">M</button>
+                        <button class="font-btn" onclick="setFontSize('large')" id="btn-large">L</button>
+                    </div>
                     <button class="menu-btn" style="padding: 0.4rem 0.8rem; font-size: 0.7rem;">🔊 Global Voice</button>
                 </div>
             </header>
@@ -392,6 +406,14 @@
 
     <script src="js/TemporalStream.js"></script>
     <script>
+        function setFontSize(size) {
+            document.documentElement.setAttribute('data-size', size);
+            localStorage.setItem('tn-font-size', size);
+            document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
+            const btn = document.getElementById('btn-' + size);
+            if(btn) btn.classList.add('active');
+        }
+
         function switchTab(tabId) {
             // 切換 active 類別
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -444,6 +466,9 @@
         }
 
         window.onload = () => {
+            const savedSize = localStorage.getItem('tn-font-size') || 'medium';
+            setFontSize(savedSize);
+
             renderMarkdown();
             
             // 啟動演化時光機
