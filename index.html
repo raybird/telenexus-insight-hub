@@ -109,6 +109,36 @@
         }
         .section-header::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
+        .voice-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+        .voice-btn:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            background: rgba(0, 243, 255, 0.05);
+        }
+        .voice-btn.active {
+            color: var(--accent);
+            border-color: var(--accent);
+            animation: pulse-border 1.5s infinite;
+        }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(124, 58, 237, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+        }
+
         /* Dashboard 專用佈局 */
         .observation-grid {
             display: grid;
@@ -249,7 +279,10 @@
                 </div>
 
                 <div class="panel">
-                    <div class="section-header">Deep Reflection Oracle</div>
+                    <div class="section-header">
+                        Deep Reflection Oracle
+                        <button class="voice-btn" onclick="toggleSpeech('md-reflection', this)">🔊 Listen</button>
+                    </div>
                     <div id="md-reflection" class="markdown-body"></div>
                 </div>
             </section>
@@ -323,6 +356,27 @@
 
             // 滾動置頂 (行動端友善)
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        let currentUtterance = null;
+        function toggleSpeech(elementId, btn) {
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+                if (currentUtterance && currentUtterance.elementId === elementId) {
+                    btn.classList.remove('active'); btn.innerHTML = '🔊 Listen';
+                    return;
+                }
+            }
+            document.querySelectorAll('.voice-btn').forEach(b => { b.classList.remove('active'); b.innerHTML = '🔊 Listen'; });
+            const targetEl = document.getElementById(elementId);
+            if (!targetEl) return;
+            const text = targetEl.innerText;
+            const utter = new SpeechSynthesisUtterance(text);
+            utter.lang = 'zh-TW'; utter.rate = 1.1; utter.elementId = elementId;
+            utter.onstart = () => { btn.classList.add('active'); btn.innerHTML = '⏹ Stop'; };
+            utter.onend = () => { btn.classList.remove('active'); btn.innerHTML = '🔊 Listen'; };
+            currentUtterance = utter;
+            window.speechSynthesis.speak(utter);
         }
 
         function renderMarkdown() {
