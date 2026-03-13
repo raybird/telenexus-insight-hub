@@ -149,7 +149,47 @@
 
         @media (max-width: 900px) {
             .app-shell { grid-template-columns: 1fr; }
-            aside.sidebar { display: none; }
+            
+            /* 行動端側邊欄轉底部導航 */
+            aside.sidebar { 
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: auto;
+                height: 70px;
+                width: 100%;
+                flex-direction: row;
+                padding: 0 1rem;
+                z-index: 1000;
+                border-right: none;
+                border-top: 1px solid var(--border);
+                justify-content: space-around;
+                align-items: center;
+            }
+            aside.sidebar .brand, aside.sidebar div:last-child { display: none; } /* 隱藏行動端的 Logo 與版本 */
+            
+            nav.menu { 
+                flex-direction: row; 
+                width: 100%; 
+                justify-content: space-between;
+                gap: 5px;
+            }
+            .menu-btn {
+                flex-direction: column;
+                padding: 0.5rem;
+                font-size: 0.65rem;
+                align-items: center;
+                gap: 4px;
+                flex: 1;
+                border-radius: 4px;
+            }
+            .menu-btn svg { width: 20px; height: 20px; }
+
+            main.content {
+                padding: var(--spacing) 1.5rem 100px; /* 留出底部導航空間 */
+            }
+            header.top-bar { margin-bottom: 2rem; }
         }
     </style>
 </head>
@@ -162,10 +202,10 @@
             </div>
             
             <nav class="menu">
-                <button class="menu-btn active" onclick="switchTab('dashboard')">📊 Dashboard</button>
-                <button class="menu-btn" onclick="switchTab('evolution')">⏳ Evolution Flow</button>
-                <button class="menu-btn" onclick="switchTab('pillars')">🏛️ Pillar Deep-Dive</button>
-                <button class="menu-btn" onclick="switchTab('protocol')">📜 Protocols</button>
+                <button class="menu-btn active" onclick="switchTab('dashboard')"><span>📊</span> Dashboard</button>
+                <button class="menu-btn" onclick="switchTab('evolution')"><span>⏳</span> Evolution</button>
+                <button class="menu-btn" onclick="switchTab('pillars')"><span>🏛️</span> Pillars</button>
+                <button class="menu-btn" onclick="switchTab('protocol')"><span>📜</span> Protocols</button>
             </nav>
 
             <div style="margin-top: auto; font-size: 0.6rem; color: var(--text-muted);">
@@ -280,6 +320,9 @@
                 'protocol': 'Operational Protocols'
             };
             document.getElementById('current-view-title').innerText = titles[tabId];
+
+            // 滾動置頂 (行動端友善)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function renderMarkdown() {
