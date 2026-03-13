@@ -20,6 +20,7 @@ class TemporalStream {
         console.log("Initializing TemporalStream...");
         await this.fetchAllData();
         this.renderTimeline();
+        this.renderPillarDetails();
     }
 
     async fetchAllData() {
@@ -27,6 +28,10 @@ class TemporalStream {
             try {
                 const response = await fetch(pillar.url, { cache: "no-store" });
                 const data = await response.json();
+                
+                // 儲存每個支柱的最新快照供 Details 使用
+                this[pillar.name.toLowerCase() + 'Latest'] = data.history[0];
+
                 return data.history.map(event => ({
                     ...event,
                     pillar: pillar.name,
@@ -41,6 +46,48 @@ class TemporalStream {
 
         const results = await Promise.all(fetchPromises);
         this.allEvents = results.flat().sort((a, b) => b.isoTime - a.isoTime);
+    }
+
+    renderPillarDetails() {
+        const detailContainer = document.getElementById('pillar-dynamic-details');
+        if (!detailContainer) return;
+
+        detailContainer.innerHTML = '';
+
+        const pillarInfo = [
+            { id: 'crypto', icon: '₿', title: 'Crypto Market Pulse', color: 'var(--primary)' },
+            { id: 'physical', icon: '🌍', title: 'Physical Intelligence', color: '#ff453a' },
+            { id: 'policy', icon: '🏛️', title: 'Institutional & Policy', color: '#a2a2a2' },
+            { id: 'social', icon: '💬', title: 'Social Sentiment', color: '#ff8800' },
+            { id: 'tech', icon: '🤖', title: 'Tech Scouting', color: '#00ff88' }
+        ];
+
+        pillarInfo.forEach(p => {
+            const data = this[p.id + 'Latest'];
+            if (!data) return;
+
+            const panel = document.createElement('div');
+            panel.className = 'panel';
+            panel.style.borderLeft = `4px solid ${p.color}`;
+            
+            panel.innerHTML = `
+                <div class="section-header" style="color: ${p.color}; border-bottom:none; margin-bottom:0.5rem;">
+                    ${p.icon} ${p.title}
+                    <span style="font-size:0.6rem; color:var(--text-muted); margin-left:auto;">${data.version || ''}</span>
+                </div>
+                <div style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text);">
+                    ${data.causal_summary || data.causal_point || '待更新...'}
+                </div>
+                <div style="display:flex; gap:15px; flex-wrap:wrap;">
+                    ${data.price ? `<span class="stream-tag">BTC: $${data.price}</span>` : ''}
+                    ${data.oil_price ? `<span class="stream-tag" style="background:rgba(255,69,58,0.1); color:#ff453a;">OIL: ${data.oil_price}</span>` : ''}
+                    ${data.clarity_index ? `<span class="stream-tag" style="background:rgba(162,162,162,0.1); color:#a2a2a2;">CLARITY: ${data.clarity_index}</span>` : ''}
+                    ${data.bullish_consensus ? `<span class="stream-tag" style="background:rgba(255,136,0,0.1); color:#ff8800;">BULLISH: ${data.bullish_consensus}</span>` : ''}
+                    ${data.top_trend ? `<span class="stream-tag" style="background:rgba(0,255,136,0.1); color:#00ff88;">TREND: ${data.top_trend}</span>` : ''}
+                </div>
+            `;
+            detailContainer.appendChild(panel);
+        });
     }
 
     renderTimeline() {
