@@ -8,8 +8,10 @@ class TemporalStream {
         this.container = document.getElementById(containerId);
         this.pillars = [
             { name: 'CRYPTO', url: 'https://raybird.github.io/crypto-market-pulse/stream.json' },
-            { name: 'SOCIAL', url: 'https://raybird.github.io/social-sentiment-observatory/stream.json' }
-            // 待補齊 PHYSICAL, POLICY, TECH 的 stream.json
+            { name: 'SOCIAL', url: 'https://raybird.github.io/social-sentiment-observatory/stream.json' },
+            { name: 'PHYSICAL', url: 'https://raybird.github.io/physical-intelligence-hub/stream.json' },
+            { name: 'POLICY', url: 'https://raybird.github.io/institutional-policy-hub/stream.json' },
+            { name: 'TECH', url: 'https://raybird.github.io/tech-scouting-hub/stream.json' }
         ];
         this.allEvents = [];
     }
@@ -65,6 +67,9 @@ class TemporalStream {
                     ${event.causal_summary || event.causal_point || '數據更新'}
                     ${event.price ? `<div style="margin-top:8px; font-family:'JetBrains Mono'; color:var(--primary)">VALUE: $${event.price} (${event.change})</div>` : ''}
                     ${event.bullish_consensus ? `<div style="margin-top:8px; color:var(--secondary)">CONSENSUS: ${event.bullish_consensus}</div>` : ''}
+                    ${event.oil_price ? `<div style="margin-top:8px; color:#ff453a">OIL: ${event.oil_price} | GOLD: ${event.gold_price}</div>` : ''}
+                    ${event.clarity_index ? `<div style="margin-top:8px; color:#a2a2a2">INSTITUTIONAL CLARITY: ${event.clarity_index}</div>` : ''}
+                    ${event.top_trend && event.pillar === 'TECH' ? `<div style="margin-top:8px; color:#00ff88">TREND: ${event.top_trend}</div>` : ''}
                 </div>
             `;
             item.innerHTML = content;
