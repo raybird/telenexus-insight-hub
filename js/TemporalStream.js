@@ -14,11 +14,13 @@ class TemporalStream {
             { name: 'TECH', url: 'https://raybird.github.io/tech-scouting-hub/stream.json' }
         ];
         this.allEvents = [];
+        this.activeFilter = 'ALL'; // 新增：過濾狀態
     }
 
     async init() {
         console.log("Initializing TemporalStream...");
         await this.fetchAllData();
+        this.renderFilterUI(); // 新增：渲染過濾按鈕
         this.renderTimeline();
         this.renderPillarDetails();
     }
@@ -48,6 +50,34 @@ class TemporalStream {
         this.allEvents = results.flat().sort((a, b) => b.isoTime - a.isoTime);
     }
 
+    // 新增：渲染過濾 UI
+    renderFilterUI() {
+        const filterContainerId = 'timeline-filter-container';
+        let filterContainer = document.getElementById(filterContainerId);
+        
+        if (!filterContainer) {
+            filterContainer = document.createElement('div');
+            filterContainer.id = filterContainerId;
+            filterContainer.style.cssText = 'display:flex; gap:10px; margin-bottom:2rem; flex-wrap:wrap;';
+            this.container.parentNode.insertBefore(filterContainer, this.container);
+        }
+
+        const options = ['ALL', ...this.pillars.map(p => p.name)];
+        filterContainer.innerHTML = options.map(opt => `
+            <button class="font-btn ${this.activeFilter === opt ? 'active' : ''}" 
+                    onclick="window.temporalStreamInstance.setFilter('${opt}')"
+                    style="padding: 4px 12px; font-size: 0.65rem;">
+                ${opt}
+            </button>
+        `).join('');
+    }
+
+    setFilter(filter) {
+        this.activeFilter = filter;
+        this.renderFilterUI();
+        this.renderTimeline();
+    }
+
     renderPillarDetails() {
         const detailContainer = document.getElementById('pillar-dynamic-details');
         if (!detailContainer) return;
@@ -67,15 +97,17 @@ class TemporalStream {
             if (!data) return;
 
             const panel = document.createElement('div');
+            const panelId = `panel-voice-${p.id}`;
             panel.className = 'panel';
             panel.style.borderLeft = `4px solid ${p.color}`;
             
             panel.innerHTML = `
                 <div class="section-header" style="color: ${p.color}; border-bottom:none; margin-bottom:0.5rem;">
                     ${p.icon} ${p.title}
+                    <button class="voice-btn" style="margin-left:15px;" onclick="window.toggleSpeech('${panelId}', this)">🔊</button>
                     <span style="font-size:0.6rem; color:var(--text-muted); margin-left:auto;">${data.version || ''}</span>
                 </div>
-                <div style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text);">
+                <div id="${panelId}" style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text);">
                     ${data.causal_summary || data.causal_point || '待更新...'}
                 </div>
                 <div style="display:flex; gap:15px; flex-wrap:wrap;">
@@ -95,14 +127,16 @@ class TemporalStream {
     renderTimeline() {
         if (!this.container) return;
         
-        // 清空現有靜態內容（保留樣式結構）
         this.container.innerHTML = '';
 
-        this.allEvents.forEach(event => {
+        const filteredEvents = this.activeFilter === 'ALL' 
+            ? this.allEvents 
+            : this.allEvents.filter(e => e.pillar === this.activeFilter);
+
+        filteredEvents.forEach(event => {
             const item = document.createElement('div');
             item.className = 'timeline-item';
             
-            // 格式化顯示時間
             const date = new Date(event.timestamp);
             const timeStr = date.toLocaleString('zh-TW', { 
                 month: '2-digit', day: '2-digit', 
@@ -125,9 +159,8 @@ class TemporalStream {
             this.container.appendChild(item);
         });
 
-        console.log(`Rendered ${this.allEvents.length} events to Timeline.`);
+        console.log(`Rendered ${filteredEvents.length} events to Timeline (Filter: ${this.activeFilter}).`);
     }
 }
 
-// 導出或掛載到 window
 window.TemporalStream = TemporalStream;
