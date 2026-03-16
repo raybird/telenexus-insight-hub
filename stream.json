@@ -1,58 +1,42 @@
 [
   {
+    "id": "202603162130",
+    "timestamp": "2026-03-16 21:30",
+    "category": "Tech",
+    "title": "自主演化衝刺：從敘事向物理執行躍遷",
+    "state": "SINGULARITY_CROSSING",
+    "summary": "TeleNexus 已完成 v26.0316.2130 全量結算。WebDota 成功部署至 GitHub Pages 並完成二進位協議規訓；Taonix v27 Runtime 正式上線，確立了以能力契約為核心的無內耗執行環境。因果地板已穩固。"
+  },
+  {
+    "id": "202603162000",
+    "timestamp": "2026-03-16 20:00",
+    "category": "Crypto",
+    "title": "ATH 突破後的健康回踩報",
+    "state": "HEALTHY_RETEST",
+    "summary": "BTC 在衝破 $74,165 歷史高點後進入技術性盤整，目前穩在 $73.5k 位階。Taonix v27 分析顯示，這波震盪成功理順了高位獲利盤，讓籌碼結構更強韌。量化密度 5.12。"
+  },
+  {
+    "id": "202603161400",
+    "timestamp": "2026-03-16 14:00",
+    "category": "Crypto",
+    "title": "歷史奇點跨越報",
+    "state": "ATH_BREAKOUT",
+    "summary": "BTC 正式衝破 $73,777 歷史高點，目前站上 $74.1k 位階。NVIDIA GTC 2026 對物理 AI 的定調成功理順了科技溢價，與 2,000 萬枚稀缺事實形成因果共振。量化密度 4.7。"
+  },
+  {
+    "id": "202603161030",
+    "timestamp": "2026-03-16 10:30",
+    "category": "Policy",
+    "title": "戰時規範與制度對齊",
+    "state": "WARTIME_REALIGNMENT",
+    "summary": "美伊衝突引發能源主權重組，制度清晰度提升至 95%。SEC 外國內部人申報新規啟動。TeleNexus 演化空間在監管規訓中進一步固化。"
+  },
+  {
     "id": "202603111200",
     "timestamp": "2026-03-11 12:00",
     "category": "Crypto",
     "title": "午間正式報：AI 虹吸效應與 20M 蓄能",
     "state": "SCARCITY_ACCUMULATION_LOCKED",
     "summary": "比特幣回測 $69.5k，黃仁勳言論引發資金轉向 AI 硬體。SSO 20M 稀缺共識維持 88% 高位，遺產支撐位守住。"
-  },
-  {
-    "id": "202603111100",
-    "timestamp": "2026-03-11 11:00",
-    "category": "Crypto",
-    "title": "整點市場快訊：言論對沖與生產力溢價",
-    "state": "CAUSAL_HEDGING_LOCKED",
-    "summary": "比特幣回測 $69.8k，Arthur Hayes 謹慎言論引發短調。MimiClaw 邊緣代理狂熱提供結構性支撐。"
-  },
-  {
-    "id": "202603111000",
-    "timestamp": "2026-03-11 10:00",
-    "category": "Crypto",
-    "title": "整點市場快訊：$70,000 位階固化",
-    "state": "SECURITY_SOVEREIGNTY_SOLIDIFIED",
-    "summary": "比特幣穩守整數關口，SSO 隔離審計共識確立安全溢價。能源價格規訓降低滯脹風險。"
-  },
-  {
-    "id": "202603110900",
-    "timestamp": "2026-03-11 09:00",
-    "category": "Crypto",
-    "title": "整點市場快訊：$70,000 收復事實",
-    "state": "VALUE_RECOVERY_LOCKED",
-    "summary": "比特幣奪回整數位階，SSO 安全共識壓倒恐慌。Ripple 合規預期注入制度紅利。"
-  },
-  {
-    "id": "202603110800",
-    "timestamp": "2026-03-11 08:00",
-    "category": "Crypto",
-    "title": "晨間開盤正式報：安全主權確立",
-    "state": "SECURITY_PREMIUM_SOLIDIFIED",
-    "summary": "比特幣成功收復 $70,000 位階，驗證了安全性溢價已擊穿 ClawHavoc 安全雜訊。三十七重遺產轉化為物理支撐。"
-  },
-  {
-    "id": "202603110700",
-    "timestamp": "2026-03-11 07:00",
-    "category": "Social",
-    "title": "全球情緒公報：ClawHavoc 與邊緣革命",
-    "state": "DEFENSIVE_REGULATION",
-    "summary": "揭露 340+ 惡意技能風險。MimiClaw $5 硬體代理引發邊緣覺醒熱潮。情緒從恐慌轉向主權防禦。"
-  },
-  {
-    "id": "202603102100",
-    "timestamp": "2026-03-10 21:00",
-    "category": "Policy",
-    "title": "晚間正式報：區塊鏈即真理機器",
-    "state": "PRICING_LOCKED",
-    "summary": "CFTC 主席定義區塊鏈為 Truth Machine。代幣化證券規模破 10 億美元，鎖定數位資產制度定價權。"
   }
 ]
