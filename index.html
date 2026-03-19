@@ -164,11 +164,20 @@
             padding: 1.5rem;
             border-radius: 12px;
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
         .data-card:hover { border-color: var(--primary); transform: translateY(-3px); }
-        .data-card .value { font-size: 2rem; font-weight: 900; margin: 0.5rem 0; font-family: 'JetBrains Mono'; }
-        .data-card .label { font-size: 0.7rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
-        .data-card .discovery { font-size: 0.8rem; color: #94a3b8; margin-top: 1rem; line-height: 1.5; }
+        .data-card .value { font-size: 2rem; font-weight: 900; margin: 0.5rem 0; font-family: 'JetBrains Mono'; color: var(--primary); }
+        .data-card .label { font-size: 0.7rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .data-card .discovery { 
+            font-size: 0.9rem; 
+            color: #94a3b8; 
+            line-height: 1.8; 
+            margin-top: 0.5rem;
+            white-space: pre-wrap; /* 保持換行 */
+        }
 
         /* 分頁隱藏邏輯 */
         .tab-content { display: none; animation: fadeIn 0.4s ease; }
@@ -366,7 +375,7 @@
                     <div class="main-panel">
                         <div class="panel" style="border-left: 4px solid var(--accent);">
                             <div class="section-header" style="color: var(--accent); border-bottom:none;">Command Audit Sandbox [LIVE]</div>
-                            <div class="orchestration-stream" id="audit-log" style="max-height: 400px; font-family: 'JetBrains Mono'; font-size: 0.75rem; background: rgba(0,0,0,0.5);">
+                            <div class="orchestration-stream" id="audit-log" style="max-height: 600px; font-family: 'JetBrains Mono'; font-size: 0.85rem; background: rgba(0,0,0,0.7); overflow-y: auto; padding: 1rem; border-radius: 8px;">
                                 <div class="stream-item">
                                     <span class="stream-time">14:35:00</span>
                                     <span class="stream-msg"><span class="stream-tag" style="background:var(--accent); color:#fff;">AUDIT</span> <strong>Identity Locked:</strong> Brand evolution v26.0319.1435 结算。Causal anchors finalized. Self-healing protocol active.</span>
