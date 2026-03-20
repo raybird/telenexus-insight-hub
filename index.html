@@ -22,6 +22,24 @@
             --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             --spacing: 1.5rem;
         }
+
+        /* 因果紫主題 (Causal) */
+        [data-theme="causal"] {
+            --primary: #a855f7;
+            --primary-glow: rgba(168, 85, 247, 0.3);
+            --bg: #fdfaff;
+            --accent: #ec4899;
+            --text: #2e1065;
+        }
+
+        /* 警戒金主題 (Warning) */
+        [data-theme="warning"] {
+            --primary: #f59e0b;
+            --primary-glow: rgba(245, 158, 11, 0.3);
+            --bg: #fffcf0;
+            --accent: #ef4444;
+            --text: #451a03;
+        }
         
         @media (prefers-color-scheme: dark) {
             :root {
@@ -32,6 +50,18 @@
                 --text-muted: #8b949e;
                 --border: #30363d;
                 --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            }
+            [data-theme="causal"] {
+                --bg: #0f0720;
+                --surface: #1a0b35;
+                --surface-alt: #25104a;
+                --text: #f5f3ff;
+            }
+            [data-theme="warning"] {
+                --bg: #1a0f00;
+                --surface: #2d1a00;
+                --surface-alt: #3d2200;
+                --text: #fffbeb;
             }
         }
 
@@ -205,7 +235,12 @@
                 <button class="menu-btn" onclick="switchTab('protocol')"><span>📜</span> 指令協議</button>
             </nav>
 
-            <div style="margin-top: auto; font-size: 0.65rem; color: var(--text-muted);">
+            <div style="margin-top: auto; display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="theme-selector" style="display: flex; gap: 10px; padding: 0 5px;">
+                    <button onclick="setTheme('default')" style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #00f3ff; background: #00f3ff; cursor: pointer;" title="主權藍"></button>
+                    <button onclick="setTheme('causal')" style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #a855f7; background: #a855f7; cursor: pointer;" title="因果紫"></button>
+                    <button onclick="setTheme('warning')" style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #f59e0b; background: #f59e0b; cursor: pointer;" title="警戒金"></button>
+                </div>
                 <div class="status-pill">● 系統在線 (Taipei)</div>
             </div>
         </aside>
@@ -316,6 +351,15 @@ graph LR
             if(btn) btn.classList.add('active');
         }
 
+        function setTheme(theme) {
+            if (theme === 'default') {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+            localStorage.setItem('tn-theme', theme);
+        }
+
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.menu-btn').forEach(btn => btn.classList.remove('active'));
@@ -339,6 +383,9 @@ graph LR
         window.onload = () => {
             const savedSize = localStorage.getItem('tn-font-size') || 'medium';
             setFontSize(savedSize);
+
+            const savedTheme = localStorage.getItem('tn-theme') || 'default';
+            setTheme(savedTheme);
             
             if (typeof TemporalStream !== 'undefined') {
                 window.temporalStreamInstance = new TemporalStream('evolution-container');
