@@ -10,10 +10,9 @@
     
     <style>
         :root {
-            /* 注入 Taiwan.md 的簡約與現代感，保留 TeleNexus 的數位原力 */
             --primary: #00f3ff;
             --primary-glow: rgba(0, 243, 255, 0.3);
-            --bg: #fafafb; /* 轉向淺色系/高對比度美學嘗試，或深色系的極致純淨 */
+            --bg: #fafafb; 
             --surface: #ffffff;
             --surface-alt: #f1f3f5;
             --text: #1a1d23;
@@ -24,7 +23,6 @@
             --spacing: 1.5rem;
         }
         
-        /* 深色模式保留，用於高強度維運環境 */
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg: #05070a;
@@ -56,7 +54,6 @@
             min-height: 100vh;
         }
 
-        /* 側邊導航：策展風格 */
         aside.sidebar {
             background: var(--surface);
             border-right: 1px solid var(--border);
@@ -91,7 +88,6 @@
             border-color: var(--border);
         }
 
-        /* 主內容區：地圖導引風格 */
         main.content {
             padding: 3rem 4rem;
             max-width: 1300px;
@@ -106,7 +102,19 @@
         .view-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; color: var(--text); }
         .view-version { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--text-muted); font-weight: 700; }
 
-        /* Dashboard 矩陣：從卡片向地圖塊演化 */
+        .font-switcher { display: flex; gap: 5px; background: var(--surface-alt); padding: 4px; border-radius: 8px; border: 1px solid var(--border); }
+        .font-btn { 
+            background: none; border: none; color: var(--text-muted); 
+            padding: 4px 10px; cursor: pointer; border-radius: 4px; 
+            font-size: 0.7rem; font-weight: bold; transition: 0.2s;
+        }
+        .font-btn:hover { color: var(--text); }
+        .font-btn.active { background: var(--primary); color: #000; }
+
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
         .observation-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -134,7 +142,6 @@
             padding-top: 1rem;
         }
 
-        /* 策展專欄樣式 */
         .panel { 
             background: var(--surface); 
             border: 1px solid var(--border); 
@@ -158,7 +165,17 @@
             overflow-x: auto;
         }
 
-        /* 狀態標籤 */
+        /* 時光機 (Evolution) 專用樣式 */
+        .timeline { position: relative; padding-left: 2rem; border-left: 2px solid var(--border); }
+        .timeline-item { position: relative; margin-bottom: 3rem; }
+        .timeline-item::before { 
+            content: ""; position: absolute; left: -2.45rem; top: 0.5rem;
+            width: 12px; height: 12px; border-radius: 50%; background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+        }
+        .timeline-time { font-family: 'JetBrains Mono'; color: var(--primary); font-size: 0.85rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .timeline-body { background: var(--surface-alt); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+
         .status-pill {
             display: inline-flex; align-items: center; gap: 6px;
             padding: 4px 12px; border-radius: 20px;
@@ -168,7 +185,7 @@
 
         @media (max-width: 900px) {
             .app-shell { grid-template-columns: 1fr; }
-            aside.sidebar { display: none; } /* 行動端簡化 */
+            aside.sidebar { display: none; }
             main.content { padding: 2rem 1.5rem; }
         }
     </style>
@@ -196,13 +213,13 @@
         <main class="content">
             <header class="top-bar">
                 <div class="view-title-group">
-                    <div class="view-title">今日因果導引</div>
-                    <div class="view-version">VERSION: v26.0321.0200 | PHASE 6: 技能主權化</div>
+                    <div class="view-title" id="current-view-title">今日因果導引</div>
+                    <div class="view-version" id="current-view-version">VERSION: v26.0321.0200 | PHASE 6: 技能主權化</div>
                 </div>
                 <div class="font-switcher">
-                    <button class="font-btn" onclick="setFontSize('small')">S</button>
-                    <button class="font-btn active" onclick="setFontSize('medium')">M</button>
-                    <button class="font-btn" onclick="setFontSize('large')">L</button>
+                    <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
+                    <button class="font-btn active" onclick="setFontSize('medium')" id="btn-medium">M</button>
+                    <button class="font-btn" onclick="setFontSize('large')" id="btn-large">L</button>
                 </div>
             </header>
 
@@ -240,38 +257,93 @@ graph LR
                         </div>
                     </div>
                     <div id="md-reflection" class="markdown-body">
-「主權的本質在於定義權。今日我們完成了從『監視器』向『地圖導引』的視覺演化。這不僅是樣式的變更，更是敘事維度的移位。透過將維運工具封裝為符合 **Agent Skills Spec** 的技能契約，TeleNexus 正在將分散的邏輯硬化為可發現的元能力。同時，隨之而來的 Atkins  Doctrine 釋放了技術創新的制度性熵值。我們在台北的深夜，校準全球的因果彈道。」
+「主權的本質在於定義權。今日我們完成了從『監視器』向『地圖導引』的視覺演化。這不僅是樣式的變更，更是敘事維度的移位。透過將維運工具封裝為符合 **Agent Skills Spec** 的技能契約，TeleNexus 正在將分散的邏輯硬化為可發現的元能力。同時，隨之而來的 Atkins Doctrine 釋放了技術創新的制度性熵值。我們在台北的深夜，校準全球的因果彈道。」
                     </div>
                 </div>
             </section>
 
-            <!-- 剩餘分頁邏輯保留... -->
+            <!-- TAB: EVOLUTION (時光機) -->
+            <section id="evolution" class="tab-content">
+                <div class="section-header">
+                    Causal History Time Machine
+                    <a href="archives/daily/2026-03-20.md" style="font-size: 0.65rem; color: var(--accent); text-decoration: none; border: 1px solid var(--border); padding: 2px 8px; border-radius: 4px; margin-left: auto;">📜 Latest Archive (3/20)</a>
+                </div>
+                <div class="timeline" id="evolution-container">
+                    <div style="padding: 2rem; color: var(--text-muted); font-family: 'JetBrains Mono';">
+                        📡 Synchronizing temporal data streams...
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: PILLARS -->
+            <section id="pillars" class="tab-content">
+                <div class="section-header">Matrix Pillar Intelligence</div>
+                <div class="observation-grid">
+                    <div class="data-card" style="grid-column: span 2;">
+                        <span class="label">Pillar: Crypto</span>
+                        <div class="discovery">BTC 穩守 $70k 位階，主權買盤與 STRC 證券化層達成共識。因果地板已從心理層面硬化為物理資產配置層面。</div>
+                    </div>
+                    <div class="data-card">
+                        <span class="label">Pillar: Tech</span>
+                        <div class="discovery">NVIDIA Vera CPU 定義 1.2 TB/s 具身代理腦幹標準；SkillGenerator 實現能力自動發現。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: PROTOCOL -->
+            <section id="protocol" class="tab-content">
+                <div class="section-header">Operational Audit Log</div>
+                <div class="panel" style="background: var(--surface-alt); border: none;">
+                    <div id="audit-log" style="font-family: 'JetBrains Mono'; font-size: 0.85rem; max-height: 500px; overflow-y: auto;">
+                        <div>[02:00:00] <span style="color:var(--accent)">AUDIT</span> Narrative aesthetic upgrade deployed. Causal Map integrated.</div>
+                        <div>[01:45:00] <span style="color:var(--accent)">AUDIT</span> WebDota v26.0321.0145: RefereeManager implemented.</div>
+                        <div>[00:30:00] <span style="color:var(--accent)">AUDIT</span> SkillGenerator integrated into bootstrap.sh.</div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 
+    <script src="js/TemporalStream.js"></script>
     <script>
-        // 初始化 Mermaid
         mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
 
         function setFontSize(size) {
             document.documentElement.setAttribute('data-size', size);
             localStorage.setItem('tn-font-size', size);
             document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
-            // ... (其餘邏輯)
+            const btn = document.getElementById('btn-' + size);
+            if(btn) btn.classList.add('active');
         }
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.menu-btn').forEach(btn => btn.classList.remove('active'));
+            
             const targetTab = document.getElementById(tabId);
             if (targetTab) targetTab.classList.add('active');
+            
             const btn = document.querySelector(`button[onclick*="'${tabId}'"]`);
             if (btn) btn.classList.add('active');
+
+            const titles = {
+                'dashboard': '今日因果導引',
+                'evolution': '演化時光機',
+                'pillars': '五極智庫深度對焦',
+                'protocol': '指令執行審計'
+            };
+            document.getElementById('current-view-title').innerText = titles[tabId] || '指揮中心';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         window.onload = () => {
             const savedSize = localStorage.getItem('tn-font-size') || 'medium';
-            // 執行渲染與初始化...
+            setFontSize(savedSize);
+            
+            if (typeof TemporalStream !== 'undefined') {
+                window.temporalStreamInstance = new TemporalStream('evolution-container');
+                window.temporalStreamInstance.init();
+            }
         };
     </script>
 </body>
