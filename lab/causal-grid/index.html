@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="default">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Causal Grid | TeleNexus Sovereign Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Causal Grid</h1>
+            <div id="status-bar">
+                <span id="score">Sovereignty: 0</span>
+                <span id="entropy">Entropy: 0%</span>
+            </div>
+        </header>
+        
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="ui-overlay">
+            <div id="start-screen">
+                <h2>Defend the Sovereign Grid</h2>
+                <p>點擊排除「熵增點」，維持五極因果穩定。</p>
+                <button id="start-btn">開始規訓</button>
+            </div>
+        </div>
+
+        <footer>
+            <div class="theme-selector">
+                <button onclick="setTheme('default')" class="t-btn def"></button>
+                <button onclick="setTheme('causal')" class="t-btn cau"></button>
+                <button onclick="setTheme('warning')" class="t-btn war"></button>
+            </div>
+            <p>Powered by TeleNexus Engine (Vanilla JS)</p>
+        </footer>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
