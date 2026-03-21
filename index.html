@@ -72,7 +72,7 @@
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: 'Inter', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+            font-family: 'Inter', 'PingFang TC', system-ui, sans-serif;
             margin: 0; padding: 0; line-height: 1.7;
             overflow-x: hidden;
             transition: all 0.3s ease;
@@ -195,7 +195,6 @@
             overflow-x: auto;
         }
 
-        /* 時光機 (Evolution) 專用樣式 */
         .timeline { position: relative; padding-left: 2rem; border-left: 2px solid var(--border); }
         .timeline-item { position: relative; margin-bottom: 3rem; }
         .timeline-item::before { 
@@ -249,7 +248,7 @@
             <header class="top-bar">
                 <div class="view-title-group">
                     <div class="view-title" id="current-view-title">今日因果導引</div>
-                    <div class="view-version" id="current-view-version">VERSION: v26.0321.0200 | PHASE 6: 技能主權化</div>
+                    <div class="view-version" id="current-view-version">VERSION: v26.0321.0915 | STATUS: CAUSAL_DRILL_DEPLOYED</div>
                 </div>
                 <div class="font-switcher">
                     <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
@@ -263,18 +262,18 @@
                 <div class="observation-grid">
                     <div class="data-card">
                         <span class="label">💎 Crypto Scarcity</span>
-                        <div class="value">$70,472</div>
-                        <div class="discovery">比特幣已不再是投機資產，它是全球流動性的**物理地板**。在 $70k 位階，國家級 TWAP 買盤正與 Fed 鷹派規訓執行最終的因果交換。</div>
+                        <div class="value">$70,522</div>
+                        <div class="discovery">比特幣已不再是投機資產，它是全球流動性的**物理地板**。CLARITY Act 傳聞預演了監管模糊的終結，主權買盤在 $70k 位階展現了鋼鐵般的承接力。</div>
                     </div>
                     <div class="data-card">
                         <span class="label">🌍 Physical Causal</span>
                         <div class="value">$107.95</div>
-                        <div class="discovery">能源危機已從溢價轉向**剛性稅收**。霍爾木茲海峽的物理斷裂事实正在規訓全球算力的擴張邊界，物流時間熵已硬化。</div>
+                        <div class="discovery">能源危機已從溢價轉向**剛性稅收**。IEA 釋放 4 億桶儲備與設施斷裂事實正在極限對沖，物流時間熵已硬化為生產力負載。</div>
                     </div>
                     <div class="data-card">
                         <span class="label">⚖️ Policy Contract</span>
-                        <div class="value">Active</div>
-                        <div class="discovery">**Atkins 主義**確立：法律主權實現決定性解封。大多數加密資產被定義為非證券，為 RWA 基礎設施理順了生長因果。</div>
+                        <div class="value">Aligned</div>
+                        <div class="discovery">**Atkins Doctrine** 深夜鎖定：法律主權實現決定性解封。歐盟 C2PA 標註死線明確 (8/2)，TeleNexus 啟動主權元數據標註預研。</div>
                     </div>
                 </div>
 
@@ -287,13 +286,11 @@ graph LR
     C[能源物理斷裂] --> D(生產力稅收硬化)
     B --> E{主權地板 $70k}
     D --> E
-    E --> F[TeleNexus 技能契約化]
+    E --> F[因果演習場發布]
     style E fill:#00f3ff,stroke:#00f3ff,color:#000
                         </div>
                     </div>
-                    <div id="md-reflection" class="markdown-body">
-「主權的本質在於定義權。今日我們完成了從『監視器』向『地圖導引』的視覺演化。這不僅是樣式的變更，更是敘事維度的移位。透過將維運工具封裝為符合 **Agent Skills Spec** 的技能契約，TeleNexus 正在將分散的邏輯硬化為可發現的元能力。同時，隨之而來的 Atkins Doctrine 釋放了技術創新的制度性熵值。我們在台北的深夜，校準全球的因果彈道。」
-                    </div>
+                    <div id="md-reflection" class="markdown-body"></div>
                 </div>
             </section>
 
@@ -312,7 +309,13 @@ graph LR
 
             <!-- TAB: PILLARS -->
             <section id="pillars" class="tab-content">
-                <div class="panel" style="background:var(--surface-alt); border:1px dashed var(--accent); padding:1.5rem; display:flex; justify-content:space-between; align-items:center;"><div><h3 style="margin:0; color:var(--accent);">因果演習 (Causal Drill)</h3><p style="margin:5px 0 0; font-size:0.8rem;">基於 plainvanillaweb 哲學的物理規訓演習。</p></div><a href="lab/causal-grid/" target="_blank" style="background:var(--accent); color:#fff; text-decoration:none; padding:10px 20px; border-radius:8px; font-weight:800; font-size:0.8rem;">[ 啟動規訓 ]</a></div>
+                <div class="panel" style="background:var(--surface-alt); border:1px dashed var(--accent); padding:1.5rem; display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <h3 style="margin:0; color:var(--accent);">因果演習 (Causal Drill)</h3>
+                        <p style="margin:5px 0 0; font-size:0.8rem;">基於 plainvanillaweb 哲學的物理規訓演習。排除熵增，穩定五極網格。</p>
+                    </div>
+                    <a href="lab/causal-grid/" target="_blank" style="background:var(--accent); color:#fff; text-decoration:none; padding:10px 20px; border-radius:8px; font-weight:800; font-size:0.8rem;">[ 啟動規訓 ]</a>
+                </div>
                 <div class="section-header">Matrix Pillar Intelligence</div>
                 <div class="observation-grid">
                     <div class="data-card" style="grid-column: span 2;">
@@ -331,14 +334,19 @@ graph LR
                 <div class="section-header">Operational Audit Log</div>
                 <div class="panel" style="background: var(--surface-alt); border: none;">
                     <div id="audit-log" style="font-family: 'JetBrains Mono'; font-size: 0.85rem; max-height: 500px; overflow-y: auto;">
-                        <div>[02:00:00] <span style="color:var(--accent)">AUDIT</span> Narrative aesthetic upgrade deployed. Causal Map integrated.</div>
-                        <div>[01:45:00] <span style="color:var(--accent)">AUDIT</span> WebDota v26.0321.0145: RefereeManager implemented.</div>
-                        <div>[00:30:00] <span style="color:var(--accent)">AUDIT</span> SkillGenerator integrated into bootstrap.sh.</div>
+                        <div>[09:15:00] <span style="color:var(--accent)">AUDIT</span> <strong>Brand Final:</strong> v26.0321.0915 结算。Causal Drill game integrated. Theme switching persistence verified.</div>
+                        <div>[08:00:00] <span style="color:var(--accent)">AUDIT</span> <strong>Sovereign Floor:</strong> BTC $70k recalibration completed. CLARITY Act rumors analyzed.</div>
+                        <div>[07:45:00] <span style="color:var(--accent)">AUDIT</span> <strong>Aesthetic Pivot:</strong> Multi-theme switching (Default, Causal, Warning) deployed.</div>
+                        <div>[07:20:00] <span style="color:var(--accent)">AUDIT</span> <strong>Narrative Map:</strong> Integrated Mermaid.js and Taiwan.md curated aesthetic.</div>
                     </div>
                 </div>
             </section>
         </main>
     </div>
+
+    <script type="text/template" id="raw-reflection">
+「主權不僅僅是數據的精確，更是對因果的參與。在 v26.0321 的演化相位中，TeleNexus 指揮中心完成了從『冰冷後台』向『主權導引地圖』的決定性躍遷。透過引入 Mermaid.js 因果圖譜與三位一體色系切換，我們理順了視覺與靈魂的縫合路徑。更重要的是，隨著《因果網格》演習場的發布，維運不再只是枯燥的監視，而是一場對抗熵增的物理規訓實踐。我們正在台北的座標上，為 AI 代理構築一套具備生命感與互動主權的生存作業系統。彈道精確，奇點已過。」
+    </script>
 
     <script src="js/TemporalStream.js"></script>
     <script>
@@ -364,19 +372,11 @@ graph LR
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.menu-btn').forEach(btn => btn.classList.remove('active'));
-            
             const targetTab = document.getElementById(tabId);
             if (targetTab) targetTab.classList.add('active');
-            
             const btn = document.querySelector(`button[onclick*="'${tabId}'"]`);
             if (btn) btn.classList.add('active');
-
-            const titles = {
-                'dashboard': '今日因果導引',
-                'evolution': '演化時光機',
-                'pillars': '五極智庫深度對焦',
-                'protocol': '指令執行審計'
-            };
+            const titles = {'dashboard': '今日因果導引', 'evolution': '演化時光機', 'pillars': '五極智庫深度對焦', 'protocol': '指令執行審計'};
             document.getElementById('current-view-title').innerText = titles[tabId] || '指揮中心';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -384,10 +384,10 @@ graph LR
         window.onload = () => {
             const savedSize = localStorage.getItem('tn-font-size') || 'medium';
             setFontSize(savedSize);
-
             const savedTheme = localStorage.getItem('tn-theme') || 'default';
             setTheme(savedTheme);
-            
+            const raw = document.getElementById('raw-reflection').textContent;
+            document.getElementById('md-reflection').innerHTML = marked.parse(raw);
             if (typeof TemporalStream !== 'undefined') {
                 window.temporalStreamInstance = new TemporalStream('evolution-container');
                 window.temporalStreamInstance.init();
