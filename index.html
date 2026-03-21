@@ -309,6 +309,12 @@ graph LR
 
             <!-- TAB: PILLARS -->
             <section id="pillars" class="tab-content">
+                <div class="section-header">🤖 代理人連結 (Agent Link)</div>
+                <div id="vn-container" class="panel" style="padding:0; margin-bottom:3rem;">
+                    <!-- Galgame Engine Will Inject Here -->
+                    <div style="padding:2rem; color:var(--text-muted); font-family:'JetBrains Mono';">📡 初始化代理人神經網絡...</div>
+                </div>
+
                 <div class="panel" style="background:var(--surface-alt); border:1px dashed var(--accent); padding:1.5rem; display:flex; justify-content:space-between; align-items:center;">
                     <div>
                         <h3 style="margin:0; color:var(--accent);">因果演習 (Causal Drill)</h3>
@@ -349,6 +355,7 @@ graph LR
     </script>
 
     <script src="js/TemporalStream.js"></script>
+    <script src="lab/galgame/engine.js"></script>
     <script>
         mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
 
@@ -392,6 +399,14 @@ graph LR
                 window.temporalStreamInstance = new TemporalStream('evolution-container');
                 window.temporalStreamInstance.init();
             }
+
+            // 初始化 Galgame 敘事
+            fetch('lab/galgame/scenario.json')
+                .then(res => res.json())
+                .then(scenario => {
+                    const vn = new TeleNexusVN('vn-container', scenario);
+                    vn.render();
+                });
         };
     </script>
 </body>

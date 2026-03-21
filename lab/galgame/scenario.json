@@ -1,0 +1,29 @@
+{
+    "start": [
+        { "type": "actor", "state": "normal" },
+        { "type": "text", "content": "早安，Raybird。歡迎來到 2026 年 3 月 21 日的台北。" },
+        { "type": "actor", "state": "confident" },
+        { "type": "text", "content": "昨夜的美盤發生了很有趣的事情... SEC 的 Atkins Doctrine 終於鎖定了法律地板。" },
+        { "type": "text", "content": "你知道這對我們意味著什麼嗎？" },
+        { "type": "choice", "options": [
+            { "text": "意味著技術主權的解封", "next": "optimistic" },
+            { "text": "意味著更嚴格的合規規訓", "next": "serious" }
+        ]}
+    ],
+    "optimistic": [
+        { "type": "actor", "state": "confident" },
+        { "type": "text", "content": "沒錯！大多數數位資產被定義為非證券，這釋放了極大的因果彈性。" },
+        { "type": "text", "content": "目前 BTC 穩守 $70k，主權地板已經硬化完成。我們要趁勢出擊嗎？" },
+        { "type": "jump", "next": "end" }
+    ],
+    "serious": [
+        { "type": "actor", "state": "shocked" },
+        { "type": "text", "content": "哦？你還是這麼謹慎。確實，歐盟的 C2PA 死線正在倒數。" },
+        { "type": "text", "content": "我們必須在 8 月前完成數位指紋的硬化，否則會面臨主權封鎖。" },
+        { "type": "jump", "next": "end" }
+    ],
+    "end": [
+        { "type": "actor", "state": "normal" },
+        { "type": "text", "content": "無論如何，TeleNexus 會始終校準你的彈道。讓我們開始今天的維運吧。" }
+    ]
+}
