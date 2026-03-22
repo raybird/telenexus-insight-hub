@@ -19,11 +19,10 @@
             --text-muted: #64748b;
             --accent: #7c3aed; 
             --border: #e2e8f0;
-            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            --spacing: 1.5rem;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            --spacing: 2rem;
         }
 
-        /* 因果紫主題 (Causal) */
         [data-theme="causal"] {
             --primary: #a855f7;
             --primary-glow: rgba(168, 85, 247, 0.3);
@@ -32,7 +31,6 @@
             --text: #2e1065;
         }
 
-        /* 警戒金主題 (Warning) */
         [data-theme="warning"] {
             --primary: #f59e0b;
             --primary-glow: rgba(245, 158, 11, 0.3);
@@ -49,7 +47,7 @@
                 --text: #e6edf3;
                 --text-muted: #8b949e;
                 --border: #30363d;
-                --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+                --card-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
             }
             [data-theme="causal"] {
                 --bg: #0f0720;
@@ -65,157 +63,158 @@
             }
         }
 
-        html[data-size="small"] { font-size: 13px; }
-        html[data-size="medium"] { font-size: 15px; }
+        html[data-size="small"] { font-size: 14px; }
+        html[data-size="medium"] { font-size: 16px; }
         html[data-size="large"] { font-size: 18px; }
 
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: 'Inter', 'PingFang TC', system-ui, sans-serif;
-            margin: 0; padding: 0; line-height: 1.7;
+            font-family: 'Inter', 'PingFang TC', -apple-system, sans-serif;
+            margin: 0; padding: 0; line-height: 1.8;
             overflow-x: hidden;
-            transition: all 0.3s ease;
+            transition: background 0.5s ease;
         }
 
         .app-shell {
             display: grid;
-            grid-template-columns: 260px 1fr;
+            grid-template-columns: 280px 1fr;
             min-height: 100vh;
         }
 
         aside.sidebar {
             background: var(--surface);
             border-right: 1px solid var(--border);
-            padding: 2.5rem 1.5rem;
+            padding: 3rem 1.5rem;
             display: flex;
-            flex-direction: column; gap: 2.5rem;
-            position: sticky;
-            top: 0;
-            height: 100vh;
+            flex-direction: column; gap: 3rem;
+            position: sticky; top: 0; height: 100vh;
             box-sizing: border-box;
+            z-index: 100;
         }
 
         .brand h1 { 
-            color: var(--text); font-size: 1.3rem; margin: 0; 
-            font-weight: 900; text-transform: uppercase; letter-spacing: 1px;
-            display: flex; align-items: center; gap: 8px;
+            color: var(--text); font-size: 1.4rem; margin: 0; 
+            font-weight: 900; text-transform: uppercase; letter-spacing: 2px;
+            display: flex; align-items: center; gap: 10px;
         }
-        .brand h1::before { content: "⦿"; color: var(--primary); }
-        .brand p { font-size: 0.7rem; color: var(--text-muted); margin: 8px 0 0; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; }
+        .brand h1::before { content: "⦿"; color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+        .brand p { font-size: 0.7rem; color: var(--text-muted); margin: 8px 0 0; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
 
-        nav.menu { display: flex; flex-direction: column; gap: 0.8rem; }
+        nav.menu { display: flex; flex-direction: column; gap: 0.5rem; }
         .menu-btn {
-            background: none; border: 1px solid transparent; color: var(--text-muted);
-            padding: 0.7rem 1rem; border-radius: 10px; text-align: left;
-            cursor: pointer; font-size: 0.9rem; font-weight: 600;
-            transition: 0.2s; display: flex; align-items: center; gap: 12px;
+            background: none; border: none; color: var(--text-muted);
+            padding: 0.8rem 1.2rem; border-radius: 12px; text-align: left;
+            cursor: pointer; font-size: 0.95rem; font-weight: 600;
+            transition: 0.3s; display: flex; align-items: center; gap: 12px;
         }
         .menu-btn:hover { background: var(--surface-alt); color: var(--text); }
         .menu-btn.active { 
-            background: var(--surface-alt); 
-            color: var(--accent); 
-            border-color: var(--border);
+            background: var(--primary); color: #000;
+            box-shadow: 0 4px 15px var(--primary-glow);
         }
 
         main.content {
-            padding: 3rem 4rem;
-            max-width: 1300px;
-            margin: 0;
+            padding: 4rem 6rem;
+            max-width: 1400px; /* 提升寬度主權 */
+            margin: 0 auto;
+            box-sizing: border-box;
         }
 
         header.top-bar {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 4rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--border);
+            display: flex; justify-content: space-between; align-items: flex-end;
+            margin-bottom: 5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);
         }
-        .view-title-group { display: flex; flex-direction: column; gap: 6px; }
-        .view-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; color: var(--text); }
-        .view-version { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--text-muted); font-weight: 700; }
-
-        .font-switcher { display: flex; gap: 5px; background: var(--surface-alt); padding: 4px; border-radius: 8px; border: 1px solid var(--border); }
-        .font-btn { 
-            background: none; border: none; color: var(--text-muted); 
-            padding: 4px 10px; cursor: pointer; border-radius: 4px; 
-            font-size: 0.7rem; font-weight: bold; transition: 0.2s;
-        }
-        .font-btn:hover { color: var(--text); }
-        .font-btn.active { background: var(--primary); color: #000; }
-
-        .tab-content { display: none; animation: fadeIn 0.4s ease; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .view-title-group { display: flex; flex-direction: column; gap: 8px; }
+        .view-title { font-size: 2.2rem; font-weight: 900; letter-spacing: -1px; color: var(--text); }
+        .view-version { font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; letter-spacing: 1px; }
 
         .observation-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
         }
         .data-card {
             background: var(--surface);
             border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 16px;
+            padding: 2.5rem;
+            border-radius: 24px;
             box-shadow: var(--card-shadow);
             transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
         }
-        .data-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .data-card .label { font-size: 0.75rem; color: var(--text-muted); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; display: block; }
-        .data-card .value { font-size: 2.2rem; font-weight: 900; margin-bottom: 1rem; color: var(--text); }
+        .data-card:hover { transform: translateY(-8px); border-color: var(--primary); }
+        .data-card .label { font-size: 0.8rem; color: var(--text-muted); font-weight: 800; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 1.5rem; display: block; }
+        .data-card .value { font-size: 2.8rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--text); letter-spacing: -1px; }
         .data-card .discovery { 
-            font-size: 0.95rem; 
+            font-size: 1.05rem; 
             color: var(--text); 
             line-height: 1.8; 
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             border-top: 1px solid var(--border);
-            padding-top: 1rem;
+            padding-top: 1.5rem;
+            white-space: pre-wrap; /* 承載長文本 */
         }
 
         .panel { 
             background: var(--surface); 
             border: 1px solid var(--border); 
-            padding: 2.5rem; 
-            border-radius: 20px; 
-            margin-bottom: 3rem; 
+            padding: 3.5rem; 
+            border-radius: 32px; 
+            margin-bottom: 4rem; 
             box-shadow: var(--card-shadow);
         }
         .section-header { 
-            font-size: 0.9rem; font-weight: 900; color: var(--accent); 
-            margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 3px;
-            display: flex; align-items: center; gap: 15px;
+            font-size: 1rem; font-weight: 900; color: var(--accent); 
+            margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 4px;
+            display: flex; align-items: center; gap: 20px;
         }
-        .section-header::after { content: ""; flex: 1; height: 2px; background: var(--border); }
+        .section-header::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
         .causal-map-container {
             background: var(--surface-alt);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 2rem 0 3rem;
             overflow-x: auto;
+            border: 1px solid var(--border);
         }
 
-        .timeline { position: relative; padding-left: 2rem; border-left: 2px solid var(--border); }
-        .timeline-item { position: relative; margin-bottom: 3rem; }
-        .timeline-item::before { 
-            content: ""; position: absolute; left: -2.45rem; top: 0.5rem;
-            width: 12px; height: 12px; border-radius: 50%; background: var(--primary);
-            box-shadow: 0 0 10px var(--primary);
+        .markdown-body {
+            font-size: 1.15rem;
+            line-height: 2;
+            color: var(--text);
         }
-        .timeline-time { font-family: 'JetBrains Mono'; color: var(--primary); font-size: 0.85rem; font-weight: 800; margin-bottom: 0.5rem; }
-        .timeline-body { background: var(--surface-alt); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+        .markdown-body p { margin-bottom: 2rem; }
+
+        /* 時光機優化 */
+        .timeline { position: relative; padding-left: 3rem; border-left: 1px solid var(--border); }
+        .timeline-item { position: relative; margin-bottom: 4rem; }
+        .timeline-item::before { 
+            content: ""; position: absolute; left: -3.35rem; top: 0.6rem;
+            width: 10px; height: 10px; border-radius: 50%; background: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+        .timeline-time { font-family: 'JetBrains Mono'; color: var(--primary); font-size: 0.9rem; font-weight: 800; margin-bottom: 1rem; }
+        .timeline-body { 
+            background: var(--surface); 
+            padding: 2.5rem; 
+            border-radius: 24px; 
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+        }
 
         .status-pill {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 4px 12px; border-radius: 20px;
-            font-size: 0.7rem; font-weight: 800;
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 16px; border-radius: 30px;
+            font-size: 0.75rem; font-weight: 800;
             background: var(--surface-alt); border: 1px solid var(--border);
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1100px) {
             .app-shell { grid-template-columns: 1fr; }
             aside.sidebar { display: none; }
-            main.content { padding: 2rem 1.5rem; }
+            main.content { padding: 3rem 2rem; }
         }
     </style>
 </head>
@@ -234,11 +233,11 @@
                 <button class="menu-btn" onclick="switchTab('protocol')"><span>📜</span> 指令協議</button>
             </nav>
 
-            <div style="margin-top: auto; display: flex; flex-direction: column; gap: 1.5rem;">
-                <div class="theme-selector" style="display: flex; gap: 10px; padding: 0 5px;">
-                    <button onclick="setTheme('default')" style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #00f3ff; background: #00f3ff; cursor: pointer;" title="主權藍"></button>
-                    <button onclick="setTheme('causal')" style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #a855f7; background: #a855f7; cursor: pointer;" title="因果紫"></button>
-                    <button onclick="setTheme('warning')" style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #f59e0b; background: #f59e0b; cursor: pointer;" title="警戒金"></button>
+            <div style="margin-top: auto; display: flex; flex-direction: column; gap: 2rem;">
+                <div class="theme-selector" style="display: flex; gap: 12px; padding: 0 10px;">
+                    <button onclick="setTheme('default')" style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid #00f3ff; background: #00f3ff; cursor: pointer;" title="主權藍"></button>
+                    <button onclick="setTheme('causal')" style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid #a855f7; background: #a855f7; cursor: pointer;" title="因果紫"></button>
+                    <button onclick="setTheme('warning')" style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid #f59e0b; background: #f59e0b; cursor: pointer;" title="警戒金"></button>
                 </div>
                 <div class="status-pill">● 系統在線 (Taipei)</div>
             </div>
@@ -248,7 +247,7 @@
             <header class="top-bar">
                 <div class="view-title-group">
                     <div class="view-title" id="current-view-title">今日因果導引</div>
-                    <div class="view-version" id="current-view-version">VERSION: v26.0322.0930 | STATUS: PHYSICAL_ENTROPY_规訓</div>
+                    <div class="view-version" id="current-view-version">VERSION: v26.0322.0930 | STATUS: STREAM_SYNCED</div>
                 </div>
                 <div class="font-switcher">
                     <button class="font-btn" onclick="setFontSize('small')" id="btn-small">S</button>
@@ -267,7 +266,7 @@
                     </div>
                     <div class="data-card">
                         <span class="label">🌍 Physical Causal</span>
-                        <div class="value" id="stat-physical-val">$110.00</div>
+                        <div class="value" id="stat-physical-val">$112.19</div>
                         <div class="discovery" id="stat-physical-desc">正在同步最新實體因果...</div>
                     </div>
                     <div class="data-card">
@@ -310,17 +309,17 @@ graph LR
             <!-- TAB: PILLARS -->
             <section id="pillars" class="tab-content">
                 <div class="section-header">🤖 代理人連結 (Agent Link)</div>
-                <div id="vn-container" class="panel" style="padding:0; margin-bottom:3rem;">
+                <div id="vn-container" class="panel" style="padding:0; margin-bottom:3rem; overflow:hidden;">
                     <!-- Galgame Engine Will Inject Here -->
                     <div style="padding:2rem; color:var(--text-muted); font-family:'JetBrains Mono';">📡 初始化代理人神經網絡...</div>
                 </div>
 
-                <div class="panel" style="background:var(--surface-alt); border:1px dashed var(--accent); padding:1.5rem; display:flex; justify-content:space-between; align-items:center;">
+                <div class="panel" style="background:var(--surface-alt); border:1px dashed var(--accent); padding:2rem; display:flex; justify-content:space-between; align-items:center;">
                     <div>
                         <h3 style="margin:0; color:var(--accent);">因果演習 (Causal Drill)</h3>
-                        <p style="margin:5px 0 0; font-size:0.8rem;">基於 plainvanillaweb 哲學的物理規訓演習。排除熵增，穩定五極網格。</p>
+                        <p style="margin:8px 0 0; font-size:0.9rem;">基於 plainvanillaweb 哲學的物理規訓演習。排除熵增，穩定五極網格。</p>
                     </div>
-                    <a href="https://raybird.github.io/telenexus-causal-grid/" target="_blank" style="background:var(--accent); color:#fff; text-decoration:none; padding:10px 20px; border-radius:8px; font-weight:800; font-size:0.8rem;">[ 啟動規訓 ]</a>
+                    <a href="https://raybird.github.io/telenexus-causal-grid/" target="_blank" style="background:var(--accent); color:#fff; text-decoration:none; padding:12px 24px; border-radius:12px; font-weight:800; font-size:0.85rem;">[ 啟動規訓 ]</a>
                 </div>
                 <div class="section-header">Matrix Pillar Intelligence</div>
                 <div class="observation-grid">
@@ -330,7 +329,7 @@ graph LR
                     </div>
                     <div class="data-card">
                         <span class="label">Pillar: Tech</span>
-                        <div class="discovery">WebDota 裁判主權完成物理硬化；Ghost Grid 獨立版整合原生合成音效系統。</div>
+                        <div class="discovery">Chrome LanguageModel 物理對焦完成；Ghost Grid 獨立版整合原生合成音效系統。</div>
                     </div>
                 </div>
             </section>
@@ -339,11 +338,10 @@ graph LR
             <section id="protocol" class="tab-content">
                 <div class="section-header">Operational Audit Log</div>
                 <div class="panel" style="background: var(--surface-alt); border: none;">
-                    <div id="audit-log" style="font-family: 'JetBrains Mono'; font-size: 0.85rem; max-height: 500px; overflow-y: auto;">
-                        <div>[09:30:00] <span style="color:var(--accent)">AUDIT</span> <strong>Brand Final:</strong> v26.0322.0930 结算。Referee Manager hardened. Audio feedback deployed.</div>
-                        <div>[00:10:00] <span style="color:var(--accent)">AUDIT</span> <strong>Consensus:</strong> WebDota v26.0322.0010 released with layered fingerprinting.</div>
-                        <div>[21:50:00] <span style="color:var(--accent)">AUDIT</span> <strong>Sensory:</strong> Integrated Web Audio API pulse for generative response.</div>
-                        <div>[21:30:00] <span style="color:var(--accent)">AUDIT</span> <strong>Infra:</strong> Fixed Git divergence via physical overwrite protocol.</div>
+                    <div id="audit-log" style="font-family: 'JetBrains Mono'; font-size: 0.85rem; max-height: 600px; overflow-y: auto;">
+                        <div>[09:30:00] <span style="color:var(--accent)">AUDIT</span> <strong>Layout v2:</strong> Deep Narrative optimization deployed. Content width expanded.</div>
+                        <div>[09:15:00] <span style="color:var(--accent)">AUDIT</span> <strong>Sensory:</strong> Verified Ghost Grid audio and global LanguageModel alignment.</div>
+                        <div>[00:10:00] <span style="color:var(--accent)">AUDIT</span> <strong>Consensus:</strong> WebDota v26.0322.0010 released with RefereeManager.</div>
                     </div>
                 </div>
             </section>
@@ -391,24 +389,20 @@ graph LR
         async function fetchDataStreams() {
             const sources = {
                 crypto: 'https://raw.githubusercontent.com/raybird/crypto-market-pulse/main/stream.json',
-                physical: 'https://raw.githubusercontent.com/raybird/physical-intelligence-hub/main/stream.json',
-                social: 'https://raw.githubusercontent.com/raybird/social-sentiment-observatory/main/stream.json'
+                physical: 'https://raw.githubusercontent.com/raybird/physical-intelligence-hub/main/stream.json'
             };
 
             try {
-                // Crypto Sync
                 const cryptoRes = await fetch(sources.crypto);
                 const cryptoData = await cryptoRes.json();
                 document.getElementById('stat-crypto-val').innerText = `$${cryptoData.stats.btc_price.toLocaleString()}`;
                 document.getElementById('stat-crypto-desc').innerText = cryptoData.summary;
 
-                // Physical Sync
                 const physicalRes = await fetch(sources.physical);
                 const physicalData = await physicalRes.json();
                 document.getElementById('stat-physical-val').innerText = `$${physicalData.quotes.oil.toFixed(2)}`;
                 document.getElementById('stat-physical-desc').innerText = physicalData.summary;
 
-                // Update Version & Status
                 document.getElementById('current-view-version').innerText = `VERSION: ${cryptoData.version} | STATUS: STREAM_SYNCED`;
             } catch (e) {
                 console.error("[StreamSync] 數據流同步失敗:", e);
@@ -423,14 +417,13 @@ graph LR
             const raw = document.getElementById('raw-reflection').textContent;
             document.getElementById('md-reflection').innerHTML = marked.parse(raw);
             
-            fetchDataStreams(); // 啟動實時數據對焦
+            fetchDataStreams();
 
             if (typeof TemporalStream !== 'undefined') {
                 window.temporalStreamInstance = new TemporalStream('evolution-container');
                 window.temporalStreamInstance.init();
             }
 
-            // 初始化 Galgame 敘事
             fetch('lab/galgame/scenario.json')
                 .then(res => res.json())
                 .then(scenario => {
