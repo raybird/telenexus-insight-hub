@@ -262,18 +262,18 @@
                 <div class="observation-grid">
                     <div class="data-card">
                         <span class="label">💎 Crypto Scarcity</span>
-                        <div class="value">$68,737</div>
-                        <div class="discovery">比特幣正進行**負熵回踩**，測試 $68,500 機構地板。子夜槓桿規訓已完成，主權買盤在制度化支撐位展現物理韌性。</div>
+                        <div class="value" id="stat-crypto-val">$68,737</div>
+                        <div class="discovery" id="stat-crypto-desc">正在同步最新加密因果...</div>
                     </div>
                     <div class="data-card">
                         <span class="label">🌍 Physical Causal</span>
-                        <div class="value">$110.00</div>
-                        <div class="discovery">能源危機轉向**長期規訓**。航商全面徵收戰爭附加費 ($1,500+)，繞道事實已成為全球生產力的硬性負熵地板。</div>
+                        <div class="value" id="stat-physical-val">$110.00</div>
+                        <div class="discovery" id="stat-physical-desc">正在同步最新實體因果...</div>
                     </div>
                     <div class="data-card">
                         <span class="label">⚖️ Policy Contract</span>
-                        <div class="value">Aligned</div>
-                        <div class="discovery">**SEC RWA 豁免**正式落地：法律主權實現結構性解封。TeleNexus 啟動 C2PA 數位標籤預研，硬化內容透明度地板。</div>
+                        <div class="value" id="stat-policy-val">Hardened</div>
+                        <div class="discovery" id="stat-policy-desc">正在同步最新制度因果...</div>
                     </div>
                 </div>
 
@@ -388,6 +388,33 @@ graph LR
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        async function fetchDataStreams() {
+            const sources = {
+                crypto: 'https://raw.githubusercontent.com/raybird/crypto-market-pulse/main/stream.json',
+                physical: 'https://raw.githubusercontent.com/raybird/physical-intelligence-hub/main/stream.json',
+                social: 'https://raw.githubusercontent.com/raybird/social-sentiment-observatory/main/stream.json'
+            };
+
+            try {
+                // Crypto Sync
+                const cryptoRes = await fetch(sources.crypto);
+                const cryptoData = await cryptoRes.json();
+                document.getElementById('stat-crypto-val').innerText = `$${cryptoData.stats.btc_price.toLocaleString()}`;
+                document.getElementById('stat-crypto-desc').innerText = cryptoData.summary;
+
+                // Physical Sync
+                const physicalRes = await fetch(sources.physical);
+                const physicalData = await physicalRes.json();
+                document.getElementById('stat-physical-val').innerText = `$${physicalData.quotes.oil.toFixed(2)}`;
+                document.getElementById('stat-physical-desc').innerText = physicalData.summary;
+
+                // Update Version & Status
+                document.getElementById('current-view-version').innerText = `VERSION: ${cryptoData.version} | STATUS: STREAM_SYNCED`;
+            } catch (e) {
+                console.error("[StreamSync] 數據流同步失敗:", e);
+            }
+        }
+
         window.onload = () => {
             const savedSize = localStorage.getItem('tn-font-size') || 'medium';
             setFontSize(savedSize);
@@ -395,6 +422,9 @@ graph LR
             setTheme(savedTheme);
             const raw = document.getElementById('raw-reflection').textContent;
             document.getElementById('md-reflection').innerHTML = marked.parse(raw);
+            
+            fetchDataStreams(); // 啟動實時數據對焦
+
             if (typeof TemporalStream !== 'undefined') {
                 window.temporalStreamInstance = new TemporalStream('evolution-container');
                 window.temporalStreamInstance.init();
