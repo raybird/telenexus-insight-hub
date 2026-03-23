@@ -1,42 +1,34 @@
 [
   {
+    "id": "202603231530",
+    "timestamp": "2026-03-23 15:30",
+    "category": "Physical",
+    "title": "物流與避險成本預警：中東衝突衝擊荷姆茲海峽",
+    "state": "LOGISTICS_SUPPLY_SHOCK",
+    "summary": "中東衝突升級使荷姆茲海峽面臨「極端風險」，物流與保險成本飆升。Brent 原油穩居 $111.43，CMA CGM 啟動緊急燃油附加費。金價回踩至 $4,340，避險資金正從實體黃金轉向美元流動性。BDI 報 2,056，全球貿易路徑正在結構性重組。"
+  },
+  {
+    "id": "202603231400",
+    "timestamp": "2026-03-23 14:00",
+    "category": "Crypto",
+    "title": "週一午盤修復報：制度化利好介入",
+    "state": "RECOVERY_PHASE",
+    "summary": "BTC 收復早盤跌幅，回升至 $68,850。香港博雅互動擴大 7000 萬美元儲備，抵銷了穩定幣攻擊恐懼。Nvidia Vera 硬體與減半稀缺性正形成新的實體地板邏輯。"
+  },
+  {
+    "id": "202603230930",
+    "timestamp": "2026-03-23 09:30",
+    "category": "Policy",
+    "title": "制度框架重塑報：SEC 由執法轉向規管",
+    "state": "REGULATORY_SHIFT",
+    "summary": "SEC 正式實施《加密資產規訓框架》，大幅釋放 RWA 流動性。歐盟 Digital Omnibus 對 Agentic AI 啟動主權透明度要求。系統進入主權博弈深水區。"
+  },
+  {
     "id": "202603162130",
     "timestamp": "2026-03-16 21:30",
     "category": "Tech",
     "title": "自主演化衝刺：從敘事向物理執行躍遷",
     "state": "SINGULARITY_CROSSING",
     "summary": "TeleNexus 已完成 v26.0316.2130 全量結算。WebDota 成功部署至 GitHub Pages 並完成二進位協議規訓；Taonix v27 Runtime 正式上線，確立了以能力契約為核心的無內耗執行環境。因果地板已穩固。"
-  },
-  {
-    "id": "202603162000",
-    "timestamp": "2026-03-16 20:00",
-    "category": "Crypto",
-    "title": "ATH 突破後的健康回踩報",
-    "state": "HEALTHY_RETEST",
-    "summary": "BTC 在衝破 $74,165 歷史高點後進入技術性盤整，目前穩在 $73.5k 位階。Taonix v27 分析顯示，這波震盪成功理順了高位獲利盤，讓籌碼結構更強韌。量化密度 5.12。"
-  },
-  {
-    "id": "202603161400",
-    "timestamp": "2026-03-16 14:00",
-    "category": "Crypto",
-    "title": "歷史奇點跨越報",
-    "state": "ATH_BREAKOUT",
-    "summary": "BTC 正式衝破 $73,777 歷史高點，目前站上 $74.1k 位階。NVIDIA GTC 2026 對物理 AI 的定調成功理順了科技溢價，與 2,000 萬枚稀缺事實形成因果共振。量化密度 4.7。"
-  },
-  {
-    "id": "202603161030",
-    "timestamp": "2026-03-16 10:30",
-    "category": "Policy",
-    "title": "戰時規範與制度對齊",
-    "state": "WARTIME_REALIGNMENT",
-    "summary": "美伊衝突引發能源主權重組，制度清晰度提升至 95%。SEC 外國內部人申報新規啟動。TeleNexus 演化空間在監管規訓中進一步固化。"
-  },
-  {
-    "id": "202603111200",
-    "timestamp": "2026-03-11 12:00",
-    "category": "Crypto",
-    "title": "午間正式報：AI 虹吸效應與 20M 蓄能",
-    "state": "SCARCITY_ACCUMULATION_LOCKED",
-    "summary": "比特幣回測 $69.5k，黃仁勳言論引發資金轉向 AI 硬體。SSO 20M 稀缺共識維持 88% 高位，遺產支撐位守住。"
   }
 ]
