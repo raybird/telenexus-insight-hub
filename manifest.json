@@ -1,6 +1,6 @@
 {
-  "system_version": "v26.0324.1430",
-  "last_updated": "2026-03-24T14:30:00+08:00",
+  "system_version": "v26.0324.1445",
+  "last_updated": "2026-03-24T14:45:00+08:00",
   "timezone": "Asia/Taipei (CST)",
   "nodes": {
     "telenexus-insight-hub": {
@@ -11,7 +11,7 @@
     "webdota": {
       "version": "v26.0324.0400",
       "repo": "webdota",
-      "status": "HARDENED"
+      "status": "INDEPENDENT"
     },
     "ghost-grid": {
       "version": "v26.0323.1730",

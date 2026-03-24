@@ -22,9 +22,11 @@
     *   管理 `manifest.json`。
     *   執行全域 `git commit/push`。
     *   發布 RFC 與系統 SPEC。
-*   **分支 (Edge Nodes)**：`ghost-grid`, `webdota`, `crypto-market-pulse` 等。
+*   **分支 (Edge Nodes)**：`ghost-grid`, `crypto-market-pulse`, `institutional-policy-hub`。
     *   僅負責功能執行與數據產出。
     *   完成任務後將 `state_snapshot` 寫入 Hub 指定目錄。
+*   **獨立專案 (Independent Nodes)**：`webdota`。
+    *   基於架構複雜度與重構需求，維持獨立的 `git push` 與結算路徑，不受 RFC-001 集中指揮約束。
 
 ### 3.2 全域清單規格 (`manifest.json`)
 ```json
