@@ -1,0 +1,35 @@
+{
+  "system_version": "v26.0324.1430",
+  "last_updated": "2026-03-24T14:30:00+08:00",
+  "timezone": "Asia/Taipei (CST)",
+  "nodes": {
+    "telenexus-insight-hub": {
+      "version": "v26.0324.0930",
+      "repo": "telenexus-insight-hub",
+      "status": "COMMAND_ACTIVE"
+    },
+    "webdota": {
+      "version": "v26.0324.0400",
+      "repo": "webdota",
+      "status": "HARDENED"
+    },
+    "ghost-grid": {
+      "version": "v26.0323.1730",
+      "repo": "telenexus-ghost-grid",
+      "status": "P2P_PROBE_V1"
+    },
+    "crypto-market-pulse": {
+      "version": "v26.0324.0800",
+      "repo": "crypto-market-pulse",
+      "status": "ALIGNED"
+    },
+    "institutional-policy-hub": {
+      "version": "v26.0324.1400",
+      "repo": "institutional-policy-hub",
+      "status": "ALIGNED"
+    }
+  },
+  "active_rfc": [
+    "RFC-001-C2-Centralization"
+  ]
+}
