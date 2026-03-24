@@ -14,9 +14,9 @@
       "status": "INDEPENDENT"
     },
     "ghost-grid": {
-      "version": "v26.0323.1730",
+      "version": "v26.0324.1630",
       "repo": "telenexus-ghost-grid",
-      "status": "P2P_PROBE_V1"
+      "status": "FIXED_P2P_PROBE"
     },
     "crypto-market-pulse": {
       "version": "v26.0324.0800",
