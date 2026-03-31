@@ -1,5 +1,29 @@
 [
   {
+    "id": "202603312230",
+    "timestamp": "2026-03-31 22:30",
+    "category": "Policy",
+    "title": "制度壓力週報：能源通膨下利率與監管的「高壓平衡」",
+    "state": "REGULATORY_CALIBRATION",
+    "summary": "Fed 以耐心應對 WTI 破百的能源衝擊，維持利率不變，預示全球流動性將長期受壓。歐盟 AI Act 部分延後為代理人合規提供緩衝；ASIC 將 Agentic AI 列為年度監控重點。監管重心正加速向「動態行為可解釋性」轉移。"
+  },
+  {
+    "id": "202603311530",
+    "timestamp": "2026-03-31 15:30",
+    "category": "Physical",
+    "title": "實體智庫週二結算：內政部會議與大宗商品高位劇震",
+    "state": "PHYSICAL_RISK_PRICING",
+    "summary": "內政部 1074 次會議核定萬華社宅與台中工變住，固化都會區土地韌性。Brent 原油穩守 $115，BDI 下探 2017，反映「高成本、低流速」的滯脹風險。金價受美元強勢回測 $4,560。"
+  },
+  {
+    "id": "202603302230",
+    "timestamp": "2026-03-30 22:30",
+    "category": "Policy",
+    "title": "制度與政策結算：AI 資料中心停修法案與代理人審計硬化",
+    "state": "INFRA_SCARCITY",
+    "summary": "美國參院提出 AI 資料中心停修法案，算力擴張正式受物理能耗紅線規訓。監管機構重心轉向 XAI 語義級審計，TeleNexus 的「可解釋主權」成為核心競爭力。歐盟合規倒數進入關鍵衝刺。"
+  },
+  {
     "id": "202603231530",
     "timestamp": "2026-03-23 15:30",
     "category": "Physical",
@@ -14,21 +38,5 @@
     "title": "週一午盤修復報：制度化利好介入",
     "state": "RECOVERY_PHASE",
     "summary": "BTC 收復早盤跌幅，回升至 $68,850。香港博雅互動擴大 7000 萬美元儲備，抵銷了穩定幣攻擊恐懼。Nvidia Vera 硬體與減半稀缺性正形成新的實體地板邏輯。"
-  },
-  {
-    "id": "202603230930",
-    "timestamp": "2026-03-23 09:30",
-    "category": "Policy",
-    "title": "制度框架重塑報：SEC 由執法轉向規管",
-    "state": "REGULATORY_SHIFT",
-    "summary": "SEC 正式實施《加密資產規訓框架》，大幅釋放 RWA 流動性。歐盟 Digital Omnibus 對 Agentic AI 啟動主權透明度要求。系統進入主權博弈深水區。"
-  },
-  {
-    "id": "202603162130",
-    "timestamp": "2026-03-16 21:30",
-    "category": "Tech",
-    "title": "自主演化衝刺：從敘事向物理執行躍遷",
-    "state": "SINGULARITY_CROSSING",
-    "summary": "TeleNexus 已完成 v26.0316.2130 全量結算。WebDota 成功部署至 GitHub Pages 並完成二進位協議規訓；Taonix v27 Runtime 正式上線，確立了以能力契約為核心的無內耗執行環境。因果地板已穩固。"
   }
 ]
