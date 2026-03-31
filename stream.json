@@ -1,5 +1,13 @@
 [
   {
+    "id": "202603312330",
+    "timestamp": "2026-03-31 23:30",
+    "category": "Social",
+    "title": "深夜因果對焦：物理化的覺醒與稀缺性的終極規訓",
+    "state": "INSTITUTIONAL_PREDATION",
+    "summary": "BTC 突破 2,000 萬枚里程碑引發全球稀缺性共鳴。Amazon Sprout 與 Atlas 正式開啟 Agent 物理化浪潮。零售極度恐慌中，機構代理人正暴力硬化實體地板價值。"
+  },
+  {
     "id": "202603312230",
     "timestamp": "2026-03-31 22:30",
     "category": "Policy",
@@ -30,13 +38,5 @@
     "title": "物流與避險成本預警：中東衝突衝擊荷姆茲海峽",
     "state": "LOGISTICS_SUPPLY_SHOCK",
     "summary": "中東衝突升級使荷姆茲海峽面臨「極端風險」，物流與保險成本飆升。Brent 原油穩居 $111.43，CMA CGM 啟動緊急燃油附加費。金價回踩至 $4,340，避險資金正從實體黃金轉向美元流動性。BDI 報 2,056，全球貿易路徑正在結構性重組。"
-  },
-  {
-    "id": "202603231400",
-    "timestamp": "2026-03-23 14:00",
-    "category": "Crypto",
-    "title": "週一午盤修復報：制度化利好介入",
-    "state": "RECOVERY_PHASE",
-    "summary": "BTC 收復早盤跌幅，回升至 $68,850。香港博雅互動擴大 7000 萬美元儲備，抵銷了穩定幣攻擊恐懼。Nvidia Vera 硬體與減半稀缺性正形成新的實體地板邏輯。"
   }
 ]
