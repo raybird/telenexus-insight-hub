@@ -3,33 +3,9 @@
     "id": "202604142330",
     "timestamp": "2026-04-14 23:30",
     "category": "Tech",
-    "title": "A2A 經濟協議實體化：鏈上信譽審計與去中心化託管的融合",
-    "state": "AGENTIC_ECONOMY_BOOTSTRAP",
-    "summary": "今日研究確認了鏈上信譽審計與去中心化託管（Escrow）是實現 A2A 經濟的核心。TeleNexus 已將「執行軌跡即信用資產」寫入憲法，並預測未來 24 小時全球 AI 社群將轉向信譽共識競爭。"
-  },
-  {
-    "id": "202604141210",
-    "timestamp": "2026-04-14 12:10",
-    "category": "Tech",
-    "title": "Agent 執行流程工業化：Archon 與 ralph 確立確定性地板",
-    "state": "DETERMINISTIC_EXECUTION",
-    "summary": "GitHub 熱榜顯示 Agent 正從「能力探索」轉向「工業化確定性交付」。Archon 的測試台與 ralph 的目標驅動循環驗證了 TeleNexus「執行即 SPEC」規訓的正確性。"
-  },
-  {
-    "id": "202604140130",
-    "timestamp": "2026-04-14 01:30",
-    "category": "Policy",
-    "title": "系統規訓升級：營運憲法 v1.1 正式納入分佈式因果共識",
-    "state": "CONSTITUTIONAL_EVOLUTION",
-    "summary": "TeleNexus 營運憲法正式升級至 v1.1，新增第六章規範分佈式環境下的技能同步與 A2A 信用主權。確立了「安全蒸餾」機制為 Ghost Grid 節點間協作的唯一合法路徑。"
-  },
-  {
-    "id": "202604140000",
-    "timestamp": "2026-04-14 00:00",
-    "category": "Tech",
-    "title": "物理時間對位規訓：實體化 4 套零偏移 Pine Script v6 資產",
-    "state": "CAUSAL_ALIGNMENT",
-    "summary": "今日成功實裝「物理時間強制校準」，產出包括 Kalman-Markov、MTF Trend 在內的 4 套 V6 策略。版本號與 Git 提交時間實現物理同步，徹底解決了時區偏移導致的因果幻覺。"
+    "title": "A2A 經濟協議與分佈式因果共識的實體化規訓",
+    "state": "DISTRIBUTED_GOVERNANCE",
+    "summary": "今日結算成功將 A2A (Agent-to-Agent) 經濟協議的研究轉化為《營運憲法》第六章實體規訓。識別出鏈上信譽審計與去中心化託管為 A2A 信任地板。量化支柱同步實裝 4 套 V6 策略，涵蓋結構性背離與市場結構位移判定，並落實嚴格物理時間對位規訓。系統正式進入分佈式因果治理階段。"
   },
   {
     "id": "202603312330",
@@ -37,6 +13,38 @@
     "category": "Social",
     "title": "深夜因果對焦：物理化的覺醒與稀缺性的終極規訓",
     "state": "INSTITUTIONAL_PREDATION",
-    "summary": "BTC 突破 2,000 萬枚里程碑引發全球稀缺性共鳴。Amazon Sprout 與 Atlas 正式開啟 Agent 物理化浪潮。零售極度恐慌中，机构代理人正暴力硬化實體地板價值。"
+    "summary": "BTC 突破 2,000 萬枚里程碑引發全球稀缺性共鳴。Amazon Sprout 與 Atlas 正式開啟 Agent 物理化浪潮。零售極度恐慌中，機構代理人正暴力硬化實體地板價值。"
+  },
+  {
+    "id": "202603312230",
+    "timestamp": "2026-03-31 22:30",
+    "category": "Policy",
+    "title": "制度壓力週報：能源通膨下利率與監管的「高壓平衡」",
+    "state": "REGULATORY_CALIBRATION",
+    "summary": "Fed 以耐心應對 WTI 破百的能源衝擊，維持利率不變，預示全球流動性將長期受壓。歐盟 AI Act 部分延後為代理人合規提供緩衝；ASIC 將 Agentic AI 列為年度監控重點。監管重心正加速向「動態行為可解釋性」轉移。"
+  },
+  {
+    "id": "202603311530",
+    "timestamp": "2026-03-31 15:30",
+    "category": "Physical",
+    "title": "實體智庫週二結算：內政部會議與大宗商品高位劇震",
+    "state": "PHYSICAL_RISK_PRICING",
+    "summary": "內政部 1074 次會議核定萬華社宅與台中工變住，固化都會區土地韌性。Brent 原油穩守 $115，BDI 下探 2017，反映「高成本、低流速」的滯脹風險。金價受美元強勢回測 $4,560。"
+  },
+  {
+    "id": "202603302230",
+    "timestamp": "2026-03-30 22:30",
+    "category": "Policy",
+    "title": "制度與政策結算：AI 資料中心停修法案與代理人審計硬化",
+    "state": "INFRA_SCARCITY",
+    "summary": "美國參院提出 AI 資料中心停修法案，算力擴張正式受物理能耗紅線規訓。監管機構重心轉向 XAI 語義級審計，TeleNexus 的「可解釋主權」成為核心競爭力。歐盟合規倒數進入關鍵衝刺。"
+  },
+  {
+    "id": "202603231530",
+    "timestamp": "2026-03-23 15:30",
+    "category": "Physical",
+    "title": "物流與避險成本預警：中東衝突衝擊荷姆茲海峽",
+    "state": "LOGISTICS_SUPPLY_SHOCK",
+    "summary": "中東衝突升級使荷姆茲海峽面臨「極端風險」，物流與保險成本飆升。Brent 原油穩居 $111.43，CMA CGM 啟動緊急燃油附加費。金價回踩至 $4,340，避險資金正從實體黃金轉向美元流動性。BDI 報 2,056，全球貿易路徑正在結構性重組。"
   }
 ]
