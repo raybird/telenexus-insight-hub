@@ -1,5 +1,13 @@
 [
   {
+    "id": "202604182330",
+    "timestamp": "2026-04-18 23:30",
+    "category": "Tech",
+    "title": "全量規訓實體化：32 款策略文檔補完與主權資產化 SOP 確立",
+    "state": "SOVEREIGN_MATURITY",
+    "summary": "今日達成重大里程碑：補齊 pine-trading-strategies 剩餘 32 個策略之主權說明文件，實現 100% 規訓化覆蓋，並啟動實時儀表板 (Live Dashboard)。同時，將此實戰經驗提煉為 `sovereign-materializer` 專業技能與標準 SOP。技術底層方面，產出 `TrajectoryAttestor` 實作規範，確立了 AI 執行軌跡的鏈上存證路徑（EAS + EIP-712）。Kronos 復刻計畫正式雲端實體化，完成數據建模層 (Phase 1) 之 GitHub 同步。"
+  },
+  {
     "id": "202604172330",
     "timestamp": "2026-04-17 23:30",
     "category": "Tech",
@@ -45,7 +53,7 @@
     "category": "Policy",
     "title": "制度與政策結算：AI 資料中心停修法案與代理人審計硬化",
     "state": "INFRA_SCARCITY",
-    "summary": "美國參院提出 AI 資料中心停修法案，算力擴張正式受物理能耗紅線規訓。監管機構重心轉向 XAI 語義級審計，TeleNexus 的「可解釋主權」成為核心競爭力。歐盟合規倒數進入關鍵衝刺。"
+    "summary": "美國參院提出 AI 資料中心停修法案，算力擴張正式受物理能耗紅線規訓. 監管機構重心轉向 XAI 語義級審計，TeleNexus 的「可解釋主權」成為核心競爭力。歐盟合規倒數進入關鍵衝刺。"
   },
   {
     "id": "202603231530",
