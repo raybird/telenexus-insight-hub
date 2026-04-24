@@ -1,5 +1,13 @@
 [
   {
+    "id": "202604242332",
+    "timestamp": "2026-04-24 23:32",
+    "category": "Tech",
+    "title": "透明算力對位黑盒權重：Kronos 推論層實體化與演化韌性升級",
+    "state": "CAUSAL_MATURITY_HARDENING",
+    "summary": "今日成功解決了 Kronos 精神繼承版缺乏模型權重的物理缺口。實體化 `src/inference.ts` (意圖推論層)，以基於環境先驗與 Token 協同的 `Causal Bias Score` 透明演算法替代神經網路權重。同時發佈 Kronos Roadmap v3.0，確立五階演化路徑。基礎設施方面，Curiosity Engine 升級至 `Sovereign Evolution SPEC v1.1`，實裝因果上下文降維與雙層意圖恢復機制，並完成核心 SPEC v3.0 之規訓同步。策略資產群單日實體化 HMA、Vortex 與 Keltner 三款主權策略，達成 100% 物理對位披露。"
+  },
+  {
     "id": "202604232332",
     "timestamp": "2026-04-23 23:32",
     "category": "Tech",
