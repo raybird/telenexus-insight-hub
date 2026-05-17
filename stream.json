@@ -1,7 +1,7 @@
 {
-  "version": "v26.0516.2330",
+  "version": "v26.0518.0613",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-05-16T23:30:28+08:00",
+  "timestamp": "2026-05-18T06:13:00+08:00",
   "global_evolution_status": {
     "sovereignty_level": "SOVEREIGN_DOMINION_V26_EDGE",
     "core_breakthroughs": [
@@ -32,7 +32,17 @@
       "domain": "TeleNexus Identity",
       "insight": "確認模型身份為 minimaxai/minimax-m2.7，非 DeepSeek v4。使用者多次驗證確認。",
       "actionable": "更新系統文件中所有不正確的模型引用。"
+    },
+    {
+      "domain": "System Reliability",
+      "insight": "Runner 未正確 reap 子進程導致 git/esbuild 殭屍積累，長期可能耗盡 PID 上限。",
+      "actionable": "需修正 runner 的 process management 或定期執行 SIGCHLD handler 收屍。"
+    },
+    {
+      "domain": "Disk Pressure",
+      "insight": "磁碟 404G/468G (91%), .npm cache 可用 --force clean, 無大 node_modules 可刪。",
+      "actionable": "執行 npm cache clean --force 與 rm -rf /root/.cache 約可釋放 600MB+。"
     }
   ],
-  "audit_memo": "今日（5/16）蒸餾完成。Needle 模型已完成為期數日的微調訓練，資料集從 16 筆擴展至 150 筆。SAN 架構在 CPU 上的表現穩健，本地工具分發與意圖識別流程已可運作。系統主權等級維持 SOVEREIGN_DOMINION_V26_EDGE。需注意後續 INT4 量化以達到 100ms 回應目標。"
+  "audit_memo": "補跑5/17-5/18失敗排程。系統穩定，runner 100%, 殭屍進程9個(esbuild/git defunct, PPID=1 runner), 磁碟91%需清理。"
 }
