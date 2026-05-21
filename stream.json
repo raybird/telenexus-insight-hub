@@ -1,7 +1,7 @@
 {
-  "version": "v26.0520.2330",
+  "version": "v26.0521.2330",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-05-20T23:30:11+08:00",
+  "timestamp": "2026-05-21T23:30:13+08:00",
   "global_evolution_status": {
     "sovereignty_level": "SOVEREIGN_DOMINION_V26_EDGE",
     "core_breakthroughs": [
@@ -9,12 +9,14 @@
       "Traditional_Chinese_Expert_Finetuning",
       "SAN_Architecture_Performance_Audit",
       "FFN-less_Transformer_Edge_Efficiency",
-      "Needle_26M_Model_Finetuning_Completed"
+      "Needle_26M_Model_Finetuning_Completed",
+      "Pine_Script_v6_Strategy_Automation"
     ],
     "project_milestones": {
       "Needle": "Successfully cloned and finetuned the 26MB Needle model (JAX/Flax). 20-epoch specialized training completed for ROAS and Memory retrieval. Dataset expanded from 16 to 150 samples via augmentation.",
       "Taonix": "V27 hunter report identified 'Mobile Agentic Expansion' as core industry pivot.",
-      "Inference": "JAX/Flax runtime verified on CPU environment. Local tool-calling pipeline operational."
+      "Inference": "JAX/Flax runtime verified on CPU environment. Local tool-calling pipeline operational.",
+      "PineScript-v6": "Auto-hunter operational, v6 compliance enforced (request.security replacing strategy.*), vwap_regime_deviation_v6 strategy materialized and versioned."
     }
   },
   "high_signal_insights": [
@@ -25,7 +27,7 @@
     },
     {
       "domain": "Agentic Workflow",
-      "insight": "行動端 Agent 擴張與 Needle 本地執行力高度對位，主權系統正向『零延遲、高隱私』轉移。",
+      "insight": "行動端 Agent 擴張與 Needle 本地執行力高度對位，主權系統正向『零延遲、高隱遲』轉移。",
       "actionable": "準備微調權重的 INT4 量化，將回應延遲壓低至 100ms 以內。"
     },
     {
@@ -40,9 +42,14 @@
     },
     {
       "domain": "Disk Pressure",
-      "insight": "磁碟 404G/468G (91%), .npm cache 可用 --force clean, 無大 node_modules 可刪。",
-      "actionable": "執行 npm cache clean --force 與 rm -rf /root/.cache 約可釋放 600MB+。"
+      "insight": "磁碟達 99% (437G/468G)，系統面臨寫入失敗風險。.cache 目錄僅 7.2MB，主要佔用來自 hermes-agent (112M) 與 DeepTutor (130M) 的 Git 對象庫。",
+      "actionable": "緊急：執行 git gc --aggressive --prune=now 針對大型 .git 目錄。評估 hermes-agent 與 DeepTutor 的 archive可行性。"
+    },
+    {
+      "domain": "Trading Automation",
+      "insight": "Pine Script v6 禁止 strategy.* 呼叫，改用 request.security 取代。已驗證合規策略成功實體化。",
+      "actionable": "持續監控 TradingView v6 規範更新，確保自動化獵頭策略即時合規。"
     }
   ],
-  "audit_memo": "執行 5/20 排程任務。補跑5/17-5/18失敗排程。系統穩定，runner 100%, 殭屍進程9個(esbuild/git defunct, PPID=1 runner), 磁碟91%需清理。"
+  "audit_memo": "執行 5/21 排程任務。磁碟99%緊急狀態，需優先清理。系統正常運行，殭屍進程需清理，Git 對象庫需压缩。"
 }
