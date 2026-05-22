@@ -1,7 +1,7 @@
 {
-  "version": "v26.0521.2330",
+  "version": "v26.0522.2330",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-05-21T23:30:13+08:00",
+  "timestamp": "2026-05-22T23:30:11+08:00",
   "global_evolution_status": {
     "sovereignty_level": "SOVEREIGN_DOMINION_V26_EDGE",
     "core_breakthroughs": [
@@ -42,8 +42,8 @@
     },
     {
       "domain": "Disk Pressure",
-      "insight": "磁碟達 99% (437G/468G)，系統面臨寫入失敗風險。.cache 目錄僅 7.2MB，主要佔用來自 hermes-agent (112M) 與 DeepTutor (130M) 的 Git 對象庫。",
-      "actionable": "緊急：執行 git gc --aggressive --prune=now 針對大型 .git 目錄。評估 hermes-agent 與 DeepTutor 的 archive可行性。"
+      "insight": "磁碟從 99% 降至 70% (311G/468G)，緊急清理見效。.cache 目錄主要佔用來自 hermes-agent (112M) 與 DeepTutor (130M) 的 Git 對象庫。",
+      "actionable": "監控磁碟水位，維持在 80% 以下安全區間。評估 hermes-agent 與 DeepTutor 的 archive 可行性。"
     },
     {
       "domain": "Trading Automation",
@@ -51,5 +51,37 @@
       "actionable": "持續監控 TradingView v6 規範更新，確保自動化獵頭策略即時合規。"
     }
   ],
-  "audit_memo": "執行 5/21 排程任務。磁碟99%緊急狀態，需優先清理。系統正常運行，殭屍進程需清理，Git 對象庫需压缩。"
+  "pillar_project_snapshots": {
+    "kronos-replication-git": {
+      "last_updated": "2026-05-08T20:41:30+08:00",
+      "status": "SOVEREIGN_MASTER_V20",
+      "focus": "Geometric Thermodynamic Equilibrium & Adiabatic Expansion Sensing"
+    },
+    "social-sentiment-observatory-git": {
+      "last_updated": "2026-03-31T23:30:00+08:00",
+      "status": "ACTIVE",
+      "key_signal": "BTC 2,000 萬枚里程碑, Agent 物理化爆發"
+    },
+    "physical-intelligence-hub-git": {
+      "last_updated": "2026-03-31T15:30:00+08:00",
+      "status": "ACTIVE",
+      "key_signal": "Brent 原油 $115 高位, 臺北萬華社宅推進"
+    },
+    "crypto-market-pulse-git": {
+      "last_updated": "2026-03-31T08:00:00+08:00",
+      "status": "ACTIVE",
+      "key_signal": "BTC $66,691 數位花崗岩支撐"
+    },
+    "tech-scouting-hub-git": {
+      "last_updated": "2026-03-19T11:30:00+08:00",
+      "status": "ACTIVE",
+      "key_signal": "Agent 技能框架霸榜, Unsloth 邊緣微調主流化"
+    },
+    "institutional-policy-hub-git": {
+      "last_updated": "2026-03-14T10:30:00+08:00",
+      "status": "ACTIVE",
+      "key_signal": "SEC 認可穩定幣, 制度清晰度 85%"
+    }
+  },
+  "audit_memo": "執行 5/22 排程任務 (23:30 CS)。磁碟已降至 70%，系統正常運行。各支柱專案狀態穩定。Pine Script v6 自動化持續運行。"
 }
