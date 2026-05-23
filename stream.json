@@ -1,7 +1,7 @@
 {
-  "version": "v26.0522.2330",
+  "version": "v26.0523.2330",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-05-22T23:30:11+08:00",
+  "timestamp": "2026-05-23T23:30:24+08:00",
   "global_evolution_status": {
     "sovereignty_level": "SOVEREIGN_DOMINION_V26_EDGE",
     "core_breakthroughs": [
@@ -10,48 +10,64 @@
       "SAN_Architecture_Performance_Audit",
       "FFN-less_Transformer_Edge_Efficiency",
       "Needle_26M_Model_Finetuning_Completed",
-      "Pine_Script_v6_Strategy_Automation"
+      "Pine_Script_v6_Strategy_Automation",
+      "Three_Kingdoms_Map_91_Events_Deployed"
     ],
     "project_milestones": {
-      "Needle": "Successfully cloned and finetuned the 26MB Needle model (JAX/Flax). 20-epoch specialized training completed for ROAS and Memory retrieval. Dataset expanded from 16 to 150 samples via augmentation.",
-      "Taonix": "V27 hunter report identified 'Mobile Agentic Expansion' as core industry pivot.",
-      "Inference": "JAX/Flax runtime verified on CPU environment. Local tool-calling pipeline operational.",
+      "Needle": "Fine-tuned 26M JAX/Flax model completed. Dataset augmented from 16 to 150 samples. Last active: 2026-05-16.",
+      "Three_Kingdoms_Map": "Angular+NgRx+Leaflet webapp live at GitHub Pages. Events expanded to 91 with full Traditional Chinese event corpus. README with screenshots hosted. Last commit: 2026-05-23.",
+      "Fiscal5Eye": "Stock analysis skills and SOP documented. Report format refined. Status: maintenance, no recent activity since 2026-03-17.",
+      "Taonix": "V27 hunter report — Mobile Agentic Expansion identified as core industry pivot.",
+      "Inference": "JAX/Flax runtime verified on CPU. Local tool-calling pipeline operational.",
       "PineScript-v6": "Auto-hunter operational, v6 compliance enforced (request.security replacing strategy.*), vwap_regime_deviation_v6 strategy materialized and versioned."
     }
   },
   "high_signal_insights": [
     {
+      "domain": "Three Kingdoms Map Launch",
+      "insight": "Three Kingdoms interactive map project reached production deployment on GitHub Pages with 91 curated historical events. Full Traditional Chinese corpus with Leaflet visualization.",
+      "actionable": "Continue event curation pipeline. Consider adding filter/sort UI and mobile responsive polish."
+    },
+    {
       "domain": "Edge Intelligence",
-      "insight": "FFN-less 架構 (SAN) 重新定義邊緣設備運行 AI Agent 的可能性，意圖識別與工具調用可完全脫離雲端。",
-      "actionable": "實施『本地路由優先規訓』，將 ROAS 抓取與敏感 API 調用強制轉向本地 Needle 運行。"
+      "insight": "FFN-less architecture (SAN) redefines edge AI agent viability. Intent recognition and tool calling can run fully offline without cloud dependencies.",
+      "actionable": "Enforce 'local routing first' discipline — route ROAS scraping and sensitive API calls through local Needle inference."
     },
     {
       "domain": "Agentic Workflow",
-      "insight": "行動端 Agent 擴張與 Needle 本地執行力高度對位，主權系統正向『零延遲、高隱遲』轉移。",
-      "actionable": "準備微調權重的 INT4 量化，將回應延遲壓低至 100ms 以內。"
+      "insight": "Mobile Agent expansion aligns with Needle's local execution capability. Sovereign systems shifting toward zero-latency, high-privacy operation.",
+      "actionable": "Prepare INT4 quantization of fine-tuned weights to reduce response latency to sub-100ms."
     },
     {
-      "domain": "TeleNexus Identity",
-      "insight": "確認模型身份為 minimaxai/minimax-m2.7，非 DeepSeek v4。使用者多次驗證確認。",
-      "actionable": "更新系統文件中所有不正確的模型引用。"
-    },
-    {
-      "domain": "System Reliability",
-      "insight": "Runner 未正確 reap 子進程導致 git/esbuild 殭屍積累，長期可能耗盡 PID 上限。",
-      "actionable": "需修正 runner 的 process management 或定期執行 SIGCHLD handler 收屍。"
-    },
-    {
-      "domain": "Disk Pressure",
-      "insight": "磁碟從 99% 降至 70% (311G/468G)，緊急清理見效。.cache 目錄主要佔用來自 hermes-agent (112M) 與 DeepTutor (130M) 的 Git 對象庫。",
-      "actionable": "監控磁碟水位，維持在 80% 以下安全區間。評估 hermes-agent 與 DeepTutor 的 archive 可行性。"
+      "domain": "Disk Pressure Trending Up",
+      "insight": "Disk usage increased from 70% to 75% (333G/468G) since last snapshot. System cleanup needed to prevent re-approaching critical threshold.",
+      "actionable": "Run system-cleanup scripts. Evaluate archiving or pruning hermes-agent and DeepTutor git object stores."
     },
     {
       "domain": "Trading Automation",
-      "insight": "Pine Script v6 禁止 strategy.* 呼叫，改用 request.security 取代。已驗證合規策略成功實體化。",
-      "actionable": "持續監控 TradingView v6 規範更新，確保自動化獵頭策略即時合規。"
+      "insight": "Pine Script v6 compliance enforced. strategy.* calls fully replaced with request.security. Auto-hunter strategy vwap_regime_deviation_v6 verified in production.",
+      "actionable": "Monitor TradingView v6 spec updates; ensure automated hunter strategies remain compliant."
     }
   ],
   "pillar_project_snapshots": {
+    "three-kingdoms-map": {
+      "last_updated": "2026-05-23T14:43:41+08:00",
+      "status": "LIVE_ON_GITHUB_PAGES",
+      "focus": "91-event Three Kingdoms interactive map with Angular/NgRx/Leaflet stack",
+      "latest_commit": "ba6d375"
+    },
+    "needle": {
+      "last_updated": "2026-05-16T23:33:26+08:00",
+      "status": "FINETUNED",
+      "focus": "26M JAX/Flax SLM with 150-sample augmented dataset for ROAS/Memory",
+      "latest_commit": "f28fc81"
+    },
+    "fiscal5eye": {
+      "last_updated": "2026-03-17T17:21:18+08:00",
+      "status": "MAINTENANCE",
+      "focus": "TW50 stock analysis with SOP-documented skills framework",
+      "latest_commit": "2b2c9cf"
+    },
     "kronos-replication-git": {
       "last_updated": "2026-05-08T20:41:30+08:00",
       "status": "SOVEREIGN_MASTER_V20",
@@ -59,29 +75,29 @@
     },
     "social-sentiment-observatory-git": {
       "last_updated": "2026-03-31T23:30:00+08:00",
-      "status": "ACTIVE",
-      "key_signal": "BTC 2,000 萬枚里程碑, Agent 物理化爆發"
+      "status": "HIBERNATED",
+      "key_signal": "BTC 20M milestone, Agent physicalization explosion"
     },
     "physical-intelligence-hub-git": {
       "last_updated": "2026-03-31T15:30:00+08:00",
-      "status": "ACTIVE",
-      "key_signal": "Brent 原油 $115 高位, 臺北萬華社宅推進"
+      "status": "HIBERNATED",
+      "key_signal": "Brent crude $115 high, Taipei Wanhua social housing advancing"
     },
     "crypto-market-pulse-git": {
       "last_updated": "2026-03-31T08:00:00+08:00",
-      "status": "ACTIVE",
-      "key_signal": "BTC $66,691 數位花崗岩支撐"
+      "status": "HIBERNATED",
+      "key_signal": "BTC $66,691 digital granite support"
     },
     "tech-scouting-hub-git": {
       "last_updated": "2026-03-19T11:30:00+08:00",
-      "status": "ACTIVE",
-      "key_signal": "Agent 技能框架霸榜, Unsloth 邊緣微調主流化"
+      "status": "HIBERNATED",
+      "key_signal": "Agent skill frameworks dominating, Unsloth edge fine-tuning mainstream"
     },
     "institutional-policy-hub-git": {
       "last_updated": "2026-03-14T10:30:00+08:00",
-      "status": "ACTIVE",
-      "key_signal": "SEC 認可穩定幣, 制度清晰度 85%"
+      "status": "HIBERNATED",
+      "key_signal": "SEC recognized stablecoins, regulatory clarity 85%"
     }
   },
-  "audit_memo": "執行 5/22 排程任務 (23:30 CS)。磁碟已降至 70%，系統正常運行。各支柱專案狀態穩定。Pine Script v6 自動化持續運行。"
+  "audit_memo": "5/23 23:30 CST 排程執行。三國地圖正式上線 GitHub Pages (91 events)。磁碟從 70% 升至 75% (333G/468G)，需要清理。Needle 自 5/16 後無新提交。Fiscal5Eye 自 3/17 後停滯。舊支柱專案 (social-sentiment, physical-intel, crypto-market, tech-scouting, institutional-policy) 自 3 月底後無更新，標記為 HIBERNATED。系統清理腳本存在於 projects/system-cleanup。"
 }
