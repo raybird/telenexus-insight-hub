@@ -1,7 +1,7 @@
 {
-  "version": "v26.0527.2330",
+  "version": "v26.0528.2330",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-05-27T23:30:13+08:00",
+  "timestamp": "2026-05-28T23:30:06+08:00",
   "global_evolution_status": {
     "sovereignty_level": "SOVEREIGN_DOMINION_V26_EDGE",
     "core_breakthroughs": [
@@ -13,46 +13,47 @@
       "Pine_Script_v6_Strategy_Automation",
       "Three_Kingdoms_Map_91_Events_Deployed",
       "TnSovereignDcaWebhookV6_DCA_Grid_Engine",
-      "蜂群聯邦共識引擎完整注入"
+      "蜂群聯邦共識引擎完整注入",
+      "TnSovereignPropFirmUltraV6_PropFirm_超防禦"
     ],
     "project_milestones": {
-      "Needle": "Fine-tuned 26M JAX/Flax model completed. No commits today. Dormant since 2026-05-16 (11 days).",
-      "Three_Kingdoms_Map": "Angular+NgRx+Leaflet webapp live at GitHub Pages. 91 events. No commits today.",
-      "Fiscal5Eye": "Stock analysis skills and SOP documented. Status: maintenance, dormant since 2026-03-17 (71 days).",
-      "Taonix": "V27 hunter report — Mobile Agentic Expansion identified as core industry pivot. No commits today.",
-      "Inference": "JAX/Flax runtime verified on CPU. Local tool-calling pipeline operational.",
-      "PineScript-v6": "Auto-hunter operational. Today: 2 commits — TnSovereignDcaWebhookV6 (DCA grid + BBW volatility + JSON webhook) and 蜂群聯邦共識引擎完整注入."
+      "PineScript_v6": "Auto-hunter operational. Today: 3 commits — tn_fakeout_signal_quality_v6 (4-Layer Signal Quality Filter), TnSovereignPropFirmUltraV6 (PropFirm 超防禦策略, QuantAlgo port), + docs reorganization. 倉庫推進至 ~133 策略.",
+      "Needle": "Fine-tuned 26M JAX/Flax model completed. No commits. Dormant since 2026-05-16 (12 days).",
+      "Three_Kingdoms_Map": "Angular+NgRx+Leaflet webapp live at GitHub Pages. 91 events. No commits today (last: 5/23, 5 days ago).",
+      "Fiscal5Eye": "Stock analysis skills and SOP documented. Status: maintenance, dormant since 2026-03-17 (72 days).",
+      "Kronos": "Peak spirit evolution v26.0508.2041. No commits today (last: 5/8, 20 days ago).",
+      "Astrology": "my-astrology project — 12 reports, 1 skill suite, 0 commits today (last: 1/29, 119 days ago)."
     }
   },
   "high_signal_insights": [
     {
-      "domain": "PineScript v6 策略持續產出 — 今日 2 次提交",
-      "insight": "pine-trading-strategies-git 今日有 2 次提交：(1) 06:41 TnSovereignDcaWebhookV6 — DCA grid engine + BBW 波動率 + JSON webhook bridge；(2) 18:52 蜂群聯邦共識引擎完整注入。版本號推進至 v26.0527.1830，為唯二有活動的支柱專案。",
-      "actionable": "檢查蜂群聯邦共識引擎的測試涵蓋率，如通過則推廣至其他策略模組。"
+      "domain": "PineScript v6 策略日產 3 筆 — 創下排程以來單日最高",
+      "insight": "pine-trading-strategies-git 今日 3 次提交：(1) 06:30 tn_fakeout_signal_quality_v6 — 4 層信號品質濾波器（trugurpala port）；(2) 18:30 TnSovereignPropFirmUltraV6 — PropFirm 超防禦策略（QuantAlgo port）；(3) 21:47 docs 重構與 AI 協作規訓文件。策略總數 ~133，為本月提交最高峰日。",
+      "actionable": "新增策略的測試整合至蜂群聯邦共識引擎需優先排程。"
     },
     {
-      "domain": "磁碟壓力升至 77% — 黃線警報",
-      "insight": "磁碟用量 340G/468G (77%)，自 5/24 的 334G (76%) 增加 6G。三日平均增長 ~2G/日。若持續，預計 19 日內達 85% 黃線、39 日內達 95% 紅線。",
-      "actionable": "立即執行 system-cleanup：清理 /tmp、prune Docker (若可用)、壓縮大型 git object store。"
+      "domain": "磁碟壓力達 341G/468G (77%) — 與前日持平",
+      "insight": "磁碟用量維持 341G (77%)，未見增長。system-cleanup 與記憶規訓如期執行可維持此水位。",
+      "actionable": "執行 system-cleanup (tmp + Docker prune + git gc) 以釋放空間。"
     },
     {
-      "domain": "26 個支柱專案中 24 個零活動",
-      "insight": "掃描 26 個含 .git 的支柱專案，僅 pine-trading-strategies-git 有提交 (2 commits)。其餘 24 個專案全數零活動。三大核心 (TeleNexus-Core / Memoria / Kronos) 均無新提交。Needle 已停滯 11 天，Fiscal5Eye 已停滯 71 天。",
-      "actionable": "建議主動推送維護性更新至重點專案 (TeleNexus-Core, Three Kingdoms Map)，避免長期休眠導致的依賴腐化。"
+      "domain": "13 個掃描專案中僅 1 個有活動 — 活躍集中度創新高",
+      "insight": "掃描 13 個具 .git 的支柱專案，僅 pine-trading-strategies-git 有提交 (3 commits)。其餘 12 個全數休眠。Needle 休眠 12 天、Fiscal5Eye 72 天、Astrology 119 天、Taonix 82 天。系統活動極度集中於 PineScript 單一領域。",
+      "actionable": "評估是否需對長期休眠專案進行主動維護或正式封存。"
     },
     {
-      "domain": "蜂群聯邦共識引擎 — 架構級注入完成",
-      "insight": "v26.0527.1830 提交名為「蜂群聯邦共識引擎完整注入」，暗示 PineScript 策略架構已從單一策略進化為多 agent 聯邦式共識機制。這是 PineScript 資產 130+ 策略之上的架構升級。",
-      "actionable": "評估該引擎與現有策略庫的整合程度，撰寫技術摘要文件。"
+      "domain": "PropFirm 超防禦策略 — 新策略類型注入",
+      "insight": "TnSovereignPropFirmUltraV6 為 QuantAlgo 移植，定位於 PropFirm (自有資金交易公司) 的超防禦風控。與之前的 DCA/BBW 策略形成互補，暗示 PineScript 體系正在朝策略類型多樣化方向擴張。",
+      "actionable": "撰寫 PropFirm 策略的風險設定建議文件。"
     }
   ],
   "pillar_project_snapshots": {
     "pine-trading-strategies-git": {
-      "last_updated": "2026-05-27T18:52:57+08:00",
+      "last_updated": "2026-05-28T21:47:05+08:00",
       "status": "ACTIVE",
-      "focus": "130+ Pine Script v6 strategies with new Swarm Federation Consensus Engine",
-      "latest_commit": "b776b51",
-      "today_activity": "2 commits (TnSovereignDcaWebhookV6 + 蜂群聯邦共識引擎注入)"
+      "focus": "~133 Pine Script v6 strategies with Swarm Federation Consensus Engine",
+      "latest_commit": "328f1b4",
+      "today_activity": "3 commits (tn_fakeout_signal_quality_v6 + TnSovereignPropFirmUltraV6 + docs restructure)"
     },
     "three-kingdoms-map": {
       "last_updated": "2026-05-23T14:43:41+08:00",
@@ -79,6 +80,21 @@
       "last_updated": "2026-05-08T20:41:30+08:00",
       "status": "SOVEREIGN_MASTER_V20",
       "focus": "Geometric Thermodynamic Equilibrium & Adiabatic Expansion Sensing",
+      "latest_commit": "d1a606c",
+      "today_activity": "NONE"
+    },
+    "taonix": {
+      "last_updated": "2026-03-07T15:47:53+08:00",
+      "status": "PURGED_V27_RUNTIME",
+      "focus": "V27 hunter report — Mobile Agentic Expansion pivot",
+      "latest_commit": "8c8796b",
+      "today_activity": "NONE"
+    },
+    "my-astrology": {
+      "last_updated": "2026-01-29T16:25:18+08:00",
+      "status": "DORMANT",
+      "focus": "12 reports, 30+ templates, 1 skill suite for 紫微斗數 astrology",
+      "latest_commit": "2414ad6",
       "today_activity": "NONE"
     },
     "social-sentiment-observatory-git": {
@@ -97,22 +113,27 @@
       "key_signal": "BTC $66,691 digital granite support"
     },
     "tech-scouting-hub-git": {
-      "last_updated": "2026-03-19T11:30:00+08:00",
-      "status": "HIBERNATED",
+      "last_updated": "2026-04-20T12:04:59+08:00",
+      "status": "DORMANT",
       "key_signal": "Agent skill frameworks dominating, Unsloth edge fine-tuning mainstream"
     },
     "institutional-policy-hub-git": {
-      "last_updated": "2026-03-14T10:30:00+08:00",
+      "last_updated": "2026-03-31T23:30:00+08:00",
       "status": "HIBERNATED",
       "key_signal": "SEC recognized stablecoins, regulatory clarity 85%"
+    },
+    "public-apis-git": {
+      "last_updated": "2026-04-18T07:10:53+08:00",
+      "status": "DORMANT",
+      "key_signal": "Public APIs comprehensive research report completed"
     }
   },
   "system_resources": {
-    "disk_usage": "340G/468G (77%)",
-    "disk_change": "+6G since 2026-05-24",
-    "disk_daily_growth_rate_gb": 2.0,
+    "disk_usage": "341G/468G (77%)",
+    "disk_change": "±0G since 2026-05-27",
+    "disk_daily_growth_rate_gb": 0.0,
     "days_to_85pct_warning": 19,
     "days_to_95pct_critical": 39
   },
-  "audit_memo": "5/27 23:30 CST 排程執行。pine-trading-strategies-git 為今日唯一活躍專案 (2 commits: DCA webhook + 蜂群聯邦共識引擎)。磁碟 340G/468G (77%)，三日增 6G。Needle 休眠 11 天、Fiscal5Eye 休眠 71 天。其餘 24 個支柱專案均零活動。系統清理與記憶規訓將於本次排程中同步執行。"
+  "audit_memo": "5/28 23:30 CST 排程執行。pine-trading-strategies-git 為今日唯一活躍專案 (3 commits: SignalQuality + PropFirmUltra + docs restructure)，創本月單日最高提交數。磁碟穩定 341G/468G (77%)，與前日持平。Needle 12 天/Fiscal5Eye 72 天/Astrology 119 天休眠。TeleNexus-Core 目錄不存在 (從未被建立)。系統清理與 Memoria prune 將同步執行。"
 }
