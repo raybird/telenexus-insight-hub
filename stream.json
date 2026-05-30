@@ -1,81 +1,89 @@
 {
-  "version": "v26.0529.2330",
+  "version": "v26.0530.2330",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-05-29T23:30:13+08:00",
+  "timestamp": "2026-05-30T23:30:13+08:00",
   "global_evolution_status": {
     "sovereignty_level": "SOVEREIGN_DOMINION_V26_EDGE",
     "core_breakthroughs": [
-      "On-Device_SLM_Tool_Calling_Realization",
-      "Traditional_Chinese_Expert_Finetuning",
-      "SAN_Architecture_Performance_Audit",
-      "FFN-less_Transformer_Edge_Efficiency",
-      "Needle_26M_Model_Finetuning_Completed",
-      "Pine_Script_v6_Strategy_Automation",
-      "Three_Kingdoms_Map_91_Events_Deployed",
-      "TnSovereignDcaWebhookV6_DCA_Grid_Engine",
-      "蜂群聯邦共識引擎完整注入",
-      "TnSovereignPropFirmUltraV6_PropFirm_超防禦"
+      "v5.0.0_Orchestration_Protocol_Dogfood_Completed",
+      "3-Host_Cross_Validation_(Claude_Codex_Antigravity)",
+      "4_New_Pine_Script_v6_Strategies_(142_total)",
+      "Tao_of_Coding_Protocol_v5_Documentation_Suite",
+      "23/23_BATS_Tests_Green_All_CI_Passing",
+      "VAMO_MACD_WaveTrend_SuperTrend_v6_Sovereign_Fork"
     ],
     "project_milestones": {
-      "PineScript_v6": "133 strategies. No commits today (cool-down after 5/28 peak of 3 commits).",
-      "Needle": "Fine-tuned 26M JAX/Flax model. Dormant since 2026-05-16 (13 days).",
-      "Three_Kingdoms_Map": "91 events Angular+NgRx+Leaflet. Dormant since 2026-05-23 (6 days).",
-      "Fiscal5Eye": "TW50 stock analysis. Dormant since 2026-03-17 (73 days).",
-      "Kronos": "Peak v26.0508.2041. Dormant since 2026-05-08 (21 days).",
-      "Astrology": "12 reports, 30+ templates. Dormant since 2026-01-29 (121 days)."
+      "PineScript_v6": "142 sovereign strategies (+4 today: ValueAreaRejection, AdaptiveRiskRegime, ChandelierFlipRadar, SmoothTrendRadar). Version v26.0530.1340.",
+      "Tao_of_Coding": "v5.0.0 protocol milestone. First end-to-end dogfood run completed. 3-host cross-validation successful. 12+ docs updated, 23 bats tests, CI green.",
+      "Needle": "26M JAX/Flax finetuned model. Dormant since 2026-05-16 (14 days).",
+      "Three_Kingdoms_Map": "91 events Angular+NgRx+Leaflet. Dormant since 2026-05-23 (7 days).",
+      "Fiscal5Eye": "TW50 stock analysis. Dormant since 2026-03-17 (74 days).",
+      "Kronos": "Peak v26.0508.2041. Dormant since 2026-05-08 (22 days).",
+      "Astrology": "12 reports, 30+ templates. Dormant since 2026-01-29 (122 days)."
     }
   },
   "high_signal_insights": [
     {
-      "domain": "全域停機日 — 31/31 專案零提交",
-      "insight": "本日所有追蹤支柱專案（31 個 .git 倉庫）均無新提交。這是 TeleNexus 排程監控以來首次出現 100% 靜止日。可能為 5/28 PineScript 高峰 (3 commits) 後的系統冷卻期。",
-      "actionable": "觀察明日是否恢復活性；若連續 2 日零活動，應考慮啟動蜂群共識引擎的 PineScript 測試整合作為強制觸發。"
+      "domain": "Tao_of_Coding_v5.0.0_Dogfood_Milestone",
+      "insight": "本日完成 v5.0.0 架構首次端到端狗食測試。Explorer→Fixer(TDD)→Reviewer→Orchestrator 路由鏈在 3 個獨立主機（Claude Code、Codex CLI、Antigravity）驗證成功。23/23 BATS 測試、shellcheck、CI 全部綠燈。",
+      "actionable": "v5.0.0 已達正式發布標準。下一步規劃 v5.1.0：將 orchestration 協議整合至 TeleNexus-Core 排程系統中。"
     },
     {
-      "domain": "磁碟 341G/468G (77%) — 連續持平第 2 日",
-      "insight": "磁碟用量維持 341G (77%)，無增長。system-cleanup 與 git gc 效應穩定。預估 19 天後達 85% 警戒線。",
-      "actionable": "system-cleanup 按時執行即可，暫無主動清理必要。"
+      "domain": "PineScript_v6_+4_策略_達_142",
+      "insight": "本日新增 4 支 sovereign 策略（Value Area Rejection / Adaptive Risk Regime / Chandelier Flip Radar / Smooth Trend Radar），全部為 v6 Pine Script 格式。倉庫累計 142 策略，版本推進至 v26.0530.1340。",
+      "actionable": "142 策略接近階段性上限（150）。建議下次 session 審視策略組合多樣性，避免重複模式，並啟動效能回測管線。"
     },
     {
-      "domain": "TeleNexus-Core 目錄從未被建立",
-      "insight": "多次記憶中提及 TeleNexus-Core 路徑，但 /app/workspace/ 下不存在此目錄，也無 git 初始化記錄。可能為已廢棄的計畫路徑或未來擴張保留名。",
-      "actionable": "確認是否需建立該目錄，或從記憶系統中移除該引用以避免持續追蹤偏差。"
+      "domain": "長期休眠專案累計 5 個",
+      "insight": "Astrology (122d) / Fiscal5Eye (74d) / Taonix (83d) / Needle (14d) / Three_Kingdoms_Map (7d)。休眠趨勢擴大至 5 個專案。系統目前以 PineScript + Tao_of_Coding 為雙核心驅動。",
+      "actionable": "排入 v27 路線圖議程：正式封存 vs. 復活排程決策點。建議保持 Needle 活躍（14d 仍在可接受範圍），其餘列入休眠觀察清單。"
     },
     {
-      "domain": "長期休眠專案累計 4 個 >60 天無活動",
-      "insight": "Astrology (121d)、Fiscal5Eye (73d)、Taonix (83d)、Needle (13d)。休眠趨勢持續加深，但專案資產（報告、策略、模型）仍具參考價值。",
-      "actionable": "下次大版本 (v27) 規劃時決定是否正式封存或啟動復活排程。"
+      "domain": "磁碟 341G/468G (77%) — 連續持平第 3 日",
+      "insight": "磁碟用量維持 341G/468G (77%)，連續第 3 日無增長。system-cleanup 與 git gc 效應穩定。預估 19 天後達 85% 警戒線。",
+      "actionable": "system-cleanup 按時執行即可。若進入 80% 區間則啟動主動清理（container prune + npm cache clean）。"
+    },
+    {
+      "domain": "TeleNexus-Core 目錄仍不存在",
+      "insight": "stream.json 及記憶系統多次提及 TeleNexus-Core 路徑，但 /app/workspace/ 下仍無此目錄。可能為未來 v27 架構擴張保留名。",
+      "actionable": "建議於 v27 規劃會議中確認是否建立 TeleNexus-Core 作為統籌目錄，或從記憶系統清除該殘留引用。"
     }
   ],
   "pillar_project_snapshots": {
     "pine-trading-strategies-git": {
-      "last_updated": "2026-05-28T21:47:05+08:00",
-      "status": "ACTIVE_COOLING",
-      "focus": "~133 Pine Script v6 strategies with Swarm Federation Consensus Engine",
-      "latest_commit": "328f1b4",
-      "today_activity": "NONE (post-peak cool-down)"
+      "last_updated": "2026-05-30T13:40:00+08:00",
+      "status": "ACTIVE (+4 strategies)",
+      "focus": "142 Pine Script v6 strategies. Latest: ValueAreaRejection, AdaptiveRiskRegime, ChandelierFlipRadar, SmoothTrendRadar",
+      "latest_version": "v26.0530.1340",
+      "today_activity": "4 new strategies added (4 .pine + 4 .md + README + index.html)"
+    },
+    "tao-of-coding": {
+      "last_updated": "2026-05-30T23:30:00+08:00",
+      "status": "v5.0.0 PROTOCOL_MILESTONE_REACHED",
+      "focus": "Agent-as-orchestrator architecture, 12+ docs, 23 bats tests, CI green",
+      "today_activity": "117 files modified. Dogfood run completed. 3-host cross-validation. Full doc suite."
     },
     "three-kingdoms-map": {
       "last_updated": "2026-05-23T14:43:41+08:00",
-      "status": "LIVE_ON_GITHUB_PAGES",
+      "status": "LIVE_ON_GITHUB_PAGES_DORMANT (7d)",
       "focus": "91-event interactive map",
       "today_activity": "NONE"
     },
     "needle": {
       "last_updated": "2026-05-16T23:33:26+08:00",
-      "status": "FINETUNED_DORMANT (13d)",
+      "status": "FINETUNED_DORMANT (14d)",
       "focus": "26M JAX/Flax SLM",
       "today_activity": "NONE"
     },
     "fiscal5eye": {
       "last_updated": "2026-03-17T17:21:18+08:00",
-      "status": "MAINTENANCE_DORMANT (73d)",
+      "status": "MAINTENANCE_DORMANT (74d)",
       "focus": "TW50 stock analysis",
       "today_activity": "NONE"
     },
     "kronos-replication-git": {
       "last_updated": "2026-05-08T20:41:30+08:00",
-      "status": "SOVEREIGN_MASTER_V20 (21d)",
+      "status": "SOVEREIGN_MASTER_V20 (22d)",
       "today_activity": "NONE"
     },
     "taonix": {
@@ -85,17 +93,17 @@
     },
     "my-astrology": {
       "last_updated": "2026-01-29T16:25:18+08:00",
-      "status": "DORMANT (121d)",
+      "status": "DORMANT (122d)",
       "focus": "12 reports",
       "today_activity": "NONE"
     }
   },
   "system_resources": {
     "disk_usage": "341G/468G (77%)",
-    "disk_change": "±0G since 2026-05-28",
+    "disk_change": "±0G since 2026-05-28 (3 consecutive days flat)",
     "disk_daily_growth_rate_gb": 0.0,
     "days_to_85pct_warning": 19,
     "days_to_95pct_critical": 39
   },
-  "audit_memo": "5/29 23:30 CST 排程執行。全域休眠 — 31 個支柱專案零提交。磁碟持平 341G/468G (77%)。Astrology 121 天/Fiscal5Eye 73 天/Needle 13 天休眠。TeleNexus-Core 目錄仍不存在。system-cleanup 與 Memoria prune 將同步執行。"
+  "audit_memo": "5/30 23:30 CST 排程執行。雙核心活躍日：Tao_of_Coding v5.0.0 dogfood 里程碑（117 files, 23/23 tests, 3-host validated）+ PineScript +4 策略達 142（v26.0530.1340）。休眠專案擴大至 5 個。磁碟持平 341G/468G (77%) 連續第 3 日。TeleNexus-Core 仍不存在。system-cleanup 與 Memoria prune 將同步執行。"
 }
