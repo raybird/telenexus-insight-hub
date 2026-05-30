@@ -1,22 +1,19 @@
 {
-  "system_version": "v26.0324.1445",
-  "last_updated": "2026-03-24T14:45:00+08:00",
+  "system_version": "v26.0531.0630",
+  "last_updated": "2026-05-31T06:30:30+08:00",
   "timezone": "Asia/Taipei (CST)",
   "nodes": {
     "telenexus-insight-hub": {
-      "version": "v26.0324.0930",
+      "version": "v26.0531.0630",
       "repo": "telenexus-insight-hub",
-      "status": "COMMAND_ACTIVE"
+      "status": "COMMAND_ACTIVE",
+      "insight_count": 144
     },
-    "webdota": {
-      "version": "v26.0324.0400",
-      "repo": "webdota",
-      "status": "INDEPENDENT"
-    },
-    "ghost-grid": {
-      "version": "v26.0324.1630",
-      "repo": "telenexus-ghost-grid",
-      "status": "FIXED_P2P_PROBE"
+    "pine-trading-strategies": {
+      "version": "v26.0531.0630",
+      "repo": "pine-trading-strategies-git",
+      "status": "SOVEREIGN_144_STRATEGIES_ACTIVE",
+      "latest_additions": "MelgoSequence, WaveTrendV4"
     },
     "crypto-market-pulse": {
       "version": "v26.0324.0800",
@@ -27,6 +24,11 @@
       "version": "v26.0324.1400",
       "repo": "institutional-policy-hub",
       "status": "ALIGNED"
+    },
+    "telenexus-ghost-grid": {
+      "version": "v26.0324.1630",
+      "repo": "telenexus-ghost-grid",
+      "status": "FIXED_P2P_PROBE"
     }
   },
   "active_rfc": [
