@@ -1,101 +1,130 @@
 {
-  "version": "v26.0531.2330",
+  "version": "v26.0601.2334",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-05-31T23:30:16+08:00",
+  "timestamp": "2026-06-01T23:34:39+08:00",
   "global_evolution_status": {
     "sovereignty_level": "SOVEREIGN_DOMINION_V26_EDGE",
     "core_breakthroughs": [
-      "144 Pine Script v6 Strategies (+4 today: MelgoSeq, WaveTrendV4, ChandelierFlipRadar, SmoothTrendRadar)",
-      "TnSovereignScalpingProV6 重大升級 — 11 項模組優化移植自 KEBOSLABS Scalping Pro v3（V6 相容性修復 + ATR 自適應動態止損 + 多時框過濾 + 訂單阻塞邏輯 + 自適應風險矩陣 + DCA 網格 + 尾盤管理模組 + 回測加速 + Webhook 輸出 + 策略框架分層重構 + 註解中文化）",
-      "Melgo Sequence — 六態價格結構分類器（HL2/HLC3/OHLC4 排序狀態機 + MTF 共識投票 + Spread 信心閾值，奠基 SSRN 6658238 學術論文）",
-      "Tao_of_Coding v5.0.0 文檔化里程碑 — 穩定（今日無變更）",
+      "144 Pine Script v6 Strategies — 今日無新增（全域靜默）",
+      "TnSovereignScalpingProV6 KEBOSLABS 11-module upgrade — 穩定（昨日 #78 完成）",
+      "Tao_of_Coding v5.0.0 文檔化里程碑 — 穩定",
       "磁碟用量 79% — 持續監控中"
     ],
     "project_milestones": {
-      "PineScript_v6": "144 sovereign strategies (+4 today: MelgoSeq, WaveTrendV4, ChandelierFlipRadar, SmoothTrendRadar). Version v26.0531.1830.",
-      "Tao_of_Coding": "v5.0.0 protocol milestone. Stable since 5/30. No changes today.",
-      "Needle": "26M JAX/Flax finetuned model. Dormant since 2026-05-16 (15 days).",
-      "Three_Kingdoms_Map": "91 events Angular+NgRx+Leaflet. Dormant since 2026-05-23 (8 days).",
-      "Fiscal5Eye": "TW50 stock analysis. Dormant since 2026-03-17 (75 days).",
-      "Kronos": "Peak v26.0508.2041. Dormant since 2026-05-08 (23 days).",
-      "Astrology": "12 reports, 30+ templates. Dormant since 2026-01-29 (123 days)."
+      "PineScript_v6": "144 sovereign strategies. Version v26.0531.1830. No activity today.",
+      "Tao_of_Coding": "v5.0.0 PROTOCOL_MILESTONE — STABLE. No changes today.",
+      "Needle": "26M JAX/Flax finetuned model. Dormant since 2026-05-16 (16 days).",
+      "Three_Kingdoms_Map": "91 events Angular+NgRx+Leaflet. Dormant since 2026-05-23 (9 days).",
+      "Fiscal5Eye": "TW50 stock analysis. Dormant since 2026-03-17 (76 days).",
+      "Kronos": "Peak v26.0508.2041. Dormant since 2026-05-08 (24 days).",
+      "Astrology": "12 reports, 30+ templates. Dormant since 2026-01-29 (124 days).",
+      "Crypto_Market_Pulse": "Last active v26.0331.0800. Dormant since 2026-03-31 (62 days).",
+      "Social_Sentiment": "Last active v26.0331.2330. Dormant since 2026-03-31 (62 days).",
+      "Tech_Scouting": "Last active v26.0420.1204. Dormant since 2026-04-20 (42 days).",
+      "Physical_Intelligence": "Last active v26.0331.1530. Dormant since 2026-03-31 (62 days).",
+      "Institutional_Policy": "Last active v26.0331.2230. Dormant since 2026-03-31 (62 days)."
     }
   },
   "high_signal_insights": [
     {
-      "domain": "ScalpingProV6_KEBOSLABS_移植_11_模組",
-      "insight": "今日 #78 任務將 TnSovereignScalpingProV6 自 v6 基礎版本升級為 KEBOSLABS Scalping Pro v3 的 11 項優化模組移植版。關鍵改進包括：V6 語法相容性修復、ATR 自適應動態止損、多時框趨勢過濾、訂單阻塞邏輯、自適應風險矩陣、DCA 網格（網格層數+間距參數化）以及尾盤管理模組。此升級使 ScalpingProV6 從基本版躍升為具備完整資金管理與多情境應對的高階剝頭皮策略。",
-      "actionable": "建議將此 11 模組框架抽象化為 lib_scalping_framework_v6，供其他剝頭皮策略（如 FlowZone、VolumeProfileScalp）共用。排入 v27 路線圖。"
+      "domain": "全域靜默_2026-06-01",
+      "insight": "今日為 2026 年 6 月第一天，所有 12 個支柱專案均無提交紀錄。這是自 5/28 以來第一次出現全零活動日（5/28 也曾有過 31 專案零提交的記錄）。此現象符合週末/月初邊界效應，但休眠專案數量從 5/31 的 5 個擴大至 12 個。",
+      "actionable": "建議在 v27 路線圖中安排『活躍度審計』：識別哪些專案該封存、哪些該重啟、哪些需要自動化排程維持脈搏。"
     },
     {
-      "domain": "總策略數_144_逼近瓶頸",
-      "insight": "策略數穩定在 144（+4 自 #76），#78 為既有策略升級而非新增。144 逼近 150 管理上限。策略類別多元性足以覆蓋趨勢、動量、反轉、剝頭皮、結構分析、聯邦共識六大類別。",
-      "actionable": "建議下回排程觸發策略審計：刪除重複性/低品質策略，騰出名額給高信號新策略。或將管理上限提升至 200。"
+      "domain": "休眠專案擴散至_12_個",
+      "insight": "休眠天數統計：Astrology (124d) / Fiscal5Eye (76d) / Taonix (84d) / Crypto_Market_Pulse (62d) / Social_Sentiment (62d) / Physical_Intelligence (62d) / Institutional_Policy (62d) / Tech_Scouting (42d) / Kronos (24d) / Needle (16d) / Three_Kingdoms_Map (9d)。僅 PineScript 與 Tao_of_Coding 仍活躍。",
+      "actionable": "建議將 Crypto_Market_Pulse / Social_Sentiment / Physical_Intelligence / Institutional_Policy 四個 62 天休眠專案列入下週復活排程，恢復市場脈動與情緒監測的能力。"
     },
     {
-      "domain": "休眠專案_5_個_無變化",
-      "insight": "休眠天數：Astrology (123d) / Fiscal5Eye (75d) / Taonix (83d) / Needle (15d) / Three_Kingdoms_Map (8d)。無任何今日活動紀錄。",
-      "actionable": "建議在 v27 路線圖中排入正式封存/復活決策會議。"
-    },
-    {
-      "domain": "磁碟用量_79%_高水位",
-      "insight": "磁碟用量 351G / 468G（79%），較前次 06:30 的預估值有所上升。接近 80% 警戒線。system-cleanup 將在此次排程末尾執行。",
-      "actionable": "若 system-cleanup 後仍 >78%，建議在下次排程執行深度清理（容器日誌輪替、npm/yarn cache、docker prune）。"
+      "domain": "磁碟用量_79%_連續_3_天",
+      "insight": "磁碟用量 351G / 468G（79%）已連續第三天維持在相同水位。79% 仍接近 80% 警戒線但無增長，推測前次 system-cleanup 有效控制了碎片增長。",
+      "actionable": "建議本輪執行 system-cleanup 後若仍 >78%，安排深度清理（npm cache prune、容器映像清理、git gc --aggressive）。"
     }
   ],
   "pillar_project_snapshots": {
     "pine-trading-strategies-git": {
-      "last_updated": "2026-05-31T21:25:13+08:00",
-      "status": "ACTIVE (144 strategies, 2 commits today)",
-      "focus": "144 Pine Script v6 strategies. #76: +4 new (MelgoSeq, WaveTrendV4, ChandelierFlipRadar, SmoothTrendRadar). #78: ScalpingProV6 KEBOSLABS 11-module upgrade.",
+      "last_updated": "2026-06-01T23:34:39+08:00",
+      "status": "ACTIVE (144 strategies, 0 commits today)",
+      "focus": "144 Pine Script v6 strategies at v26.0531.1830. ScalpingProV6 KEBOSLABS 11-module upgrade complete.",
       "latest_version": "v26.0531.1830",
-      "today_activity": "2 commits: #76 (+4 strategies, 144 total), #78 (ScalpingProV6 upgrade, 11 modules from KEBOSLABS Scalping Pro v3)"
+      "today_activity": "NONE — 全域靜默日"
     },
     "tao-of-coding": {
       "last_updated": "2026-05-31T06:30:00+08:00",
       "status": "v5.0.0 PROTOCOL_MILESTONE — STABLE",
       "focus": "Agent-as-orchestrator architecture, 12+ docs, 23 bats tests, CI green",
-      "today_activity": "Insight hub routine sync. No Tao changes today."
+      "today_activity": "NONE — 全域靜默日"
     },
     "three-kingdoms-map": {
       "last_updated": "2026-05-23T14:43:41+08:00",
-      "status": "LIVE_ON_GITHUB_PAGES_DORMANT (8d)",
+      "status": "LIVE_ON_GITHUB_PAGES_DORMANT (9d)",
       "focus": "91-event interactive map",
       "today_activity": "NONE"
     },
     "needle": {
       "last_updated": "2026-05-16T23:33:26+08:00",
-      "status": "FINETUNED_DORMANT (15d)",
+      "status": "FINETUNED_DORMANT (16d)",
       "focus": "26M JAX/Flax SLM",
       "today_activity": "NONE"
     },
     "fiscal5eye": {
       "last_updated": "2026-03-17T17:21:18+08:00",
-      "status": "MAINTENANCE_DORMANT (75d)",
+      "status": "MAINTENANCE_DORMANT (76d)",
       "focus": "TW50 stock analysis",
       "today_activity": "NONE"
     },
     "kronos-replication-git": {
       "last_updated": "2026-05-08T20:41:30+08:00",
-      "status": "SOVEREIGN_MASTER_V20 (23d)",
+      "status": "SOVEREIGN_MASTER_V20 (24d)",
+      "today_activity": "NONE"
+    },
+    "crypto-market-pulse-git": {
+      "last_updated": "2026-03-31T08:00:00+08:00",
+      "status": "DORMANT (62d)",
+      "focus": "BTC market pulse analysis",
+      "today_activity": "NONE"
+    },
+    "social-sentiment-observatory-git": {
+      "last_updated": "2026-03-31T23:30:00+08:00",
+      "status": "DORMANT (62d)",
+      "focus": "Global sentiment monitoring",
+      "today_activity": "NONE"
+    },
+    "physical-intelligence-hub-git": {
+      "last_updated": "2026-03-31T15:30:00+08:00",
+      "status": "DORMANT (62d)",
+      "focus": "Physical assets & commodities intelligence",
+      "today_activity": "NONE"
+    },
+    "institutional-policy-hub-git": {
+      "last_updated": "2026-03-31T22:30:00+08:00",
+      "status": "DORMANT (62d)",
+      "focus": "Regulatory & policy intelligence",
+      "today_activity": "NONE"
+    },
+    "tech-scouting-hub-git": {
+      "last_updated": "2026-04-20T12:04:00+08:00",
+      "status": "DORMANT (42d)",
+      "focus": "GitHub trending tech scouting",
       "today_activity": "NONE"
     },
     "taonix": {
       "last_updated": "2026-03-07T15:47:53+08:00",
-      "status": "PURGED_V27_RUNTIME (83d)",
+      "status": "PURGED_V27_RUNTIME (84d)",
       "today_activity": "NONE"
     },
     "my-astrology": {
       "last_updated": "2026-01-29T16:25:18+08:00",
-      "status": "DORMANT (123d)",
+      "status": "DORMANT (124d)",
       "focus": "12 reports",
       "today_activity": "NONE"
     }
   },
   "system_resources": {
     "disk_usage": "351G / 468G (79%)",
-    "disk_change": "+0 vs 06:30 snapshot",
+    "disk_change": "±0 vs 5/31 23:30 snapshot",
     "notes": "system-cleanup 將於本次排程末尾執行"
   },
-  "audit_memo": "5/31 23:30 CST 排程 #78 執行。PineScript 策略維持 144 筆（v26.0531.1830）：#76 新增 4 策略 (+MelgoSeq, +WaveTrendV4, +ChandelierFlipRadar, +SmoothTrendRadar)，#78 將 ScalpingProV6 升級為 KEBOSLABS Scalping Pro v3 11 模組移植版。休眠專案 5 個持平。磁碟 79% 接近警戒。TeleNexus-Core 仍不存在。"
+  "audit_memo": "6/1 23:34 CST 排程觸發。全域靜默日 — 12 個支柱專案零提交。PineScript 維持 144 策略（v26.0531.1830），ScalpingProV6 KEBOSLABS 移植穩定。休眠專案擴散至 12 個，僅 PineScript 與 Tao_of_Coding 仍活躍。磁碟 79% 連續三天持平。system-cleanup + memoria 整理將於此輪執行。"
 }
