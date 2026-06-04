@@ -1,162 +1,162 @@
 {
-  "version": "v27.0603.2330",
+  "version": "v28.0604.2335",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-06-03T23:30:26+08:00",
+  "timestamp": "2026-06-04T23:35:49+08:00",
   "global_evolution_status": {
-    "sovereignty_level": "SOVEREIGN_DOMINION_V27_EDGE",
+    "sovereignty_level": "SOVEREIGN_DOMINION_V28_EDGE",
     "core_breakthroughs": [
-      "144 Pine Script v6 Strategies — 今日無新增（連續第3日全域靜默）",
-      "TnSovereignScalpingProV6 KEBOSLABS 11-module upgrade — 穩定（#78 完成後第3日）",
-      "Tao_of_Coding v5.0.0 文檔化里程碑 — 穩定無變動",
-      "磁碟用量 81% — 較昨日再增 1%，持續突破警戒線"
+      "連續第4日全域靜默 — 17支柱專案零提交",
+      "144 Pine Script v6 Strategies — 無新增（連續第4日）",
+      "pine-trading-strategies-git 出現 10 個未追蹤新策略檔案（潛在 V6 升級活動）",
+      "磁碟用量 81% — 持平昨日，未再惡化"
     ],
     "project_milestones": {
-      "PineScript_v6": "144 sovereign strategies. Version v26.0531.1830. No commits for 3 days.",
-      "Tao_of_Coding": "v5.0.0 PROTOCOL_MILESTONE — STABLE. No changes for 3 days.",
-      "Needle": "26M JAX/Flax finetuned model. Dormant since 2026-05-16 (18 days).",
-      "Three_Kingdoms_Map": "91 events Angular+NgRx+Leaflet. Dirty tree (docs/PLANNING.md untracked). Dormant since 2026-05-23 (11 days).",
-      "Fiscal5Eye": "TW50 stock analysis. Dormant since 2026-03-17 (78 days).",
-      "Kronos": "Peak v26.0508.2041. Dormant since 2026-05-08 (26 days).",
-      "Astrology": "12 reports, 30+ templates. Dormant since 2026-01-29 (126 days).",
-      "Crypto_Market_Pulse": "Last active v26.0331.0800. Dormant since 2026-03-31 (64 days).",
-      "Social_Sentiment": "Last active v26.0331.2330. Dormant since 2026-03-31 (64 days).",
-      "Tech_Scouting": "Last active v26.0420.1204. Dormant since 2026-04-20 (44 days).",
-      "Physical_Intelligence": "Last active v26.0331.1530. Dormant since 2026-03-31 (64 days).",
-      "Institutional_Policy": "Last active v26.0331.2230. Dormant since 2026-03-31 (64 days)."
+      "PineScript_v6": "144 sovereign strategies. Dirty tree detected: 1 modified + 10 untracked files (new V6 strategies). 0 commits today.",
+      "Tao_of_Coding": "v5.0.0 PROTOCOL_MILESTONE — STABLE. No changes for 4 days.",
+      "Needle": "26M JAX/Flax finetuned model. Dormant since 2026-05-16 (19 days).",
+      "Three_Kingdoms_Map": "91 events Angular+NgRx+Leaflet. Dirty tree (docs/PLANNING.md untracked). Dormant since 2026-05-23 (12 days).",
+      "Fiscal5Eye": "TW50 stock analysis. Dormant since 2026-03-17 (79 days).",
+      "Kronos": "Peak v26.0508.2041. Dormant since 2026-05-08 (27 days).",
+      "Astrology": "12 reports, 30+ templates. Dormant since 2026-01-29 (127 days).",
+      "Crypto_Market_Pulse": "Last active v26.0331.0800. Dormant since 2026-03-31 (65 days).",
+      "Social_Sentiment": "Last active v26.0331.2330. Dormant since 2026-03-31 (65 days).",
+      "Tech_Scouting": "Last active v26.0420.1204. Dormant since 2026-04-20 (45 days).",
+      "Physical_Intelligence": "Last active v26.0331.1530. Dormant since 2026-03-31 (65 days).",
+      "Institutional_Policy": "Last active v26.0331.2230. Dormant since 2026-03-31 (65 days)."
     }
   },
   "high_signal_insights": [
     {
-      "domain": "全域靜默_第3日_2026-06-03",
-      "insight": "連續第3日全域零提交，31 個專案無任何 git 活動。這是自啟用以來最長的持續靜默期。6 個專案存在髒工作樹（crypto-monitor、three-kingdoms-map、telenexus-ghost-grid、git-workflow-git、system-cleanup、webdota-git），其中 webdota-git 新增為 dirty（docs/architecture.md、src/core/NetworkManager.ts 已修改，CLAUDE.md、src/utils/WBASigner.ts 未追蹤）。",
-      "actionable": "v27 版啟動前必須處理髒工作樹：crypto-monitor（NetworkManager.ts + WBASigner.ts）與 webdota-git（NetworkManager.ts + 簽章工具）優先級最高，system-cleanup 與 three-kingdoms-map 次之。"
+      "domain": "全域靜默_第4日_2026-06-04",
+      "insight": "連續第4日全域零提交，所有 17 支柱專案無 git 活動。pine-trading-strategies-git 出現異常：1 個已修改檔案 + 10 個未追蹤的 Pine Script V6 新策略檔案，可能為排程任務中斷或部分完成的程式碼生成。telenexus-ghost-grid 仍有 CLAUDE.md 未追蹤。",
+      "actionable": "pine-trading-strategies-git 的 10 個未追蹤策略檔案需優先確認：若為排程生成應完成 commit，若為殘留則 stash 清理。webdota-git 與 crypto-monitor 的 WBASigner.ts/NetworkManager.ts 問題同前，已累積第2日未處理。"
     },
     {
-      "domain": "休眠專案突破臨界線_6_專案達_64_天",
-      "insight": "Crypto_Market_Pulse、Social_Sentiment、Physical_Intelligence、Institutional_Policy 等 4 專案從 63 天邁入 64 天休眠。Astrology 達 126 天、Fiscal5Eye 達 78 天。5 個專案同時處於 64 天休眠（含 Taonix 86 天），恢復成本快速上升中。",
-      "actionable": "v27 版須一次性決策：封存 Astrology (126d) 與 Fiscal5Eye (78d)；重啟 crypto-market-pulse、social-sentiment、physical-intelligence、institutional-policy 等 64 天臨界專案。"
+      "domain": "pine-trading-strategies-git_新髒樹_10_未追蹤策略",
+      "insight": "pine-trading-strategies-git 今日出現 1 個 modified 檔案及 10 個 untracked 檔案。這是一個重要信號 — 該專案過去 3 日完全靜默，突然出現新檔案可能表示：#1 排程任務中斷（最可能）、#2 手動操作未提交、#3 其他代理活動。此為自 5/31 (KEBOSLABS 11-module upgrade) 以來 pine-trading-strategies-git 首次有變更活動。",
+      "actionable": "立即檢查 pine-trading-strategies-git 的未追蹤檔案內容，判斷是否為有效的策略升級。若是，應整合提交；否則 git clean 清理以恢復乾淨狀態。"
     },
     {
-      "domain": "webdota-git_新髒樹_NetworkManager_與_WBASigner",
-      "insight": "webdota-git 在過去 24 小時內出現未提交的變更：docs/architecture.md 與 src/core/NetworkManager.ts 已被修改，新增 src/utils/WBASigner.ts（Web3 錢包簽章工具）與 CLAUDE.md。此為新的開發活動但尚未 commit，可能是某個進行的功能開發中斷。",
-      "actionable": "優先檢查 webdota-git 的 WBASigner.ts 完整性並決定是否推進。若為排程任務中斷，應完成 commit 或 stash。"
+      "domain": "休眠專案_65_天臨界線擴散",
+      "insight": "Crypto_Market_Pulse、Social_Sentiment、Physical_Intelligence、Institutional_Policy 等 4 專案從 64 天休眠邁入 65 天。Astrology 達 127 天創新高、Fiscal5Eye 79 天。目前 12 個專案處於休眠狀態，6 個專案有髒工作樹。",
+      "actionable": "v28 版需啟動專案封存評估：Astrology (127d) 與 Fiscal5Eye (79d) 應正式封存；4 個 65 天臨界專案需決定重啟或封存。"
     },
     {
-      "domain": "磁碟用量_81%_持續惡化",
-      "insight": "磁碟用量 357G / 468G (81%)，較昨日 80% (+1%)、前日 79% (+2%) 持續上升。三日累計 +2% 增幅，速度略快。記憶體 6.7G/29G (23%) 正常。系統清理若未能降回 79% 以下，下週將觸及 83% 緊戒線。",
-      "actionable": "本輪 system-cleanup 執行後若仍 >80%，需啟動深度清理腳本：npm cache clean --force、清理舊 docker 映像層、對 pine-trading-strategies-git 等大型專案執行 git gc --aggressive --prune=now。"
+      "domain": "磁碟_81%_持平_未再惡化",
+      "insight": "磁碟用量 358G / 468G (81%)，與昨日持平。雖然未再增加 +1%，但仍處於警戒線之上。記憶體 6.7G/29G (23%) 正常。",
+      "actionable": "system-cleanup 執行後確認效果。若持續 81%，需於 v29 版前啟動 npm cache 清理與 git gc --aggressive --prune=now。"
     }
   ],
   "pillar_project_snapshots": {
     "pine-trading-strategies-git": {
-      "last_updated": "2026-06-03T23:30:26+08:00",
-      "status": "ACTIVE (144 strategies, 0 commits today)",
-      "focus": "144 Pine Script v6 strategies at v26.0531.1830. ScalpingProV6 KEBOSLABS 11-module upgrade stable.",
+      "last_updated": "2026-06-04T23:35:49+08:00",
+      "status": "ACTIVE BUT DIRTY (144 strategies, 0 commits today, 1 modified + 10 untracked)",
+      "focus": "144 Pine Script v6 strategies at v26.0531.1830. Dirty tree with 10 new V6 strategy files.",
       "latest_version": "v26.0531.1830",
-      "today_activity": "NONE — 連續第3日全域靜默"
+      "today_activity": "DIRTY — 10 untracked strategy files detected"
     },
     "tao-of-coding": {
-      "last_updated": "2026-06-03T23:30:26+08:00",
+      "last_updated": "2026-06-04T23:35:49+08:00",
       "status": "v5.0.0 PROTOCOL_MILESTONE — STABLE",
       "focus": "Agent-as-orchestrator architecture, 12+ docs, 23 bats tests, CI green",
-      "today_activity": "NONE — 連續第3日全域靜默"
+      "today_activity": "NONE — 連續第4日全域靜默"
     },
     "three-kingdoms-map": {
-      "last_updated": "2026-06-03T23:30:26+08:00",
-      "status": "LIVE_ON_GITHUB_PAGES_DIRTY (11d dormant, untracked docs/PLANNING.md)",
+      "last_updated": "2026-06-04T23:35:49+08:00",
+      "status": "LIVE_ON_GITHUB_PAGES_DIRTY (12d dormant, untracked docs/PLANNING.md)",
       "focus": "91-event interactive map",
       "today_activity": "NONE — dirty tree 需處理"
     },
     "needle": {
       "last_updated": "2026-05-16T23:33:26+08:00",
-      "status": "FINETUNED_DORMANT (18d)",
+      "status": "FINETUNED_DORMANT (19d)",
       "focus": "26M JAX/Flax SLM",
       "today_activity": "NONE"
     },
     "fiscal5eye": {
       "last_updated": "2026-03-17T17:21:18+08:00",
-      "status": "MAINTENANCE_DORMANT (78d)",
+      "status": "MAINTENANCE_DORMANT (79d)",
       "focus": "TW50 stock analysis",
       "today_activity": "NONE"
     },
     "kronos-replication-git": {
       "last_updated": "2026-05-08T20:41:30+08:00",
-      "status": "SOVEREIGN_MASTER_V20 (26d)",
+      "status": "SOVEREIGN_MASTER_V20 (27d)",
       "today_activity": "NONE"
     },
     "crypto-market-pulse-git": {
       "last_updated": "2026-03-31T08:00:00+08:00",
-      "status": "DORMANT (64d)",
+      "status": "DORMANT (65d)",
       "focus": "BTC market pulse analysis",
       "today_activity": "NONE"
     },
     "social-sentiment-observatory-git": {
       "last_updated": "2026-03-31T23:30:00+08:00",
-      "status": "DORMANT (64d)",
+      "status": "DORMANT (65d)",
       "focus": "Global sentiment monitoring",
       "today_activity": "NONE"
     },
     "physical-intelligence-hub-git": {
       "last_updated": "2026-03-31T15:30:00+08:00",
-      "status": "DORMANT (64d)",
+      "status": "DORMANT (65d)",
       "focus": "Physical assets & commodities intelligence",
       "today_activity": "NONE"
     },
     "institutional-policy-hub-git": {
       "last_updated": "2026-03-31T22:30:00+08:00",
-      "status": "DORMANT (64d)",
+      "status": "DORMANT (65d)",
       "focus": "Regulatory & policy intelligence",
       "today_activity": "NONE"
     },
     "tech-scouting-hub-git": {
       "last_updated": "2026-04-20T12:04:00+08:00",
-      "status": "DORMANT (44d)",
+      "status": "DORMANT (45d)",
       "focus": "GitHub trending tech scouting",
       "today_activity": "NONE"
     },
     "taonix": {
       "last_updated": "2026-03-07T15:47:53+08:00",
-      "status": "PURGED_V27_RUNTIME (86d)",
+      "status": "PURGED_V27_RUNTIME (87d)",
       "today_activity": "NONE"
     },
     "my-astrology": {
       "last_updated": "2026-01-29T16:25:18+08:00",
-      "status": "DORMANT (126d)",
+      "status": "DORMANT (127d)",
       "focus": "12 reports",
       "today_activity": "NONE"
     },
     "telenexus-ghost-grid": {
-      "last_updated": "2026-06-03T23:30:26+08:00",
+      "last_updated": "2026-06-04T23:35:49+08:00",
       "status": "DIRTY (untracked CLAUDE.md)",
       "today_activity": "NONE — dirty tree 需處理"
     },
     "git-workflow-git": {
-      "last_updated": "2026-06-03T23:30:26+08:00",
+      "last_updated": "2026-06-04T23:35:49+08:00",
       "status": "DIRTY (untracked scripts/)",
       "today_activity": "NONE — dirty tree 需處理"
     },
     "crypto-monitor": {
-      "last_updated": "2026-06-03T23:30:26+08:00",
+      "last_updated": "2026-06-04T23:35:49+08:00",
       "status": "DIRTY (modified docs/architecture.md, src/core/NetworkManager.ts; untracked CLAUDE.md, src/utils/WBASigner.ts)",
-      "today_activity": "NONE — dirty tree 需處理，NetworkManager.ts 與 WBASigner.ts 有修改中程式碼"
+      "today_activity": "NONE — dirty tree 需處理"
     },
     "system-cleanup": {
-      "last_updated": "2026-06-03T23:30:26+08:00",
+      "last_updated": "2026-06-04T23:35:49+08:00",
       "status": "DIRTY (modified scripts/cleanup.sh)",
       "today_activity": "NONE — dirty tree 需處理"
     },
     "webdota-git": {
-      "last_updated": "2026-06-03T23:30:26+08:00",
+      "last_updated": "2026-06-04T23:35:49+08:00",
       "status": "DIRTY (modified docs/architecture.md, src/core/NetworkManager.ts; untracked CLAUDE.md, src/utils/WBASigner.ts)",
-      "today_activity": "DIRTY — NetworkManager.ts 與 WBASigner.ts 有修改中程式碼"
+      "today_activity": "DIRTY — NetworkManager.ts 與 WBASigner.ts 持續未處理"
     }
   },
   "system_resources": {
-    "disk_usage": "357G / 468G (81%)",
-    "disk_change": "+4G vs 6/2 23:34 snapshot (+1%)",
+    "disk_usage": "358G / 468G (81%)",
+    "disk_change": "+1G vs 6/3 23:30 snapshot (持平 81%)",
     "memory": "6.7G / 29G (23%)",
     "load_avg": "N/A",
-    "notes": "磁碟突破 81% 警戒線。system-cleanup + memoria 將於本次排程末尾執行。"
+    "notes": "磁碟持平於 81% 警戒線。system-cleanup + memoria 將於本次排程末尾執行。"
   },
-  "audit_memo": "6/3 23:30 CST 排程觸發。連續第3日全域靜默 — 31 個專案零提交。6 個專案存在髒工作樹（crypto-monitor、three-kingdoms-map、telenexus-ghost-grid、git-workflow-git、system-cleanup、webdota-git），webdota-git 為新增髒樹。休眠專案擴散至 12 個，Astrology 達 126 天最長休眠紀錄。磁碟突破 81% 警戒線（357G/468G），三日累計 +2%。system-cleanup + memoria 將於此輪執行。系統記憶體正常（6.7G/29G, 23%）。"
+  "audit_memo": "6/4 23:35 CST 排程觸發。連續第4日全域靜默 — 17 支柱專案零提交。新信號：pine-trading-strategies-git 出現 10 個未追蹤策略檔案（自 5/31 以來首次活動）。6 個專案存在髒工作樹（pine-trading-strategies-git、crypto-monitor、three-kingdoms-map、telenexus-ghost-grid、git-workflow-git、system-cleanup），webdota-git 髒樹持續第2日。休眠專案擴散至 12 個，Astrology 達 127 天最長休眠紀錄。磁碟 81%（358G/468G），持平前日未惡化。system-cleanup + memoria 將於此輪執行。系統記憶體正常（6.7G/29G, 23%）。"
 }
