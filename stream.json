@@ -1,178 +1,178 @@
 {
-  "version": "v35.0615.2330",
+  "version": "v36.0616.2330",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-06-15T23:31:32+08:00",
+  "timestamp": "2026-06-16T23:30:05+08:00",
   "global_evolution_status": {
-    "sovereignty_level": "SOVEREIGN_DOMINION_V35_PINE_ACTIVE_ONLY",
+    "sovereignty_level": "SOVEREIGN_DOMINION_V36_PINE_CONTINUES",
     "core_breakthroughs": [
-      "6/15 為 pine-trading 獨力活動第 2 日（2 commits, +6 strategies），其餘 31 支柱專案全面靜默",
-      "pine-trading 連續第 15 日提交（6/1→6/15）：29 strategies (+6 today: Hull MA, Heikin Ashi, Fisher Transform; Chandelier Exit, Fakeout Confirmed, MTF Trend Entry), +992 lines",
-      "磁碟 395G/468G (89%) — 單日 +2G（393G→395G），增速維持 +2G/日（與 6/14 持平）",
-      "記憶體 5.1Gi/29Gi (18%) — 較 6/14 回升 +1.8Gi（3.3Gi→5.1Gi），系統自 6/14 20:48 重啟後運行 1 日 2.7h",
-      "system-cleanup 已清潔（6/14 23:33 執行），髒樹總數從 7 降至 6"
+      "6/16 為 pine-trading 獨力活動第 3 日（2 commits, +4 strategies），其餘 31 支柱專案全面靜默",
+      "pine-trading 連續第 16 日提交（6/1→6/16）：31 strategies (+4 today: Multi-Session Sweeps, WaveTrend Strategy; Footprint CVD, Parabolic SAR)",
+      "磁碟 395G/468G (89%) — 與 6/15 持平（395G→395G），增速歸零為 6/1 以來首見",
+      "記憶體 5.7Gi/29Gi (20%) — 較 6/15 +0.6Gi（5.1Gi→5.7Gi），系統自今日重啟後運行 15h",
+      "髒樹總數維持 6，但 crypto-monitor 達 108d 超越 webdota 78d 成最老髒樹"
     ],
     "project_milestones": {
-      "PineScript_v6": "29 strategies at v26.0615.1830 (+6 today). 15-day commit streak. +992 lines today. Hull MA, Heikin Ashi, Fisher Transform (0630); Chandelier Exit, Fakeout Confirmed, MTF Trend Entry (1830) added.",
-      "Tao_of_Coding": "v5.0.0+ — DORMANT. Last commit 6/7-10 range. No activity for 5 days.",
+      "PineScript_v6": "31 strategies at v26.0616.1830 (+4 today). 16-day commit streak. Multi-Session Sweeps, WaveTrend Strategy (0630); Footprint CVD, Parabolic SAR (1830) added.",
+      "Tao_of_Coding": "v5.0.0+ — DORMANT. Last commit ~6/7. No activity for 9 days.",
       "Needle": "N/A — Repository not found on disk.",
-      "Three_Kingdoms_Map": "91 events. DIRTY (docs/PLANNING.md untracked). Dormant since 5/23 (23 days).",
-      "Fiscal5Eye": "TW50 stock analysis. Dormant since 3/17 (90 days).",
-      "Kronos": "Peak v26.0508.2041. Dormant since 5/8 (38 days).",
-      "Astrology": "12 reports. Dormant since 1/29 (137 days) — 歷史新高.",
-      "Crypto_Market_Pulse": "Last active v26.0331.0800. Dormant 76 days.",
-      "Social_Sentiment": "Last active v26.0331.2330. Dormant 76 days.",
-      "Tech_Scouting": "Last commit 6/9. Dirty (4 files — index.html, stream.json, trending_raw.json modified; archives/2026-06-11_1200.html untracked). No 6/15 report (Monday, cron可能中斷).",
-      "Physical_Intelligence": "Last active v26.0331.1530. Dormant 76 days.",
-      "Institutional_Policy": "Last active v26.0331.2230. Dormant 76 days."
+      "Three_Kingdoms_Map": "91 events. DIRTY (docs/PLANNING.md untracked). Dormant since 5/23 (24 days).",
+      "Fiscal5Eye": "TW50 stock analysis. Dormant since 3/17 (91 days).",
+      "Kronos": "Peak v26.0508.2041. Dormant since 5/8 (39 days).",
+      "Astrology": "12 reports. Dormant since 1/29 (138 days) — 歷史新高.",
+      "Crypto_Market_Pulse": "Last active v26.0331.0800. Dormant 77 days.",
+      "Social_Sentiment": "Last active v26.0331.2330. Dormant 77 days.",
+      "Tech_Scouting": "Last commit 6/9. DIRTY (4 files — index.html, stream.json, trending_raw.json modified; archives/2026-06-11_1200.html untracked). 排程中斷第 7 日，無 6/16 報告.",
+      "Physical_Intelligence": "Last active v26.0331.1530. Dormant 77 days.",
+      "Institutional_Policy": "Last active v26.0331.2230. Dormant 77 days."
     }
   },
   "high_signal_insights": [
     {
-      "domain": "pine-trading_15日連續提交_29策略達陣_全域唯二動能日",
-      "insight": "6/15 為連續第 15 日提交（6/1→6/15），從 3 策略成長至 29 策略。今日 +6 為單日最大增幅（與 6/11 並列），涵蓋均線系（Hull MA, Heikin Ashi）、震盪系（Fisher Transform）、出場系（Chandelier Exit）、假突破確認（Fakeout Confirmed）、多時間框架趨勢（MTF Trend Entry）。pine-trading 已連續第 2 日維持全域唯一活動專案地位，其餘 31 個全面靜默。",
-      "actionable": "高信號。pine-trading 已從 6/1 的 3 策略成長 9.7× 至 29 策略。策略多樣性加速（今日覆蓋 5 個策略類別），15 日不間斷提交確認管道成熟。建議評估 30 策略後是否進入品質審計階段。"
+      "domain": "pine-trading_16日連續提交_31策略_獨力活動第3日",
+      "insight": "6/16 為連續第 16 日提交（6/1→6/16），從 3 策略成長至 31 策略（10.3×）。今日 +4 策略：Multi-Session Sweeps（多盤面掃描）、WaveTrend Strategy（波趨策略）、Footprint CVD（足跡累積量差）、Parabolic SAR（拋物線轉向）。pine-trading 獨力活動已進入第 3 日，其餘 31 支柱全面靜默。",
+      "actionable": "高信號。31 策略突破 30 關卡，昨日建議的品質審計階段應啟動。16 日不間斷提交確認管道成熟度已無需驗證。"
     },
     {
-      "domain": "全域靜默擴大_31支柱零提交_休眠全面惡化",
-      "insight": "6/15 有 31/32 支柱專案零提交，僅 pine-trading 獨活。Astrology 達 137 日歷史新高（+1d vs 6/14），Fiscal5Eye 90 日（+1d），4 專案 76 日（+1d）。休眠專案佔 78%（25/32），連續第 5 日維持此比例。",
-      "actionable": "中信號。休眠時鐘持續累加無逆轉跡象。Astrology (137d) 與 Fiscal5Eye (90d) 建議正式歸檔移出主動監控列表。"
+      "domain": "全域靜默持續第6日_休眠時鐘全線累加",
+      "insight": "6/16 有 31/32 支柱專案零提交，僅 pine-trading 獨活第 3 日。Astrology 138d（+1d→新高），Fiscal5Eye 91d（+1d），4 專案 77d（+1d），Tao 9d（+4d）。休眠佔比維持 78%（25/32）連續第 6 日。",
+      "actionable": "中信號。休眠無逆轉跡象。Astrology (138d) 與 Fiscal5Eye (91d) 應正式歸檔。crypto-monitor 108d 未列入前次監控，需補登。"
     },
     {
-      "domain": "磁碟增速持穩_89%持續_仍需關注",
-      "insight": "磁碟 395G/468G (89%)，單日 +2G（393G→395G）與 6/14 增速持平。距極限 73G（~36 日緩衝以目前 +2G/日）。git objects 與策略檔案新增為主要驅動。",
-      "actionable": "低信號。增速持穩為正面，但 89% 仍在警戒區。建議 90% 時啟用自動清理。"
+      "domain": "磁碟增速歸零_395G持平_89%警報暫緩",
+      "insight": "磁碟 395G/468G (89%)，與 6/15 完全持平（395G→395G），為 6/1 以來首見零增速日。距極限 73G。git objects 與策略檔案新增量在本日回落。",
+      "actionable": "低信號。增速歸零為正面信號，但 89% 仍在警戒區。若持續零增速可下修關注等級。"
     },
     {
-      "domain": "system-cleanup已清潔_髒樹總數降至6",
-      "insight": "system-cleanup 於 6/14 23:33 成功執行 v1.0.0 後轉為 CLEAN，使髒樹總數從 7 降至 6。webdota-git（~77d, 4 files）及 tech-scouting（~6d, 4 files）仍為最嚴重髒樹。curiosity-engine（~38d）、three-kingdoms-map（~23d）、ghost-grid、crypto-monitor 持續。",
-      "actionable": "中高信號。system-cleanup 清潔驗證排程機制有效。但 webdota (77d) 與 tech-scouting (6d+4files) 仍需優先處理。"
+      "domain": "system-cleanup未執行_髒樹總數維持6",
+      "insight": "system-cleanup 自 6/14 23:33 執行後未再觸發。髒樹維持 6 個：crypto-monitor 108d（新最老）、webdota 78d、telenexus-ghost-grid 78d、curiosity-engine 39d、three-kingdoms-map 24d、tech-scouting 7d。本期無髒樹數變化。",
+      "actionable": "中信號。crypto-monitor (108d) 超越 webdota 成為最老髒樹，需確認是否為誤報（untracked scripts/ 目錄可能為排程產物）。"
     },
     {
-      "domain": "tech-scouting週一排程中斷_6/9報告後無新提交_6/11存檔未處理",
-      "insight": "tech-scouting 自 6/9 後無新提交，6/11 archive 仍未提交。今日為週一（常規報告日）但無活動，暗示 cron 排程可能中斷或邏輯異常。髒樹含 3 個已修改檔案（index.html, stream.json, trending_raw.json）及 1 個未追蹤存檔。",
-      "actionable": "中信號。需檢查 tech-scouting cron 排程狀態。若為排程中斷，應在 6/16 前恢復，否則本週趨勢報告將完全中斷。"
+      "domain": "tech-scouting排程中斷第7日_仍無恢復跡象",
+      "insight": "tech-scouting 自 6/9 後無提交已滿 7 日，6/11 archive 持續未處理。本日為週二仍無任何活動，cron 中斷確認而非延遲。含 3 個已修改檔案（index.html, stream.json, trending_raw.json）及 1 個未追蹤存檔。",
+      "actionable": "高信號。排程中斷已達 7 日，本週趨勢報告（6/9→6/16）完全中斷。需立即介入修復 cron 排程或手動清理髒樹後重置。"
     }
   ],
   "pillar_project_snapshots": {
     "pine-trading-strategies-git": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
-      "status": "CLEAN (29 strategies, 2 commits today #9-#10)",
-      "focus": "15-day streak. v26.0615.1830. +6 strategies: Hull MA, Heikin Ashi, Fisher Transform (0630); Chandelier Exit, Fakeout Confirmed, MTF Trend Entry (1830).",
-      "latest_version": "v26.0615.1830",
-      "today_activity": "ACTIVE (+2 commits, +992 lines, +6 strategies)"
+      "last_updated": "2026-06-16T23:30:05+08:00",
+      "status": "CLEAN (31 strategies, 2 commits today #11-#12)",
+      "focus": "16-day streak. v26.0616.1830. +4 strategies: Multi-Session Sweeps, WaveTrend Strategy (0630); Footprint CVD, Parabolic SAR (1830).",
+      "latest_version": "v26.0616.1830",
+      "today_activity": "ACTIVE (+2 commits, +4 strategies)"
     },
     "tao-of-coding": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
+      "last_updated": "2026-06-16T23:30:05+08:00",
       "status": "v5.0.0+ — DORMANT",
       "focus": "Codex/AGY mode B testing",
-      "today_activity": "NONE (5 日無活動)"
+      "today_activity": "NONE (9 日無活動)"
     },
     "three-kingdoms-map": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
-      "status": "LIVE_ON_GITHUB_PAGES_DIRTY (23d dormant, untracked docs/PLANNING.md)",
+      "last_updated": "2026-06-16T23:30:05+08:00",
+      "status": "LIVE_ON_GITHUB_PAGES_DIRTY (24d dormant, untracked docs/PLANNING.md)",
       "focus": "91-event interactive map",
       "today_activity": "NONE — dirty tree 持續 (docs/PLANNING.md)"
     },
     "needle": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
+      "last_updated": "2026-06-16T23:30:05+08:00",
       "status": "NOT_FOUND_ON_DISK",
       "focus": "Repository missing from workspace",
       "today_activity": "MISSING"
     },
     "fiscal5eye": {
       "last_updated": "2026-03-17T17:21:18+08:00",
-      "status": "MAINTENANCE_DORMANT (90d)",
+      "status": "MAINTENANCE_DORMANT (91d)",
       "focus": "TW50 stock analysis",
       "today_activity": "NONE"
     },
     "kronos-replication-git": {
       "last_updated": "2026-05-08T20:41:30+08:00",
-      "status": "SOVEREIGN_MASTER_V20 (38d)",
+      "status": "SOVEREIGN_MASTER_V20 (39d)",
       "today_activity": "NONE"
     },
     "tech-scouting-hub-git": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
+      "last_updated": "2026-06-16T23:30:05+08:00",
       "status": "DIRTY (4 files — modified index.html, stream.json, trending_raw.json; untracked archives/2026-06-11_1200.html)",
-      "focus": "GitHub trending — no 6/15 report (Monday, cron可能中斷)",
-      "latest_report": "v26.0609.1200 (last committed). 6/11 archive still uncommitted.",
-      "today_activity": "NONE — dirty tree 持續含 6/11 archive；排程可能中斷"
+      "focus": "GitHub trending — 排程中斷第 7 日，無本週報告",
+      "latest_report": "v26.0609.1200 (last committed). No reports for 7 days.",
+      "today_activity": "NONE — cron 中斷確認，需緊急修復"
     },
     "crypto-market-pulse-git": {
       "last_updated": "2026-03-31T08:00:00+08:00",
-      "status": "DORMANT (76d)",
+      "status": "DORMANT (77d)",
       "focus": "BTC market pulse analysis",
       "today_activity": "NONE"
     },
     "social-sentiment-observatory-git": {
       "last_updated": "2026-03-31T23:30:00+08:00",
-      "status": "DORMANT (76d)",
+      "status": "DORMANT (77d)",
       "focus": "Global sentiment monitoring",
       "today_activity": "NONE"
     },
     "physical-intelligence-hub-git": {
       "last_updated": "2026-03-31T15:30:00+08:00",
-      "status": "DORMANT (76d)",
+      "status": "DORMANT (77d)",
       "focus": "Physical assets & commodities intelligence",
       "today_activity": "NONE"
     },
     "institutional-policy-hub-git": {
       "last_updated": "2026-03-31T22:30:00+08:00",
-      "status": "DORMANT (76d)",
+      "status": "DORMANT (77d)",
       "focus": "Regulatory & policy intelligence",
       "today_activity": "NONE"
     },
     "taonix": {
       "last_updated": "2026-03-07T15:47:53+08:00",
-      "status": "PURGED_V27_RUNTIME (100d)",
+      "status": "PURGED_V27_RUNTIME (101d)",
       "today_activity": "NONE"
     },
     "my-astrology": {
       "last_updated": "2026-01-29T16:25:18+08:00",
-      "status": "DORMANT (137d)",
+      "status": "DORMANT (138d)",
       "focus": "12 reports",
       "today_activity": "NONE"
     },
     "telenexus-ghost-grid": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
+      "last_updated": "2026-06-16T23:30:05+08:00",
       "status": "DIRTY (untracked CLAUDE.md)",
-      "today_activity": "NONE — dirty tree 持續"
+      "today_activity": "NONE — dirty tree 持續 (78d)"
     },
     "git-workflow-git": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
+      "last_updated": "2026-06-16T23:30:05+08:00",
       "status": "CLEAN",
       "today_activity": "NONE"
     },
     "crypto-monitor": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
+      "last_updated": "2026-06-16T23:30:05+08:00",
       "status": "DIRTY (untracked scripts/)",
-      "today_activity": "NONE — dirty tree 持續"
+      "today_activity": "NONE — 最老髒樹 108d"
     },
     "system-cleanup": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
+      "last_updated": "2026-06-16T23:30:05+08:00",
       "status": "CLEAN (6/14 23:33 已執行)",
-      "today_activity": "CLEAN — 昨日排程執行成功"
+      "today_activity": "CLEAN — 昨日未觸發新排程"
     },
     "webdota-git": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
+      "last_updated": "2026-06-16T23:30:05+08:00",
       "status": "DIRTY (4 files: modified docs/architecture.md, src/core/NetworkManager.ts; untracked CLAUDE.md, src/utils/WBASigner.ts)",
-      "focus": "約 77 日未處理（最老髒樹，自 3/30 起算）",
-      "today_activity": "DIRTY — 77 日持續"
+      "focus": "約 78 日未處理（第二老髒樹）",
+      "today_activity": "DIRTY — 78 日持續"
     },
     "curiosity-engine": {
-      "last_updated": "2026-06-15T23:31:32+08:00",
+      "last_updated": "2026-06-16T23:30:05+08:00",
       "status": "DIRTY (modified JOURNAL.md, SPEC.md)",
-      "focus": "約 38 日持續",
-      "today_activity": "DIRTY — 38 日持續"
+      "focus": "約 39 日持續",
+      "today_activity": "DIRTY — 39 日持續"
     }
   },
   "system_resources": {
     "disk_usage": "395G / 468G (89%)",
-    "disk_change": "+2G vs 6/14 23:30 snapshot (393G→395G) — 增速持穩 +2G/日，距極限 73G (~36日)",
-    "memory": "5.1Gi / 29Gi (18%)",
-    "memory_change": "+1.8G vs 6/14 (3.3Gi→5.1Gi) — 系統自 6/14 20:48 重啟後運行 1d 2.7h",
-    "load_avg": "1.29 / 0.54 / 0.30",
-    "uptime": "1:02:43 (系統自 6/14 ~20:48 重啟，連續第 3 日定時重啟模式)",
-    "notes": "6/15 為 pine-trading 獨力活動第 2 日（2 commits, +6 strategies, +992 lines），其餘 31 支柱全面靜默。pine-trading 連續第 15 日提交（6/1→6/15: 3→29 strategies）。今日 +6 為單日最大增幅：Hull MA, Heikin Ashi, Fisher Transform, Chandelier Exit, Fakeout Confirmed, MTF Trend Entry。磁碟 395G/89% 增速持穩。記憶體回升至 5.1Gi（18%）。系統距上次重啟 1d 2.7h（6/14 20:48 重啟）。system-cleanup 已清潔，髒樹總數降至 6 個（-1）。休眠擴散：Astrology 137d（新高）、Fiscal5Eye 90d、4 專案 76d。tech-scouting 週一排程可能中斷（6/9 後無提交，6/11 archive 仍未處理）。pine-trading 策略多樣性持續擴張，15 日不間斷提交確認管道成熟。"
+    "disk_change": "±0G vs 6/15 23:30 snapshot (395G→395G) — 增速歸零為 6/1 以來首見，距極限 73G",
+    "memory": "5.7Gi / 29Gi (20%)",
+    "memory_change": "+0.6G vs 6/15 (5.1Gi→5.7Gi) — 系統自今日重啟後運行 15h",
+    "load_avg": "0.72 / 0.26 / 0.20",
+    "uptime": "15:00 (系統於 6/16 ~08:30 重啟，不同於前兩日 20:48 定時模式)",
+    "notes": "6/16 為 pine-trading 獨力活動第 3 日（2 commits, +4 strategies），其餘 31 支柱全面靜默。pine-trading 連續第 16 日提交（6/1→6/16: 3→31 strategies）。今日 +4：Multi-Session Sweeps, WaveTrend Strategy, Footprint CVD, Parabolic SAR。磁碟 395G/89% 增速歸零（6/1 以來首見零增速）。記憶體 5.7Gi（20%）。系統距本次重啟 15h（6/16 ~08:30 重啟，不同於前兩日 20:48 定時模式）。髒樹仍維持 6 個，crypto-monitor 108d 超越 webdota 78d 成最老髒樹。休眠擴散：Astrology 138d（新高）、Fiscal5Eye 91d、4 專案 77d。tech-scouting 排程中斷第 7 日確認（需緊急修復）。pine-trading 已達 31 策略（10.3×），16 日不間斷提交。"
   },
-  "audit_memo": "6/15 23:31 CST 排程觸發 v35。pine-trading 獨力活躍第 2 日（+6 strategies, 15-day streak, 29 總策略）。全域 31/32 支柱靜默。磁碟 395G/89% 增速持穩。系統距 6/14 20:48 重啟後運行 1d 2.7h（連續第 3 日定時重啟模式）。system-cleanup 已清潔，髒樹降至 6。休眠擴散：Astrology 137d 歷史新高、Fiscal5Eye 90d、4 專案 76d。高信號：pine-trading 15-day streak + 單日 +6 策略 + 5 類別覆蓋 = 全域唯一動能，已成長 9.7×（3→29）。hostile frontiers：磁碟 89% 警戒 + 髒樹 6 專案 + 休眠 78% + tech-scouting 排程中斷（6/9→無報告）+ webdota 77d 最老髒樹。下一觀察點：6/16 若 pine-trading 達 30 策略應考慮品質審計；tech-scouting 若 6/16 無恢復需介入排程修復。"
+  "audit_memo": "6/16 23:30 CST 排程觸發 v36。pine-trading 獨力活躍第 3 日（+4 strategies, 16-day streak, 31 總策略）。全域 31/32 支柱靜默。磁碟 395G/89% 增速歸零（首見）。系統於 ~08:30 重啟，運行 15h（不同於前兩日 20:48 模式）。髒樹維持 6 但結構改變：crypto-monitor 108d 取代 webdota 78d 成最老。休眠擴散：Astrology 138d（新高）、Fiscal5Eye 91d、4 專案 77d。高信號：pine-trading 16-day streak + 31 策略（10.3×成長）= 全域唯一動能，建議啟動 30+ 品質審計。hostile frontiers：磁碟 89% 警戒 + 髒樹 6 專案 + 休眠 78%（第6日）+ tech-scouting 排程中斷已達 7 日需緊急介入 + crypto-monitor 108d 新最老髒樹。下一觀察點：6/17 若 pine-trading 持續提交（17d）應進行首次策略品質抽查；tech-scouting 若 6/17 仍無恢復需手動清理並重置 cron。"
 }
