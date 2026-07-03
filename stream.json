@@ -1,149 +1,149 @@
 {
-  "version": "v41.0701.2332",
+  "version": "v42.0703.2332",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-07-01T23:32:21+08:00",
+  "timestamp": "2026-07-03T23:32:34+08:00",
   "global_evolution_status": {
-    "sovereignty_level": "SOVEREIGN_DOMINION_V41_ASTROLOGY_REACTIVATED_DIRTY_ACCELERATION",
+    "sovereignty_level": "SOVEREIGN_DOMINION_V42_DISK_ACCELERATION_WARNING",
     "core_breakthroughs": [
-      "pine-trading 策略數維持 163，CLEAN。6/27 最後提交（獵頭 #109 v26.0627.1830），連續 6 日 streak（6/18→6/23）已中斷，距今 8 日無提交。動能由成熟期進入觀察期。",
-      "磁碟 376G/468G（85%，可用 69G），較 6/23 350G→376G（+26G/8d，增速 ~3.25G/日）。增速顯著加快（前期 ~1G/日），需關注是否為異常寫入。",
-      "記憶體 6.6Gi/29Gi（23%），較 6/23 4.4Gi/15% 回升 +2.2Gi。負載 0.81/0.90/0.55，資源全景健康但記憶體較前期回升。",
-      "uptime 2d 1:52（無重啟），較 6/23 2d16h 微增。系統穩定運行中。",
-      "髒樹增至 7 組：tech-scouting-hub-git(22d,6檔)、my-astrology(新增,3檔)、telenexus-ghost-grid(88d,2檔)、three-kingdoms-map(34d,4檔)、webdota-git(88d,4檔)、crypto-monitor(118d,1檔)、curiosity-engine(49d,2檔)。my-astrology 因今日占卜產出新增 3 untracked 檔。",
-      "tech-scouting 排程中斷第 22 日（6/9→7/1），正式進入第 4 週。髒樹維持 6 檔案（4M+2??），無新增變化，靜態腐爛深化。",
-      "my-astrology 今日 06:00 CST 完成 64 卦占卜（v26.0701.0600），本卦 64 未濟（火水未濟）變 34 大壯（雷天大壯），雙爻二/四動。核心指引：Q3 進入「未濟慎重期」——鎖標的、健檢、止損、不簽約；2027 丁未年轉「大壯收成期」。家族五角色行動檢核表同步更新。",
-      "休眠專案全線老化 +8~9 日：Astrology 154d（持續創歷史新高）、Fiscal5Eye 106d、4 支柱專案 91d、Tao_of_Coding 32d、Kronos 54d、Three_Kingdoms 39d。32 支柱中僅 pine-trading 維持活動（~3% 活動率）。休眠佔比維持 ~96.9%。"
+      "pine-trading 策略數維持 163，CLEAN。6/27 最後提交（獵頭 #109 v26.0627.1830），迄今 6 日無提交（6/28→7/3）。觀察期持續，距恢復門檻（7/7）尚有 4 日。",
+      "磁碟 390G/468G（88%，可用 55G），較 7/1 376G→390G（+14G/2d，增速 ~7G/日），較前報 3.25G/日再加速 2.15 倍。可用空間 55G，按此增速 ~8 日耗盡。",
+      "記憶體 8.9Gi/29Gi（31%），較 7/1 6.6Gi/23% 跳升 +2.3Gi（+8pct）。負載 1.05/0.87/0.66，資源全景負擔加重。",
+      "uptime 4d 1:45（自 6/29 起算，無重啟）。較 7/1 2d 1:52 正常遞增，系統穩定運行。",
+      "髒樹維持 7 組無增減，全線老化 +2d：tech-scouting-hub-git(24d,6檔)、my-astrology(新增 4 untracked，含 7/4 新占卜)、telenexus-ghost-grid(90d,2檔)、three-kingdoms-map(41d,1檔)、webdota-git(90d,4檔)、crypto-monitor(120d,1檔)、curiosity-engine(51d,1檔)。",
+      "tech-scouting 排程中斷第 24 日（6/9→7/3），正式進入第 4 週。髒樹維持 6 檔案無變化，靜態腐爛持續深化。缺失 4 期報告（6/11、6/19、6/26、7/3）。",
+      "my-astrology 新增 divination_20260704_v2607020602.md（7/2 06:02 CST 產出），占卜 2026-07-04 後天得水天需卦(5)變雷天大壯(34)，雙變爻四/五。此為繼 7/1 64 卦占卜後 24 小時內第二次深度命理產出，Astrology 專案實質進入活躍期。",
+      "休眠專案全線老化 +2d：Astrology 156d（已重啟活躍，但原始休眠紀錄續增）、Fiscal5Eye 108d、4 支柱專案 93d、Tao_of_Coding 34d、Kronos 56d、Three_Kingdoms 41d。32 支柱中僅 pine-trading 維持活動（~3% 活動率）。休眠佔比維持 ~96.9%。"
     ],
     "project_milestones": {
-      "PineScript_v6": "163 strategies (維持自 6/23)。6/27 最後提交獵頭 #109。6 日 streak（6/18→6/23）已斷，現進入 8 日觀察期。",
-      "Tao_of_Coding": "v5.0.0+ — DORMANT. Last commit 5/30（32 日無活動）。",
+      "PineScript_v6": "163 strategies (維持自 6/23)。6/27 最後提交獵頭 #109。6 日無提交，觀察期第 8-13 日。",
+      "Tao_of_Coding": "v5.0.0+ — DORMANT. Last commit 5/30（34 日無活動）。",
       "Needle": "N/A — Repository not found on disk.",
-      "Three_Kingdoms_Map": "91 events. DIRTY（4 檔：2??+2M）。Dormant since 5/23（39 日）。",
-      "Fiscal5Eye": "TW50 stock analysis. Dormant since 3/17（106 日）。",
-      "Kronos": "Peak v26.0508.2041. Dormant since 5/8（54 日）。",
-      "Astrology": "13 reports（+1 today）。Reactivated today 06:00 with I Ching divination v26.0701.0600. Dormant broken after 154d record.",
-      "Crypto_Market_Pulse": "Last active v26.0331.0800. Dormant 92 日.",
-      "Social_Sentiment": "Last active v26.0331.2330. Dormant 92 日.",
-      "Tech_Scouting": "Last commit 6/9. DIRTY（6 檔案）. 排程中斷第 22 日（進入第 4 週）。",
-      "Physical_Intelligence": "Last active v26.0331.1530. Dormant 92 日.",
-      "Institutional_Policy": "Last active v26.0331.2230. Dormant 92 日."
+      "Three_Kingdoms_Map": "91 events. DIRTY（1 檔 ???）。Dormant since 5/23（41 日）。",
+      "Fiscal5Eye": "TW50 stock analysis. Dormant since 3/17（108 日）。",
+      "Kronos": "Peak v26.0508.2041. Dormant since 5/8（56 日）。",
+      "Astrology": "13 reports（+2 today）。7/2 06:02 二度占卜 v26.0702.0602，需卦(5)變大壯(34)，雙變爻四/五。Astrology 正式進入活躍期。",
+      "Crypto_Market_Pulse": "Last active v26.0331.0800. Dormant 94 日.",
+      "Social_Sentiment": "Last active v26.0331.2330. Dormant 94 日.",
+      "Tech_Scouting": "Last commit 6/9. DIRTY（6 檔案）. 排程中斷第 24 日（第 4 週）。",
+      "Physical_Intelligence": "Last active v26.0331.1530. Dormant 94 日.",
+      "Institutional_Policy": "Last active v26.0331.2230. Dormant 94 日."
     }
   },
   "high_signal_insights": [
     {
-      "domain": "my-astrology休眠154d終結_64卦占卜啟動_未濟變大壯家族戰略重構",
-      "insight": "Astrology 專案今日 06:00 CST 完成後天 64 卦占卜（v26.0701.0600），打破 154 日休眠紀錄。本卦 64 未濟（火水未濟）變 34 大壯（雷天大壯），雙動爻二/四。「未濟」= 事業未完成、轉型關鍵期、慎終如始；「大壯」= 完成慎重試探後進入壯健推進期。家族五角色（總指揮媽媽、幕僚長爸爸、前鋒長女、特種二子、後勤三女）獲精準行動指引：Q3 核心三大戰役——房產鎖標的（7/15勘察、7/31開價）、雙方健檢（7/15-31主動見血化煞）、資產止損（7/15完成清單）。擎羊雙重（父田宅/母身宮）+ 天馬（三女命宮）+ 七殺（二子官祿）+ 陀羅多重血光煞，透過「主動健檢/裝修/運動」化解。2026 丙午年未濟慎重 → 2027 丁未年大壯收成 → 2028 戊申年穩固，錯過 2027 = 錯過 12 年循環。",
-      "actionable": "極高信號。Astrology 專案從深度休眠轉為主動戰略輸出。家族行動檢核表 15 項具體任務已對位時程與卦象指引。建議：1) 本週啟動父親獨處習慣/母親放空療法；2) 7/15 前完成房產標的比對表與非必要投資清單；3) 7/15-31 執行雙方健檢與房產實地勘察；4) 即刻設定薪資 80% 自動轉母親帳戶。"
+      "domain": "磁碟增速再度暴衝至7G/日_可用55G_8日耗盡臨界",
+      "insight": "磁碟 390G/468G（88%），較 7/1 376G 增長 14G/2d（~7G/日），較前報 3.25G/日再加速 2.15 倍。可用空間從 69G 壓縮至 55G，按此增速約 8 日耗盡。journalctl 與 docker 皆無異常，推測為 overlayfs 底層檔案系統自然增長或 memory-mapped file 膨脹。增速連續兩期加速（1G/日→3.25G/日→7G/日），呈現指數型增長趨勢。",
+      "actionable": "極高信號。緊急介入：1) 立即執行 system-cleanup 指令；2) 若無效，本週需擴容或清理大量暫存檔案；3) 監控 du -h / --max-depth=1 找出異常寫入目錄。"
     },
     {
-      "domain": "磁碟增速異常加速至3.25G/日_可用空間壓縮至69G_需立即排查",
-      "insight": "磁碟 376G/468G（85%），較 6/23 350G 增長 26G/8d（~3.25G/日），較前期 1G/日增速暴增 3 倍。可用空間從 95G 壓縮至 69G，按此速度約 21 天耗盡。無明顯專案對應此寫入量（pine-trading 8 日無提交、tech-scouting 22 日無產出、my-astrology 僅新增 3 小檔）。需排查：系統日誌堆積、Docker overlay 清理、臨時檔案、或未知寫入程序。",
-      "actionable": "高信號。執行磁碟佔用排查（du -h / --max-depth=1、journalctl --disk-usage、docker system df）。若為正常緩存增長則可接受，若為異常寫入需立即清理。建議本次 system-cleanup 重點針對磁碟。"
+      "domain": "my-astrology 二度占卜_24小時內兩次深度命理產出_Astrology正式轉為活躍",
+      "insight": "my-astrology 於 7/2 06:02 CST 再度執行後天 64 卦占卜（v26.0702.0602），距 7/1 06:00 首度占卜僅 24 小時。本次針對 7/4 後天得水天需卦(5)變雷天大壯卦(34)，雙變爻四/五 — 需卦「需于血，出自穴」「需于酒食，貞吉」；大壯「藩決不羸，壯于大輿之輹」。兩日占卜核心持續指向：未月（7/7-8/6）土旺剋水，坎險受制，最忌急進簽約，以主動健檢見血化煞。Astrology 專案從 154 日深度休眠一舉躍為最活躍專案之一。",
+      "actionable": "極高信號。my-astrology 4 untracked 檔案應立即提交版控（git add/commit/push v26.0702.0602）。7/4 起卦確認未月土旺格局，建議本週：1) 房產標的比對表完成時間由 7/15 提前至 7/7；2) 雙方健檢預約於未月（7/7-8/6）首週完成。"
     },
     {
-      "domain": "tech-scouting排程中斷達22日_進入第4週_髒樹靜態腐爛無變化",
-      "insight": "tech-scouting 排程中斷已達 22 日（6/9→7/1），正式進入第 4 週。髒樹維持 6 檔案（M 4 + ?? 2），較 6/23 無新增/減少，顯示已進入深度靜態腐爛階段。排程恢復可能性隨時間趨近零。上次成功報告 v26.0609.1200（6/9），已缺失 3 期報告（6/11、6/19、6/26 應產出）。",
-      "actionable": "高信號。已遠超緊急介入門檻（>10 日）並進入第 4 週。本週必須二選一：1) 手動清理髒樹並重啟排程（git add/commit/push 恢復 v26.07xx 版本號）；2) 正式降級為休眠狀態，歸檔現有 6 檔案，更新 manifest.json 標記 DORMANT。建議選項 1，保留 GitHub Trending 監控資產價值。"
+      "domain": "pine-trading 連續6日無提交_streak彈性驗證進入關鍵第9-14天",
+      "insight": "pine-trading 自上報（7/1）後又經歷 2 日靜默，策略數維持 163，CLEAN 狀態。自 6/27 最後提交（獵頭 #109）已 6 日無活動。對照前次 6/18→6/23 的 6 日連續提交 streak，當前靜默期已超過 streak 長度。若 7/7 前無新提交（即滿 10 日靜默），將確認進入休眠週期。",
+      "actionable": "中信號。觀察期持續。若 7/7 前恢復提交，維持正常排程 #76 運作；若持續靜默，需啟動排程健康度重新評估。"
     },
     {
-      "domain": "pine-trading streak 終結進入觀察期_8日無提交_動能驗證關鍵點",
-      "insight": "pine-trading 連續 6 日提交（6/18→6/23，23 日跨度含 18 有效提交日，超越先前 12 日紀錄）於 6/27 最後提交後中斷。現距最後提交 8 日（6/28-7/1），超過先前觀察的「連續中斷 3 日重新評估」門檻。策略數維持 163，CLEAN 狀態。關鍵驗證點：streak 成熟期（23 日）後能否自我恢復高頻節奏，或已進入新休眠週期。",
-      "actionable": "中高信號。持續監控未來 7 日。若 7/7 前無新提交，確認進入休眠，需重新評估排程 #76 健康度。若恢復提交，確認 streak 具備彈性恢復能力。"
+      "domain": "tech-scouting 排程中斷達24日_第4週_缺失4期報告_去留決策窗口收窄",
+      "insight": "tech-scouting 排程中斷已達 24 日（6/9→7/3），進入第 4 週。較前報（22 日/第 4 週）再推進 2 日。缺失報告增至 4 期（6/11、6/19、6/26、7/3）。髒樹維持 6 檔案無變化，靜態腐爛指標：git status 輸出與上報完全一致，證明系統層級無任何寫入活動。",
+      "actionable": "高信號。上報建議的二選一期限已過。本週必須執行：1) 優先嘗試 git add/commit/push 恢復機能；2) 若本地修改衝突過大，強制歸檔至 archives/ 並更新 manifest.json 標記 DORMANT。"
     },
     {
-      "domain": "髒樹總數增至7組_my-astrology新增3檔_系統整體髒度上升",
-      "insight": "髒樹專案從 6 組增至 7 組：新增 my-astrology（今日占卜產出 3 untracked：divination_20260701_v2607010600.md、family_strategy_20260701_v2607010600.md、divination_log.json）。既有 6 組全線老化 +8~9 日：crypto-monitor 118d（+8）、webdota-git 88d（+8）、telenexus-ghost-grid 88d（+8）、curiosity-engine 49d（+8）、three-kingdoms-map 34d（+8）、tech-scouting-hub-git 22d（+8）。髒樹佔比上升，系統整體整潔度下降。",
-      "actionable": "中信號。my-astrology 新增檔案應納入版控（git add/commit/push v26.0701.0600）。既有髒樹專案需分批清理：優先 tech-scouting（排程相關）、crypto-monitor（最老）、telenexus-ghost-grid/webdota-git（同齡 88d）。建議本週內完成至少 2 組清理。"
+      "domain": "記憶體跳升至8.9Gi/31%_較前報+2.3Gi_需關注異常程序",
+      "insight": "記憶體 8.9Gi/29Gi（31%），較 7/1 6.6Gi/23% 跳升 2.3Gi（+8pct）。為近期最高水位，突破前高 6.6Gi。負載 1.05/0.87/0.66 同步上升（前報 0.81/0.90/0.55）。可能原因為系統 4 日連續運行（無重啟）導致記憶體累積，或 AI 工作負載增加。",
+      "actionable": "中信號。結合磁碟異常增速，資源全景呈現雙重壓力。建議本次執行 system-cleanup 後觀察記憶體是否回落至 6Gi 區間。若仍高於 8Gi 且磁碟持續加速，需考慮系統重啟。"
     }
   ],
   "pillar_project_snapshots": {
     "pine-trading-strategies-git": {
       "last_updated": "2026-06-27T18:30:00+08:00",
       "status": "CLEAN (163 strategies, 維持自 6/23)",
-      "focus": "6 日 streak（6/18→6/23）已斷，進入 8 日觀察期。驗證成熟 streak 彈性恢復能力。",
+      "focus": "6 日無提交（6/28→7/3）。Streak 彈性驗證關鍵期第 8-13 天。",
       "latest_version": "v26.0627.1830",
-      "today_activity": "NONE — 8 日無提交（上次 6/27 獵頭 #109）"
+      "today_activity": "NONE — 6 日無提交（上次 6/27 獵頭 #109）"
     },
     "tao-of-coding": {
-      "last_updated": "2026-07-01T23:32:21+08:00",
+      "last_updated": "2026-07-03T23:32:34+08:00",
       "status": "v5.0.0+ — DORMANT",
       "focus": "Codex/AGY mode B testing",
-      "today_activity": "NONE（32 日無活動）"
+      "today_activity": "NONE（34 日無活動）"
     },
     "three-kingdoms-map": {
-      "last_updated": "2026-07-01T23:32:21+08:00",
-      "status": "LIVE_ON_GITHUB_PAGES_DIRTY（39d dormant）",
+      "last_updated": "2026-07-03T23:32:34+08:00",
+      "status": "LIVE_ON_GITHUB_PAGES_DIRTY（41d dormant）",
       "focus": "91-event interactive map",
-      "today_activity": "NONE — dirty tree 持續（?? 2 檔 + M 2 檔 docs/）"
+      "today_activity": "NONE — dirty tree 持續（1 ?? 檔）"
     },
     "needle": {
-      "last_updated": "2026-07-01T23:32:21+08:00",
+      "last_updated": "2026-07-03T23:32:34+08:00",
       "status": "NOT_FOUND_ON_DISK",
-      "focus": "focus": "Repository missing from workspace",
+      "focus": "Repository missing from workspace",
       "today_activity": "MISSING"
     },
     "fiscal5eye": {
       "last_updated": "2026-03-17T17:21:18+08:00",
-      "status": "MAINTENANCE_DORMANT（106d）",
+      "status": "MAINTENANCE_DORMANT（108d）",
       "today_activity": "NONE"
     },
     "kronos-replication-git": {
       "last_updated": "2026-05-08T20:41:30+08:00",
-      "status": "SOVEREIGN_MASTER_V20（54d）",
+      "status": "SOVEREIGN_MASTER_V20（56d）",
       "today_activity": "NONE"
     },
     "tech-scouting-hub-git": {
-      "last_updated": "2026-07-01T23:32:21+08:00",
+      "last_updated": "2026-07-03T23:32:34+08:00",
       "status": "DIRTY（6 檔案 — M archives/list.json, M index.html, M stream.json, M trending_raw.json; ?? archives/2026-06-11_1200.html, ?? archives/2026-06-19_1200.html）",
-      "focus": "GitHub trending — 排程中斷第 22 日（進入第 4 週）",
-      "latest_report": "v26.0609.1200（last committed）. 缺失 3 期報告（6/11, 6/19, 6/26）",
-      "today_activity": "NONE — cron 中斷第 22 日，髒樹維持 6 檔案（深度靜態腐爛）"
+      "focus": "GitHub trending — 排程中斷第 24 日（第 4 週）",
+      "latest_report": "v26.0609.1200（last committed）. 缺失 4 期報告（6/11, 6/19, 6/26, 7/3）",
+      "today_activity": "NONE — cron 中斷第 24 日，髒樹維持 6 檔案（靜態腐爛深化）"
     },
     "crypto-market-pulse-git": {
       "last_updated": "2026-03-31T08:00:00+08:00",
-      "status": "DORMANT（92d）",
+      "status": "DORMANT（94d）",
       "today_activity": "NONE"
     },
     "social-sentiment-observatory-git": {
       "last_updated": "2026-03-31T23:30:00+08:00",
-      "status": "DORMANT（92d）",
+      "status": "DORMANT（94d）",
       "today_activity": "NONE"
     },
     "physical-intelligence-hub-git": {
       "last_updated": "2026-03-31T15:30:00+08:00",
-      "status": "DORMANT（92d）",
+      "status": "DORMANT（94d）",
       "today_activity": "NONE"
     },
     "institutional-policy-hub-git": {
       "last_updated": "2026-03-31T22:30:00+08:00",
-      "status": "DORMANT（92d）",
+      "status": "DORMANT（94d）",
       "today_activity": "NONE"
     },
     "taonix": {
       "last_updated": "2026-03-07T15:47:53+08:00",
-      "status": "PURGED_V27_RUNTIME（116d）",
+      "status": "PURGED_V27_RUNTIME（118d）",
       "today_activity": "NONE"
     },
     "my-astrology": {
-      "last_updated": "2026-07-01T06:00:00+08:00",
-      "status": "REACTIVATED — I Ching divination v26.0701.0600 completed",
-      "focus": "64 卦占卜：未濟(64)→大壯(34)，雙爻二/四動。家族五角色 Q3 三大戰役部署。",
-      "today_activity": "OCCUPIED — 06:00 占卜完成，產出 3 檔案（divination.md, family_strategy.md, log.json）。DIRTY（3 untracked）待提交"
+      "last_updated": "2026-07-02T06:02:00+08:00",
+      "status": "ACTIVE — 二度占卜完成（v26.0702.0602），需卦(5)變大壯(34)",
+      "focus": "7/4 後天水天需卦變雷天大壯，雙變爻四/五。Q3 未月(7/7-8/6)土旺剋水，最忌急進簽約。",
+      "today_activity": "OCCUPIED — 7/2 06:02 二度占卜產出，4 untracked 檔案待提交"
     },
     "telenexus-ghost-grid": {
-      "last_updated": "2026-07-01T23:32:21+08:00",
+      "last_updated": "2026-07-03T23:32:34+08:00",
       "status": "DIRTY（?? CLAUDE.md, ?? .claude/）",
-      "today_activity": "NONE — dirty tree 持續（88d）"
+      "today_activity": "NONE — dirty tree 持續（90d）"
     },
     "git-workflow-git": {
-      "last_updated": "2026-07-01T23:32:21+08:00",
+      "last_updated": "2026-07-03T23:32:34+08:00",
       "status": "CLEAN",
       "today_activity": "NONE"
     },
     "crypto-monitor": {
-      "last_updated": "2026-07-01T23:32:21+08:00",
+      "last_updated": "2026-07-03T23:32:34+08:00",
       "status": "DIRTY（?? scripts/）",
-      "today_activity": "NONE — 最老髒樹 118d"
+      "today_activity": "NONE — 最老髒樹 120d"
     },
     "system-cleanup": {
       "last_updated": "2026-06-21T23:32:07+08:00",
@@ -151,26 +151,26 @@
       "today_activity": "PENDING — 將於本輪執行"
     },
     "webdota-git": {
-      "last_updated": "2026-07-01T23:32:21+08:00",
+      "last_updated": "2026-07-03T23:32:34+08:00",
       "status": "DIRTY（4 檔：2?? + 2M）",
-      "focus": "約 88 日未處理",
-      "today_activity": "DIRTY — 88 日持續"
+      "focus": "約 90 日未處理",
+      "today_activity": "DIRTY — 90 日持續"
     },
     "curiosity-engine": {
-      "last_updated": "2026-07-01T23:32:21+08:00",
-      "status": "DIRTY（M JOURNAL.md, M SPEC.md）",
-      "focus": "約 49 日持續",
-      "today_activity": "DIRTY — 49 日持續"
+      "last_updated": "2026-07-03T23:32:34+08:00",
+      "status": "DIRTY（M SPEC.md）",
+      "focus": "約 51 日持續",
+      "today_activity": "DIRTY — 51 日持續"
     }
   },
   "system_resources": {
-    "disk_usage": "376G / 468G（85%）",
-    "disk_change": "+26G vs 6/23（350G→376G），增速 ~3.25G/日（較前期 1G/日暴增 3 倍），可用 69G。若持續約 21 天耗盡，需立即排查異常寫入源。",
-    "memory": "6.6Gi / 29Gi（23%）",
-    "memory_change": "+2.2Gi vs 6/23（4.4Gi→6.6Gi），回升至健康區間，23% 為近期常態水位。",
-    "load_avg": "0.81 / 0.90 / 0.55",
-    "uptime": "2 days 1:52（無重啟，自 6/21 ~07:04 持續運行至今）",
-    "notes": "7/1（週三）pine-trading 策略數 163 維持，8 日無提交進入觀察期。my-astrology 打破 154 日休眠紀錄，完成 64 卦占卜（v26.0701.0600），本卦未濟變大壯，家族戰略重構 Q3 三大戰役。磁碟 376G/85%（+26G/8d，增速 3.25G/日異常），可用 69G 呈加速壓縮。記憶體 6.6Gi/23% 回升，負載低位。tech-scouting 排程中斷 22 日（第 4 週），髒樹 6 檔深度腐爛。髒樹 7 組全線 +8~9d，my-astrology 新增 3 untracked。休眠全線 +8~9d：Astrology 154d 創歷史新高後重啟、4 支柱 91d、tech-scouting 22d 進入第 4 週。pine-trading 唯一活動專案但 8 日靜默，動能驗證關鍵點。"
+    "disk_usage": "390G / 468G（88%）",
+    "disk_change": "+14G vs 7/1（376G→390G），增速 ~7G/日（較前報 3.25G/日再加速 2.15 倍），可用 55G。若持續約 8 日耗盡，需緊急介入。",
+    "memory": "8.9Gi / 29Gi（31%）",
+    "memory_change": "+2.3Gi vs 7/1（6.6Gi→8.9Gi），跳升至近期最高水位。",
+    "load_avg": "1.05 / 0.87 / 0.66",
+    "uptime": "4 days 1:45（無重啟，自 6/29 ~22:47 持續運行至今）",
+    "notes": "7/3（週五）pine-trading 策略數 163 維持，6 日無提交。my-astrology 24 小時內二度占卜（v26.0702.0602），需卦變大壯雙爻四/五，正式轉為活躍。磁碟 390G/88%（+14G/2d，增速 7G/日暴衝），可用 55G 極其嚴峻。記憶體 8.9Gi/31% 跳升 +2.3Gi，負載同步走高。tech-scouting 排程中斷 24 日（第 4 週+），缺失 4 期報告。髒樹 7 組全線 +2d 無增減，my-astrology 4 untracked 持續累積。休眠佔比 ~96.9%，pine-trading 靜默 6 日觀察期關鍵。"
   },
-  "audit_memo": "7/1 23:32 CST 排程觸發 v41。核心突破：my-astrology 終結 154 日休眠，64 卦占卜產出家族 Q3 戰略（未濟→大壯，雙爻二/四動），三大戰役——房產鎖標的（7/15勘察/7/31開價）、雙方健檢（7/15-31主動化煞）、資產止損（7/15清單）。磁碟異常增速 3.25G/日（350→376G/8d），可用 69G 約 21 天耗盡，需立即排查。pine-trading 8 日無提交超越 3 日觀察門檻，streak 彈性驗證關鍵期。tech-scouting 中斷 22 日進入第 4 週，髒樹 6 檔深度腐爛，本週必須二選一（清理重啟/正式休眠）。髒樹增至 7 組全線老化 +8~9d，my-astrology 新增 3 untracked 待提交。高信號：Astrology 戰略重啟、磁碟異常增速、tech-scouting 第 4 週決策點、pine-trading streak 驗證。下一觀察點：磁碟清理成效、pine-trading 7/7 前能否恢復提交、tech-scouting 本週去留決斷、my-astrology 占卜檔案版控入庫。"
+  "audit_memo": "7/3 23:32 CST 排程觸發 v42。核心突破：my-astrology 24h 內二度占卜（7/2 06:02，水天需→雷天大壯雙爻四/五），正式宣告從 154 日深度休眠轉為活躍期。磁碟增速連續三期加速：1G/日→3.25G/日→7G/日，可用 55G 僅餘 8 日窗口，列為最高優先級緊急事項。記憶體跳升至 8.9Gi/31%（+2.3Gi），負載同步上升，資源全景雙重壓力。tech-scouting 中斷 24 日（第 4 週+），缺失報告達 4 期，去留決策本週必須執行。pine-trading 6 日無提交持續觀察至 7/7 門檻。髒樹 7 組老化 +2d 無變化。高信號：磁碟緊急警報、Astrology 活躍轉變、tech-scouting 第 4 週強制決策、pine-trading 觀察期、記憶體異常跳升。下一觀察點：system-cleanup 成效、pine-trading 7/7 前恢復與否、tech-scouting 本週去留執行、my-astrology 版控入庫。"
 }
