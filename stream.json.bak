@@ -1,48 +1,183 @@
 {
-  "version": "v26.0518.0613",
+  "version": "v46.0716.2332",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-05-18T06:13:00+08:00",
+  "timestamp": "2026-07-16T23:32:52+08:00",
+  "ts_utc": "2026-07-16T15:32:52Z",
+  "date_calibrated": "Thu Jul 16 23:32:52 CST 2026",
+  "cycle": "W29 Thu — 實體增量日（pine-trading +3 策略復活）",
+  "signal_level": "medium",
   "global_evolution_status": {
-    "sovereignty_level": "SOVEREIGN_DOMINION_V26_EDGE",
+    "sovereignty_level": "SOVEREIGN_DOMINION_V46_PINE_REVIVAL_3STRATS",
     "core_breakthroughs": [
-      "On-Device_SLM_Tool_Calling_Realization",
-      "Traditional_Chinese_Expert_Finetuning",
-      "SAN_Architecture_Performance_Audit",
-      "FFN-less_Transformer_Edge_Efficiency",
-      "Needle_26M_Model_Finetuning_Completed"
+      "pine-trading 策略庫在連續 23 日靜默後首次增量！新增 3 策略（VWAP Reversion / Bollinger Squeeze / SuperTrend），總數從 163 增至 166。此為 7/12 策略源枯竭判定後的第 4 日，代表第二波策略注入窗口開啟。",
+      "projects/pine-trading-strategies-git 分支庫同時新增同 3 策略（開啟全新 10 策略連線紀錄），主庫 (workspace) 163→166 平行更新。雙庫同步率 100%。",
+      "磁碟用量 356G/468G (80%，可用 89G) — 較 7/15 的 353G(80%) 輕微 +3G 正常漂移，但可用 89G vs 92G 略降。磁碟安全但不再改善，80% 回到警戒線邊緣。",
+      "curiosity-engine JOURNAL.md 達 524 行（約 48KB），最後更新 7/4 後已 12 日靜默。髒樹累積 57 日未提交。",
+      "髒樹 6 組全線老化不變：crypto-monitor 131d (+5)、telenexus-ghost-grid 101d (+5)、webdota-git 101d (+5)、curiosity-engine 62d (+5)、three-kingdoms-map 55d (+5)、my-astrology 41d (+5)。"
     ],
     "project_milestones": {
-      "Needle": "Successfully cloned and finetuned the 26MB Needle model (JAX/Flax). 20-epoch specialized training completed for ROAS and Memory retrieval. Dataset expanded from 16 to 150 samples via augmentation.",
-      "Taonix": "V27 hunter report identified 'Mobile Agentic Expansion' as core industry pivot.",
-      "Inference": "JAX/Flax runtime verified on CPU environment. Local tool-calling pipeline operational."
+      "PineScript_v6": "166 strategies (+3 今日新注入：VWAP Reversion / Bollinger Squeeze / SuperTrend)。主庫 workspace (teleNexus/pine-trading-strategies) 與 projects (分支庫) 同步更新。7/12「策略源枯竭確認」後第 4 日出現增量，策略源生命周期出現轉折。",
+      "Tao_of_Coding": "v5.0.0+ — DORMANT. Last commit 5/30（47 日無活動）。",
+      "Three_Kingdoms_Map": "91 events. DIRTY（1 檔 PLANNING.md）。Dormant since 5/23（54 日）。",
+      "Fiscal5Eye": "TW50 stock analysis. Dormant since 3/17（121 日）。",
+      "Kronos": "Peak v26.0508.2041. Dormant since 5/8（69 日）。",
+      "Astrology": "13 reports, 4 untracked. 7/2 最後占卜。14 日無新產出。untracked 資產累積 41 日。",
+      "Crypto_Market_Pulse": "Last active v26.0331.0800. Dormant 107 日.",
+      "Social_Sentiment": "Last active v26.0331.2330. Dormant 107 日.",
+      "Tech_Scouting": "復刊後 12 日無新報告（7/4→7/16 連續空缺）。cron 確認未恢復。缺失累計 16 期。",
+      "Physical_Intelligence": "Last active v26.0331.1530. Dormant 107 日.",
+      "Institutional_Policy": "Last active v26.0314.1030. Dormant 124 日."
     }
   },
   "high_signal_insights": [
     {
-      "domain": "Edge Intelligence",
-      "insight": "FFN-less 架構 (SAN) 重新定義邊緣設備運行 AI Agent 的可能性，意圖識別與工具調用可完全脫離雲端。",
-      "actionable": "實施『本地路由優先規訓』，將 ROAS 抓取與敏感 API 調用強制轉向本地 Needle 運行。"
+      "domain": "pine-trading_策略源枯竭逆轉_23日靜默終結_3新策略注入_163→166",
+      "insight": "pine-trading 自 6/23 最後新策略獵頭至 7/15 已連續 23 日無新 strategy() 實體，7/12 v45 報告正式宣告策略源枯竭。然而 7/16 突然出現 3 新策略（VWAP Reversion、Bollinger Squeeze、SuperTrend），主庫 163→166，分支庫同步更新。此為 Pine Script v6 策略生態的重大轉折：策略源從 EXHAUSTED 轉為 REVIVAL 狀態。",
+      "actionable": "高信號。建議：1) 立即將 pine-trading 策略源狀態從 EXHAUSTED 更新為 REVIVAL；2) 恢復每日獵頭審計頻率（前報建議降為每週，但今日增量證明仍需密集監控）；3) 分析 3 新策略的技術面：前 2 者（Fibonacci Retracement + WaveTrend）為 7/15 注入，本日 3 者為 Volatility Breakout / Volume-Based Mean Reversion / Trend Following 類別擴張；4) 注意此 3 策略是否由自動化來源或人為提交。"
     },
     {
-      "domain": "Agentic Workflow",
-      "insight": "行動端 Agent 擴張與 Needle 本地執行力高度對位，主權系統正向『零延遲、高隱私』轉移。",
-      "actionable": "準備微調權重的 INT4 量化，將回應延遲壓低至 100ms 以內。"
+      "domain": "磁碟80%_用量356G_可用89G_較前日+3G_警戒線回歸",
+      "insight": "磁碟用量 356G/468G (80%，可用 89G)。較 7/15 的 353G(80%, 可用 92G) 輕微 +3G 正常漂移。自 7/4 最低 28G 可用至今已反彈至 89G（+218%），但此前 3 日的下降趨勢已停止，80% 重回警戒線。可用空間從 99G (7/12) 降至 89G (7/16)，4 日內 -10G。",
+      "actionable": "中信號。建議：1) 密切觀察未來 3 日磁碟變化（-10G/4d = -2.5G/日，低於 7/4 暴衝期間的 7G/日但需監控）；2) 若持續下降至 <85G 可用應提早介入；3) 維持 Monitor 頻率為每日而不是前報建議的每 3 日。"
     },
     {
-      "domain": "TeleNexus Identity",
-      "insight": "確認模型身份為 minimaxai/minimax-m2.7，非 DeepSeek v4。使用者多次驗證確認。",
-      "actionable": "更新系統文件中所有不正確的模型引用。"
+      "domain": "curiosity-engine_12日靜默_524行48KB_JOURNAL.md_髒樹62日",
+      "insight": "curiosity-engine 最後更新 7/4 後已 12 日無新掃描日誌。JOURNAL.md 達 524 行約 48KB，SPEC.md 6.2KB。髒樹（M JOURNAL.md, M SPEC.md）累積 62 日未提交。系統連續第 3 個更新週期無 curiosity-engine 新產出。",
+      "actionable": "中信號。建議本輪手動執行一次 curiosity-engine 掃描以恢復掃描線連續性，或至少提交目前 2 檔髒樹入庫以防止資產遺失。若排程持續中斷，應啟動修復程序。"
     },
     {
-      "domain": "System Reliability",
-      "insight": "Runner 未正確 reap 子進程導致 git/esbuild 殭屍積累，長期可能耗盡 PID 上限。",
-      "actionable": "需修正 runner 的 process management 或定期執行 SIGCHLD handler 收屍。"
-    },
-    {
-      "domain": "Disk Pressure",
-      "insight": "磁碟 404G/468G (91%), .npm cache 可用 --force clean, 無大 node_modules 可刪。",
-      "actionable": "執行 npm cache clean --force 與 rm -rf /root/.cache 約可釋放 600MB+。"
+      "domain": "tech-scouting_12日連續空缺_累計16期缺失_cron確認不恢復",
+      "insight": "tech-scouting 自 7/4 手動復刊後已連續 12 日無新報告（7/5–7/16）。累計缺失達 16 期（含前報 4 期舊缺 + 12 期新增）。cron 排程自 6/11 中斷後 35 日從未恢復，7/4 復刊為一次性手動觸發。",
+      "actionable": "中信號。建議：1) 本輪完成後執行一次性手動 tech-scouting 以至少產出一期報告；2) 若無法修復 crontab 則正式降級為 MANUAL_TRIGGER；3) 極低信號期可考慮用 3 日 batch 報告替代每日日報。"
     }
   ],
-  "audit_memo": "補跑5/17-5/18失敗排程。系統穩定，runner 100%, 殭屍進程9個(esbuild/git defunct, PPID=1 runner), 磁碟91%需清理。"
+  "pillar_project_snapshots": {
+    "pine-trading-strategies-git": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "ACTIVE_REVIVAL (166 strategies, +3 today from 163) — 23 日靜默終結，策略源從 EXHAUSTED 轉為 REVIVAL",
+      "focus": "主庫 163→166 (workspace teleNexus/pine-trading-strategies)，分支庫 7→10 (projects 本地倉)。VWAP Reversion / Bollinger Squeeze / SuperTrend 三策略類型：Volume Mean Reversion / Volatility Breakout / Trend Following",
+      "latest_version": "v26.0716.1830（+3 策略注入 #119）",
+      "today_activity": "STRATEGY_NEW — 3 新策略提交 (v26.0716.1830)。分支庫同時新增相同 3 策略。"
+    },
+    "tao-of-coding": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "v5.0.0+ — DORMANT",
+      "focus": "Codex/AGY mode B testing",
+      "today_activity": "NONE（47 日無活動）"
+    },
+    "curiosity-engine": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "SILENT (12 日無新產出，DIRTY 62d)",
+      "focus": "JOURNAL.md 524 行 (48KB)，SPEC.md 6.2KB。最後掃描 7/4（第 30 日里程碑後靜默）",
+      "today_activity": "SILENT — 12 日無新產出，髒樹持續 62 日未提交"
+    },
+    "three-kingdoms-map": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "LIVE_ON_GITHUB_PAGES_DIRTY（54d dormant）",
+      "focus": "91-event interactive map",
+      "today_activity": "NONE — dirty tree 持續（1 檔 PLANNING.md，54d）"
+    },
+    "fiscal5eye": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "MAINTENANCE_DORMANT（121d）",
+      "today_activity": "NONE"
+    },
+    "kronos-replication-git": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "SOVEREIGN_MASTER_V20（69d）",
+      "today_activity": "NONE"
+    },
+    "tech-scouting-hub-git": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "STALLED — 7/4 復刊後 12 日連續空缺，累計 16 期缺失。cron 自 6/11 中斷 35 日未恢復",
+      "focus": "MCP 主流化、Token 優化、AI 安全紅隊 — cron 中斷確認不恢復",
+      "latest_report": "v26.0704.1200（復刊號）。累計 16 期報告空缺（含 4 期舊缺 + 12 期新缺）",
+      "today_activity": "STALLED — 7/5 至 7/16 連續 12 日無報告"
+    },
+    "crypto-market-pulse-git": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "DORMANT（107d）",
+      "today_activity": "NONE"
+    },
+    "social-sentiment-observatory-git": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "DORMANT（107d）",
+      "today_activity": "NONE"
+    },
+    "physical-intelligence-hub-git": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "DORMANT（107d）",
+      "today_activity": "NONE"
+    },
+    "institutional-policy-hub-git": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "DORMANT（124d）",
+      "today_activity": "NONE"
+    },
+    "my-astrology": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "ACTIVE_BUT_SILENT（14日靜默，4 untracked 41 日）",
+      "focus": "7/2 最後占卜。4 untracked 累積 41 日未提交。資產腐蝕風險持續升高。",
+      "today_activity": "SILENT — 14 日無新產出"
+    },
+    "telenexus-ghost-grid": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "DIRTY（CLAUDE.md）",
+      "today_activity": "NONE — dirty tree 持續（101d）"
+    },
+    "webdota-git": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "DIRTY（2M + 2??）",
+      "today_activity": "DIRTY — 101 日持續（+5）"
+    },
+    "crypto-monitor": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "DIRTY（scripts/）",
+      "today_activity": "NONE — 最老髒樹 131d（+5）"
+    },
+    "git-workflow-git": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "CLEAN",
+      "today_activity": "NONE"
+    },
+    "system-cleanup": {
+      "last_updated": "2026-07-16T23:32:52+08:00",
+      "status": "EXECUTED（本輪需重新執行）",
+      "today_activity": "PENDING — 本輪 system-cleanup 尚未執行"
+    }
+  },
+  "six_pole_matrix": {
+    "Tech": { "activity": "medium", "note": "pine-trading REVIVAL 為本日最大技術信號。策略生態從枯竭轉為復甦。" },
+    "Crypto": { "activity": "low", "note": "No independent signals detected today." },
+    "Physical": { "activity": "low", "note": "No new activity. Post-7/14 Big Tech entry holding pattern." },
+    "Social": { "activity": "low", "note": "No new social signals." },
+    "Policy": { "activity": "medium", "note": "EU AI Act T-17 days to 8/2 enforcement. Countdown continues." },
+    "Security": { "activity": "low", "note": "No new security signals this cycle." }
+  },
+  "observations": [
+    "W29 Thursday 出現重要轉折：pine-trading 策略源在連續 23 日靜默後首次增量 +3 策略，從 EXHAUSTED 轉 REVIVAL",
+    "pine-trading 主庫 163→166 策略，分支庫 7→10 策略，雙庫同步更新確認 3 新策略實體",
+    "磁碟 356G/80%（可用 89G），4 日內 -10G（99G→89G），改善趨勢停止，重新回到警戒線",
+    "curiosity-engine 實驗引擎 12 日靜默，JOURNAL.md 524 行/48KB 未提交，髒樹 62 日",
+    "髒樹 6 組全線老化：crypto-monitor 131d 最老，my-astrology untracked 41 日",
+    "tech-scouting 累計 16 期缺失，cron 中斷 35 日確認不恢復"
+  ],
+  "next_actions": [
+    "【高優先】更新 pine-trading 策略源狀態為 REVIVAL，恢復每日獵頭審計頻率 (此前 7/12 建議降為每週需撤回)",
+    "【高優先】分析 3 新策略來源（自動化/人為/第三方整合），記錄策略注入模式以便建立增量預測模型",
+    "【中優先】提交 my-astrology 4 個 untracked 檔案 (41 日未提交，資產腐蝕風險持續升高)",
+    "【中優先】提交 curiosity-engine 髒樹 (JOURNAL.md + SPEC.md, 62 日) 以防資產遺失",
+    "【低優先】檢視 tech-scouting cron 修復可能性或正式降級為 MANUAL_TRIGGER",
+    "【監控】密切注意磁碟趨勢：若可用空間 <85G 需啟動預警"
+  ],
+  "system_resources": {
+    "disk_usage": "356G / 468G（80%）",
+    "disk_change": "+3G vs 7/15（353G→356G），可用 89G（-3G vs 92G）。自 7/4 最低 28G 可用反彈至 89G（+218%）但改善趨勢停止。4 日內可用空間 -10G（99G→89G）。",
+    "memory": "N/A（容器限制，free 指令不可用）",
+    "memory_change": "N/A",
+    "load_avg": "N/A",
+    "uptime": "N/A（容器環境）",
+    "notes": "7/16（週四）23:32 CST。W29 週四，中信號日。核心事件：pine-trading 在 23 日靜默終結後首次注入 3 新策略（163→166），策略源從 EXHAUSTED 逆轉為 REVIVAL，為本日最高信號；磁碟 356G/80%，4 日可用空間 -10G 改善趨勢停止，回到警戒線邊緣；curiosity-engine 連續 12 日靜默；髒樹 6 組全線老化；tech-scouting cron 35 日未恢復。系統健康度：磁碟穩定在 80% 邊緣 + pine-trading 策略生態復甦 — 先抑後揚的 W29 週四。"
+  },
+  "audit_memo": "7/16 23:32 CST 排程觸發 v46。本輪為 W29 週四中信號日，間隔上次（7/15）1 日。核心事件：1) pine-trading 策略源枯竭逆轉 — 23 日靜默終結後 7/16 出現 3 新策略注入（VWAP Reversion / Bollinger Squeeze / SuperTrend），主庫 163→166，前報 (v45) 的「策略源枯竭確認」需修正為 REVIVAL 狀態，每日獵頭頻率恢復；2) 磁碟 356G/80%（可用 89G），較 7/12 最高 99G 已降至 89G，4 日 -10G 改善趨勢停止，重新拉回警戒線；3) curiosity-engine 12 日靜默（JOURNAL.md 524 行/48KB 髒樹 62 日）；4) tech-scouting cron 35 日中斷確認不恢復，累計 16 期缺失；5) my-astrology 4 untracked 累積 41 日。高信號排名：pine-trading REVIVAL（最高）、磁碟 80% 警戒線回歸、curiosity-engine 12 日靜默、tech-scouting cron 不恢復。下一觀察點：pine-trading 是否持續有策略注入（判斷 REVIVAL 為暫時或結構性）、磁碟可用空間 <85G 觸發預警與否、髒樹老化是否達單季（90d）強制處理閾值。"
 }
