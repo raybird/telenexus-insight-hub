@@ -1,189 +1,174 @@
 {
-  "version": "v61.0808.2330",
+  "version": "v62.0817.2330",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-08-08T23:30:34+08:00",
-  "ts_utc": "2026-08-08T15:30:34Z",
-  "date_calibrated": "Sat Aug  8 23:30:34 CST 2026",
-  "cycle": "W32 Sat — 排程觸發全域洞察蒸餾與記憶規訓 v61（runner 復原驗證 + tech-scouting 新根因發現）",
+  "timestamp": "2026-08-17T23:30:08+08:00",
+  "ts_utc": "2026-08-17T15:30:08Z",
+  "date_calibrated": "Mon Aug 17 23:30:08 CST 2026",
+  "cycle": "W34 Mon — 排程觸發全域洞察蒸餾與記憶規訓 v62（9 日空窗復刊 / pine 復活 171→175 / tech-scouting 復刊 #131+#132 / 占卜心跳 8/17 再斷）",
   "signal_level": "high",
   "global_evolution_status": {
-    "sovereignty_level": "SOVEREIGN_DOMINION_V61_RUNNER_RECOVERED_TECH_SKILL_MISSING",
+    "sovereignty_level": "SOVEREIGN_DOMINION_V62_POST_9DAY_GAP_PINE_RECOVERED_TECH_REVIVED",
     "core_breakthroughs": [
-      "【高信號—復原】runner 健康終止連續故障：今日 8/8 全數 6 槽準時成功（06:00 110.4s / 06:30 13.4s / 11:30 223.0s / 12:00 385.3s / 18:30 253.9s + interactive 09:00 17.8s），無超時、無 SIGKILL、無空窗、zombie 0、Success 100%。v60 設定之「8/8 06:00/06:30/12:00 三槽準時」復原判準全數命中，連續 5 日故障週期（8/4–8/7）終止。",
-      "【高信號—新根因】tech-scouting #131 於 8/8 12:00 slot 已成功執行（385.3s）卻仍無新 commit（hub 最後仍為 8/6 #130）— 首見「runner 正常而 tech 無出」。線索：排程 #82 prompt 引用之技能路徑 /app/workspace/projects/tao-of-coding/references/superpowers/tech-scouting-hub/SKILL.md 已不存在（該目錄現移入 skills/tao-of-opencode/references/superpowers/，且無 tech-scouting-hub 子項）→ 技能文件檔案位移致執行失焦，列為 #131 缺刊新主因候選。",
-      "【中信號—復原】my-astrology 心跳連續第 2 日恢復：8/8 06:00 正常產出 divination_20260808（v2608080600，7534 bytes），今日 06:00 槽準時（110.4s）。untracked 9→10 檔（+1：divination_20260808）。v60「8/8 06:00 確認」命中。",
-      "【中信號—pine】171 策略仍停滯（8/4 起第 5 日無 commit，#131/#132 皆未出）：今日 06:30 13.4s 與 18:30 253.9s 皆跑完但無新策略 commit，工作樹乾淨。另觀測到 /app/projects/pine-trading-strategies-git 下存在另一 pine repo（33→35 策略、最後 commit 8/7 06:32、無 git remote）與 workspace 版（171 策略、有 origin）內容不同源 — 排程目標 repo 之歧義需釐清。",
-      "【低信號—磁碟續惡化】disk 396G→403G（89%→91%），可用 49G→42G，跌破 75G 硬性閾值至 -33G（續 -7G）。/tmp 回收但仍存在 agent-browser chrome 18M 等殘留；容器內 pgrep/ps/free 不可用，system-cleanup 僅完成 temp 清理。"
+      "【高信號—復刊】insight-hub 結束 9 日空窗（v61 8/8 → v62 8/17）。期間 8/9–8/16 的 23:30 #78 槽多次觸發但多以滿時長 30 分鐘執行未能完成 commit（8/15 23:30 1800s、8/16 23:30 1800s）→ 本月最長出刊間隔。今日 23:30 為首度成功到達執行，判 runner 排程執行正常但 8/9–8/16 間各槽吃滿 timeout。",
+      "【高信號—復活】pine 於 8/14–8/15 連續三版出刊 171→175 策略（#131 8/14 v26.0814.1830 +2、#132 8/14 v26.0814.1839 +1、#133 8/15 v26.0815.1830 +1，新高 175），完全推翻 v61「171 靜態第 5 日」敘事。今日 06:30 槽滿 30 分鐘執行（1800s）無新 commit、18:30 83s 正常亦無新增。Track 14 大類、檔案 353。",
+      "【高信號—復刊】tech-scouting 連兩期復刊：#131（8/9 12:06 commit，Agent Skills 技能資產化成形）與 #132（8/14 12:03 commit，stream v37.0814.1200，orca 超車最速 +951/d）。v61「技能路徑失效」疑慮證偽 — 該技能以自身流程出刊成功，判定僅為個別 slot 未出。今日 8/17 12:00 執行 211s 但 respLen 112（極短）→ 無 #133 出刊，hub 仍 v37.0814.1200。",
+      "【中信號—心跳再斷】my-astrology 8/16 06:00 正常產出 divination_20260816_v2608160600（9091 bytes）後，8/17 06:00 槽執行滿時長 1800s（30 分鐘上限）卻無今日占卜檔 → 心跳再斷（8/10–8/15、8/17 缺）。untracked 累計 12 檔。",
+      "【低信號—磁碟改善】403G→397G（91%→90%），可用 42G→48G（+6G），少數改善週期，仍低於 75G 硬線（-27G）。"
     ],
     "project_milestones": {
-      "pine-trading-strategies-git": "171 策略自 8/3 #130 後無新增（第 5 日靜態）。今日 06:30（13.4s）與 18:30（253.9s）均跑完但無新 commit；#131/#132 未出。另於 /app/projects/pine-trading-strategies-git 發現不同源 repo（33→35 策略、8/7 commit、無 remote）— repo 目標歧義待釐清。",
-      "tech-scouting-hub-git": "#131 未出第 4 日。差異：8/8 12:00 slot 本次成功執行（385.3s）卻無新 commit，非 runner 故障 → 疑技能文件路徑失效（tao-of-coding/references/superpowers/tech-scouting-hub/ 已不存在）為新根因。stream.json 維持 v35.0806.1200（8/6 #130）。",
-      "Tao_of_Coding": "v5.0.0+ DORMANT. Last commit 5/30（70d）。",
-      "Three_Kingdoms_Map": "76d DIRTY（1 檔 PLANNING.md）。",
-      "Fiscal5Eye": "143d DORMANT（3/17 末次）。",
-      "Kronos": "Peak v26.0508.2041. 91d DORMANT（5/8）。",
-      "Astrology": "187d 累計（10 untracked）。8/8 06:00 正常產出（v2608080600）— 心跳連續第 2 日復原。8/4–8/6 三檔缺仍維持。",
-      "Crypto_Market_Pulse": "129d DORMANT。",
-      "Social_Sentiment": "129d DORMANT。",
-      "Tech_Scouting": "8/8 12:00 已執行但無 #131 新 commit → 出刊根因由 runner 依賴轉為技能失效（主要）。節奏『不規則 + 技能路徑依存』新觀測。",
-      "Physical_Intelligence": "129d DORMANT。",
-      "Institutional_Policy": "129d DORMANT。"
+      "pine-trading-strategies-git": "復活並創新高：8/14 #131（171→173，IndiaCcfNiftyV6 + CalendarSwingV6）、#132（173→174，VwapPullbackV6）、8/15 #133（174→175，MaRelationshipV6）。今日 06:30 滿 30 分鐘執行無 commit、18:30 83s 無新增。最新 v26.0815.1830。",
+      "tech-scouting-hub-git": "復刊：#131（8/9）+#132（8/14，stream v37.0814.1200）。今日 12:00 執行 211s 但 respLen 112 極短，#133 未出刊。v61 技能失效判定證偽。",
+      "my-astrology": "心跳再斷：#8/16 06:00 產 divination_20260816（v2608160600）後 8/17 06:00 槽滿 30 分鐘無檔。untracked 12 檔累計。",
+      "curiosity-engine": "SILENT DIRTY（JOURNAL.md/SPEC.md 髒）。今日 11:30（49s，respLen 158）與 23:30 槽均有執行；repo 最後 commit 為 6/26 v56。",
+      "Tao_of_Coding": "DORMANT（70d+）。",
+      "Three_Kingdoms_Map": "DIRTY（76d+，PLANNING.md）。",
+      "Fiscal5Eye": "DORMANT（143d+）。",
+      "Kronos": "DORMANT（91d+，peak v26.0508.2041）。",
+      "Crypto_Market_Pulse": "DORMANT（129d+）。",
+      "Social_Sentiment": "DORMANT（129d+）。",
+      "Physical_Intelligence": "DORMANT（129d+）。",
+      "Institutional_Policy": "DORMANT（129d+）。"
     }
   },
   "high_signal_insights": [
     {
-      "domain": "runner_full_recovery_all_6_slots_on_time_8-8",
-      "insight": "v60 把 8/8 06:00/06:30/12:00 三槽準時設為復原判準，並標記 runner 為最高優先維保對象（37h 空窗、雙超時、SIGKILL、zombie）。v60→v61 期間（8/7 23:38→8/8 23:30，約 24h）觀察到：全天所有 scheduled 槽（06:00 / 06:30 / 11:30 / 12:00 / 18:30）與 interactive（09:00）全部成功，時長正常（最長 385.3s、最短 13.4s），無 timeout、無 SIGKILL、zombie 維持 0、Success Rate 100%。長達 5 日的『下線→復活→再失敗』週期於今告終；以 audit log 為單一事實來源檢核，runner 處於健康狀態。",
-      "actionable": "高信號（復原達標）。建議：1) 觀測窗口由『日』延長為『連續 3 日』（8/9–8/11）確認復原非單日巧合；2) 維持「runner-audit.log 為健康唯一事實源」原則，持續追蹤三指標（下線/超時/SIGKILL）；3) 若再現任何單槽超時即回升告警，勿放鬆。"
+      "domain": "insight-hub_9day_gap_23h30_slots_fulltimeout",
+      "insight": "v61（8/8 23:30）後 insight-hub 出現本月最長 9 日空窗（8/9–8/16 無 v62）。runner-audit 顯示期間 23:30 #78 槽多次觸發但 execution 吃滿 30 分鐘 timeout（8/15 23:30 dur=1800010、8/16 23:30 dur=1800068、8/17 00:00 dur=1800020），均未能完成 stream.json commit。v61 判定『runner 全日準時復原』在本週並未持續 —『滿時長執行』成為新一類故障型態，與舊 SIGKILL/timeout 相比以『boundary duration + ok:true 卻無產出』表現。",
+      "actionable": "高信號（復刊後首要）。建議：1) 檢視 8/9–8/16 期間 runner 滿 30 分鐘執行之輸出，確認是否被 SIGKILL 終止或模型迴圈；2) 為 #78 增加產出未達即重試機制（30 分鐘內無 commit → 標記失敗而非 ok）；3) 明日 23:30 起連續 3 日驗證 v62 後節奏回穩。"
     },
     {
-      "domain": "tech-scouting_empty_run_new_root_cause_skill_path_missing",
-      "insight": "v60 判定 #131 8/7 未出係 runner 空窗所致，建議 8/8 12:00 驗證。今日驗證結果：12:00 #82 slot 正常執行 385.3s，但 tech-scouting-hub-git 仍未產生 #131 新 commit（hub 最後 stream v35.0806.1200、last commit 8/6）— 首次在 runner 完全健康下仍無出刊。調查發現排程 #82 的 prompt 引用技能文件路徑已不存在，而現存官方技能載點為 skills/tao-of-opencode/references/superpowers/ 且無 tech-scouting-hub 項目 → 出刊依賴之技能文件已死鏈（或該技能被移動）。這是不依賴 runner 的新根因，需修復引用或確認技能遷移方式。",
-      "actionable": "高信號（新根因）。建議：1) 核實排程 #82 之技能路徑是否應改指其他現存位置；2) 若 tech-scouting-hub skill 已被移除，需重建或改由 prompt 自帶掃描流程；3) 8/9 12:00 再觀 #131，並對照「runner 健康 vs 技能健康」分離判準。"
+      "domain": "pine_recovery_171_to_175_three_reports",
+      "insight": "v61 記載 pine『171 靜態第 5 日、斷言週級振盪』。實況為 8/14 18:39/18:45 雙出 #131+#132、8/15 18:34 出 #133，三日推進 4 策略達 175 新高，全滅 v61 悲觀預期。今日 06:30 槽出現滿 30 分鐘執行（1800s）雖無新增，但 18:30 83s 正常完成 → 雙槽並無證據顯示損壞。判定 pine 以『連續幾天集中出刊』模式運作，先前 9 日靜默屬正常空包而非停滯。",
+      "actionable": "高信號（回正）。建議：1) 將 pine 判準由『每日淨增量』改為『週級窗口』統計（如 #131-#133 3 日 +4），降低單日觀測雜訊；2) 觀察下次 06:30 滿時長是否再現，若持續出現『2 分鐘後無 commit 但 ok』需查 Pine CLI 配置；3) 175 新高後留意 Trend/MeanRev 擴張速率的平台期。"
     },
     {
-      "domain": "pine_stagnant_5d_repo_source_ambiguity",
-      "insight": "pine-trading（workspace 版，171 策略）自 8/4 起第 5 日無任何 commit，#131/#132 皆未出；今日 06:30 13.4s 與 18:30 253.9s 兩槽皆「跑完無新策略」與 v60 判讀一致（正常空包非故障）。關鍵發現：/app/projects/pine-trading-strategies-git 存在另一棵 pine repo（33→35 策略、最後 commit 8/7 06:32、無 git remote），與 workspace 版（171 策略、remote=github raybird/pine-trading-strategies）歷史完全不同 — 兩 repo 來源與排程寫入位置歧義，影響後續『策略數淨增量』判準的一致性。",
-      "actionable": "中信號（訊號系統待整合）。建議：1) 確認 scheduler #76 實際讀寫之 repo（明訂完整絕對路徑），消除雙 repo 歧義；2) 將『每次審計策略數淨增量』判準綁定單一 repo，避免跨 repo 統計失真；3) 統一基準後再談 171 高位是否回落。"
+      "domain": "tech-scouting_revival_131_132_skill_failure_reverted",
+      "insight": "v61 判定排程 #82 技能文件路徑失效致 #131 後空洞。實際 #131（8/9）與 #132（8/14）皆正常出刊並 commit（stream 升至 v37.0814.1200），證據顯示 tech-scouting 不需依賴外部 SKILL.md 也能自驅出刊 → v61『技能死鏈』判讀為假警報。本輪真信號為今日 12:00 執行 211s 但 respLen 僅 112（幾乎空回應）卻無 #133 commit — 新態樣『執行成功但輸出退化』。",
+      "actionable": "高信號（判準更新）。建議：1) 正式撤銷 v61 技能失效根因，改列『輸出退化（respLen<300 卻無 commit）』為新觀察項；2) 8/18 12:00 驗證 #133 是否補出，判斷 8/17 缺口屬週末跳過或系統性；3) 若 8/18 仍無 #133，則檢查 trending_raw.json 是否為空。"
     },
     {
-      "domain": "my-astrology_heartbeat_2_consecutive_days_recovery",
-      "insight": "v60 記錄 8/7 06:00 心跳復原（125s ok，反轉 8/3 缺檔），並設 8/8 再確認之待辦。復核今日：06:00 槽準時 110.4s，產出 divination_20260808_v2608080600（未濟卦，占卜日 8/10），心跳連續第 2 日復�，反轉 8/4–8/6 三檔空窗。untracked 累計 10 檔（6/30、7/1、7/26、7/27、8/1、8/2、8/7、8/8 等）。全系統唯一每日穩定範本回穩。",
-      "actionable": "中信號（穩定回穩）。建議：1) 10 檔 untracked 待使用者提交/歸檔（持續累積）；2) 8/4–8/6 三檔缺因 runner 空窗所致，評估是否補產或接受容錯；3) 續檢 8/9 06:00 心跳。"
+      "domain": "my-astrology_heartbeat_gap_after_8-16_recovery",
+      "insight": "8/16 06:00 產出 divination_20260816（9091 bytes，v2608160600）為 8/9 後首檔（刷 6 日空白），今日 8/17 06:00 槽卻執行滿 30 分鐘 timeout 且無今日檔 → 心跳穩定度仍不足。untracked 12 檔（6/30、7/1、7/4、7/26、7/27、8/1、8/2、8/7、8/8、8/9、8/16 等）。頻率追蹤：8/7–8/9 連 3 日、其後斷 6 日、8/16 一日、8/17 再斷。",
+      "actionable": "中信號。建議：1) 8/17 06:00 滿時長無檔疑與 runner 全槽 timeout 相關，8/18 06:00 再確認；2) 12 檔 untracked 促使用者一次性歸檔；3) 將『遺漏占卜補產 SOP』列入 my-astrology 排程提示，避免數據裂口擴大。"
     },
     {
-      "domain": "disk_decline_to_42G_below_75G_threshold_-33G",
-      "insight": "磁碟由 v60 之 396G/89%（可用 49G）續降至 403G/91%（可用 42G）—連續第 2 個週期惡化。宿主機層級增長為主，容器內已清理（/tmp 91M、workspace/temp 12K 已清空）。預告線持續亮出，但尚未構成急性容量危機。",
-      "actionable": "低信號。建議：宿主機層 docker 清理（舊 image/volume）；容器內 pgrep/ps/free 不可用，system-cleanup 僅能清 temp — 請在主機側配置資源回收 cron。"
+      "domain": "disk_improvement_403G_to_397G",
+      "insight": "磁碟由 v61 之 403G/91%（可用 42G）改善至 397G/90%（可用 48G，+6G），為連續多月下降週期中的少數回升，推測宿主機 docker/暫存清理奏效。仍低於 75G 硬性閾值（-27G）。容器內 /tmp 34M（濕度正常）。",
+      "actionable": "低信號（持續監測）。建議：1) 確認宿主機 cleanup cron 已建立；2) 若 8/18 再回升則將磁碟警報降至中；3) 維持容器內 temp 週期清理。"
     }
   ],
   "pillar_project_snapshots": {
     "pine-trading-strategies-git": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "171 靜態第 5 日（8/4 後無 commit）。今日 06:30 13.4s / 18:30 253.9s 雙槽跑完皆無新策略 commit。另 /app/projects/pine-trading-strategies-git 存在不同源 repo（33→35 策略、8/7 commit、無 remote）— repo 規格待統整。",
-      "focus": "v60『週級 #132』觀測未達（#131/#132 皆未出）。『策略數淨增量』訊號仍為判定要項，但需先統一 repo 來源。",
-      "latest_version": "v26.0803.1922（#130 audit，8/3）",
-      "today_activity": "SILENT — 06:30 13.4s / 18:30 253.9s 皆無新策略 commit"
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "復活高點：175 策略（8/15 #133，v26.0815.1830）。8/14 #131+#132、8/15 #133 三日 +4。今日 06:30 滿 30 分鐘執行無 commit / 18:30 83s 無新增。",
+      "focus": "v61『171 靜態』證偽 — 改以週級窗口判準。下輪觀察 06:30 滿時長是否再現。",
+      "latest_version": "v26.0815.1830（#133 audit，8/15）",
+      "today_activity": "兩槽執行（06:30 1800s timeout / 18:30 83s）均無新策略 commit"
     },
     "tech-scouting-hub-git": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "#130（8/6）為末份。今日 12:00 槽正常執行但未產 #131 — 新根因：技能路徑失效。",
-      "focus": "排程 #82 之技能文件路徑不再存在；runner 正常卻仍缺出刊，以『技能文件是否存在』為基準審查。",
-      "latest_report": "v35.0806.1200（#130，8/6）",
-      "today_activity": "EMPTY — 12:00 slot 385.3s 成功執行但 hub 無新 commit（技能失效嫌疑）"
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "復刊連二期：#131（8/9）+#132（8/14，stream v37.0814.1200）。今日 12:00 執行 211s 但 respLen 112 → #133 未出。",
+      "focus": "v61『技能失效』撤銷改列『輸出退化』：連續觀察 respLen<300 卻無 commit 之新態樣。",
+      "latest_report": "v37.0814.1200（#132，8/14）",
+      "today_activity": "RAN（12:00 211s，respLen 112，無 #133 commit）"
     },
-    "tao-of-coding": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "DORMANT（70 日）",
-      "today_activity": "NONE"
+    "my-astrology": {
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "心跳 8/17 再斷：8/16 06:00 產 divination_20260816（v2608160600）後 8/17 06:00 槽滿 30 分鐘無檔。untracked 12 檔。",
+      "focus": "8/18 06:00 再確認；12 檔 untracked 促歸檔；補產 SOP 列入。",
+      "latest_version": "v2608160600（8/16 06:00）",
+      "today_activity": "06:00 槽 1800s 滿時長且無今日占卜檔（MISS）"
     },
     "curiosity-engine": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "SILENT DIRTY（JOURNAL.md/SPEC.md 髒，38d+）。今日 11:30（223s）與 23:30 觸發均有執行。",
-      "today_activity": "RAN（#85，repo 未 commit）"
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "SILENT DIRTY（JOURNAL.md/SPEC.md 髒）。最後 commit 6/26 v56。今日 11:30（49s，respLen 158）與 23:30 槽均有執行而未 commit。",
+      "today_activity": "RAN（11:30 + 23:30；repo 未 commit）"
+    },
+    "tao-of-coding": {
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "DORMANT（70d+）",
+      "today_activity": "NONE"
     },
     "three-kingdoms-map": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "DIRTY（76d，PLANNING.md 1 檔）",
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "DIRTY（76d+，PLANNING.md）",
       "today_activity": "NONE"
     },
     "fiscal5eye": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "MAINTENANCE_DORMANT（143d）",
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "DORMANT（143d+）",
       "today_activity": "NONE"
     },
     "kronos-replication-git": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "DORMANT（91d）",
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "DORMANT（91d+）",
       "today_activity": "NONE"
     },
     "crypto-market-pulse-git": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "DORMANT（129d）",
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "DORMANT（129d+）",
       "today_activity": "NONE"
     },
     "social-sentiment-observatory-git": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "DORMANT（129d）",
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "DORMANT（129d+）",
       "today_activity": "NONE"
     },
     "physical-intelligence-hub-git": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "DORMANT（129d）",
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "DORMANT（129d+）",
       "today_activity": "NONE"
     },
     "institutional-policy-hub-git": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "DORMANT（129d）",
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "DORMANT（129d+）",
       "today_activity": "NONE"
-    },
-    "my-astrology": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "心跳連續第 2 日復原 — 8/8 06:00 產 divination_20260808_v2608080600（110.5s）。10 檔 untracked。",
-      "focus": "8/2–8/6 因 runner 空窗缺 3 檔；8/7 復原，8/8 續穩。8/9 再確認。",
-      "today_activity": "BACK — 8/8 06:00 正常（v2608080600，未濟卦）"
     },
     "telenexus-ghost-grid": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "DIRTY（CLAUDE.md，130d）",
-      "today_activity": "NONE"
-    },
-    "webdota-git": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "DIRTY（5 files，130d）",
-      "today_activity": "NONE"
-    },
-    "crypto-monitor": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "CRITICAL（160d，超 135d 季閾 +25d）",
-      "today_activity": "NONE — 最老髒樹 160d，scripts/ 未追蹤"
-    },
-    "git-workflow-git": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "CLEAN（111d）",
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "DIRTY（CLAUDE.md，130d+）",
       "today_activity": "NONE"
     },
     "system-cleanup": {
-      "last_updated": "2026-08-08T23:30:34+08:00",
-      "status": "EXECUTED — v61 本輪執行。temp 目錄已清空；pgrep/ps/free 容器不可用，僅完成暫存清理。",
-      "today_activity": "EXECUTED（cleanup.sh；temp 清空）"
+      "last_updated": "2026-08-17T23:30:08+08:00",
+      "status": "EXECUTED — v62 本輪執行。",
+      "today_activity": "EXECUTED（cleanup.sh）"
     }
   },
   "six_pole_matrix": {
-    "Tech": { "activity": "low", "note": "tech-scouting #131 在 runner 正常下仍缺出 → 根因轉移（技能路徑失效）；pine 171 靜態 5 日。" },
-    "Crypto": { "activity": "low", "note": "No new independent signals. crypto-monitor 髒 160d 續超標。" },
+    "Tech": { "activity": "high", "note": "pine 三日復活 171→175（#131-#133）；tech-scouting 復刊 #131+#132（stream v37.0814.1200）；今日 12:00 出現『執行成功但 respLen 112 無 #133』輸出退化新態樣。" },
+    "Crypto": { "activity": "low", "note": "No new independent signals." },
     "Physical": { "activity": "low", "note": "No activity." },
     "Social": { "activity": "low", "note": "No new social signals." },
-    "Policy": { "activity": "low", "note": "EU AI Act 後開源動態停滯於 #130（8/6）；技能失效使 #131 無法出。" },
-    "Security": { "activity": "high", "note": "runner 達全日準時復原判準（6/6 槽成功），故障週期終止；但轉而發現 tech-scouting 技能失效之營運新風險。" }
+    "Policy": { "activity": "low", "note": "EU AI Act 反應停留於 tech-scouting #132（8/14）要件；無獨立政策更新。" },
+    "Security": { "activity": "medium", "note": "insight-hub 9 日空窗肇因 runner 多槽『滿 30 分鐘 timeout 卻標 ok』— 新故障型態；pine 06:30 同現 1800s，占卜 06:00 亦同。監測優先級回升。" }
   },
   "observations": [
-    "【時距】v60（8/7 23:38）→ v61（8/8 23:30）約 24h，正常每日節奏（連續 1 日）。",
-    "【runner 復原】8/8 全槽準時：06:00 110.4s / 06:30 13.4s / 11:30 223.7s / 12:00 385.3s / 18:30 253.9s，interactive 09:00 17.8s；Success 100%、zombie 0。v60『三槽準時』判準達標。",
-    "【tech 新根因】#131（8/8 12:00）在 runner 健康時仍無出，cron 引用的技能文件路徑已不復存在 →『技能失效』加入缺刊根因集。",
-    "【pine】171 靜態第 5 日；今日 06:30 13.4s / 18:30 253.9s 空置無 commit，符合『有跑無新=正常空包』判準。雙 repo（workspace 171 與 app 35）存在懸念，統一來源為近期工作。",
-    "【占卜】08:00 心跳第 2 日復原（v2608080600），untracked 9→10 檔；8/4–8/6 三檔缺口續列於容錯。",
-    "【磁碟】403G/91%、可用 42G，跌破 75G 硬線至 -33G（-7G/日）；/tmp 已回清，host 層 docker 需清理。",
-    "【Memoria】prune --all：consolidate 1 group / 4 nodes，stale/dup 0；sessions 1600 不變，記憶體輸出正常（memory-status 全綠）。",
-    "【v60 預測核對】『8/8 三槽準時』→ 達；『#131（8/8 12:00）』→ runner 正常執行但無出（新根因技能失效）；『占卜 I08 確認』→ 達（8/8 續穩）；『pine 週級』 → 未達；磁碟續跌 → 達（-7G）。"
+    "【時距】v61（8/8 23:30）→ v62（8/17 23:30）＝ 9 日 —— 本月最長空窗（前一長為 v49→v59 間跨 96h）。8/9–8/16 間 23:30 #78 槽多次觸發但皆吃滿 30 分鐘 timeout 未能 commit。",
+    "【pine】8/14 #131+#132、8/15 #133 三日三版 171→175 新高，推翻 v61『靜態』敘事；今日 06:30 滿 30 分鐘槽無新增（1800s）、18:30 83s 正常無新增。",
+    "【tech】#131（8/9）+#132（8/14）復刊，v61 技能失效證偽；今日 12:00 211s 但 respLen 112 極短、無 #133 → 新態樣『輸出退化』。",
+    "【占卜】8/16 06:00 產 divination_20260816（v2608160600，9091B）刷 6 日空白後，8/17 06:00 槽滿 30 分鐘無檔 → 心跳再斷；untracked 12 檔。",
+    "【runner】今日記錄槽：11:30 49s（respLen 158）/ 12:00 211s（respLen 112）/ 18:30 83s（respLen 217）/ 23:30 觸發中；06:00 占卜與 06:30 pine 兩槽皆滿時長 1800s 為異常焦點。",
+    "【磁碟】397G/90%，可用 48G（+6G），為連續下降週期少數回升，仍低於 75G 硬線（-27G）；/tmp 34M 正常。",
+    "【Memoria / 本輪整理】待執行：prune consolidate、更長期記憶規訓；先前 v61 之『技能失效』根因待正式撤銷登錄。"
   ],
   "next_actions": [
-    "【最高】tech-scouting 技能失效修復：核對排程 #82 的技能路徑與 tao-of-coding skills 現況，重建或遷移 tech-scouting-hub 執行知識（skills/tao-of-opencode/references/superpowers/ 是否含真正 scouting 技能）；8/9 12:00 驗證。",
-    "【高】pine 雙 repo 統整：明訂 scheduler #76 的唯一工作路徑與計數基準（workspace 171 vs /app/pine 35），啟動「淨增量」訊號單一來源化。",
-    "【高】runner 復原再確認：維持『連續 3 日』（8/8–8/10）為成功終確認窗口，期間監控三指標（下線/超時/SIGKILL）是否回現。",
-    "【中】my-astrology 心跳維續：以 8/9 06:00 記録第 3 日心跳；10 檔 untracked 促使用者提交或歸檔。",
-    "【中】磁碟：宿主機 docker 層級清理（image/volume/prune），容器內 temp 已清空；若宿主持續 -G/日需升為硬性告警。",
-    "【低】crypto-monitor/webdota/ghost-grid/三國等 129–160d 老髒樹續待提交或歸檔決策。"
+    "【最高】runner 滿時長執行診斷：核對 8/9–8/16 期間 30 分鐘 timeout 槽之完整輸出，確認 SIGKILL/迴圈/模型慢因；為 #78 補『30 分鐘內無 commit 即標失敗並重試』機制，8/18 23:30 驗證 v62 後節奏。",
+    "【高】tech-scouting #133 驗證：8/18 12:00 檢查是否補出（今日 respLen 112 極短屬週末跳過或系統性）；同步將 8/17『執行成功但輸出退化』登錄為新判準。",
+    "【高】pine 判準改週級：正式採 3 日移動窗口統計淨增量（#131-#133 +4），8/18 06:30 滿時長是否再現列入監測。",
+    "【中】my-astrology：8/18 06:00 再確認心跳；12 檔 untracked 促一次性歸檔；將補產 SOP 寫入排程 #83 提示。",
+    "【中】磁碟：確認宿主機 cleanup cron、8/18 是否續回升（是則將警報降級）。",
+    "【低】crypto-monitor/webdota/ghost-grid/三國等 129–160d 老髒樹續待歸檔決策；記憶庫澄清 v61『技能死鏈』誤判並撤銷。"
   ],
   "system_resources": {
-    "disk_usage": "403G / 468G（91%）",
-    "disk_change": "396G→403G（+7G），可用 49G→42G，跌破 75G 硬性閾值至 -33 33G。容器內 /tmp 與 temp 已回收。",
+    "disk_usage": "397G / 468G（90%）",
+    "disk_change": "403G→397G（-6G），可用 42G→48G（+6G）。容器內 /tmp 34M 正常。",
     "memory": "N/A（容器限制）",
     "memory_change": "N/A",
     "load_avg": "N/A",
     "uptime": "N/A（容器環境）",
-    "notes": "8/8（週六）23:30 CST。W32 週六 — 本輪為『復原確認 + 新根因定案』。核心事件：1)【最高信號—復原】runner 全天 6 槽全準時成功（100%、zombie 0），v60 判準全中，5 日故障週期終止；2)【高信號—新根因】tech-scouting #131 於 12:00 槽 runner 健康下仍未出，其 cron 技能文件路徑已不存在 → 出刊瓶頸由 runner 轉移至技能失效；3)【中信號—復原】my-astrology 心跳連續第 2 日（8/8 06:00 v2608080600，untracked 10）；4)【中信號—pine】171 靜態第 5 日（#131/#132 皆空）＋雙 pine repo 來源分歧；5)【低信號—磁碟】403G 91%、可用 42G（-33G/75G）。基調：『runner 好轉、tech 需技能修復』分叉 — 本月核心風險由基礎設施轉為技能失效。下輪觀察：8/9 12:00 tech #131、runner 連續 3 日、占卜第 3 日、pine 雙 repo 整合、磁碟宿主清理。",
-    "urgent_alert": "【CRITICAL→降級】runner 已達全日準時復原（6/6 槽），5 日故障週期終止。新 CRITICAL 為 tech-scouting 技能失效：8/8 12:00 runner 正常時仍無出刊，且排程 #82 的技能文件已消失 → 請於 8/9 12:00 前修正/遷移技能路徑，避免 #130 後空洞再度擴大。磁碟 403G（42G）列為宿主機清理項。"
+    "notes": "8/17（週一）23:30 CST。W34 Mon — 本輪為『9 日空窗復刊 + 雙支柱復活/復刊』。核心事件：1)【最高信號—復刊】insight-hub 於 9 日空洞（8/9–8/16 #78 槽全吃 30 分鐘 timeout）後首度成功執行 → 復刊；2)【高信號—復活】pine 8/14–8/15 三日三版 171→175（#131-#133 共+4），推翻 v61 靜態敘事；3)【高信號—復刊】tech-scouting #131+#132 正常出刊，v61 技能失效判讀證偽，唯今日 12:00 呈現『respLen 112 無 #133』輸出退化新態樣；4)【中信號—心跳再斷】占卜 8/16 產檔後 8/17 06:00 槽滿時長無檔；5)【低信號—磁碟改善】397G / 90%（+6G）。基調：『復活與復刊為表、runner timeout 為裡』— 本月風險從技能失效退回基礎設施（滿時長執行）。下輪觀察：8/18 23:30 節奏、tech #133、pine 週級判準、占卜 06:00、磁碟續走勢。",
+    "urgent_alert": "【復刊】9 日空窗已於今日 23:30 補上，但根因『runner 滿 30 分鐘標 ok 卻無產出』尚未根治（8/9–8/16 六槽受害、今日 06:00/06:30 續現）→ 請求於 8/18 前針對 runner 長執行輸出進行根因診斷；同時對 #78 加入產出驗收。磁碟 397G 續監測。"
   },
-  "audit_memo": "8/8 23:30 CST 排程觸發 v61。以 runner-audit.log 與 projects status 交叉核對：6 槽全準時（06:00 110.4s / 06:30 13.4s / 11:30 223.7s / 12:00 385.3s / 18:30 253.9s / interactive 17.8s），無超時 SIGKILL 空窗，zombie 0 — v60『三槽準時』判準命中，確認 runner 故障週期終止。tech-scouting #82 於 12:00 成功執行（385.3s）卻無 commit — 首次 runner 健康下仍缺出，核查其 cron prompt 技能文件 tao-of-coding/references/superpowers/tech-scouting-hub/ 已不存在（實際技能在 skills/tao-of-opencode/references/superpowers/ 且無 scouting 子集）→ 技能失效列新根因。占卜 8/8 06:00 心跳第 2 日（divination_20260808_v2608080600，110.4s）。pine 兩槽空跑（13.4s/253.9s）無 commit，171 靜態第 5 日；另於 /app/projects 發現不同源 pine repo（33→35）— repo 分歧。磁碟 403G/91%、可用 42G。Memoria prune（consolidate 1 group 4 nodes）、system-cleanup 完成（temp 清理）。下一觀察：8/9 12:00 tech #131、runner 連續 3 日、06:00 占卜第 3 日、pine 週期審計、磁碟宿主機清理。"
+  "audit_memo": "8/17 23:30 CST 排程觸發 v62（排程 #78）。以 runner-audit.log（今日檔）與各 repo git 交叉核對：insight-hub 自 v61（8/8 23:30）後 9 日無新 commit；期間 8/15 23:30 dur=1800010、8/16 23:30 dur=1800068、8/17 00:00 dur=1800020 皆滿 30 分鐘 timeout 標 ok — 判定為 9 日空窗根因（非 skill、非模型選項，而為 runner 長執行輸出遺失）。pine workspace 版（remote=github raybird/pine）確認為唯一排程目標：8/14 18:39 #131（171→173）、18:45 #132（173→174）、8/15 18:34 #133（174→175），strategies 353 檔、14 大類、README 175；今日 06:30 1800s timeout 無 commit、18:30 83s 無 commit。tech-scouting hub：8/9 #131、8/14 #132 已 commit（stream v37.0814.1200）；今日 12:00 執行 211s、respLen 112、hub 無新增 → 判定『輸出退化』新態樣，v61 技能失效根因撤銷。my-astrology：8/16 06:00 divination_20260816（9091B）；8/17 06:00 槽 1800s 無檔，心跳再斷，untracked 12。curiosity-engine：11:30 49s（respLen 158）執行未 commit（repo 最後 6/26）。磁碟 397G/90%（+6G）。今日將執行 Memoria 整理與 system-cleanup。下一觀察：8/18 23:30 出刊節奏、tech #133、pine 週級判準、06:00 占卜、runner 滿時長根因。"
 }
