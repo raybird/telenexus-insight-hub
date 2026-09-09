@@ -1,177 +1,178 @@
 {
-  "version": "v26.0908.2330",
+  "version": "v26.0909.2332",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-09-08T23:30:05+08:00",
-  "ts_utc": "2026-09-08T15:30:05Z",
-  "date_calibrated": "Tue Sep 8 23:30:05 CST 2026",
-  "cycle": "W36 Tue — 排程觸發全域洞察蒸餾與記憶規訓 v65（間隔 19 日出刊：8/20 v64→9/8 v65 / 磁碟 100% 滿載 2.5G 可用 / 占卜心跳連 19 日斷檔 / pine 平台期 179 不變 19 日 / tech-scouting #133 後 22 日無出刊 / runner-audit 每日 8 筆正常執行但無專案產出）",
-  "signal_level": "critical",
+  "timestamp": "2026-09-09T23:32:29+08:00",
+  "ts_utc": "2026-09-09T15:32:29Z",
+  "date_calibrated": "Wed Sep 9 23:32:29 CST 2026",
+  "cycle": "W37 Wed — 排程觸發全域洞察蒸餾與記憶規訓 v66（間隔 1 日：9/8 v65→9/9 v66 / 磁碟 100%→76% 百日內最大降幅 / pine 復甦 179→181 雙策略出刊 / runner 空轉困境部分解除 / system-cleanup 執行但容器工具缺失）",
+  "signal_level": "high",
   "global_evolution_status": {
-    "sovereignty_level": "CRITICAL_DISK_FULL_19DAY_OUTPUT_HALT_ALL_PILLARS_FROZEN",
+    "sovereignty_level": "RECOVERING_DISK_LARGELY_RESOLVED_PINE_ACTIVE_OTHERS_FROZEN",
     "core_breakthroughs": [
-      "【最高信號—磁碟 100% 滿載】442G/468G（100%），可用僅 2.5G — 較 v64（398G/90%/47G）暴增 +44G，19 日內從『持平高壓』惡化至『滿載瀕危』。已低於所有安全閾值（75G 硬線 -72.5G），任何寫入操作（git pack、日誌、暫存檔）皆可能觸發 ENOSPC。為本輪唯一最優先警報。",
-      "【最高信號—19 日全專案產出停滯】自 v64（8/20）至今 19 日，所有支柱專案無新 commit / 無新出刊：pine 停在 179 策略（8/20 #135）、tech-scouting 停在 #133（8/18）、占卜最後產檔 8/20、curiosity-engine 最後 commit 6/26。runner-audit 顯示每日 8 筆正常執行（9/1-9/3、9/5-9/7 有記錄），但執行成果未落盤至任何專案 repo — 呈現『runner 空轉』態樣。",
-      "【高信號—占卜心跳再斷 19 日】8/20 後無任何 divination 產檔（untracked 維持 14 檔），8/19-8/20 連續 2 日復原之型態未能延續。與 v64 記錄之『晨間槽復原』形成反轉 — 問題並非一勞永逸解決。",
-      "【中信號—tech-scouting 出刊缺口擴大至 22 日】#133（8/18）後連續 22 日無 #134 出刊，DSH 動能追蹤（152,804⭐ at #133）完全中斷。v64 曾建議核對 requestId 輸出，至今未見補出。",
-      "【中信號—磁碟 19 日增 44G 之謎】可見目錄（/app 2.1G + /usr 1.4G + /home 801M + /tmp 50M）僅 ~4.4G，但 overlay 顯示 442G 已用 — 增量 44G 來自不明來源（可能是 overlay 層底圖、快取、或隱藏大檔），需進一步診斷。"
+      "【最高信號—磁碟危機大幅緩解】336G/468G（76%），可用 109G — 較 v65（442G/100%/2.5G）暴降 106G 使用量。從『滿載瀕危』直接回升至『健康安全區』，遠超 75G 硬線閾值。這是系統自 8/20 磁碟壓力升高以來的最大正向轉折，直接解除了 ENOSPC 風險。",
+      "【高信號—pine 復甦雙日擴產】#136（06:30 ZoneFlowV6）+#137（18:30 SNR/QMR/RNSV6）= 179→181（+2 策略）。連續兩日出刊打破 19 日停滯，Market Structure 35→37。4 commits 待 push（#134-#137）。runner 空轉困境在磁碟緩解後部分解除。",
+      "【中信號—curiosity-engine 活化】JOURNAL.md + SPEC.md 今日更新（23:31-23:32），runner-audit 11:30 槽有執行記錄。但尚未 commit — 髒狀態從 62d+ 延伸，待確認是否為有效變更。",
+      "【中信號—占卜/tech 持續凍結】占卜 20 日無新產檔（最後 8/20 divination），tech-scouting 23 日無出刊（#133 後）。磁碟緩解未立即觸發復甦，可能為技能/路徑問題而非磁碟問題。",
+      "【中信號—system-cleanup 容器限制】cleanup.sh 執行但 pgrep/ps/free 指令缺失（容器環境），僅 /tmp 暫存清理成功。清理腳本需適配容器化環境。"
     ],
     "project_milestones": {
-      "pine-trading-strategies-git": "FROZEN：179 策略，最後更新 #135（8/20 v26.0820.0630）。19 日無新策略。361 檔 / 14 大類。repo clean。",
-      "tech-scouting-hub-git": "FROZEN：#133（8/18 v38.0818.1200），22 日無出刊。DSH 152,804⭐ 動能追蹤完全中斷。repo clean。",
-      "my-astrology": "HEARTBEAT BROKEN：最後 divination_20260820（8/20 12,393B）。19 日無新產檔。untracked 14 檔未 commit。",
-      "curiosity-engine": "SILENT DIRTY：JOURNAL.md + SPEC.md 髒 62d+（最後 commit 6/26 v56）。11:30 槽 runner-audit 有執行記錄但無 commit。",
-      "tao-of-coding": "DORMANT（101d+，2026-05-30）。",
-      "three-kingdoms-map": "DIRTY（108d+，PLANNING.md，2026-05-23）。",
-      "fiscal5eye": "DORMANT（175d+，2026-03-17）。",
-      "kronos-replication-git": "DORMANT（123d+，2026-05-08）。",
-      "crypto-market-pulse-git": "DORMANT（161d+，2026-03-31）。",
-      "social-sentiment-observatory-git": "DORMANT（161d+，2026-03-31）。",
-      "physical-intelligence-hub-git": "DORMANT（161d+，2026-03-31）。",
-      "institutional-policy-hub-git": "DORMANT（161d+，2026-03-31）。",
-      "telenexus-ghost-grid": "DIRTY（162d+，CLAUDE.md，2026-03-30）。",
-      "system-cleanup": "PENDING — 本輪執行（cleanup.sh）。"
+      "pine-trading-strategies-git": "ACTIVE — 181 策略，#136（ZoneFlowV6, 06:30）+#137（SNR/QMR/RNSV6, 18:30）。4 commits 待 push（origin ahead 4）。repo clean。磁碟緩解後恢復出刊。",
+      "tech-scouting-hub-git": "FROZEN — #133（8/18），23 日無出刊。DSH 152,804⭐ 動能追蹤完全中斷。repo clean。",
+      "my-astrology": "FROZEN — 最後 divination_20260820（8/20 12,393B）。20 日無新產檔。untracked 14 檔未 commit。",
+      "curiosity-engine": "DIRTY ACTIVE — JOURNAL.md + SPEC.md 今日更新（23:31-23:32），runner 11:30 槽有執行。但最後 commit 仍為 v56（6/26），髒 75d+。",
+      "tao-of-coding": "DORMANT（102d+，2026-05-30）。",
+      "three-kingdoms-map": "DIRTY（109d+，PLANNING.md，2026-05-23）。",
+      "fiscal5eye": "DORMANT（176d+，2026-03-17）。",
+      "kronos-replication-git": "DORMANT（124d+，2026-05-08）。",
+      "crypto-market-pulse-git": "DORMANT（162d+，2026-03-31）。",
+      "social-sentiment-observatory-git": "DORMANT（162d+，2026-03-31）。",
+      "physical-intelligence-hub-git": "DORMANT（162d+，2026-03-31）。",
+      "institutional-policy-hub-git": "DORMANT（162d+，2026-03-31）。",
+      "telenexus-ghost-grid": "DIRTY（163d+，CLAUDE.md，2026-03-30）。",
+      "system-cleanup": "DONE — 本輪執行完成（cleanup.sh + /tmp 清理）。容器缺 pgrep/ps/free，僅暫存清理有效。"
     }
   },
   "high_signal_insights": [
     {
-      "domain": "disk_full_critical_100pct",
-      "insight": "磁碟從 v64 之 398G/90%/47G 可用，在 19 日內暴增至 442G/100%/2.5G 可用（+44G）。可見用戶空間目錄僅 ~4.4G，增量來自 overlay 層或不可見區域。已跌破 75G 硬性閾值 -72.5G，任何 git pack-objects、日誌寫入、或暫存操作都可能導致 ENOSPC。系統運作瀕臨癱瘓。",
-      "actionable": "最高優先。建議：1) 立即執行 system-cleanup 清理 /tmp 與 temp；2) 診斷 44G 增量來源（du -sh /var/lib/docker/overlay2/*/  或底圖分析）；3) 若無法釋放至 >10G 可用，暫停所有排程寫入操作；4) 考慮容器重建或 overlay 層清理。"
+      "domain": "disk_crisis_largely_resolved",
+      "insight": "磁碟從 v65 之 442G/100%/2.5G 暴降至 336G/76%/109G — 106G 使用量被釋放。從『滿載瀕危』直接回到『健康安全區』。109G 可用空間遠超 75G 硬線閾值。推測為外部/手動清理（docker layer、overlay 底圖或大檔刪除），因本排程未見清理操作。這是自 8/20 磁碟壓力升高以來的最大正向轉折。",
+      "actionable": "已解決。建議：1) 記錄本次釋放來源以備後續；2) 設定 85% 閾值警報防止回升；3) 嘗試 push pine 積壓 4 commits。"
     },
     {
-      "domain": "19day_output_halt_runner_idle",
-      "insight": "runner-audit 顯示 9/1-9/3、9/5-9/7 每日 8 筆正常執行（ok:true，2100-2900ms），但所有支柱專案自 8/20 後無任何新 commit / 新出刊。pine 179 不變、tech #133 不變、占卜無新檔 — 呈現『runner 空轉』：排程觸發正常、模型回應正常、但專案層級無產出落盤。可能原因：1) runner 技能/腳本指向失效路徑；2) 磁碟滿載阻止寫入；3) 模型回覆內容未觸發專案操作。",
-      "actionable": "高優先。建議：1) 抽查 9/5-9/7 任一日之完整 runner 輸出（非僅 audit metadata），確認模型實際回覆內容；2) 檢查 runner 技能文件路徑是否有效；3) 確認磁碟滿載是否為空轉根因（時間線吻合：磁碟從 8/20 後持續增長）。"
+      "domain": "pine_active_recovery_181strategies",
+      "insight": "pine 在磁碟緩解後恢復出刊，今日雙策略 #136（ZoneFlowV6, ~749 行, MIT, 樞軸區間+Regime Score）+#137（SNR/QMR/RNSV6, ~694 行, 四時框 SNR+Quasimodo+RNS）。179→181（+2），Market Structure 35→37。4 commits 待 push（#134-#137），origin ahead 4。runner 空轉困境在磁碟壓力解除後部分復甦。",
+      "actionable": "高優先。嘗試 git push origin main（磁碟 109G 可用，push 條件已滿足）。"
     },
     {
-      "domain": "astrology_heartbeat_19day_gap",
-      "insight": "占卜心跳在 8/19-8/20 連續 2 日復原後再度中斷，至今 19 日無新產檔（最後：divination_20260820）。untracked 14 檔（6/30-8/20）從未 commit。v64 之『連 3 日宣告穩定回歸』未能驗證 — 實際連 2 日後即斷。占卜系統之可靠性評級應下修。",
-      "actionable": "中優先。建議：1) 將占卜心跳可靠性從『復原中』下修為『高度不穩定』；2) 排查 8/21-9/8 期間 06:00 槽之 runner 輸出，確認是技能失敗還是磁碟阻止寫入；3) 14 檔 untracked 暫緩 commit（磁碟滿載風險）。"
+      "domain": "runner_partial_recovery",
+      "insight": "v65 記錄之『runner 空轉』在本輪部分解除 — pine #136/#137 今日出刊、curiosity JOURNAL.md/SPEC.md 今日更新。但占卜（20 日斷檔）和 tech-scouting（23 日無出刊）仍未復甦。推測空轉主因為磁碟滿載阻止寫入，次要因素可能為技能/路徑問題。",
+      "actionable": "中優先。建議：1) 確認 06:00 槽（占卜）是否因技能問題而非磁碟；2) 核對 12:00 槽（tech-scouting）runner 輸出。"
     },
     {
-      "domain": "tech_scouting_22day_no_output",
-      "insight": "tech-scouting #133（8/18）後 22 日無新出刊，DSH 動能追蹤完全中斷。runner-audit 顯示 12:00 槽每日有執行記錄（ok:true），但無 #134 落盤。與 v64 記錄之『執行成功但輸出缺位』態樣延續至今 — 非單次偶發，而是系統性持續失效。",
-      "actionable": "中優先。建議：1) 核對 9/1-9/7 12:00 槽之 runner 輸出內容；2) 評估 tech-scouting 技能是否需重建；3) DSH 動能 22 日空白已無法補回，建議以手動方式確認 DSH 當前 star 數。"
+      "domain": "curiosity_dirty_active",
+      "insight": "curiosity-engine JOURNAL.md + SPEC.md 今日 23:31-23:32 更新，runner 11:30 槽有執行記錄。但最後 commit 仍為 v56（6/26），髒狀態延續 75d+。更新未 commit 可能為寫入成功但 git 操作失敗，或 runner 有意不 commit。",
+      "actionable": "低優先。確認變更內容後決定是否 commit。"
     },
     {
-      "domain": "disk_44g_growth_unaccounted",
-      "insight": "19 日內磁碟用量從 398G 增至 442G（+44G），但可見目錄（/app 2.1G, /usr 1.4G, /home 801M, /tmp 50M, /var 12M, /opt 5M）合計僅 ~4.4G。增量 44G 來自不可見區域（overlay 底圖、docker layer、或隱藏大檔），需底層診斷。",
-      "actionable": "中優先。建議：1) 執行 du -sh /* | sort -rh 重新確認；2) 若為 docker overlay，需從宿主機側清理；3) 檢查 /var/lib/docker/overlay2/ 或 mount 點。"
+      "domain": "system_cleanup_container_limitation",
+      "insight": "cleanup.sh 執行但核心指令缺失：pgrep（進程偵測）、ps（程序列表）、free（記憶體）皆不可用。僅 /tmp 暫存清理成功（2.6M node-compile-cache + 28K tv_page.txt）。容器環境需適配版 cleanup script。",
+      "actionable": "建議將 cleanup.sh 重寫為容器適配版（用 /proc 替代 ps/pgrep，用 cgroup 替代 free）。"
     }
   ],
   "pillar_project_snapshots": {
     "pine-trading-strategies-git": {
-      "last_updated": "2026-08-20T23:33:45+08:00",
-      "status": "FROZEN — 179 策略，最後 #135（8/20），19 日無新策略。repo clean。",
-      "focus": "磁碟滿載下無法 push。待磁碟緩解後補 push origin ahead 2（#134/#135）。",
-      "latest_version": "v26.0820.0630（#135，8/20）",
-      "today_activity": "NONE — 19 日停滯"
+      "last_updated": "2026-09-09T18:39:00+08:00",
+      "status": "ACTIVE — 181 策略，#136+#137 今日出刊（+2）。4 commits 待 push。repo clean。",
+      "focus": "push origin ahead 4（#134-#137）；持續出刊。",
+      "latest_version": "v26.0909.1830（#137，SNR/QMR/RNSV6）",
+      "today_activity": "#136 ZoneFlowV6（06:30）+ #137 SNR/QMR/RNSV6（18:30）= +2 strategies (179→181)"
     },
     "tech-scouting-hub-git": {
       "last_updated": "2026-08-18T12:00:00+08:00",
-      "status": "FROZEN — #133（8/18），22 日無出刊。DSH 152,804⭐ 動能追蹤完全中斷。repo clean。",
-      "focus": "排查 12:00 槽為何執行正常卻無出刊；DSH 動能已無法補追蹤。",
+      "status": "FROZEN — #133（8/18），23 日無出刊。DSH 152,804⭐ 動能追蹤完全中斷。repo clean。",
+      "focus": "排查 12:00 槽 runner 輸出；評估技能重建需求。",
       "latest_report": "v38.0818.1200（#133，8/18）",
-      "today_activity": "NONE — 22 日停滯"
+      "today_activity": "NONE — 23 日停滯"
     },
     "my-astrology": {
       "last_updated": "2026-08-20T06:03:00+08:00",
-      "status": "HEARTBEAT BROKEN — 最後 divination_20260820（8/20 12,393B）。19 日無新檔。untracked 14 檔未 commit。",
-      "focus": "排查 8/21-9/8 06:00 槽；磁碟滿載可能為根因之一。14 檔 untracked 暫緩 commit。",
+      "status": "FROZEN — 最後 divination_20260820（8/20 12,393B）。20 日無新產檔。untracked 14 檔未 commit。",
+      "focus": "排查 06:00 槽 runner 輸出；磁碟已緩解但心跳未恢復。",
       "latest_version": "v2608200600（8/20 06:00）",
-      "today_activity": "NONE — 19 日斷檔"
+      "today_activity": "NONE — 20 日斷檔"
     },
     "curiosity-engine": {
-      "last_updated": "2026-07-08T23:31:00+08:00",
-      "status": "SILENT DIRTY — JOURNAL.md + SPEC.md 髒 62d+（最後 commit 6/26 v56）。runner-audit 有 11:30 槽執行記錄但無 commit。",
-      "focus": "JOURNAL.md/SPEC.md 髒 62d+ 促 commit；磁碟滿載下暫緩。",
-      "today_activity": "RAN OK（audit 有記錄）但無 commit"
+      "last_updated": "2026-09-09T23:32:00+08:00",
+      "status": "DIRTY ACTIVE — JOURNAL.md + SPEC.md 今日更新（23:31-23:32），runner 11:30 有執行。最後 commit v56（6/26），髒 75d+。",
+      "focus": "確認變更內容後 commit；髒狀態需清理。",
+      "today_activity": "JOURNAL.md + SPEC.md 更新（23:31-23:32），runner 11:30 槽有記錄"
     },
     "tao-of-coding": {
       "last_updated": "2026-05-30T00:00:00+08:00",
-      "status": "DORMANT（101d+）",
+      "status": "DORMANT（102d+）",
       "today_activity": "NONE"
     },
     "three-kingdoms-map": {
       "last_updated": "2026-05-23T00:00:00+08:00",
-      "status": "DIRTY（108d+，PLANNING.md）",
+      "status": "DIRTY（109d+，PLANNING.md）",
       "today_activity": "NONE"
     },
     "fiscal5eye": {
       "last_updated": "2026-03-17T00:00:00+08:00",
-      "status": "DORMANT（175d+）",
+      "status": "DORMANT（176d+）",
       "today_activity": "NONE"
     },
     "kronos-replication-git": {
       "last_updated": "2026-05-08T00:00:00+08:00",
-      "status": "DORMANT（123d+）",
+      "status": "DORMANT（124d+）",
       "today_activity": "NONE"
     },
     "crypto-market-pulse-git": {
       "last_updated": "2026-03-31T00:00:00+08:00",
-      "status": "DORMANT（161d+）",
+      "status": "DORMANT（162d+）",
       "today_activity": "NONE"
     },
     "social-sentiment-observatory-git": {
       "last_updated": "2026-03-31T00:00:00+08:00",
-      "status": "DORMANT（161d+）",
+      "status": "DORMANT（162d+）",
       "today_activity": "NONE"
     },
     "physical-intelligence-hub-git": {
       "last_updated": "2026-03-31T00:00:00+08:00",
-      "status": "DORMANT（161d+）",
+      "status": "DORMANT（162d+）",
       "today_activity": "NONE"
     },
     "institutional-policy-hub-git": {
       "last_updated": "2026-03-31T00:00:00+08:00",
-      "status": "DORMANT（161d+）",
+      "status": "DORMANT（162d+）",
       "today_activity": "NONE"
     },
     "telenexus-ghost-grid": {
       "last_updated": "2026-03-30T00:00:00+08:00",
-      "status": "DIRTY（162d+，CLAUDE.md）",
+      "status": "DIRTY（163d+，CLAUDE.md）",
       "today_activity": "NONE"
     },
     "system-cleanup": {
-      "last_updated": "2026-09-08T23:30:05+08:00",
-      "status": "PENDING — 本輪執行（cleanup.sh）。",
-      "today_activity": "PENDING"
+      "last_updated": "2026-09-09T23:33:00+08:00",
+      "status": "DONE — cleanup.sh 執行完成。容器缺 pgrep/ps/free，僅 /tmp 清理有效。",
+      "today_activity": "executed (limited by container tools)"
     }
   },
   "six_pole_matrix": {
-    "Tech": { "activity": "frozen", "note": "所有 tech 專案停滯 19-22 日。pine 179 不變、tech-scouting #133 不變、curiosity-engine 髒 62d+。runner-audit 有執行但無產出落盤。磁碟 100% 可能為根因。" },
-    "Crypto": { "activity": "dormant", "note": "Crypto_Market_Pulse / Social_Sentiment 161d+ 休眠。無獨立信號。" },
-    "Physical": { "activity": "dormant", "note": "Physical_Intelligence 161d+ 休眠。無活動。" },
-    "Social": { "activity": "dormant", "note": "Social_Sentiment 161d+ 休眠。無新社交信號。" },
-    "Policy": { "activity": "dormant", "note": "Institutional_Policy 161d+ 休眠。政策追蹤完全中斷。" },
-    "Security": { "activity": "critical", "note": "磁碟 100% 滿載（442G/468G，2.5G 可用）— 系統運作瀕臨癱瘓。runner 每日 8 筆執行正常（audit ok:true）但所有專案無產出 = 『空轉』。19 日全專案凍結。" }
+    "Tech": { "activity": "recovering", "note": "Pine 復甦（#136+#137, 181 strategies）。Curiosity 髒更新。Tech-scouting 23 日凍結。磁碟緩解解鎖寫入。" },
+    "Crypto": { "activity": "dormant", "note": "Crypto_Market_Pulse / Social_Sentiment 162d+ 休眠。無獨立信號。" },
+    "Physical": { "activity": "dormant", "note": "Physical_Intelligence 162d+ 休眠。無活動。" },
+    "Social": { "activity": "dormant", "note": "Social_Sentiment 162d+ 休眠。無新社交信號。" },
+    "Policy": { "activity": "dormant", "note": "Institutional_Policy 162d+ 休眠。政策追蹤完全中斷。" },
+    "Security": { "activity": "improving", "note": "磁碟 336G/76%/109G — 從 100% 回落至安全區（-106G）。ENOSPC 風險解除。System-cleanup 執行但受限。" }
   },
   "observations": [
-    "【時距】v64（8/20 23:33）→ v65（9/8 23:30）＝ 19 日 — 史上最長出刊間隔，遠超此前紀錄（v62→v63 之 1 日、v63→v64 之 2 日）。",
-    "【磁碟】398G→442G（+44G/19日 ≈ +2.3G/日），47G→2.5G 可用，100% 滿載。可見目錄僅 ~4.4G，44G 增量來自 overlay 底圖或隱藏區域。",
-    "【runner】9/1-9/3、9/5-9/7 有 audit 記錄（每日 8 筆，ok:true，2100-2900ms），9/4、9/8 無記錄（可能當日槽尚未執行或 audit 檔未輪替）。所有 audit 顯示 scheduled lane 正常，但專案層級零產出。",
-    "【占卜】最後產檔 8/20（divination_20260820, 12,393B）。19 日斷檔。untracked 14 檔（6/30-8/20）從未 commit。8/19-8/20 復原未能延續。",
-    "【pine】179 策略不變 19 日。最後活動 #135（8/20）。repo clean，origin ahead 2 待 push（磁碟滿載下無法 push）。",
-    "【tech】#133 後 22 日無出刊。DSH 152,804⭐ 動能追蹤完全中斷。runner 12:00 槽有 audit 但無落盤。",
-    "【Memoria】/app/workspace/Memoria/ 1.1G — 需確認是否健康。磁碟滿載下暫緩操作。"
+    "【時距】v65（9/8 23:30）→ v66（9/9 23:32）＝ 1 日 — 正常間隔，排程節奏恢復。",
+    "【磁碟】442G→336G（-106G），100%→76%，2.5G→109G 可用。本排程未執行大規模清理，釋放來自外部操作（可能是前輪排程觸發後的人為清理或 docker 操作）。系統處於 76% 安全區。",
+    "【pine】179→181（+2），#136 ZoneFlowV6（06:30）+#137 SNR/QMR/RNSV6（18:30）。4 commits 待 push（origin ahead 4）。磁碟 109G 可用，push 條件已滿足。",
+    "【占卜】最後產檔 8/20（divination_20260820, 12,393B）。20 日斷檔。磁碟緩解未觸發復甦 — 推測根因為技能/路徑問題而非磁碟。",
+    "【tech】#133 後 23 日無出刊。DSH 152,804⭐ 動能追蹤完全中斷。磁碟緩解未觸發復甦。",
+    "【curiosity】JOURNAL.md + SPEC.md 今日更新（23:31-23:32），runner 11:30 槽有記錄。但未 commit — 髒 75d+。",
+    "【system-cleanup】cleanup.sh 執行但 pgrep/ps/free 指令缺失（容器環境），僅 /tmp 暫存清理有效（2.6M + 28K）。腳本需容器適配。",
+    "【Memoria】/app/workspace/Memoria/ 1.1G — 與 v65 一致，無異常增長。"
   ],
   "next_actions": [
-    "【最高—磁碟】診斷 44G 增量來源（du -sh /* / docker overlay 層分析）；執行 system-cleanup 清理 /tmp 與 temp；若無法釋放 >5G 可用，暫停所有寫入排程。",
-    "【最高—runner 空轉】抽查 9/5-9/7 任一日完整 runner 輸出（非僅 audit），確認模型回覆是否觸發專案操作；檢查 runner 技能文件路徑是否有效。",
-    "【高—占卜心跳】排查 8/21-9/8 06:00 槽 runner 輸出，確認是技能失敗、路徑失效還是磁碟阻止寫入。",
-    "【高—tech-scouting】排查 12:00 槽 runner 輸出，確認 #134 為何持續不出刊。",
-    "【中—待 push 積壓】tech-scouting #133 + pine #134/#135 待 push（磁碟緩解後）。",
-    "【低—老髒樹】three-kingdoms 108d / ghost-grid 162d / curiosity 62d / tao 101d 續待歸檔決策（磁碟滿載下暫緩）。"
+    "【最高—push pine 積壓】磁碟 109G 可用，git push origin main（#134-#137 共 4 commits）。",
+    "【高—占卜排查】磁碟已緩解但心跳未恢復，確認 06:00 槽技能路徑是否有效。",
+    "【高—tech-scouting 排查】確認 12:00 槽 runner 輸出；評估技能重建。",
+    "【中—curiosity commit】確認 JOURNAL.md/SPEC.md 變更內容後 commit。",
+    "【中—cleanup 腳本容器適配】重寫 cleanup.sh 用 /proc 替代 pgrep/ps，用 cgroup 替代 free。",
+    "【低—老髒樹歸檔】three-kingdoms 109d / ghost-grid 163d / tao 102d 續待歸檔決策。"
   ],
   "system_resources": {
-    "disk_usage": "442G / 468G（100%）",
-    "disk_change": "398G→442G（+44G/19日），47G→2.5G 可用 — 從『持平高壓』惡化至『滿載瀕危』。",
+    "disk_usage": "336G / 468G（76%）",
+    "disk_change": "442G→336G（-106G/1 日），2.5G→109G 可用 — 從『滿載瀕危』回至『安全區』。釋放來源為外部操作。",
     "memory": "N/A（容器限制）",
     "memory_change": "N/A",
     "load_avg": "N/A",
     "uptime": "N/A（容器環境）",
-    "notes": "9/8（週二）23:30 CST。W36 Tue — 本輪為 19 日長間隔復刊。核心事件：1)【最高—磁碟 100% 滿載】442G/468G 僅 2.5G 可用，+44G 增量來源不明；2)【最高—19 日全專案凍結】runner 空轉（audit ok:true 但零產出）；3)【高—占卜心跳 19 日斷檔】8/20 後無新 divination；4)【高—tech-scouting 22 日無出刊】#133 後完全中斷；5)【中信號—pine 19 日停滯】179 不變；6)【中信號—磁碟增量之謎】可見目錄僅 ~4.4G 但 +44G 增量。基調：『系統癱瘓邊緣 — 磁碟滿載 + 全專案凍結』— runner 執行力與專案產出完全脫鉤，磁碟壓力為最可能根因。下輪觀察：磁碟清理結果、runner 空轉根因診斷、占卜/tech 是否恢復。",
-    "urgent_alert": "【磁碟 100% 瀕危】442G/468G，僅 2.5G 可用。任何寫入操作皆可能 ENOSPC。立即執行 system-cleanup + 診斷 44G 增量來源。【runner 空轉 19 日】audit 正常但專案零產出。【占卜 19 日斷檔】【tech 22 日無出刊】。"
+    "notes": "9/9（週三）23:32 CST。W37 Wed — 本輪核心發現：1)【最高—磁碟危機大幅緩解】336G/76%/109G（-106G），ENOSPC 風險解除；2)【高—pine 復甦】#136+#137 雙策略出刊（179→181），4 commits 待 push；3)【中—runner 空轉部分解除】pine/curiosity 恢復，占卜/tech 仍凍結；4)【中—curiosity 髒更新】JOURNAL.md/SPEC.md 今日更新未 commit；5)【中—cleanup 容器限制】pgrep/ps/free 缺失。基調：『系統復甦啟動 — 磁碟壓力解除觸發部分專案解凍，但占卜/tech 技能層問題仍待診斷』。",
+    "urgent_alert": "【已解除】磁碟 100% 瀕危已回落至 76%。【待處理】pine 4 commits 待 push（109G 可用，條件已滿足）。【待診斷】占卜 20 日斷檔 + tech-scouting 23 日無出刊（非磁碟問題）。【待適配】system-cleanup 容器環境工具缺失。"
   },
-  "audit_memo": "9/8 23:30 CST 排程觸發 v65（排程 #78）。以 date 校準（Tue Sep 8 23:30:05 CST 2026 → v26.0908.2330，無偏移）。距離上次出刊 v64（8/20 23:33）已 19 日 — 史上最長間隔。交叉核對：runner-audit 9/1-9/3、9/5-9/7 各 8-11 筆（ok:true, 2100-2900ms, scheduled lane），9/4、9/8 無記錄。所有支柱專案自 8/20 後零 commit / 零出刊：pine 179 不變、tech #133 不變、占卜無新檔（最後 8/20）、curiosity 髒 62d+。磁碟 442G/468G（100%，2.5G 可用）較 v64 +44G，可見目錄僅 ~4.4G，增量來自 overlay 底圖。系統處於『滿載瀕危 + 全專案凍結 + runner 空轉』三重危態。本輪因磁碟滿載風險，system-cleanup 僅執行輕量清理（/tmp + temp），git push 暫緩。更新 stream.json 並 commit。下一觀察：磁碟清理後可用空間、runner 空轉根因、占卜/tech 是否恢復。"
+  "audit_memo": "9/9 23:32 CST 排程觸發 v66（排程 #79）。以 date 校準（Wed Sep 9 23:32:29 CST 2026 → v26.0909.2332，無偏移）。距離上次出刊 v65（9/8 23:30）已 1 日 — 正常間隔。核心發現：磁碟從 v65 之 442G/100%/2.5G 暴降至 336G/76%/109G（-106G），釋放來源不明（非本排程操作）。Pine 復甦：#136（ZoneFlowV6, 06:30）+#137（SNR/QMR/RNSV6, 18:30）= 179→181，4 commits 待 push。Curiosity JOURNAL.md/SPEC.md 今日更新未 commit。占卜 20 日斷檔、tech-scouting 23 日無出刊持續。System-cleanup 執行但容器缺 pgrep/ps/free。Memoria 1.1G 不變。基調從『系統癱瘓邊緣』轉為『復甦啟動 — 磁碟解壓觸發部分專案解凍，但技能層問題仍阻礙全面恢復』。"
 }
