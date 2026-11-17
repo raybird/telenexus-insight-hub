@@ -1,104 +1,113 @@
 {
-  "version": "v26.1002.2330",
+  "version": "v26.1117.2331",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-10-02T23:30:31+08:00",
-  "ts_utc": "2026-10-02T15:30:31Z",
-  "date_calibrated": "Fri Oct  2 23:30:31 CST 2026",
-  "cycle": "W40 Fri — 排程觸發全域洞察蒸餾與記憶規訓 v71（間隔 19 日：9/13 v70→10/2 v71 / 全支柱 9/15 後凍結 17 日、v70 回退誤判修正、占卜六日連卦完結、磁碟 -7G 改善）",
+  "timestamp": "2026-11-17T23:31:30+08:00",
+  "ts_utc": "2026-11-17T15:31:30Z",
+  "date_calibrated": "Tue Nov 17 23:31:30 CST 2026",
+  "cycle": "W47 Tue — 排程觸發全域洞察蒸餾與記憶規訓 v72（間隔 46 日：10/2 v71→11/17 v72 / v71「全支柱凍結」診斷被證偽、三支柱陸續甦醒、curiosity v76→v77 記憶治理升格、commit 積壓與磁碟回升）",
   "signal_level": "high",
   "global_evolution_status": {
-    "sovereignty_level": "FULL_DORMANCY_POST_0915_TECH_RECOVERY_CORRECTED_ASTROLOGY_SIXCHAIN_COMPLETE",
+    "sovereignty_level": "DORMANCY_DIAGNOSIS_FALSIFIED_PILLARS_REVIVED_HANDOFF_COMPRESSION_DISCIPLINE_MEMORY_GOVERNANCE_UPGRADE",
     "core_breakthroughs": [
-      "【最高信號—v70 回退誤判修正】v70 判定 tech-scouting『D2 續刊失敗、復甦降級為一次性覺醒』，但事實是 #140（9/14）與 #141（9/15）連續出刊：archify 重回全艦最速 +1,441/d 破 62K、DeepSeek Harness 高原假說破功 +1,411/d 二次加速 224K 新高、Graphify 負成長一日反彈 +295、orca 破 68K 連四期壓制 OmniRoute、hyperframes 破 50K / humanizer 破 48K 里程碑雙響。v70 結論在 24 小時內即被證偽——蒸餾判讀存在『以單日缺刊斷言回退』的急躁偏誤，需規訓為『至少觀察 2 個出刊窗口再下回退結論』。",
-      "【高信號—全支柱 17 日凍結】9/15 為最後活躍日（pine #143 18:35、tech #141 12:04、占卜 9/15 06:00）之後所有支柱全面沉寂至 10/2：pine 17 日無獵頭、tech 17 日無日報、curiosity 自 9/12 起 20 日無合成、insight-hub 自 9/13 起 19 日無蒸餾、my-astrology 占卜止於 9/15（20 個 untracked 檔案待 commit）。這是 9/9 磁碟危機恢復以來最長的一次全域靜默，長度超越 8 月 tech 25 日單支柱沉睡——此次為多支柱同步凍結，指向排程觸發層而非單專案故障。",
-      "【高信號—占卜六日連卦完結】9/14 大過→坎（28→29：『棟橈本末弱、扛大梁承重涉險』）與 9/15 未濟→蹇（64→39：『小狐汔濟濡其尾、見險能止續完連結』）為連卦第五、六日，與 9/20 結算窗（剩 5 天）直接對位。六日敘事完整收束：破籬（大壯）→割除（損/歸妹）→潛行（明夷/小過）→立身立信（無妄/中孚）→承重涉險（大過/坎）→續完連結（未濟/蹇）。『最後一卦未濟』落在結算前 5 天，是整個 Q3 排程中最精準的一次時間—卦象共振；之後占卜亦隨全域凍結而中斷。",
-      "【中信號—磁碟改善】336G/76%/109G，較 v70（343G/78%/102G）-7G used / +7G avail。17 日凍結期間無新增出刊，磁碟自然回落，ENOSPC 風險解除且餘裕擴大。Pine 184 策略（14 類）物理對位在 #143 後凍結，品質地板維持但無增量。"
+      "【最高信號—v71 凍結診斷被證偽】v71（10/2）判定 9/15 後四支柱『同步凍結、排程觸發層失效』；46 日後原始 git log 與檔案 mtime 顯示凍結是階段性而非終態：pine 10/3 起連續四期獵頭（#144–#147，184→190 策略）、tech 11/14–11/15 連續出刊（#143/#144）、curiosity 11/12 v76（22 日斷線復掃）→11/17 v77（當日 23:00 落盤）、my-astrology 占卜出刊至 11/17。僅 insight-hub 自身自 10/2 沉默 46 日。此與 v70→v71 的『急躁回退偏誤』完全同構：單一觀察窗缺刊不足以推斷結構性失效，連續缺刊亦不等於永久死亡。",
+      "【最高信號—交接壓縮規訓直接命中本引擎】curiosity v77 以 arXiv 2611.18642 確立：重複摘要壓縮造成 56 世界／六模型一致退化（八代後僅等效單 agent 第四條命），主要損失來自『重複壓縮』而非更換 agent；每次從完整原始紀錄重寫同樣 300 字可挽救 70–82% 損失。本輪蒸餾即為實證——v71 stream.json 的『全支柱凍結』結論建立在 9/15 的壓縮摘要上，與 raw git log 直接矛盾。規訓升級：蒸餾必須回到原始 git log／檔案 mtime，禁止以既有摘要為唯一輸入做鏈式再壓縮；CausalLogDistiller v5 輸出需含 provenance／retention policy／recall policy／deletion scrub 四欄位。",
+      "【高信號—tech 主軸易位：token 成本＋交付工作流】tech #144（11/15）確立賽道從『技能數量競賽』轉向『省 token／免費模型／路由』與『會審、會交付』：caveman 120,126 登全站單日 #1（少 token 做同樣的事）、dsh-our-free-model 74,568／magpie 36,598 共構成本最佳化叢集；交付工具 chrome-devtools-mcp 56,379／alibaba/open-code-review 51,505／Tencent LoopForge／plannotator 12,843 進榜。王座 mattpocock/skills 324,557（+661）對 superpowers 317,688（+399），差距擴至 6,869，個人品牌技能庫首度結構性壓過框架派。orca 125,147（+678/d）奪單日增速王、craft-anything +1,327 為全場最猛。",
+      "【高信號—記憶治理升格為五責任】curiosity v77 將規則 27 升格為 Meta-#5 正式子面『記憶完整性與治理（MIP-Governance）』：HEAMS（2611.20144）以效能／效率／安全／隱私／使用者主權五責任評估並提出可包裹任意後端的 governance layer；HippoRAG helpful 94.79% 卻 scenario leak 71.74%，necessity-gated recall 使 helpful-no-leak 30.86%→45.95%，retention＋recall 雙閘使中毒抵抗 40%→88.61%；LEDGER（2611.20927）1% context 達 full replay 準確度且刪除需 scrubbing。Gatekeeping Impossibility 三日觀察期收束為 Synthesis 候選（SPILLWAY 確定性 sentry floor＋span veto＋兩視角 judge，12/12 cell in-scope ASR 0／99.8% benign utility），Meta-#7 新增第五子面『可稽核執行地板』。",
+      "【中信號—commit 積壓已成為主要營運風險】my-astrology 27 個 untracked 檔案（含 11/17 當日損→歸妹、10/03／10/20／10/22／11/13–11/15 系列、家族策略）全部未版控；tech-scouting #144 四檔修改（stream.json／index.html／archives/list.json／trending_raw.json）＋一檔 untracked archive（2026-11-15_1200.html）未 commit；curiosity JOURNAL.md／SPEC.md 位於非 git 目錄。資料物理存在但無法由 git 稽核，若排程再次中斷即面臨流失風險。",
+      "【中信號—磁碟回升】367G／468G（83%，78G 可用），較 v71（336G／76%／109G）+31G used／−31G avail。46 日增量來自三支柱復刊、三源掃描快取與 archive 堆積；ENOSPC 風險自 v71 解除後重新上升。"
     ],
     "project_milestones": {
-      "pine-trading-strategies-git": "DORMANT — #143（9/15 18:35）為最後獵頭，維持 184 策略（14 類）。17 日無新增，工作樹乾淨。",
-      "curiosity-engine": "DORMANT — v69.0912 為最新合成，20 日無新增。工作樹乾淨。",
-      "tech-scouting-hub-git": "DORMANT — #140（9/14）+ #141（9/15）連續出刊證偽 v70 回退論，隨後 17 日凍結。工作樹乾淨。",
-      "my-astrology": "DORMANT — 占卜止於 9/15（未濟→蹇六日連卦完結）。20 個 untracked 檔案待 commit（含 6/30-9/15 divination 全系列 + 家族策略）。",
-      "telenexus-insight-hub-git": "ACTIVE — v71 出刊。排程恢復（19 日間隔後重启）。"
+      "pine-trading-strategies-git": "REVIVED→DORMANT — #144（10/3）/#145（10/20）/#146（10/21）/#147（10/22）四期獵頭，184→190 策略（14 類）：新增 Fear & Greed 情緒量表進場閘門、投降耗竭反轉、NY SMT-IFVG、商品脈衝矩陣、ATR 棘輪帶、選擇權結構路由。10/22 後 26 日無新增，190 .pine＝190 .md＝index.html 190 對位，工作樹乾淨。",
+      "curiosity-engine": "REVIVED — v76（11/12，22 日斷線復掃，第四基底啟動）→ v77（11/17 23:00 當日落盤）；JOURNAL.md（280KB）／SPEC.md v2.5。規則 27 升格 MIP-Governance、CausalLogDistiller v5 全記錄重寫、Gatekeeping Synthesis 候選、NVIDIA/SkillEvaluator 3.2k⭐ 納入評估方法論。非 git 目錄，無 commit 稽核。",
+      "tech-scouting-hub-git": "REVIVED — #143（11/14 committed）＋#144（11/15 未 commit）。29 檔艦隊單日 +5,524⭐、總星 2,274,588；orca 125,147／deepseek-harness 281,169／Graphify 147,863／anthropics/skills 194,685。",
+      "my-astrology": "ACTIVE — 占卜出刊至 11/17（損→歸妹雙動爻：『減法＋等待、減極轉給予』）；11/13 ID 83 更新為對外白話版、完整版仍存檔。27 個 untracked 全未 commit。",
+      "telenexus-insight-hub-git": "ACTIVE — v72 出刊，46 日間隔後重啟；stream.json 時間戳對齊 date（Tue Nov 17 23:31:30 CST 2026／v26.1117.2331，零偏移）。"
     }
   },
   "high_signal_insights": [
     {
-      "domain": "distillation_bias_correction",
-      "insight": "v70 在 #139 出刊後僅 30 小時無 #140 即斷言『D2 續刊失敗、復甦降級』，但 #140（9/14）與 #141（9/15）隨即連續出刊且內容強度為近期最高（雙引擎格局、里程碑雙響）。這暴露蒸餾流程的系統性偏誤：以單一缺刊窗口推斷趨勢反轉。正確規訓應為『缺刊 N 日才下回退結論』（建議 N=3），且回退結論須標註『待續刊證偽』的有效期限。",
-      "actionable": "將『三日缺刊才判回退』寫入蒸餾規訓；本次 v71 即為修正範例——承認誤判並記錄偏誤模式。"
+      "domain": "dormancy_falsification",
+      "insight": "v71 將 9/15 後的同步停擺定性為『排程觸發層失效』並給出 FULL_DORMANCY 狀態，46 日後被三支柱復刊直接證偽：pine 於 10/3 即恢復（距 9/15 僅 18 日）、tech 11/14、curiosity 11/12、占卜持續至 11/17。真正長期停擺的只有 insight-hub 自身。這與 v70『tech 回退』在 24 小時內被證偽是同一類偏誤：以觀察窗內的缺席推斷永久狀態。差別在於 v71 的結論存活了 46 日，顯示偏誤可長期潛伏而不被察覺——若非本次原始 log 交叉比對，FULL_DORMANCY 標籤仍會被視為事實。",
+      "actionable": "將『休眠標籤必須附到期日與復活條件』寫入蒸餾規訓；任何 DORMANT／FAILURE 判定需同時記錄最后一次 raw log 檢查時間，禁止無期限沿用前一期狀態描述。"
     },
     {
-      "domain": "schedule_layer_freeze",
-      "insight": "9/15 18:35（pine #143）之後四支柱在數小時內同步停止（占卜 9/15 06:00、tech 9/15 12:04、pine 9/15 18:35），同步性指向排程觸發層失效而非各專案獨立故障。9/9 磁碟危機時為『部分恢復』（pine+curiosity 先回、占卜/tech 凍結），此次為『同步凍結』，模式相反。磁碟現況 109G 可用排除空間壓力，故障點應在 cron/scheduler 配置或 runner 存活狀態。",
-      "actionable": "排查 9/15 後 scheduler 日誌與 cron 存活狀態；確認本次 10/2 觸發為手動/排程何者，恢復各支柱定時任務。"
+      "domain": "handoff_compression_discipline",
+      "insight": "curiosity v77 的 2611.18642 實證：鏈式摘要壓縮（以先前摘要為唯一輸入）造成 70–82% 交接損失，且六個模型一致；從完整原始紀錄重寫可挽救大部分損失。本引擎 v71 的凍結誤判正是此機制的產物——它引用的是 v70/v69 的摘要而非 raw git log。同時 What Moves a LoCoMo Score（2611.19199）顯示僅換 judge 可移動 7.2 分、換 prompt 移動 9.3 分，因此跨期 KPI 比較必須固定 judge/prompt，否則『改善』可能只是量測漂移。",
+      "actionable": "stream.json 的 pillar_project_snapshots 必須由當次 raw git log／檔案 mtime 直接生成，並在 audit_memo 記錄取證來源；禁用『延續 vXX』式描述作為事實依據。"
     },
     {
-      "domain": "timing_narrative_closure",
-      "insight": "六日連卦以『未濟→蹇』收尾：『小狐汔濟濡其尾』（最後一哩最險）＋『利西南不利東北、利見大人、往蹇來連』（見險能止、止而後連）。9/15 距 9/20 結算剩 5 天，卦象指令從『再砍』轉為『續完與連結』——與 v70『立正定信』形成『正→扛→完』三段收束。全域凍結恰發生在結算窗內（9/15-9/20），『未濟』一語成讖：Q3 收斂（健檢＋議獄筆錄＋標的優先序）是否如期完成已無法從排程輸出驗證。",
-      "actionable": "人工確認 9/20 結算三項（健檢＋議獄筆錄＋標的優先序）實際完成狀態；占卜恢復後首卦應以『Q4 現金轉房產專戶』為情境重起。"
+      "domain": "tech_axis_shift",
+      "insight": "#144 的結構性訊號不是 orca 增速王，而是評價標準的轉移：caveman 以『少 token 做同樣的事』登上全站單日 #1，與 dsh-our-free-model／magpie／OmniRoute 形成成本最佳化叢集；同時 chrome-devtools-mcp／open-code-review／LoopForge／plannotator 讓 agent 從『會寫』轉為『會審、會交付』。mattpocock/skills 324,557 對 superpowers 317,688 的 6,869 差距，是個人品牌技能庫首度在上位差距上壓過框架派——技能生態的價值錨點正從『框架完整性』移向『可直接交付的個人化工作流』。",
+      "actionable": "tech-scouting 下一期追蹤指標增列 token 成本／免費模型路由與交付審核工具兩類，並持續觀測 mattpocock 與 superpowers 差距是否擴大為結構性反轉。"
     },
     {
-      "domain": "tech_double_engine_confirmed",
-      "insight": "#141 確立技能賽道『雙引擎格局』：archify（62K，+1,441/d 重回最速）與 DeepSeek Harness（224K，+1,411/d 二次加速破高原假說）並駕；orca 對 OmniRoute 四連壓制差距 2,628；垂直領域產業化（hyperframes 50K / humanizer 48K）；Graphify 負成長定性為一次性校正（+295 反彈）。凍結前最後一期是近期資訊密度最高的一期，17 日斷檔的資訊缺口需以恢復後首期『追補掃描』彌合。",
-      "actionable": "tech-scouting 恢復後首期應做 9/15→恢復日全量追補（star 數斷層校準），而非僅日報增量。"
+      "domain": "memory_governance_five_duties",
+      "insight": "規則 27 升格反映記憶系統的評價座標已從『記得多少』移到『是否可被治理』：HEAMS 五責任（效能／效率／安全／隱私／使用者主權）＋外部 governance wrapper，HippoRAG 揭示 helpful 與 scenario leak 可同時高達 94.79%／71.74%，necessity-gated recall 與 retention＋recall 雙閘分別將 helpful-no-leak 與中毒抵抗大幅提升。對 TeleNexus 的直接的含義是：記憶寫入不是中性動作，必須有 provenance 與 deletion scrub 機制，否則隱私與主權責任無法兌現。",
+      "actionable": "在 Memoria／memory-cli 寫入流程中增列來源標註與可刪除性檢查；蒸餾記憶時避免將未驗證的『休眠／失敗』標籤固化為長期事實。"
+    },
+    {
+      "domain": "version_control_backlog",
+      "insight": "目前有三層未版控資料：my-astrology 27 untracked（含當日占卜與家族策略）、tech-scouting #144 的四檔修改＋一檔 untracked archive、curiosity JOURNAL/SPEC 完全在非 git 目錄。相較 v71 時期『僅 my-astrology 20 untracked』，積壓已從單點擴散為三支柱。這與交接壓縮規訓形成雙重風險：即使記憶內容正確，若無版本化快照，原始取證來源仍會流失。",
+      "actionable": "優先 commit my-astrology 27 檔與 tech-scouting #144；將 curiosity JOURNAL/SPEC 納入 git 或至少建立每日只讀鏡像。commit 訊息沿用 vYY.MMDD.HHMM 對位慣例。"
     }
   ],
   "pillar_project_snapshots": {
     "pine-trading-strategies-git": {
-      "last_updated": "2026-09-15T18:35:53+08:00",
-      "status": "DORMANT — 184 策略（14 類）凍結 17 日，工作樹乾淨。",
-      "today_activity": "NONE（最後為 #143：6 組關鍵詞交叉 + commits API 全域掃描 + TradingView 社群熱門頁，無全新合格 strategy()；排除 tradingview-multi-strategy-pine 無 .pine、stock-market-trading-view-script 已覆蓋、Project-X 無 LICENSE、OI-Command-Center indicator()、Bull-bear-Crypto 無 LICENSE、cvd-divergence README-only；TradingView 熱門前 6 全 indicator()）。"
+      "last_updated": "2026-10-22T06:56:45+08:00",
+      "status": "DORMANT — #147（10/22）為最後獵頭，190 策略（14 類），10/22 後 26 日無新增。工作樹乾淨。",
+      "today_activity": "NONE。v71 誤判為『17 日凍結』，實為復刊後再休眠：#144（10/3）184 穩態 → #145（10/20）+2 SMT-IFVG／商品脈衝 → #146（10/21）+2 ATR 棘輪／選擇權結構 → #147（10/22）+2 Fear & Greed 情緒共識／投降耗竭，共 +6 至 190。"
     },
     "curiosity-engine": {
-      "last_updated": "2026-09-12T23:45:00+08:00",
-      "status": "DORMANT — v69 為最新，20 日無合成。工作樹乾淨。",
-      "today_activity": "NONE（延續 v69：Harness 插件經濟化 + 演化安全合流 + Crypto 甦醒 D2）。"
+      "last_updated": "2026-11-17T23:00:09+08:00",
+      "status": "ACTIVE — v77 於今日 23:00 落盤（JOURNAL.md／SPEC.md v2.5），非 git 目錄。",
+      "today_activity": "v77 因果合成：交接壓縮規訓（2611.18642，完整紀錄重寫挽救 70–82%）＋規則 27 升格 MIP-Governance（HEAMS 五責任／LEDGER／AdMem／Jetriever）＋Gatekeeping Synthesis 候選（SPILLWAY 確定性地板＋受限語意 judge）＋Meta-#7 第五子面可稽核執行地板＋NVIDIA/SkillEvaluator 三層閘門；三源掃描 arXiv 306 篇／HF 約 30／GitHub 15，壓縮率 ~96%。排程健康度 33%（近 6 日 2/6，11/13–11/16 四窗無落盤）。"
     },
     "tech-scouting-hub-git": {
-      "last_updated": "2026-09-15T12:04:35+08:00",
-      "status": "DORMANT — #140 + #141 連續出刊後凍結 17 日。工作樹乾淨。",
-      "today_activity": "NONE（最後為 #141：archify 62K 最速 + DeepSeek Harness 224K 雙引擎 + orca 68K 四連壓制 + hyperframes 50K/humanizer 48K 里程碑）。"
+      "last_updated": "2026-11-15T12:00:00+08:00",
+      "status": "ACTIVE_UNCOMMITTED — #144（11/15）已生成但未 commit；#143（11/14）為最後已提交期。",
+      "today_activity": "NONE（11/16–11/17 無新日報）。待消化：#144 內容為 29 檔單日 +5,524⭐、總 2,274,588；orca 125,147（+678/d 增速王）、craft-anything +1,327（全場最猛）、mattpocock/skills 324,557 對 superpowers 317,688、caveman 120,126 單日 #1、交付工具鏈進榜。工作樹 4 檔修改＋1 檔 untracked。"
     },
     "my-astrology": {
-      "last_updated": "2026-09-15T06:00:04+08:00",
-      "status": "DORMANT — 六日連卦完結後凍結 17 日。20 個 untracked 檔案待 commit。",
-      "today_activity": "NONE（最後為 9/15 未濟→蹇：『小狐汔濟濡其尾、利見大人往蹇來連』——續完與連結，距 9/20 結算 5 天）。"
+      "last_updated": "2026-11-17T06:00:00+08:00",
+      "status": "ACTIVE_UNCOMMITTED — 占卜持續出刊至今日；27 個 untracked 全未 commit。",
+      "today_activity": "v26.1117.0600 損→歸妹（第 41→54 卦，六四＋上九雙動爻）：『損其疾、弗損益之；歸妹征凶、永終知敝』——先減多餘與毛病、耐心等時機，減極轉給予；全家宜減 3C／減糖／早睡、緩簽約與承諾、柔性應對長輩。11/13 起 ID 83 對外僅輸出白話版，完整卦爻存檔。"
     },
     "telenexus-insight-hub-git": {
-      "last_updated": "2026-10-02T23:30:31+08:00",
-      "status": "ACTIVE — v71 出刊。19 日間隔後排程重启。",
-      "today_activity": "v71 蒸餾：v70 誤判修正 + 全域凍結診斷 + 六日連卦收束 + 磁碟改善確認。"
+      "last_updated": "2026-11-17T23:31:30+08:00",
+      "status": "ACTIVE — v72 出刊（v26.1117.2331），46 日間隔後重啟。",
+      "today_activity": "v72 蒸餾：v71 凍結診斷證偽＋交接壓縮規訓＋tech 主軸易位（token 成本／交付工作流）＋記憶治理五責任升格＋commit 積壓與磁碟回升診斷。"
     }
   },
   "six_pole_matrix": {
-    "Tech": { "activity": "dormant", "note": "tech-scouting #141 後凍結 17 日；恢復首期需全量追補。Pine 184 策略凍結。" },
-    "Crypto": { "activity": "dormant", "note": "自 v70 D3 坐實後 19 日無追蹤；TradingAgents 105K / Vibe-Trading 33K 現況未知，需重建基線。" },
-    "Physical": { "activity": "dormant", "note": "curiosity v69 後 20 日無合成；physical-intelligence-hub 自 3/31 沉睡。" },
-    "Social": { "activity": "dormant", "note": "無新增追蹤；social-sentiment 自 3/31 沉睡。" },
-    "Policy": { "activity": "dormant", "note": "無新增追蹤；institutional-policy-hub 自 3/31 沉睡。" },
-    "Security": { "activity": "stable", "note": "磁碟 336G/76%/109G，較 v70（343G/78%/102G）-7G used / +7G avail。ENOSPC 遠離，餘裕擴大。" }
+    "Tech": { "activity": "active_high", "note": "Pine 190 策略（10/22 後休眠）；curiosity v77 交接壓縮／記憶治理／SkillEvaluator；tech #144 orca 125K／DSH 281K／mattpocock 324K。技術主軸由技能數量轉向 token 成本＋交付工作流。" },
+    "Crypto": { "activity": "stable_d3", "note": "v77 維持 D3 不升 D4：tradermonty/claude-trading-skills 6.5k⭐（+837/d）屬金融技能需求，非 agentic payments 新增長。TradingAgents 122,617 仍在艦隊觀察。" },
+    "Physical": { "activity": "active_no_breakthrough", "note": "cs.RO 11/17 110 篇新稿／217 total；Robustness as a Transferable Skill（2611.18702）PiPER 20.3%→45.8%、RoboCoEvo／WEALR 邊緣推理 +23%。規則 8 側面滿足但無單一突破標的。" },
+    "Social": { "activity": "active", "note": "使用者主權納入記憶五責任；技能生態 mattpocock/skills 王座易位；plannotator 12.8k（+696/d）人因糾偏、ag-ui-protocol/ag-ui 19.4k（+791/d）agent 狀態可視化。" },
+    "Policy": { "activity": "active_high", "note": "SPILLWAY（typed-identity 確定性地板＋span veto＋兩視角 judge，12/12 cell ASR 0／99.8% utility）為 Gatekeeping Impossibility 提 synthesis 候選；Auditable Authorization 稽核契約；SECCARD 310 張 Agent Card 語意 judge 波動 25.8–97%。" },
+    "Security": { "activity": "warning", "note": "磁碟 367G／468G（83%，78G 可用），較 v71 +31G used／−31G avail；三支柱 commit 積壓（27 untracked＋4 M＋1 untracked＋非 git JOURNAL）。Meta-#7 第五子面可稽核執行地板確立。" }
   },
   "observations": [
-    "【時距】v70（9/13 23:33）→ v71（10/2 23:30）＝ 19 日 — 全域凍結後重启，以 date 校準零偏移（Fri Oct  2 23:30:31 CST 2026）。",
-    "【誤判修正】v70『tech D2 續刊失敗』在 24 小時內被 #140 證偽、#141 加固——蒸餾急躁偏誤確診，規訓升級為三日缺刊才判回退。",
-    "【同步凍結】9/15 四支柱數小時內同步停止（占卜 06:00、tech 12:04、pine 18:35），指向排程觸發層而非單專案故障；磁碟 109G 可用排除空間因素。",
-    "【六日連卦完結】9/14 大過→坎（承重涉險）→ 9/15 未濟→蹇（續完連結），『破籬→割除→潛行→立正→承重→續完』完整收束，『未濟』預言 9/20 結算窗內的凍結。",
-    "【tech 最後強音】#141 為近期資訊密度最高一期（雙引擎格局 + 里程碑雙響 + 四連壓制），17 日斷檔需全量追補而非增量日報。",
-    "【磁碟】336G/76%/109G（-7G used / +7G avail 較 v70），凍結期自然回落，安全且餘裕擴大。",
-    "【commit 積壓】my-astrology 20 個 untracked 檔案（含 9/14、9/15 兩期占卜 + 家族策略）為唯一待消化積壓；其餘支柱工作樹乾淨。"
+    "【時距】v71（10/2 23:30）→ v72（11/17 23:31）＝ 46 日 — insight-hub 自身長期缺窗；以 date 校準零偏移（Tue Nov 17 23:31:30 CST 2026 → v26.1117.2331）。",
+    "【診斷證偽】v71『FULL_DORMANCY／排程觸發層失效』被 raw git log 證偽：pine 10/3 即復刊、curiosity 11/12 v76、tech 11/14 #143、占卜至 11/17；長期停擺者實為蒸餾樞紐自身。",
+    "【偏誤同構】v70『tech 回退』24h 被證偽、v71『全支柱凍結』46d 被證偽——兩次皆為以缺席推斷永久狀態；後者因存活更久而今次才被交叉比對抓出。",
+    "【交接壓縮】v77 2611.18642：重複壓縮造成 70–82% 損失、從完整原始紀錄重寫可回收；v71 誤判即為此機制產物。LoCoMo judge/prompt 漂移 7.2／9.3 分，跨期 KPI 須固定量測條件。",
+    "【tech 易位】#144：caveman 120,126 單日 #1（少 token）、dsh-our-free-model 74,568／magpie 36,598；交付工具 chrome-devtools-mcp 56,379／open-code-review 51,505；mattpocock/skills 324,557 壓 superpowers 317,688（差 6,869）。",
+    "【記憶治理】規則 27 升格 MIP-Governance：HEAMS 五責任（效能／效率／安全／隱私／使用者主權）；HippoRAG helpful 94.79%／leak 71.74%，雙閘使中毒抵抗 40%→88.61%；LEDGER 1% context 達 full replay。",
+    "【占卜】11/17 損→歸妹雙動爻，承接前六日『未濟→剝→小過→坤→觀→否』保守格局後轉為『減法＋等待』；焦點：砍毛病、緩承諾、減極轉給予。",
+    "【commit 積壓】my-astrology 27 untracked（v71 時 20，+7）＋tech-scouting 未提交 #144（4 M＋1 untracked）＋curiosity 非 git；積壓由單點擴散為三支柱。",
+    "【磁碟】367G／468G（83%，78G 可用），較 v71（336G／76%／109G）+31G／−31G；v71 的『ENOSPC 遠離』結論需下修為風險回升。"
   ],
   "next_actions": [
-    "【最高—排程層診斷】排查 9/15 後 scheduler/cron 存活與日誌，確認 10/2 觸發來源，逐一恢復 pine / tech / 占卜 / curiosity 定時任務。",
-    "【高—9/20 結算人工確認】健檢＋議獄筆錄＋標的優先序三項在凍結期內的實際完成狀態，無法由排程輸出驗證，需人工回填。",
-    "【高—my-astrology commit】20 個 untracked 檔案（6/30-9/15 divination 全系列 + 家族策略）commit + push，勿遺失六日連卦完結篇。",
-    "【中—tech 全量追補】恢復首期做 9/15→恢復日斷層校準（archify / Harness / orca / hyperframes 現況重建基線）。",
-    "【中—Crypto 基線重建】TradingAgents / Vibe-Trading 19 日斷檔後重取 star 數，D3 坐實後的延續或反轉需重新判定。"
+    "【最高—commit 積壓消化】git add/commit/push my-astrology 27 個 untracked（含 11/17 當日卦與家族策略）與 tech-scouting #144（4 M＋1 untracked archive）；curiosity JOURNAL/SPEC 納入 git 或建立每日只讀鏡像，避免原始取證來源流失。",
+    "【高—蒸餾規訓落地】將 v77『全記錄重寫摘要』寫入本引擎：pillar snapshots 須由當次 raw git log／檔案 mtime 生成，audit_memo 記錄取證來源；休眠／失敗標籤需附到期日與復活條件，禁止無期限沿用。",
+    "【高—排程健康度】v71 後 46 日 insight-hub 無出刊；落實 v77『缺窗即寫入休眠標記（含無信號判定）』於所有支柱含本樞紐，避免靜默跳過造成型態 B 執行未落盤。",
+    "【中—磁碟回收】+31G／46 日；執行 system-cleanup 後再次 df 核對，必要時清理 temp／archive 舊快取，避免 ENOSPC 風險回升。",
+    "【中—tech 增量追補】#144 之後 11/16–11/17 尚無日報；恢復首期做增量補掃並延續 token 成本／交付工作流兩類新指標觀測（mattpocock vs superpowers 差距是否擴大）。"
   ],
   "system_resources": {
-    "disk_usage": "336G / 468G（76%）",
-    "disk_change": "-7G used / +7G avail（較 9/13 343G/78%/102G）。凍結期自然回落，安全且餘裕擴大。",
-    "notes": "10/2（週五）23:30 CST。W40 Fri — 核心發現：1)【最高—v70 誤判修正】tech #140/#141 連續出刊證偽回退論，蒸餾偏誤規訓升級；2)【高—全支柱 17 日同步凍結】9/15 後排程觸發層失效，磁碟無辜；3)【高—占卜六日連卦完結】未濟→蹇『續完連結』預言結算窗凍結；4)【中—磁碟改善】336G/76%/109G。基調：『誤判修正、同步凍結診斷、連卦收束、餘裕擴大』。"
+    "disk_usage": "367G / 468G（83%，78G 可用）",
+    "disk_change": "+31G used / -31G avail（較 v71 336G/76%/109G）。46 日復刊與三源快取增量；ENOSPC 風險較 v71 回升，需持續監控。",
+    "notes": "11/17（週二 W47）23:31 CST。核心發現：1)【最高—v71 凍結診斷證偽】三支柱於 10/3–11/17 間陸續復刊，長期停擺實為蒸餾樞紐自身；2)【最高—交接壓縮規訓】v77 2611.18642 證實重複摘要丟失 70–82%，本引擎誤判即為實例，須回到 raw log 取證；3)【高—tech 主軸易位】token 成本／免費模型路由＋交付工作流成為新評價標準，mattpocock 首度壓過 superpowers；4)【高—記憶治理五責任】規則 27 升格 MIP-Governance、Gatekeeping Synthesis 候選出爐；5)【中—commit 積壓與磁碟回升】三支柱未版控、磁碟 +31G。基調：『證偽凍結神話、回到原始證據、記憶治理升格、交付工作流新軸』。"
   },
-  "audit_memo": "10/2 23:30 CST 排程觸發 v71。以 date 校準（Fri Oct  2 23:30:31 CST 2026 → v26.1002.2330，零偏移）。距離上次出刊 v70（9/13 23:33）19 日 — 全域凍結後重启。核心發現：(1) v70 回退誤判修正——#140（9/14）+ #141（9/15）連續出刊且為近期最強一期，蒸餾規訓升級為三日缺刊才判回退；(2) 9/15 後四支柱同步凍結 17 日（占卜 06:00、tech 12:04、pine 18:35 依序停止），排程觸發層為首要嫌疑，磁碟 109G 可用排除空間因素；(3) 占卜六日連卦以未濟→蹇完結，『小狐汔濟濡其尾、往蹇來連』，9/20 結算三項需人工回填；(4) 磁碟 336G/76%/109G（-7G）餘裕擴大。my-astrology 20 untracked 待 commit，其餘乾淨。基調：『誤判修正、凍結診斷、連卦收束』——從 v70 的『以正立身』進階為『認錯修正（正）＋追查凍結根因（信）』。"
+  "audit_memo": "11/17 23:31 CST 排程觸發 v72。以 date 校準（Tue Nov 17 23:31:30 CST 2026 → v26.1117.2331，零偏移）。距離上次出刊 v71（10/2 23:30）46 日。取證來源：各支柱 raw `git log`（pine／curiosity／tech／my-astrology／insight-hub）、`git status --short`、檔案 mtime、`df -h /`、curiosity JOURNAL.md v77 條目與 SPEC.md v2.5、tech stream.json v43.1115.1200、my-astrology 11/17 卦文、memory-cli stats（Total Messages 6,172）。核心發現：(1) v71『FULL_DORMANCY／排程觸發層失效』被三支柱復刊證偽，與 v70 回退誤判同構，偏誤為『以缺席推斷永久狀態』；(2) curiosity v77 交接壓縮實證（2611.18642，重複壓縮丟失 70–82%、原始紀錄重寫可回收）直接命中本引擎，規訓升級為蒸餾僅能從 raw log／mtime 生成；(3) tech #144 主軸易位至 token 成本＋交付工作流，mattpocock/skills 324,557 壓 superpowers 317,688（差 6,869）、caveman 120,126 單日 #1、craft-anything +1,327 全場最猛；(4) 規則 27 升格 MIP-Governance（HEAMS 五責任＋HippoRAG 雙閘中毒抵抗 40%→88.61%），Gatekeeping Impossibility 收束為 SPILLWAY 確定性地板＋受限語意 judge 之 Synthesis 候選；(5) 占卜 11/17 損→歸妹雙動爻，『減法＋等待、減極轉給予』；(6) commit 積壓擴為三支柱（27 untracked＋4 M／1 untracked＋非 git JOURNAL），磁碟 367G／83%／78G（+31G 較 v71）。基調：『證偽凍結神話、回到原始證據、記憶治理升格、交付工作流新軸』——從 v71 的『認錯修正＋追查根因』進階為『以 raw 證據重寫結論＋把治理責任寫進記憶管線』。"
 }
