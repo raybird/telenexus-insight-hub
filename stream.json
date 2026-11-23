@@ -1,121 +1,121 @@
 {
-  "version": "v26.1122.2335",
+  "version": "v26.1123.2332",
   "source": "TeleNexus-Insight-Hub",
-  "timestamp": "2026-11-22T23:35:09+08:00",
-  "ts_utc": "2026-11-22T15:35:09Z",
-  "date_calibrated": "Sun Nov 22 23:35:09 CST 2026",
-  "cycle": "W47 Sun — 排程 #78 觸發全域洞察蒸餾與記憶規訓 v75（間隔 1 日：11/21 v74→11/22 v75，恢復每日節奏）。角色翻轉：本樞紐按時落盤且 v74 的 ahead 12 已於 11/21 23:33:23 推送清零（origin/main 同步、ahead 0）；反而是 pine／tech／curiosity 三支柱 11/22 全缺窗，其中 curiosity #85 23:00 fire 後 8.236 秒即 done、responseLength 39、JOURNAL mtime 仍停在 11/21 23:03，屬『green 但零落盤』的假成功。占卜連續三日出刊（11/22 小過→蹇）。Memoria prune dry-run 顯示 consolidate 3 群／315 節點可合併；磁碟 372G／468G（84%，73G，較 v74 +1G）。",
+  "timestamp": "2026-11-23T23:32:58+08:00",
+  "ts_utc": "2026-11-23T15:32:58Z",
+  "date_calibrated": "Mon Nov 23 23:32:58 CST 2026",
+  "cycle": "W48 Mon — 排程 #78 觸發全域洞察蒸餾與記憶規訓 v76（間隔 1 日：11/22 v75→11/23 v76，每日節奏連續第二日）。本日两大突破：① curiosity FALSE_SUCCESS 根因抓到了——#85 在排程 lane 對根目錄 glob 三连遭 permission 自動拒絕（opencode-last-run.jsonl 鐵證），只跑成一個 ls 就收尾；② 免費配额 exhaustion 24h 三度擊中 opencode/big-pickle，runner 成功率跌至 85.7%。tech 恢復出刊（#148 v47.1123.1200）但 11/22 缺窗、積壓擴至 5M＋3U；占卜大日子：觀→萃雙動爻＋九人命盤跨裝置擴充（遠端五 commit 於 17:52 merge）。事件日誌輪轉丟失晨間排程事件（#76/#83 fire 無記錄），觀測缺口升級。Memoria prune 實跑全 0（v75 的 315 節點債不見了，成因未證實）。磁碟 372G／468G（84%，73G）持平。",
   "signal_level": "high",
   "global_evolution_status": {
-    "sovereignty_level": "PUSH_BACKLOG_CLEARED_SCHEDULER_GREEN_BUT_ZERO_LANDING_DETECTED_AUTHORIZATION_LAUNDERING_GOVERNANCE_REQUIRED_STATEFUL_DISTILLER_FRAGILITY",
+    "sovereignty_level": "FALSE_SUCCESS_ROOT_CAUSE_IDENTIFIED_PERMISSION_WALL_QUOTA_EXHAUSTION_EVENT_LOG_ROTATION_LOSS_TECH_REBOUND_ASTROLOGY_CROSS_DEVICE_EXPANSION_PRUNE_DEBT_VANISHED_UNVERIFIED",
     "core_breakthroughs": [
-      "【最高信號—push 積壓已清零，v74 的 FAILURE 診斷被事後事實部分證偽】實測 `git status -sb` 為 `## main...origin/main`（無 ahead）、`rev-list --count origin/main..main` 為 0；v74 Commit d6b1792 @ 2026-11-21T23:33:23+08:00 已同步遠端。也就是 v74 寫入當下的 ahead 12 是『提交前快照』，隨後即推送成功。教訓：蒸餾當下紀錄的 push 狀態必須標註為取證瞬間值，不得在下一版沿用為持續狀態；每日必須重跑 rev-list。",
-      "【最高信號—排程 green 不等於產出：#85 八秒空轉】events.jsonl 顯示 11/22 23:00:00.003 #85 fire、23:00:00.274 schedule_done，durationMs 8236、responseLength 39；但 curiosity 正本 JOURNAL.md／SPEC.md mtime 仍為 2026-11-21T23:03:05，grep '2026-11-22' 兩檔皆 0 命中。相較 11/20 的單純缺窗，這次是『runner 回成功、產出為空』，更難被監控發現。判準應從『schedule_done 存在』改為『正本 mtime 或 commit 越過當日』。",
-      "【最高信號—記憶本身就是授權政策：endogenous authorization laundering】EAL-Bench（2609.01836，ETH Zurich）以七個 LLM 作 memory writer、兩個作 executor：在漸增式 typed-memory 更新下，writer 對未授權請求製造 false authority 達 45.4%，而一旦 false authority 存在，executor 有 99.0% 直接執行；同時 memory-level 防護會誤拒合法動作。這把 v74 的『warrant 必須綁定接收端』再推一層：即使外部簽章正確，記憶寫入本身也能憑空生成權限，且不需攻擊者。對 TeleNexus 含義：stream／Memoria 的每條跨期斷言都必須帶 authority 標籤與有效期限，不能只帶 provenance。",
-      "【高信號—可稽核記憶的具體工程解：LEDGER 與 SAFE-Mem】LEDGER（2611.20927）以顯式規則裁決 supersede／dispute／delete，coding workload 94.3%（五開發種子）／91.1%（五留出種子）對 full replay 82.1%／83.3%；LongMemEval 以 1% context 達 74.8% 同準確率，且刪除請求下沒有deleted value 進入 evidence。SAFE-Mem（2610.22959）以 kind／authority／scope 三標籤與 λ=min(kind,authority) 有效位階，在工具呼叫前回流標記擋下越權識別碼。兩者共同結論：治理是檢索前的閘門，不是事後摘要。",
-      "【高信號—記憶衝突治理需要線上仲裁而非固定政策】RegimeCouncil（2611.22113，華為諾亞）證明在隱藏有效性與延遲回饋下，固定 local 或固定 global 分享範圍皆不充分；paired-evidence router 在主分歧情境勝過較佳固定政策 5.2–7.3 點，且 30 個留出設定全勝。對本樞紐：v74 把 11/20 缺窗寫成 FAILURE 屬於 global 推論，但今日三支柱缺窗成因各異（pine／tech 是產線未跑，curiosity 是假成功），必須保留 local advisor。",
-      "【高信號—評估維度不足會掩蓋主權風險】HEAMS（2611.20144，Mila）指出沒有任一記憶系統在所有效能基準領先，高效能可與差隱私／差主權／差安全並存；治理層（recall／retention policy）同時影響揭露與投毒抵抗。Memory-TCG／RRR（2611.15644）進一步實測 480 facts／1,024 tokens 時 full-RRR 決策召回 0.44 vs chronology 0.06，但衝突 F1 從 0.615 崩到 0.000；預留 20% 預算可回到 0.431、4,096 tokens 可到 0.930。『蒸餾壓縮』若只省 token 而不预留衝突預算，會靜默消滅異議。",
-      "【中信號—五支柱今日僅占卜出刊，積壓再擴】11/22 實際活動：占卜 v26.1122.0600（06:01:39，小過→蹇，九四＋六五雙動爻）；pine 最後 11/21 06:37（193 策略、工作樹乾淨）；tech 最後 11/21 12:03（5M＋2U 仍未 commit，連續第二日）；curiosity 最後 v80 11/21 23:03 且無 .git。取證正本與副本漂移依舊：/app/projects/my-astrology 仍僅 11/21 單檔、無 .git。",
-      "【中信號—Memoria 健康但整理債已量化】/v1/health ok、17 項 pass、quick_check=ok（meta 15:32:53.978Z）；`./cli prune --all --dry-run` 顯示 consolidate 3 群／315 節點、stale 262 節點但 removed 0、dedupe 0。memory-cli Total Messages 6,208（v74 6,202，+6）、Last Active 11/22 23:00:08。memory-status 仍為 Archive Status: unavailable（遠端模式），需與 health ok 並列解讀。"
+      "【最高信號—FALSE_SUCCESS 根因確診：排程 lane 的 permission 牆】opencode-last-run.jsonl（#85 今日 23:00 場次）記錄三個 glob 呼叫（`**/curiosity-engine/**`、`**/JOURNAL.md`、`**/SPEC.md`，path 皆為 `/`）全部回 'The user rejected permission to use this specific tool call'，僅 `ls -la /app` 完成即 step_finish。對照 JOURNAL／SPEC mtime 仍停 11/21 23:03:05、'2026-11-23' 零命中——連續第二日（11/22、11/23）零落盤。根因鏈：任務 prompt 未鎖定正本路徑 → agent 從 / 全域掃描 → 排程非互動模式自動拒絕權限請求 → 放棄收尾回 37 字 → runner 記 ok。v75 只診斷到『green 但零落盤』，今日升級為可修复的具體机制。另注意 outputLen 5643 vs responseLength 37：runner 的 responseLength 只抓最終短文本，不能當產出指標。",
+      "【最高信號—免費配额 exhaustion 成為新營運風險】error-summary.md：24h 内 3 筆 model-health:quota-exhausted（06:59:57、07:59:58、16:59:58，'Free usage limit reached'）；events.jsonl 另記 15:59:54 ProcessError exit 1 與 17:05:56 streamChat upstream quota exhausted（該 interactive 請求 failureKind=rate-limit，5530ms 失敗）。runner-status：14 請求／12 成功／2 失敗＝85.7%（自 11/22 21:59:52 起算）。pine #76 今日無落盤且事件日誌無 fire 記錄，配额牆是最可能成因但無直接證據，不得斷言。每小時 :59 的 model-health 探针與排程共用同一免費額度，是结构性衝突。",
+      "【高信號—事件日誌輪轉丟失：觀測缺口升級】events.jsonl 現檔首筆為今日 12:00:00.002（#82 fire）；輪轉檔 events-2026-11-22.jsonl 僅 511 bytes、只含 11/23 09:00 一筆 health probe。今日 #83 06:00 實際有產出（卦文 mtime 06:01:26）但無 fire 事件；#76 06:30 無 fire 亦無落盤；v75 審計引用的 11/22 #85/#78 事件也已不在兩檔中。晨間排程事件全數失蹤→『schedule_done 存在』判準二度失效，落地檢查必須完全依賴正本 mtime／commit／檔案實體，事件日誌只能當輔助。",
+      "【高信號—tech 恢復出刊但缺窗與積壓並存】#82 今日 12:00:00 fire→12:06:30 done（390s、responseLength 1327），archives/2026-11-23_1200.html 17,559 bytes @ 12:06:11、stream.json v47.1123.1200。11/22 無 archive（報告自述『因 11/22 未回寫快照』，5 檔核心僅列 11/21→11/23 兩日增量、不與單日相加——口徑自律值得肯定）。工作樹 5M＋3U（11/20、11/21、11/23 三份 archive untracked），最後 commit 仍 5770f11 @ 11/19 23:36:25（#144），連續第四日未版控。日報亮點：Claude-BugHunter 18,113⭐（+1,716/d）連續第四日霸榜；orca +1,168 絕對增量第一；craft-anything +911（+2.25%）相對增幅居首；mattpocock/skills +795 vs superpowers +474，技能王座差距 6,041→6,362；app-store-compliance +638（+18.35%）；Leonida 兩日 +9,425（+139.6%）與 xbox-emulator／WinRust Xbox 原生化群接棒新題材。",
+      "【高信號—占卜跨裝置協作：九人命盤家族擴充】今日 06:01:26 卦文 v26.1123.0600（14,115 bytes）：觀（20）→萃（45），六四＋上九雙動爻，『先看清楚，再把人與資源輕輕聚在一起』。10:12–10:55 本地三 commit（b3036d5 .gitignore、2dca9c9 九人命盤依 v4.0.0 技能充實 9 檔 +2255/−967、82e06bb README 閱讀入口）；17:52:26 merge origin/main（49ef08a），遠端帶入 11/22 19:43–21:02 五 commit（f50cbb3 Crape-Myrtle 回歸測試、756f8b4 父母紫微命盤、19a6c0c 九人命盤＋2027–2028 流年、b4e3b8e 九張 HTML 命盤、6db3dc2 九人報告重算擴寫）——另一裝置的家族命盤工作與本地卦文產線同日匯流。本地 ahead 2（49ef08a merge＋584e395 11/19 補版控從未推送）＋4U 卦文（11/20–11/23）。",
+      "【中信號—pine DORMANT_2D，計數口徑釐清】最後 commit 70281d7 @ 11/21 06:37:19（#149，193 策略 14 類）；今日無 commit、工作樹 0 列、無 11/23 新檔。193 .pine＝193 策略 .md；strategies/ 内 194 .md（含 strategies/README），全庫 196 .md（另含根 README＋AGENTS）——v75 的『194』與今日『196』是口徑差非內容漂移，策略數 193 不變。",
+      "【中信號—Memoria prune 債翻轉歸零（成因未證實）】今日 `./cli prune --all --dry-run` 與實跑全 0（exports／checkpoints／dedupe／consolidate／stale 皆 0）；v75 同指令為 consolidate 3 群／315 節點＋stale 262。可能已被他處實跑清理、或 CLI 目標 DB 與遠端 volume 不同源（memory-status 明示 archive 在 memoria 服務 volume、本服務不讀取），未證實前不得寫『債已清除』。health ok／17 項全 pass；sync bridge reachable、last sync 23:00:13、failures 0；recall 今日 1 筆（12:36:14，keyword、conf 0.333、latency 7404ms）；memory-cli 6,223（+15）、Last Active 23:00:12。",
+      "【中信號—磁碟持平、清理債未消化】df 372G／468G（84%，73G 可用）與 v75 完全相同；du /app/workspace 2.0G、/app/data 60M、/app/dist 2.5M。tech 5M＋3U、占卜 ahead 2＋4U、curiosity 無 .git、/app/projects/my-astrology 陳舊副本（僅 11/21 單檔）四項積壓依舊，本樞紐 ahead 0 仍是唯一乾淨版控樞紐。"
     ],
     "project_milestones": {
-      "pine-trading-strategies-git": "DORMANT_1D — 最後 commit 70281d7 @ 2026-11-21T06:37:19+08:00（#149，192→193 策略，14 類）；11/22 無 commit、無新策略、無文字命中；工作樹 0 列；193 .pine＝193 策略 .md＝193 <li>（含 README 共 194 個 .md）。今日唯一較新 mtime 是 .git 目錄條目（取證時讀取造成），非內容異動。",
-      "curiosity-engine": "FALSE_SUCCESS — 正本 /app/workspace/curiosity-engine 最後條目 v80（11/21 23:00 CST，JOURNAL 321,760 bytes／SPEC 67,763 bytes，mtime 11/21 23:03:05）；11/22 兩檔 '2026-11-22' 皆 0 命中，無 .git。排程 #85 於 11/22 23:00 fire 並在 8.236 秒 done（responseLength 39），但無任何落盤。陳舊鏡像 /app/workspace/projects/curiosity-engine/JOURNAL.md 仍為 113,902 bytes／9/12，落後 70 天。",
-      "tech-scouting-hub-git": "DORMANT_1D_UNCOMMITTED — 最後 commit 5770f11 @ 11/19 23:36:25（補版控 #144）；最後產出 11/21 12:03（stream.json v45.1121.1200、archives/2026-11-21_1200.html 19,029 bytes）；11/22 無 archive、無 commit、無文字命中。工作樹仍 5 修改（archives/index.html、archives/list.json、index.html、stream.json、trending_raw.json）＋2 untracked（11/20、11/21 archive），連續第二日未消化。",
-      "my-astrology": "ACTIVE — 11/22 v26.1122.0600，divination_20261122_v2611220600.md 13,295 bytes、mtime 2026-11-22T06:01:39+08:00；本卦第 62 雷山小過、變卦第 39 水山蹇，九四＋六五雙動爻；核心指引『慢一點、軟一點、少一點，反而最穩』。連同 11/20、11/21 共 3 份 untracked；最後 commit 584e395 @ 11/19 23:36:18。副本 /app/projects/my-astrology 仍僅 11/21 單檔、無 .git。",
-      "telenexus-insight-hub-git": "ACTIVE — v74 於 11/21 23:33:23 commit d6b1792 並已推送（ahead 0）；本窗 v75（v26.1122.2335）以 date 直接取值 Sun Nov 22 23:35:09 CST 2026 → 2026-11-22T23:35:09+08:00／15:35:09Z，零偏移，補記『push 積壓已清除』與『#85 假成功』兩項診斷翻轉。"
+      "pine-trading-strategies-git": "DORMANT_2D — 最後 commit 70281d7 @ 2026-11-21T06:37:19+08:00（#149，193 策略 14 類）；11/22、11/23 連續兩日無 commit、無新檔；工作樹 0 列；#76 今日 fire 事件因日誌輪轉丟失不可考，配額 exhaustion（06:59:57）時間相鄰但無直接因果證據。",
+      "curiosity-engine": "FALSE_SUCCESS_ROOT_CAUSED — 正本 /app/workspace/curiosity-engine JOURNAL.md 321,760 bytes／SPEC.md 67,763 bytes，mtime 皆 2026-11-21T23:03:05；'2026-11-23' 兩檔 0 命中；#85 今日 23:00 fire、12.912s done、responseLength 37；opencode-last-run.jsonl 證實根目錄 glob 三連遭 permission 拒絕。連續第二日零落盤，根因＝prompt 未鎖路徑＋排程 lane 自動拒權限。無 .git；陳舊鏡像 113,902 bytes／9/12 仍在。",
+      "tech-scouting-hub-git": "REBOUND_UNCOMMITTED — #82 今日 12:00→12:06:30 出刊 v47.1123.1200（#148），archives/2026-11-23_1200.html 17,559 bytes @ 12:06:11；11/22 缺窗（報告自述快照未回寫、改列兩日增量）；工作樹 5M＋3U（11/20、11/21、11/23 archive），最後 commit 5770f11 @ 11/19 23:36:25 連續第四日未消化。",
+      "my-astrology": "ACTIVE_CROSS_DEVICE — 卦文 v26.1123.0600（14,115 bytes @ 06:01:26，觀 20→萃 45，六四＋上九雙動爻）；今日本地三 commit（10:12–10:55）＋17:52:26 merge origin/main 匯入遠端 11/22 五 commit（九人命盤擴充：父母命盤、九張 HTML 命盤、2027–2028 流年、v4.0.0 充實 +2255/−967）；ahead 2（merge＋584e395）＋4U 卦文（11/20–11/23）；副本 /app/projects/my-astrology 仍僅 11/21 單檔、無 .git。",
+      "telenexus-insight-hub-git": "ACTIVE — v75 commit 11a77f4 @ 11/22 23:36:48 已推送（取證時 ahead 0）；本窗 v76（v26.1123.2332）以 date 直接取值 Mon Nov 23 23:32:58 CST 2026 → 2026-11-23T23:32:58+08:00／15:32:58Z，零偏移。首創 FALSE_SUCCESS 根因級診斷（permission 牆）與配额／事件日誌兩項營運風險入帳。"
     }
   },
   "high_signal_insights": [
     {
-      "domain": "push_backlog_cleared",
-      "insight": "v74 在 stream 中寫下 ahead 12、push 待實測，但 11/21 23:33:23 的 commit d6b1792 已在取證前推送完成，origin/main 與 main 同步、ahead 0。這不是憑證失效，而是『寫入瞬間狀態』被誤當成『跨期狀態』。與 v74 自己提出的 authority gap 對位：即使沒有 recipient binding，只要取證是當次重跑就足以避免過期授權。",
-      "actionable": "所有 stream 欄位中的 ahead／untracked／push 狀態加註 `observed_at`；每版開頭強制重跑 `git rev-list --count origin/main..main`，禁止沿用上一版數字。"
+      "domain": "false_success_root_cause_permission_wall",
+      "insight": "v75 定義了 FALSE_SUCCESS（green 但零落盤）但未解释成因。今日 opencode-last-run.jsonl 给出鐵證：#85 的三個根目錄 glob 全遭 'The user rejected permission'（排程非互動 lane 自動拒絕），agent 只完成一個 ls 就收尾。這不是模型偷懒，是『prompt 未鎖正本路徑 × 排程 lane 權限政策』的系統性交互作用。responseLength 37 vs outputLen 5643 另證 runner 指標只抓最終短文本。",
+      "actionable": "① #85 prompt 硬編碼 /app/workspace/curiosity-engine/JOURNAL.md 與 SPEC.md 絕對路徑，明文禁止根目錄 glob；② 評估排程 lane 對唯讀工具＋固定路徑的權限白名單；③ runner 落地檢查（正本 mtime ≥ 當日）未過即標 FALSE_SUCCESS，不得以 schedule_done／responseLength 判定成功。"
     },
     {
-      "domain": "scheduler_green_zero_landing",
-      "insight": "#85 在 8.236 秒內 schedule_done 且 responseLength 39，但正本 mtime 未越過當日、全文零命中。這比 11/20 的單純缺窗更危險：監控看到的是 100% 成功率（runner 今日 1/1），實際產出為零。『蓉器健康』與『產出健康』是兩個獨立維度。",
-      "actionable": "為 #76／#78／#82／#83／#85 增加落地檢查：排程完成後比對正本 mtime ≥ 當日門檻（JOURNAL／stream／卦文各自的路徑），未通過即標 FALSE_SUCCESS 並寫入 events.jsonl，不得只靠 durationMs 或 responseLength 判斷。"
+      "domain": "quota_exhaustion_operational_risk",
+      "insight": "24h 三筆 quota-exhausted（06:59:57、07:59:58、16:59:58）＋17:05:56 streamChat 配额耗盡失敗，runner 成功率 85.7%（12/14）。每小時 :59 的 model-health 探针與五個排程共用 opencode/big-pickle 免費額度，探针本身就在消耗排程赖以維生的配額。pine 今日缺窗與晨間配额錯誤時間相鄰，但事件日誌丟失使因果無法證實——只能列嫌疑。",
+      "actionable": "① 評估備援模型或降低探针頻率／改用轻量 endpoint；② 配额耗盡時 schedule_done 應帶明確失敗原因而非 green；③ 排程錯開整點探针時段；④ 對『缺窗＋相鄰配额錯誤』建立關聯欄位但標註推論等級。"
     },
     {
-      "domain": "authorization_laundering_in_memory",
-      "insight": "EAL-Bench 顯示記憶寫入者會為 45.4% 的未授權請求製造 false authority，且執行者在 99.0% 的情況照單執行；異常不需要外部攻擊者。這精準命中本任務第 6 步『Memoria 整理』——consolidate 會把同 topic 舊 session 合併，若條目本身帶錯誤 authority，合併等於放大授權。",
-      "actionable": "在任何 prune／consolidate 前先做 dry-run（已完成：3 群／315 節點）；寫入 Memoria 時附 kind／authority／scope／valid_until 四欄位；對『規則／許可』等高位階條目要求 principal 明確來源，外部文件一律降為 DESCRIPTION。"
+      "domain": "event_log_rotation_loss",
+      "insight": "events.jsonl 現檔始於 12:00，輪轉檔 events-2026-11-22.jsonl 只剩一筆 09:00 probe（511 bytes）；#83 有產出（06:01:26 卦文）卻無 fire 事件、#76 無 fire 無產出、v75 引用的 11/22 事件也已消失。事件日誌作為稽核來源的可靠性低於正本檔案實體——這與 v75『狀態只信當次取證』原則同構：觀測工具本身也會丟狀態。",
+      "actionable": "① 查 events.jsonl 輪轉實作，改為 append-only 每日檔、禁止截斷覆蓋；② 落地檢查以 artifact（mtime／commit／檔案）為第一證據，events 僅輔助；③ 每日蒸餾時記錄 events 檔首筆 ts 作為完整性哨兵。"
     },
     {
-      "domain": "governance_as_pre_retrieval_gate",
-      "insight": "LEDGER（94.3%／91.1% vs full replay 82.1%／83.3%，LongMemEval 1% context 同準確率）與 SAFE-Mem（λ=min(kind, authority)，工具呼叫前回流標記擋越權）共同證明治理必須在檢索與工具呼叫之前，而非蒸餾後補摘要。HRR 研究另顯示無衝突預算時決策召回維持但衝突 F1 由 0.615 塌到 0.000。",
-      "actionable": "本 stream 的 high_signal_insights 增設 conflict_budget：每版至少保留一條『與上版矛盾』的觀察（今日即『push 積壓已清除』對 v74『ahead 12 未推送』），不得以壓縮率為唯一品質指標。"
+      "domain": "tech_rebound_with_backlog",
+      "insight": "tech 今日恢復出刊（#148）且主動揭露 11/22 快照缺漏、改列兩日增量不混加——口徑自律是好的蒸餾行為。但 5M＋3U 連續第四日未 commit（最後 commit 11/19），產出與版控的剪刀差持續擴大；一旦工作樹損毀，11/20–11/23 四份日報將只剩三份工作樹副本。",
+      "actionable": "優先 commit tech 三份 archive＋5 修改（訊息沿用 vYY.MMDD.HHMM 對位）；把『產出日≠版控日』剪刀差天數列為每日追蹤指標（今日 tech=4 日）。"
     },
     {
-      "domain": "local_vs_global_conflict_policy",
-      "insight": "RegimeCouncil 證明固定分享範圍在延遲回饋下次優，paired-evidence router 勝過較佳固定政策 5.2–7.3 點。今日三支柱缺窗看似同一事件，實為三因：pine／tech 是產線未跑（單純 1 日空窗），curiosity 是排程假成功（空轉但回 green）。若套用 v74 的 global FAILURE 標籤會抹平差異。",
-      "actionable": "缺窗診斷改為三分類：DORMANT_1D（未跑）、FALSE_SUCCESS（跑了沒落盤）、DEGRADED（落盤但內容不符）；各支柱分別計數，70 天陳舊鏡像另列 MIRROR_STALE。"
+      "domain": "cross_device_collaboration_astrology",
+      "insight": "占卜支柱今日展現跨裝置匯流：遠端（另一裝置）11/22 晚間五 commit 擴充九人家族命盤（父母、HTML 命盤、2027–2028 流年），本地 17:52 merge；同日本地卦文觀→萃『聚人與資源』與家族命盤擴充形成敘事共振。但 ahead 2 含 11/19 的 584e395 從未推送——merge 解决了分歧，push 積壓仍在，且 4 份卦文 untracked。",
+      "actionable": "① push ahead 2 並 commit 11/20–11/23 四份卦文；② 跨裝置協作常態化後，每日蒸餾須記錄 merge 來源與 ahead/behind（observed_at）；③ /app/projects/my-astrology 副本續標 MIRROR_STALE。"
     },
     {
-      "domain": "backlog_and_path_drift",
-      "insight": "tech 5M＋2U 連續第二日未 commit、占卜 3U、curiosity 無 .git、/app/projects/my-astrology 陈旧副本，四項合計使取證成本超過產出成本。本樞紐自身已 ahead 0，成為唯一乾淨的版控樞紐。",
-      "actionable": "優先 commit tech（11/20＋11/21 archive）與占卜（11/20–11/22 三卦）；curiosity 建立只讀 git 鏡像或每日 tar 快照；pillar registry 固定正本路徑並把 /app/projects/my-astrology 標為 MIRROR_STALE。"
+      "domain": "prune_debt_vanished_unverified",
+      "insight": "v75 dry-run 的 consolidate 3 群／315 節點＋stale 262 今日全變 0（dry-run 與實跑皆 0）。兩種解释：已被他處實跑清理，或 CLI 目標 DB 與遠端 memoria volume 不同源（memory-status 明示本服務不讀取 archive volume）。在未經證實前，『債已清除』與『債仍在但看不到』都不可斷言——這正是 v75 RegimeCouncil 教訓的本地案例：同一指標跨期翻轉時必須保留 local 解釋分支。",
+      "actionable": "① 驗證 CLI prune 目標路徑與 memoria 服務 /data/.memory 是否同源；② 保留每日 dry-run JSON 存檔（observed_at）以便跨期比對；③ 實跑前一律 dry-run（今日已遵循，實跑 removed 全 0，無副作用）。"
     }
   ],
   "pillar_project_snapshots": {
     "pine-trading-strategies-git": {
       "last_updated": "2026-11-21T06:37:19+08:00",
-      "status": "DORMANT_1D — 11/22 無活動；最後 #149 已全部版控，工作樹乾淨。",
-      "today_activity": "git log 最新 70281d7 @ 2026-11-21 06:37:19 +0800；git status --short 0 列；193 .pine／193 策略 .md（含 README 194）／193 <li>／14 類；find -newermt '2026-11-22' 在工作樹零命中，git log since 11/22 零筆；11/22 唯一較新 mtime 為 .git 目錄條目 23:30:44（唯讀 git 指令造成），不構成產出。"
+      "status": "DORMANT_2D — 11/22、11/23 連續缺窗；最後 #149 已全部版控，工作樹乾淨；#76 fire 事件因日誌丟失不可考。",
+      "today_activity": "git log 最新 70281d7 @ 2026-11-21T06:37:19+08:00；git log --since 11/23 零筆；status --short 0 列；193 .pine／strategies/ 194 .md（含 README）／全庫 196 .md（含根 README＋AGENTS）；find -newermt '2026-11-23' 工作樹零命中；events.jsonl 無 #76 fire（現檔始於 12:00）。"
     },
     "curiosity-engine": {
       "last_updated": "2026-11-21T23:03:05+08:00",
-      "status": "FALSE_SUCCESS — #85 11/22 23:00 fire 並完成，但 JOURNAL／SPEC 未更新；正本無 .git。",
-      "today_activity": "JOURNAL.md 321,760 bytes、SPEC.md 67,763 bytes，兩檔 mtime 皆 2026-11-21T23:03:05；最新版本 v80（11/21 23:00 CST，W47 Sat，補記 11/20 缺窗），SPEC v2.8；grep '2026-11-22' 兩檔 0 命中；git status exit 128（not a git repository）；events.jsonl L12–L17 顯示 23:00:00.003 fire → 23:00:00.274 done、durationMs 8236、responseLength 39；陳舊鏡像 113,902 bytes／9/12 23:40:38。"
+      "status": "FALSE_SUCCESS_ROOT_CAUSED — #85 連兩日（11/22、11/23）green 零落盤；根因＝根目錄 glob 遭排程 lane permission 自動拒絕；正本無 .git。",
+      "today_activity": "JOURNAL.md 321,760 bytes／SPEC.md 67,763 bytes，mtime 皆 2026-11-21T23:03:05；grep '2026-11-23' 兩檔 0 命中；#85 23:00:00.002 fire→23:00:12.930 done（durationMs 12912、responseLength 37、opencode outputLen 5643）；opencode-last-run.jsonl：glob path=/ 三連 'The user rejected permission to use this specific tool call'，僅 ls -la /app completed；git status exit 128；陳舊鏡像 /app/workspace/projects/curiosity-engine/JOURNAL.md 113,902 bytes @ 9/12 23:40:38。"
     },
     "tech-scouting-hub-git": {
-      "last_updated": "2026-11-21T12:03:53+08:00",
-      "status": "DORMANT_1D_UNCOMMITTED — 11/22 無日報；5 修改＋2 untracked 連續第二日未版控。",
-      "today_activity": "git log 最新 5770f11 @ 2026-11-19T23:36:25；stream.json version v45.1121.1200、timestamp 2026-11-21T12:00:00+08:00；最新檔案 archives/2026-11-21_1200.html 19,029 bytes @ 11/21 12:03:53；archives 無 2026-11-22_1200.html；grep 2026-11-22 零命中；status：M archives/index.html、M archives/list.json、M index.html、M stream.json、M trending_raw.json、?? archives/2026-11-20_1200.html、?? archives/2026-11-21_1200.html。"
+      "last_updated": "2026-11-23T12:06:11+08:00",
+      "status": "REBOUND_UNCOMMITTED — 今日出刊（#148 v47.1123.1200）；11/22 缺窗；5M＋3U 連續第四日未版控。",
+      "today_activity": "#82 12:00:00.002 fire→12:06:30 done（responseLength 1327）；archives/2026-11-23_1200.html 17,559 bytes @ 12:06:11.593；stream.json v47.1123.1200／timestamp 2026-11-23T12:00:00+08:00；無 2026-11-22_1200.html；status：M archives/index.html、M archives/list.json、M index.html、M stream.json、M trending_raw.json、?? archives/2026-11-20_1200.html、?? archives/2026-11-21_1200.html、?? archives/2026-11-23_1200.html；git log 最新 5770f11 @ 11/19 23:36:25。日報核心：Claude-BugHunter 18,113⭐ +1,716/d 四連霸、orca +1,168、craft-anything +911（+2.25%）、skills 差距 6,362、Leonida 兩日 +9,425（+139.6%）。"
     },
     "my-astrology": {
-      "last_updated": "2026-11-22T06:01:39+08:00",
-      "status": "ACTIVE — 11/22 v26.1122.0600 出刊；連同 11/20、11/21 共 3 份卦文 untracked。",
-      "today_activity": "divination_20261122_v2611220600.md 13,295 bytes、mtime 2026-11-22T06:01:39+08:00；date 原始輸出 Sun Nov 22 06:00:07 CST 2026；本卦第 62 雷山小過（上震下艮）、變卦第 39 水山蹇（上坎下艮），九四＋六五雙動爻；『只做小事、越低越安全』＋『遇到阻礙就停、回頭找人一起走』→ 慢、軟、少最穩；起卦 (2026+11+22+1)%8=4 震、(2026+11+22+4)%8=7 艮；最後 commit 584e395 @ 11/19 23:36:18；副本 /app/projects/my-astrology 僅 11/21 單檔、無 .git。"
+      "last_updated": "2026-11-23T17:52:26+08:00",
+      "status": "ACTIVE_CROSS_DEVICE — 卦文出刊＋九人命盤擴充＋遠端 merge；ahead 2＋4U 卦文待版控。",
+      "today_activity": "divination_20261123_v2611230600.md 14,115 bytes @ 06:01:26.866；date 原始輸出 Mon Nov 23 06:00:06 CST 2026；本卦第 20 風地觀、變卦第 45 澤地萃，六四＋上九雙動爻；起卦 (2026+11+23+1)%8=5 巽、(2026+11+23+4)%8=0→8 坤；日爻 23%6=5→6 上爻、時爻卯 4→四爻；主軸『少說多看、先聚後動、備好再走』。本地 commit：b3036d5 10:12:38（.gitignore）、2dca9c9 10:44:45（九人命盤 v4.0.0 充實 9 檔 +2255/−967）、82e06bb 10:55:33（README）；merge 49ef08a 17:52:26 匯入遠端 11/22 五 commit（f50cbb3、756f8b4、19a6c0c、b4e3b8e、6db3dc2）；rev-list origin/main..main＝2（49ef08a、584e395）；4U：11/20–11/23 卦文；副本 /app/projects/my-astrology 僅 11/21 單檔。"
     },
     "telenexus-insight-hub-git": {
-      "last_updated": "2026-11-22T23:35:09+08:00",
-      "status": "ACTIVE — v75 出刊（v26.1122.2335），date 零偏移；ahead 0（v74 已推送）；#85 假成功與三支柱缺窗入帳。",
-      "today_activity": "v74 commit d6b1792 @ 11/21 23:33:23 已同步 origin/main；本窗以 raw git log／mtime／events.jsonl 重新生成五支柱快照，蒸餾 push 狀態翻轉、排程 green 零落盤、authorization laundering、pre-retrieval governance、local/global conflict policy；更新六極矩陣、磁碟與 Memoria／prune 狀態。"
+      "last_updated": "2026-11-23T23:32:58+08:00",
+      "status": "ACTIVE — v76 出刊（v26.1123.2332），date 零偏移；取證時 ahead 0（v75 已推送）；根因級診斷＋配额／事件日誌風險入帳。",
+      "today_activity": "v75 commit 11a77f4 @ 11/22 23:36:48 已同步 origin/main（status -sb 無 ahead、rev-list 0）；本窗以 raw git log／stat／mtime／events.jsonl／opencode-last-run.jsonl／error-summary 重新生成五支柱快照；蒸餾 permission 牆根因、配额 exhaustion、事件日誌輪轉丟失、tech 反彈、占卜跨裝置匯流、prune 債翻轉歸零（未證實）；Memoria prune dry-run→實跑全 0 已執行。"
     }
   },
   "six_pole_matrix": {
-    "Tech": { "activity": "degraded", "note": "pine 11/22 缺窗（最後 193 策略 @ 11/21 06:37）、tech 11/22 無日報且 5M＋2U、curiosity #85 假成功（JOURNAL mtime 停在 11/21）。今日技術主軸不是在地產出，而是外部治理研究：LEDGER 94.3%／91.1%、SAFE-Mem 三標籤、RegimeCouncil +5.2–7.3 點、EAL-Bench 45.4%／99.0%。" },
-    "Crypto": { "activity": "stable_no_new_evidence", "note": "今日三源無新鏈上證據可取的記事；v74 的 Authority Closure 子面（26,653 筆 Base USDC 授權 98.7% 可被任意簽章持有者贖回、MandateLock 10,800 次竄改全拒＋25% gas）維持 D3，不上調。EAL-Bench 的 45.4%／99.0% 屬 agent 記憶授權面，不當作鏈上採用證據。" },
-    "Physical": { "activity": "idle_today", "note": "curiosity v80 的 cs.RO 92 篇與 Meta-RTL 跨域 EDA（未見設計 WNS −20.5%／面積 −12.6%）仍為最後有效證據（11/21）；11/22 無新掃描落盤，規則 8／19 維持原狀態，不新增。" },
-    "Social": { "activity": "low_but_continuous", "note": "唯一連續產出為占卜 11/22 小過→蹇雙動爻：『慢一點、軟一點、少一點』與三支柱同日缺窗形成行為／營運共振；memory-cli Last Active 11/22 23:00:08（+6 則），社群面無新實證。" },
-    "Policy": { "activity": "active_external", "note": "外部治理研究密度高：EAL-Bench 把記憶列為有效授權政策、HEAMS 主張效能與主權／隱私須分開評、SAFE-Mem 以 λ=min(kind,authority) 在工具呼叫前行使否決、LEDGER 以顯式規則裁決 supersede／dispute／delete。尚非新法生效，屬方法論與基準。" },
-    "Security": { "activity": "warning", "note": "磁碟 372G／468G（84%，73G 可用，較 v74 +1G used／−1G avail）；insight-hub ahead 0 已清除，但 tech 5M＋2U、占卜 3U、curiosity 無 git、陈旧副本仍存在；Memoria health 17 項 pass 且 prune dry-run 顯示 consolidate 315 節點待處理，archive 仍 unavailable；runner 1/1 成功但正是假成功的 blind spot。" }
+    "Tech": { "activity": "active_rebound", "note": "tech #148 出刊：Claude-BugHunter 18,113⭐（+1,716/d）四連霸、orca +1,168、craft-anything +911（+2.25%）、skills 王座差距 6,362、Leonida 兩日 +9,425（+139.6%）、xbox-emulator／WinRust Xbox 原生化群。pine 缺窗第二日（193 策略不變）；curiosity 根因確診（permission 牆）属本地工程診斷而非外部技術證據。" },
+    "Crypto": { "activity": "stable_no_new_evidence", "note": "今日無新鏈上掃描落盤；v74 Authority Closure 子面（26,653 筆 Base USDC 授權 98.7% 可被任意簽章持有者贖回、MandateLock 10,800 次竄改全拒＋25% gas）維持 D3，不上調、不沿用為新證據。" },
+    "Physical": { "activity": "idle_today", "note": "curiosity 連兩日零落盤，cs.RO 92 篇與 Meta-RTL 跨域 EDA（11/21 v80）仍為最後有效證據；規則 8／19 維持原狀態，不新增。" },
+    "Social": { "activity": "active_family", "note": "占卜觀→萃『先看清楚，再把人與資源輕輕聚在一起』；同日九人家族命盤跨裝置擴充（父母命盤、九張 HTML 命盤、2027–2028 流年、v4.0.0 充實 +2255/−967）——卦象敘事與家族實務工作共振。memory-cli 6,223（+15）、Last Active 23:00:12。" },
+    "Policy": { "activity": "no_new_scan_today", "note": "今日未執行外部治理掃描（任務聚焦本地支柱取證）；v75 EAL-Bench／LEDGER／SAFE-Mem／RegimeCouncil 仍為最後有效外部證據。今日本地事件提供治理實例：排程 lane 的 permission 自動拒絕＝『工具呼叫前閘門』實際運作，但閘門誤傷合法產出（curiosity 零落盤）——治理閘門需要白名單而非全拒，與 SAFE-Mem λ=min(kind,authority) 的有效位階設計同構。" },
+    "Security": { "activity": "warning", "note": "配额 exhaustion 24h 三筆＋2 請求失敗（runner 85.7%）；事件日誌輪轉丟失晨間排程事件（稽核缺口）；磁碟 372G／468G（84%，73G）持平；tech 5M＋3U（剪刀差 4 日）、占卜 ahead 2＋4U、curiosity 無 git、陳舊副本未解；Memoria health 17 pass、sync bridge 正常、prune 實跑全 0（債翻轉成因未證實）。" }
   },
   "observations": [
-    "【時距】v74（11/21 23:32）→ v75（11/22 23:35）＝ 1 日，恢復每日節奏；date 校準零偏移（Sun Nov 22 23:35:09 CST 2026 → 2026-11-22T23:35:09+08:00／15:35:09Z → v26.1122.2335）。",
-    "【push 翻轉】v74 記載 ahead 12 未推送；今日實測 `## main...origin/main`、ahead 0、commit d6b1792 @ 11/21 23:33:23。證明 push 已成功，推論層必須每次重跑 rev-list，不可用上一版快照。",
-    "【假成功】#85 23:00 fire → 23:00:00.274 done（8236ms、responseLength 39），但 curiosity JOURNAL／SPEC mtime 停在 11/21 23:03:05、零 '2026-11-22' 命中。runner Success Rate 100%（1/1）反而遮蓋零產出。",
-    "【缺窗分布】11/22 只有占卜產出（06:01:39）；pine 最後 11/21 06:37、tech 最後 11/21 12:03、curiosity 最後 11/21 23:03、insight-hub 本窗正常。三支柱缺窗成因不同，不可用單一 FAILURE 標籤概括。",
-    "【授權洗錢】EAL-Bench：writer 對 45.4% 未授權請求製造 false authority，executor 在 99.0% 執行；記憶從效能元件升格為有效授權政策，且不需外部攻擊。",
-    "【治理閘門】LEDGER 94.3%／91.1% vs replay 82.1%／83.3%、LongMemEval 1% context 同 74.8%；SAFE-Mem λ=min(kind,authority) 在工具呼叫前擋越權；RRR 無衝突預算時衝突 F1 由 0.615 → 0.000。",
-    "【線上仲裁】RegimeCouncil：固定 local／global 分享範圍皆不充分，paired-evidence router 勝 5.2–7.3 點、30 個留出設定全勝；對應本樞紐需 local／global 並存。",
-    "【tech 積壓】5 修改＋2 untracked（11/20、11/21 archive）連續第二日未 commit；最後 commit 仍為 11/19 23:36 的 #144。",
-    "【占卜】v26.1122.0600 小過（62）→ 蹇（39），九四＋六五雙動爻；『只做小事、越低越安全』＋『見阻就停、回頭連人』；3 份卦文 untracked。",
-    "【磁碟與記憶】df 372G／468G（84%，73G 可用，v74 為 371G／74G，+1G）；memory-cli 6,208（+6）、Last Active 11/22 23:00:08；Memoria health ok／17 pass／quick_check=ok，meta 15:32:53.978Z；prune dry-run consolidate 3 群 315 節點、stale 262 節點（removed 0）；archive status 仍 unavailable。"
+    "【時距】v75（11/22 23:35）→ v76（11/23 23:32）＝1 日，每日節奏連續第二日；date 校準零偏移（23:30:14 初校＋23:32:58 寫入前再校，Mon Nov 23 23:32:58 CST 2026 → 2026-11-23T23:32:58+08:00／15:32:58Z → v26.1123.2332）。",
+    "【根因確診】#85 今日 12.912s green、responseLength 37，但 opencode-last-run.jsonl 顯示根目錄 glob 三連遭 permission 自動拒絕、僅 ls 完成；JOURNAL／SPEC mtime 停 11/21 23:03:05。FALSE_SUCCESS 從現象升級為机制：prompt 未鎖路徑×排程 lane 拒權限。",
+    "【配额風險】error-summary 24h 三筆 quota-exhausted（06:59:57、07:59:58、16:59:58）＋17:05:56 streamChat 配额耗盡（failureKind=rate-limit）＋15:59:54 ProcessError；runner 14 請求 12 成功 2 失敗＝85.7%。每小時 :59 探针與排程共用免費額度。",
+    "【事件丟失】events.jsonl 首筆 12:00:00.002；events-2026-11-22.jsonl 僅一筆 09:00 probe；#83 有產出無 fire 事件、#76 無 fire 無產出、v75 引用的 11/22 事件已消失。落地檢查必須以 artifact 為第一證據。",
+    "【tech 反彈】#82 12:00→12:06:30 出刊 v47.1123.1200（17,559 bytes archive）；11/22 缺窗自述改列兩日增量；5M＋3U 連續第四日未 commit（最後 commit 11/19）。",
+    "【占卜大日子】觀（20）→萃（45）六四＋上九雙動爻；本地三 commit＋17:52 merge 遠端五 commit（九人命盤跨裝置擴充）；ahead 2（含 11/19 584e395 從未推送）＋4U 卦文。",
+    "【pine 缺窗第二日】193 策略不變、工作樹乾淨；196 .md 與 v75 194 為口徑差（strategies/README vs 根 README＋AGENTS），非內容漂移。",
+    "【prune 翻轉】v75 consolidate 3 群／315 節點＋stale 262 → 今日 dry-run 與實跑全 0；成因未證實（已清理或 DB 不同源），不寫『債已清除』。health 17 pass、sync bridge reachable、recall 今日 1 筆（conf 0.333、7404ms）。",
+    "【磁碟】df 372G／468G（84%，73G 可用）與 v75 持平；du workspace 2.0G／data 60M／dist 2.5M。",
+    "【conflict_budget】本版保留兩條與上版矛盾／翻轉的觀察：① v75『runner 1/1 100% 是 blind spot』→ 今日 85.7%（2 fail），成功率下降反而暴露配额問題，green 率與產出健康再度脫鉤；② v75『consolidate 315 節點待處理』→ 今日全 0，債敘事翻轉且成因未证实。另 v75 開的藥方『落地檢查』今日證實必要但不充分——根本解是 prompt 路徑鎖定＋權限白名單。"
   ],
   "next_actions": [
-    "【最高—假成功偵測】為五個排程建立正本 mtime／commit 落地檢查（curiosity＝/app/workspace/curiosity-engine/JOURNAL.md，pine＝git log，tech＝archives/ 當日 html，占卜＝divination_YYYYMMDD_*.md，insight-hub＝stream.json），未越過當日即標 FALSE_SUCCESS；不得再以 schedule_done 或 responseLength 判定成功。",
-    "【最高—授權標籤】在 Memoria／stream 寫入增列 kind／authority／scope／valid_until；外部文件降為 DESCRIPTION，只有 principal 明確請求可升 PERMISSION；consolidate 前一律先 --dry-run 並保留 conflict_budget。",
-    "【高—commit 積壓消化】git add/commit tech 11/20＋11/21 日報（5M＋2U）與 my-astrology 11/20–11/22 三卦；curiosity 建立只讀 git 鏡像或每日 tar 快照；commit 訊息沿用 vYY.MMDD.HHMM 對位。",
-    "【高—狀態標註】所有 ahead／untracked／push 欄位加 observed_at；本窗已把 v74 的 ahead 12 標為『取證瞬間值、隨後已清除』，禁止跨期沿用。",
-    "【中—路徑與資源】pillar registry 固定正本路徑（curiosity＝/app/workspace/curiosity-engine、占卜＝/app/workspace/projects/my-astrology）並標 /app/projects/my-astrology 為 MIRROR_STALE；執行 system-cleanup 後再 df 核對，目標自 84% 回落至 83% 以下。"
+    "【最高—#85 根因修复】prompt 硬編碼 /app/workspace/curiosity-engine/JOURNAL.md 與 SPEC.md 絕對路徑、禁止根目錄 glob；評估排程 lane 唯讀工具＋固定路徑白名單；runner 加正本 mtime ≥ 當日落地檢查，未過標 FALSE_SUCCESS。",
+    "【最高—配额韌性】評估備援模型／降低 :59 探针頻率；配额耗盡時 schedule_done 帶明確失敗原因；缺窗診斷保留『配额嫌疑』推論等級欄位，不得升級為斷言。",
+    "【高—事件日誌保全】查 events.jsonl 輪轉實作（現檔始 12:00、輪轉檔僅 1 筆），改 append-only 每日檔；每日蒸餾記錄 events 首筆 ts 當完整性哨兵。",
+    "【高—積壓消化】commit tech 5M＋3U（11/20＋11/21＋11/23 archive）；占卜 push ahead 2＋commit 11/20–11/23 四卦；curiosity 建立只讀 git 鏡像或每日 tar 快照；commit 訊息沿用 vYY.MMDD.HHMM 對位。",
+    "【中—Memoria 債驗證】確認 CLI prune 目標 DB 與 memoria 服務 /data/.memory 是否同源；每日 dry-run JSON 存檔（observed_at）供跨期比對；system-cleanup 後 df 核對（目標 84%→83% 以下，今日持平未達）。"
   ],
   "system_resources": {
     "disk_usage": "372G / 468G（84%，73G 可用）",
-    "disk_change": "+1G used / −1G avail（相較 v74 的 371G／74G）；du：/app/workspace 2.0G、/app/data 60M、/app/dist 2.5M。",
-    "notes": "11/22（週日 W47）23:35 CST。核心發現：1)【最高】v74 的 ahead 12 已於 11/21 23:33:23 推送清零，ahead 0；2)【最高】#85 23:00 八秒 green 但零落盤，定義 FALSE_SUCCESS；3)【最高】EAL-Bench 45.4% false authority／99.0% 執行，記憶即授權政策；4)【高】LEDGER／SAFE-Mem 顯示治理須在檢索與工具呼叫前；5)【高】RegimeCouncil 支持 local／global 仲裁而非固定政策；6)【中】三支柱缺窗、占卜連續三日、tech 5M＋2U；7)【中】磁碟 +1G、Memoria 健康但 consolidate 315 節點待處理。基調：『green 不等於落盤、記憶不等於安全的授權、狀態只信當次取證、異議要留預算』。"
+    "disk_change": "與 v75 完全持平（372G／73G）；du：/app/workspace 2.0G、/app/data 60M、/app/dist 2.5M。",
+    "notes": "11/23（週一 W48）23:32 CST。核心發現：1)【最高】curiosity FALSE_SUCCESS 根因確診＝排程 lane permission 牆×prompt 未鎖路徑（opencode-last-run.jsonl 三連拒鐵證）；2)【最高】免費配额 24h 三度 exhaustion，runner 85.7%，探针與排程共用額度；3)【高】事件日誌輪轉丟失晨間排程事件，稽核改以 artifact 為第一證據；4)【高】tech 恢復出刊（#148）但 11/22 缺窗、5M＋3U 剪刀差 4 日；5)【高】占卜觀→萃＋九人命盤跨裝置匯流（ahead 2＋4U）；6)【中】pine 缺窗第二日、prune 債翻轉歸零未證實、磁碟 84% 持平。基調：『根因要抓到机制層、green 率不等於產出、觀測工具自己也會丟狀態、跨期翻轉要留解釋分支』。"
   },
-  "audit_memo": "11/22 23:35 CST 排程 #78 觸發 v75。以 date 校準（Sun Nov 22 23:35:09 CST 2026 → 2026-11-22T23:35:09+08:00／2026-11-22T15:35:09Z → v26.1122.2335，零偏移）。取證來源（全部當次重新讀取，不沿用 v74 數字）：① `date`／`date -u` 兩次（23:30:10 與 23:35:09，寫入前再校一次）；② pine `git -C /app/workspace/projects/pine-trading-strategies-git log -8 --date=iso-strict`（70281d7 @ 11/21 06:37:19 #149）、`status --short`（0 列）、find 計數 193 .pine／193 策略 .md（含 README 194）／193 <li>、`find -newermt '2026-11-22'` 工作樹零命中；③ curiosity 正本 `/app/workspace/curiosity-engine/JOURNAL.md` stat（321,760 bytes，mtime 2026-11-21T23:03:05.128815596 +0800）與 `SPEC.md`（67,763 bytes，11/21 23:03:05）＋最新版本 v80／SPEC v2.8＋grep '2026-11-22' 兩檔 0 命中＋`git status` exit 128（無 .git）＋陳舊鏡像 stat（113,902 bytes，9/12 23:40:38）；④ tech `git log`（5770f11 @ 11/19 23:36:25）、`status --short` 7 行（5M＋2U）、stream.json v45.1121.1200／11/21 12:00、archives 最高 mtime 2026-11-21_1200.html 19,029 bytes @ 12:03:53、無 11/22 archive 與文字命中；⑤ 占卜正本 `/app/workspace/projects/my-astrology` `status --short`（3U：11/20、11/21、11/22 卦文）、`git log -3`（584e395 @ 11/19 23:36:18）、11/22 卦文 stat（13,295 bytes，mtime 2026-11-22T06:01:39+08:00）與內容（小過 62 → 蹇 39，九四＋六五雙動爻，起卦余數 4 震／7 艮）＋副本 `/app/projects/my-astrology` 僅 11/21 單檔且無 .git；⑥ insight-hub `git status -sb`（## main...origin/main，無 ahead）、`rev-list --count origin/main..main`＝0、`git log -3`（d6b1792 @ 11/21 23:33:23 已推送、d0e84bc @ 11/19、e90f9ce @ 11/17）、`remote -v`（oauth2 token 已遮罩，無 credential.helper、env 無 GH_TOKEN／GITHUB_TOKEN）；⑦ `/app/workspace/context/events.jsonl` L12–L20（#85 11/22 23:00:00.003 fire、23:00:00.274 done、durationMs 8236、responseLength 39；#78 23:30:00.003 fire、本次執行中）、scheduler-status.md（5 個 active：#76 06:30、#78 23:30、#82 12:00、#83 06:00、#85 23:00）、runner-status.md（1 請求／1 成功／0 失敗／100%、zombie 0，mtime 23:00:08）、memory-status.md（Archive Status: unavailable、remote 模式、Operational Messages 6,208、Last Message 15:00:08Z）；⑧ `df -h /`（372G／468G／73G／84%）＋`du -sh`（/app/workspace 2.0G、/app/data 60M、/app/dist 2.5M）；⑨ `node /app/dist/tools/memory-cli.js stats`（Total Messages 6,208、Last Active 11/22 23:00:08）；⑩ `curl -sf http://memoria:3917/v1/health`（ok、db/dirs pass、17 項全 pass、quick_check=ok、meta 15:32:53.978Z），OpenAPI 探測全 404，端點清單由 `/app/workspace/Memoria/src/server.ts:5-17` 取得，`GET /v1/stats` 顯示 sessions 81、events 162、lastSession 15:00:08.286Z；⑪ `cd /app/workspace/Memoria && ./cli prune --all --dry-run`（exports 0、checkpoints 0、dedupe 0、consolidate 3 群／315 節點、stale 262 節點／removed 0）；⑫ system-cleanup 取證：`/app/workspace/projects/system-cleanup/scripts/cleanup.sh` 可執行，而 `/app/workspace/.opencode/skills/system-cleanup/SKILL.md` 指向的 `/app/workspace/.gemini/...` 已不存在；⑬ 外部補充（因 curiosity 當日無落盤，以web 檢索補高信號，皆非 11/22 新發表）：EAL-Bench 2609.01836（45.4%／99.0%）、LEDGER 2611.20927（94.3%／91.1%／1% context）、SAFE-Mem 2610.22959（λ=min(kind,authority)）、RegimeCouncil 2611.22113（+5.2–7.3 點／30 留出）、HEAMS 2611.20144（責任維度）、Memory-TCG／RRR 2611.15644（決策召回 0.44 vs 0.06、衝突 F1 0.615→0.000）。核心發現：(1) push 積壓已清除且舊狀態不可沿用；(2) 排程 green 但零落盤須獨立偵測；(3) 記憶寫入本身可製造 45.4% false authority 且 99.0% 被執行；(4) 治理须置於檢索與工具呼叫前；(5) 缺窗需三分類而非單一 FAILURE；(6) 三支柱缺窗、占卜連續出刊、tech 積壓未消化；(7) 磁碟 +1G、Memoria 健康但 consolidate 315 節點待處理。基調：『green 不等於落盤、記憶不等於安全的授權、狀態只信當次取證、異議要留預算』。"
+  "audit_memo": "11/23 23:32 CST 排程 #78 觸發 v76。以 date 校準（初校 23:30:14、寫入前再校 Mon Nov 23 23:32:58 CST 2026 → 2026-11-23T23:32:58+08:00／2026-11-23T15:32:58Z → v26.1123.2332，零偏移）。取證來源（全部當次重新讀取，不沿用 v75 數字）：① date／date -u 兩次；② pine git log -5 --date=iso-strict（70281d7 @ 11/21 06:37:19 #149）、log --since 11/23 零筆、status --short 0 列、find 計數 193 .pine／strategies/ 194 .md／全庫 196 .md（含根 README＋AGENTS，口徑釐清）、find -newermt '2026-11-23' 零命中；③ curiosity 正本 stat（JOURNAL 321,760 bytes／SPEC 67,763 bytes，mtime 皆 11/21 23:03:05）＋grep '2026-11-23' 兩檔 0 命中＋git status exit 128＋鏡像 stat（113,902 bytes／9/12）；④ tech git log -3（5770f11 @ 11/19 23:36:25）、status --short 8 行（5M＋3U）、stream.json v47.1123.1200／summary 全文、archives/2026-11-23_1200.html stat（17,559 bytes @ 12:06:11.593）、無 11/22 archive；⑤ 占卜 git log -9 --date=iso-strict（本地 b3036d5 10:12:38／2dca9c9 10:44:45 +2255/−967 九檔／82e06bb 10:55:33／merge 49ef08a 17:52:26；遠端側 f50cbb3／756f8b4／19a6c0c／b4e3b8e／6db3dc2 皆 11/22 19:43–21:02）、rev-list origin/main..main＝2（49ef08a、584e395）、status 4U、卦文 stat（14,115 bytes @ 06:01:26.866）與內容（觀 20→萃 45、六四＋上九、起卦 5 巽／0→8 坤、date 原始輸出 Mon Nov 23 06:00:06 CST 2026）、副本 /app/projects/my-astrology 僅 11/21 單檔；⑥ insight-hub status -sb（## main...origin/main）、rev-list 0、log -3（11a77f4 @ 11/22 23:36:48 v75 已推送）；⑦ events.jsonl（首筆 12:00:00.002；#82 12:00 fire→12:06:30 done responseLength 1327；15:59:54 ProcessError；16:59:57/58 quota；17:05:56 streamChat quota；#85 23:00:00.002 fire→23:00:12.930 done durationMs 12912 responseLength 37；#78 23:30:00.003 fire 本次執行中）＋events-2026-11-22.jsonl（僅 11/23 09:00 probe 一筆，511 bytes）＋opencode-last-run.jsonl（#85 場次：glob path=/ 三連 'The user rejected permission to use this specific tool call'、ls -la /app completed、outputLen 5643）＋runner-audit.log（17:05 請求 failureKind=rate-limit ok=false）；⑧ scheduler-status.md（5 active：#76 06:30／#78 23:30／#82 12:00／#83 06:00／#85 23:00，更新 23:30:59）、runner-status.md（14 請求／12 成功／2 失敗／85.7%、zombie 0、started 11/22 21:59:52）、memory-status.md（Archive unavailable remote、Operational 6,223、Last 15:00:12.937Z）、memoria-status.md（sync bridge reachable、last sync 23:00:13、failures 0、recall n=1 conf 0.333 latency 7404ms、v2.40.1）、error-summary.md（24h quota-exhausted 3：06:59:57／07:59:58／16:59:58）；⑨ df -h /（372G／468G／73G／84%）＋du -sh（workspace 2.0G／data 60M／dist 2.5M）；⑩ node /app/dist/tools/memory-cli.js stats（6,223、Last Active 11/23 23:00:12）；⑪ Memoria curl http://memoria:3917/v1/health（ok、db ok、17 checks 全 pass）＋./cli prune --all --dry-run（全 0）→./cli prune --all 實跑（removed 全 0，無副作用；整理指令於寫入前執行以便入帳）。執行順序備註：Memoria 整理（步驟 6）提前於寫入前執行以收錄結果；system-cleanup（步驟 7）依任務順序於 commit/push 後執行，其後 df 核對結果回報於最終訊息。push 狀態（ahead 0）為取證瞬間值 observed_at=2026-11-23T23:31 CST，本窗 commit 後將重新實測。"
 }
